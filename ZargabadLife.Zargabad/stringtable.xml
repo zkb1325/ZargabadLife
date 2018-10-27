@@ -1,0 +1,3215 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="ZargabadLife">
+	<Package name="Zargabad Life Stringtables">
+	
+	
+		<Container name="Common">
+			<Key ID="STR_Common_Yes">
+				<Original>Yes</Original>
+			</Key>
+			
+			<Key ID="STR_Common_No">
+				<Original>No</Original>
+			</Key>
+			
+			<Key ID="STR_Common_None">
+				<Original>None</Original>
+			</Key>
+			
+			<Key ID="STR_Common_Nothing">
+				<Original>Nothing</Original>
+			</Key>
+			
+			<Key ID="STR_Common_Unlimited">
+				<Original>Unlimited</Original>
+			</Key>
+			
+			<Key ID="STR_Common_Rob">
+				<Original>Rob</Original>
+			</Key>
+			
+			<Key ID="STR_Common_Abort">
+				<Original>Abort</Original>
+			</Key>
+			
+			<Key ID="STR_Common_Respawn">
+				<Original>Respawn</Original>
+			</Key>
+			
+			<Key ID="STR_Common_Close">
+				<Original>Close</Original>
+			</Key>
+			
+			<Key ID="STR_Common_Back">
+				<Original>Back</Original>
+			</Key>
+			
+			<Key ID="STR_Common_KeysEnabled">
+				<Original>Keys Enabled: %1</Original>
+			</Key>
+			
+			<Key ID="STR_Common_Direct">
+				<Original>Direct</Original>
+			</Key>
+			
+			<Key ID="STR_Common_SideChat">
+				<Original>Side Chat</Original>
+			</Key>
+			
+			<Key ID="STR_Common_GlobalChat">
+				<Original>Global Chat</Original>
+			</Key>
+			
+			<Key ID="STR_Common_VehLockNotYours">
+				<Original>You do not have the keys to this vehicle.</Original>
+			</Key>
+			
+			<Key ID="STR_Common_VehLocked">
+				<Original>Vehicle locked.</Original>
+			</Key>
+			
+			<Key ID="STR_Common_VehUnLocked">
+				<Original>Vehicle unlocked.</Original>
+			</Key>
+			
+			<Key ID="STR_Common_VehIsLocked">
+				<Original>The vehicle is locked.</Original>
+			</Key>
+			
+			<Key ID="STR_Common_VehMovingToFast">
+				<Original>The vehicle is moving too fast</Original>
+			</Key>
+			
+			<Key ID="STR_Common_VehToFar">
+				<Original>The selected vehicle is to far</Original>
+			</Key>
+			
+			<Key ID="STR_Common_LicenseNoMoney">
+				<Original>You do not have enough money for that license.</Original>
+			</Key>
+			
+			<Key ID="STR_Common_LicenseGotAlready">
+				<Original>You already have that License.</Original>
+			</Key>
+			
+			<Key ID="STR_Common_LicenseBought">
+				<Original>You bought %1 for $%2.</Original>
+			</Key>
+			
+			<Key ID="STR_Common_NoLicenseProcess">
+				<Original>You don't have the right license to Process This.</Original>
+			</Key>
+			
+			<Key ID="STR_Common_NotEnoughToProcess">
+				<Original>You don't have enough items to process.</Original>
+			</Key>
+			
+			<Key ID="STR_Common_NotInVeh">
+				<Original>You are not in a vehicle.</Original>
+			</Key>
+			
+			<Key ID="STR_Common_NotInVehDriver">
+				<Original>You are not in the driver seat of a vehicle.</Original>
+			</Key>
+			
+			<Key ID="STR_Common_CantUseInVeh">
+				<Original>You can't use this item in a vehicle.</Original>
+			</Key>
+			
+			<Key ID="STR_Common_AlreadyPerformingAction">
+				<Original>You're already performing an action</Original>
+			</Key>
+			
+			
+		</Container>
+		
+		<Container name="ZKB_CBA">
+		
+			<Key ID="STR_CBA_UseBindName">
+				<Original>Use %1</Original>
+			</Key>
+			
+			<Key ID="STR_CBA_BindToolTip">
+				<Original>Uses 1 %1 when pressed\nDescription:\n%2</Original>
+			</Key>
+			
+			<Key ID="STR_CBA_OpenWelcomeMenu">
+				<Original>Open Welcome Menu</Original>
+			</Key>
+			
+			<Key ID="STR_CBA_VolumeUp">
+				<Original>Volume Up 10%</Original>
+			</Key>
+			
+			<Key ID="STR_CBA_VolumeDown">
+				<Original>Volume Down 10%</Original>
+			</Key>
+			
+			<Key ID="STR_CBA_VolumeAt">
+				<Original>Sound Volume At %1%2</Original>
+			</Key>
+			
+			<Key ID="STR_CBA_EnableKeys">
+				<Original>Enable Keys</Original>
+			</Key>
+			
+			<Key ID="STR_CBA_OpenInfoMenu">
+				<Original>Open Info Menu</Original>
+			</Key>
+			
+			<Key ID="STR_CBA_OpenInventory">
+				<Original>Open Inventory</Original>
+			</Key>
+			
+			<Key ID="STR_CBA_HandsUp">
+				<Original>Hands Up</Original>
+			</Key>
+			
+			<Key ID="STR_CBA_HandsDown">
+				<Original>Hands Down</Original>
+			</Key>
+			
+			<Key ID="STR_CBA_OpenGangMenu">
+				<Original>Open Gang Menu</Original>
+			</Key>
+			
+			<Key ID="STR_CBA_Interaction">
+				<Original>Interaction Key</Original>
+			</Key>
+			
+			<Key ID="STR_CBA_OpenTrunk">
+				<Original>Open Trunk</Original>
+			</Key>
+			
+			<Key ID="STR_CBA_KnockOut">
+				<Original>Knock Out</Original>
+			</Key>
+			
+			<Key ID="STR_CBA_ToggleSiren">
+				<Original>Siren On/Off</Original>
+			</Key>
+			
+			<Key ID="STR_CBA_HolsterWeapon">
+				<Original>Holster Weapon</Original>
+			</Key>
+			
+			<Key ID="STR_CBA_VehicleLock">
+				<Original>Vehicle Lock</Original>
+			</Key>
+			
+			<Key ID="STR_CBA_PoliceComputer">
+				<Original>Open Police Computer</Original>
+			</Key>
+			
+		</Container>
+		
+		<Container name="Voting">
+		
+			<Key ID="STR_Voting_MayorVoteAction">
+				<Original>Elect a mayor</Original>
+			</Key>
+			
+			<Key ID="STR_Voting_ChiefVoteAction">
+				<Original>Elect a Police Chief</Original>
+			</Key>
+			
+			<Key ID="STR_Voting_Vote">
+				<Original>Vote</Original>
+			</Key>
+			
+			<Key ID="STR_Voting_CancelVote">
+				<Original> - No Vote - </Original>
+			</Key>	
+			
+			<Key ID="STR_Voting_CurVotes">
+				<Original>Current Votes: %1</Original>
+			</Key>
+			
+			<Key ID="STR_Voting_VotedForMayor">
+				<Original>You voted for %1 to be mayor</Original>
+			</Key>
+			
+			<Key ID="STR_Voting_VotedForChief">
+				<Original>You voted for %1 to be police chief</Original>
+			</Key>
+			
+			<Key ID="STR_Voting_VoteNoOneMayor">
+				<Original>You cleared your vote for mayor</Original>
+			</Key>
+			
+			<Key ID="STR_Voting_VoteNoOneChief">
+				<Original>You cleared your vote for police chief</Original>
+			</Key>
+			
+			<Key ID="STR_Voting_VoteError">
+				<Original>There was an error voting that player, try again or select another candidate</Original>
+			</Key>
+			
+			<Key ID="STR_Voting_NewMayor">
+				<Original>%1 is now the new Mayor! They won with %2 votes</Original>
+			</Key>
+			
+			<Key ID="STR_Voting_MayorStays">
+				<Original>%1 remains the mayor</Original>
+			</Key>
+			
+			<Key ID="STR_Voting_NoneMayorElected">
+				<Original>Currently no Mayor has been elected</Original>
+			</Key>
+			
+			<Key ID="STR_Voting_NewCheif">
+				<Original>%1 is now the Police Chief! They won with %2 votes</Original>
+			</Key>
+			
+			<Key ID="STR_Voting_ChiefStays">
+				<Original>The current chief of police stays</Original>
+			</Key>
+			
+			<Key ID="STR_Voting_NoneChiefElected">
+				<Original>Currently no Chief of police has been elected</Original>
+			</Key>
+			
+			<Key ID="STR_Tax_TaxMenu">
+				<Original>Tax Menu</Original>
+			</Key>
+			
+			<Key ID="STR_Tax_ItemTax">
+				<Original>Item Tax: %1%2</Original>
+			</Key>
+			
+			<Key ID="STR_Tax_VehicleTax">
+				<Original>Vehicle Tax: %1%2</Original>
+			</Key>
+			
+			<Key ID="STR_Tax_MagazineTax">
+				<Original>Magazine Tax: %1%2</Original>
+			</Key>
+			
+			<Key ID="STR_Tax_WeaponTax">
+				<Original>Weapon Tax: %1%2</Original>
+			</Key>
+			
+			<Key ID="STR_Tax_TransferTax">
+				<Original>Bank Transfer Tax: %1%2</Original>
+			</Key>
+			
+			<Key ID="STR_Tax_ChangeTaxes">
+				<Original>Change Taxes</Original>
+			</Key>
+			
+			<Key ID="STR_Tax_TaxesChanged">
+				<Original>The mayor has changed the taxes!</Original>
+			</Key>
+			
+			<Key ID="STR_Law_LawMenu">
+				<Original>Law Menu</Original>
+			</Key>
+			
+			<Key ID="STR_Law_ChangeLaw">
+				<Original>Change!</Original>
+			</Key>
+			
+			<Key ID="STR_Law_LawChanged">
+				<Original>Law #%1 has been changed.\nThis is the new Law:\n\n%2</Original>
+			</Key>
+		
+		</Container>
+		
+		<Container name="Hud">
+		
+			<Key ID="STR_Hud_Enter">
+				<Original>Enter (%1)</Original>
+			</Key>
+			
+			<Key ID="STR_Hud_ATM">
+				<Original>ATM (%1)</Original>
+			</Key>
+			
+			<Key ID="STR_Hud_Shop">
+				<Original>%1 (%2)</Original>
+			</Key>
+			
+			<Key ID="STR_Hud_Search">
+				<Original>Search (%1)</Original>
+			</Key>
+			
+			<Key ID="STR_Hud_Interact">
+				<Original>Interact (%1)</Original>
+			</Key>
+		</Container>
+		
+		<Container name="Robbing">
+			<Key ID="STR_Robbing_Stole">
+				<Original>You stole $%1 from %2!</Original>
+			</Key>
+			
+			<Key ID="STR_Robbing_RobbedGlobal">
+				<Original>Someone robbed %1!</Original>
+			</Key>
+		
+		</container>
+		
+		<Container name="Bank">
+			
+			<Key ID="STR_Bank_Bank">
+				<Original>Bank</Original>
+			</Key>
+			
+			<Key ID="STR_Bank_ATMBANK">
+				<Original>ATM/Bank</Original>
+			</Key>
+			
+			<Key ID="STR_Bank_DepTrans">
+				<Original>Deposit/Transfer</Original>
+			</Key>
+			
+			<Key ID="STR_Bank_Withdraw">
+				<Original>Withdraw</Original>
+			</Key>
+			
+			<Key ID="STR_Bank_PlayerSelect">
+				<Original>Select Player</Original>
+			</Key>
+			
+			<Key ID="STR_Bank_Submit">
+				<Original>Submit</Original>
+			</Key>
+			
+			<Key ID="STR_Bank_Deposited">
+				<Original>$%1 transferred to your account</Original>
+			</Key>
+			
+			<Key ID="STR_Bank_DepositNotEnough">
+				<Original>You don't have enough money in your inventory to deposit $%1</Original>
+			</Key>
+			
+			<Key ID="STR_Bank_DepositMaxBank">
+				<Original>You can't have more than $%1 in your bank. $%2 remains in your inventory.</Original>
+			</Key>
+			
+			<Key ID="STR_Bank_Withdrew">
+				<Original>$%1 successfully withdrawn</Original>
+			</Key>
+			
+			<Key ID="STR_Bank_WithdrawNotEnough">
+				<Original>You don't have $%1 in your account</Original>
+			</Key>
+			
+			<Key ID="STR_Bank_TransferTaxInfo">
+				<Original>Transfer Tax: %1%2 $%3</Original>
+			</Key>
+			
+			<Key ID="STR_Bank_Transferred">
+				<Original>You transfered $%1 to %2's account and paid an additional $%3 in transfer tax</Original>
+			</Key>
+			
+			<Key ID="STR_Bank_TransferredRecieve">
+				<Original>%1 transferred $%2 to your account</Original>
+			</Key>
+			
+			<Key ID="STR_Bank_TransferredMaxBank">
+				<Original>You can't have more than $%1 in your bank. $%2 was returned to %3.</Original>
+			</Key>
+			
+			<Key ID="STR_Bank_TransferredBack">
+				<Original>You got $%1 back from what you transferred to %2 because their bank account has maxed out</Original>
+			</Key>
+			
+			<Key ID="STR_Bank_TransferPlayerNotInGame">
+				<Original>Error: Player not in-game</Original>
+			</Key>
+			
+			<Key ID="STR_Bank_TransferNotEnough">
+				<Original>You don't have enough money in your account to transfer $%1 to %2 plus $%3 in transfer tax</Original>
+			</Key>
+			
+			<Key ID="STR_Bank_InvMoney">
+				<Original>Money In Your Inventory: $%1</Original>
+			</Key>
+			
+			<Key ID="STR_Bank_BankMoney">
+				<Original>Money In Your Account: $%1</Original>
+			</Key>
+			
+			<Key ID="STR_Bank_PayCheckIn">
+				<Original>%1 Minute(s) until next Paycheck</Original>
+			</Key>
+			
+			<Key ID="STR_Bank_PayCheckMaxBank">
+				<Original>You can't have more than $%1 in your bank. $%2 of your paycheck has been lost.</Original>
+			</Key>
+			
+			<Key ID="STR_Bank_CopPaycheck">
+				<Original>%1, You earned $%2, the money has been transfered to your account</Original>
+			</Key>
+			
+			<Key ID="STR_Bank_CheifPaycheck">
+				<Original>As a Police Chief you get an extra paycheck of $%1</Original>
+			</Key>
+			
+			<Key ID="STR_Bank_CivPaycheck">
+				<Original>%1, you received a paycheck of $%2. If you own a gang area or workplace you got extra. The Money has been transferred to your account.</Original>
+			</Key>
+			
+			<Key ID="STR_Bank_MayorPaycheck">
+				<Original>As a Mayor you get an extra paycheck of $%1. You also got $%2 from taxes.</Original>
+			</Key>
+			
+			<Key ID="STR_Bank_PaycheckDead">
+				<Original>You missed a paycheck because you are dead.</Original>
+			</Key>
+			
+			<Key ID="STR_Bank_SafeRecent">
+				<Original>This safe has recently been stolen from and is empty</Original>
+			</Key>
+			
+			<Key ID="STR_Bank_RobNoWeapon">
+				<Original>You can't rob the bank without being armed</Original>
+			</Key>
+			
+			<Key ID="STR_Bank_RobbingBank">
+				<Original>You decided to rob the bank. Stay here until you get the money and then get the hell outta here!</Original>
+			</Key>
+			
+			<Key ID="STR_Bank_RobbingBankGlobal">
+				<Original>&lt;t color='#FF0000'&gt;WARNING&lt;/t&gt; SOMEONE IS ROBBING THE BANK &lt;t color='#FF0000'&gt;WARNING&lt;/t&gt;</Original>
+			</Key>
+			
+			<Key ID="STR_Bank_RobbedBank">
+				<Original>You robbed the bank successfully. Escape before the cops catch you!</Original>
+			</Key>
+			
+			<Key ID="STR_Bank_RobbedBankStole">
+				<Original>The thief stole $%1!</Original>
+			</Key>
+			
+			<Key ID="STR_Bank_BankRobbedInsurance">
+				<Original>Because of your bank insurance you lost no money but you lost one bank insurance</Original>
+			</Key>
+			
+			<Key ID="STR_Bank_BankRobbedLostAll">
+				<Original>The bank has been robbed. You lost all the money on your account!</Original>
+			</Key>
+			
+			<Key ID="STR_Bank_BankRobbedLostSome">
+				<Original>The bank has been robbed. You lost $%1 and have $%2 left on your account</Original>
+			</Key>
+			
+			<Key ID="STR_Bank_BankRobbedNoATM">
+				<Original>You can not use the ATM/Bank while you have Blue Ink on you</Original>
+			</Key>
+			
+			<Key ID="STR_Bank_BuyWorkplace">
+				<Original>Buy Workplace %1 $%2</Original>
+			</Key>
+			
+			<Key ID="STR_Bank_BoughtWorkplace">
+				<Original>You bought Workplace %1 for $%2</Original>
+			</Key>
+		
+		</container>
+		
+		<Container name="Vehicle">
+			<Key ID="STR_Vehicle_VehInformation">
+				<Original>Vehicle Information</Original>
+			</Key>
+			
+			<Key ID="STR_Vehicle_VehInfo">
+				<Original>VEHICLE INFORMATION:\n\nName: %1\nPlate: %2\nDriver: %3\nTotal Seats: %4</Original>
+			</Key>
+
+			<Key ID="STR_Vehicle_VehInfoNoDriver">
+				<Original>No Driver</Original>
+			</Key>
+			
+			<Key ID="STR_Vehicle_RefuelAction">
+				<Original>Fill up for $%1 per 10 liters</Original>
+			</Key>
+			
+			<Key ID="STR_Vehicle_RefuelEngineOn">
+				<Original>Turn off the vehicles engine</Original>
+			</Key>
+			
+			<Key ID="STR_Vehicle_Refueling">
+				<Original>Refueling %1 with 10 liters of gas for $%2</Original>
+			</Key>
+			
+			<Key ID="STR_Vehicle_RefuelComplete">
+				<Original>Refueling Complete</Original>
+			</Key>
+			
+			<Key ID="STR_Vehicle_VehicleTrunk">
+				<Original>Vehicles Trunk</Original>
+			</Key>
+			
+			<Key ID="STR_Vehicle_VehicleStorage">
+				<Original>Storage: %1/%2Kg</Original>
+			</Key>
+			
+			<Key ID="STR_Vehicle_VehicleTrunkFull">
+				<Original>The vehicle's storage is full or can't hold that much</Original>
+			</Key>
+			
+			<Key ID="STR_Vehicle_NotEnoughToTake">
+				<Original>There is not that many items in the vehicles trunk</Original>
+			</Key>
+			
+			<Key ID="STR_Vehicle_ImpoundLot">
+				<Original>Impound Lot</Original>
+			</Key>
+			
+			<Key ID="STR_Vehicle_ImpoundRetrieve">
+				<Original>Retrieve</Original>
+			</Key>
+			
+			<Key ID="STR_Vehicle_ImpoundNoMoney">
+				<Original>You don't have $%1 to retrieve %2 from impound</Original>
+			</Key>
+			
+			<Key ID="STR_Vehicle_ImpoundPaid">
+				<Original>You payed the $%1 fine and retrieved %2 from impound</Original>
+			</Key>
+					
+			<Key ID="STR_Vehicle_ImpoundWrongSide">
+				<Original>You are not allowed to retrieve this vehicle as this side</Original>
+			</Key>
+			
+			<Key ID="STR_Vehicle_Impound">
+				<Original>Impound %1</Original>
+			</Key>
+			
+			<Key ID="STR_Vehicle_ImpoundSuccess">
+				<Original>You have impounded this vehicle!</Original>
+			</Key>
+			
+			<Key ID="STR_Vehicle_ImpoundSuccessGlobal">
+				<Original>%1 has impounded vehicle %2!</Original>
+			</Key>
+			
+			<Key ID="STR_Vehicle_ImpoundVehNotEmpty">
+				<Original>The vehicle is not empty!</Original>
+			</Key>
+			
+			<Key ID="STR_Vehicle_ImpoundNotAllowed">
+				<Original>you cannot impound this vehicle!</Original>
+			</Key>
+			
+			<Key ID="STR_Vehicle_UnFlipVeh">
+				<Original>UnFlip %1</Original>
+			</Key>
+			
+			<Key ID="STR_Vehicle_UnFlipVehWait">
+				<Original>UnFliping %1, wait 10s within 10 meters</Original>
+			</Key>
+			
+			<Key ID="STR_Vehicle_UnFlipVehToFar">
+				<Original>Try again, stay within 10m</Original>
+			</Key>
+			
+			<Key ID="STR_Vehicle_UnFlipVehUnFlipped">
+				<Original>%1 has been UnFlipped</Original>
+			</Key>
+			
+			<Key ID="STR_Vehicle_PullOut">
+				<Original>Pull Out</Original>
+			</Key>
+			
+			<Key ID="STR_Vehicle_PullOutLocked">
+				<Original>The car is locked. This might take a while.</Original>
+			</Key>
+			
+			<Key ID="STR_Vehicle_PullOutPullingOut">
+				<Original>You're pulling out %1. Stay close to the car!</Original>
+			</Key>
+			
+			<Key ID="STR_Vehicle_PullOutBeingPullingOut">
+				<Original>%1 is pulling you out of the car!</Original>
+			</Key>
+			
+			<Key ID="STR_Vehicle_PullOutToFar">
+				<Original>You are too far away.</Original>
+			</Key>
+			
+			<Key ID="STR_Vehicle_PullOutNoCrew">
+				<Original>There's no one in the vehicle.</Original>
+			</Key>
+			
+			<Key ID="STR_Vehicle_PullOutGlobal">
+				<Original>%1 pulled %2 out of a car!</Original>
+			</Key>
+			
+			<Key ID="STR_Vehicle_ViewTrunk">
+				<Original>View Trunk</Original>
+			</Key>
+			
+			<Key ID="STR_Vehicle_SearchVeh">
+				<Original>Search Vehicle</Original>
+			</Key>
+			
+			<Key ID="STR_Vehicle_SearchVehFound">
+				<Original>%1 found $%2 worth of illegal items in %3</Original>
+			</Key>
+			
+			<Key ID="STR_Vehicle_SearchVehNotFound">
+				<Original>No illegal items found</Original>
+			</Key>
+			
+		</Container>
+		
+		<Container name="Jail">
+			<Key ID="STR_Jail_UnitArrested">
+				<Original>%1 was arrested by %2 for %3</Original>
+			</Key>
+			
+			<Key ID="STR_Jail_MayorArrested">
+				<Original>The mayor has been arrested and is no longer mayor</Original>
+			</Key>
+			
+			<Key ID="STR_Jail_PlayerArrested">
+				<Original>You have been arrested for %1. After that you will be teleported out. You can board a chopper to escape</Original>
+			</Key>
+			
+			<Key ID="STR_Jail_ReleaseTimer">
+				<Original>Time until release: %1\nBail left to pay: $%2</Original>
+			</Key>
+			
+			<Key ID="STR_Jail_Free">
+				<Original>%1 is free again</Original>
+			</Key>
+			
+			<Key ID="STR_Jail_Escaped">
+				<Original>%1 has escaped from jail</Original>
+			</Key>
+			
+			<Key ID="STR_Jail_PaidBail">
+				<Original>%1 paid $%2 in bail</Original>
+			</Key>
+			
+			<Key ID="STR_Jail_NoMoney">
+				<Original>You do not have enough money to pay bail</Original>
+			</Key>
+			
+			<Key ID="STR_Jail_BailCopReward">
+				<Original>You got $%1 because %2 paid bail</Original>
+			</Key>
+					
+		</Container>
+		
+		<Container name="Respawn">
+			<Key ID="STR_Killed_PlayerKilledBy">
+				<Original>%1 was killed by %2</Original>
+			</Key>
+			
+			<Key ID="STR_Killed_PlayerRanOver">
+				<Original>%1 hit %2 with a vehicle</Original>
+			</Key>
+			
+			<Key ID="STR_Killed_PlayerSuicide">
+				<Original>You committed suicide</Original>
+			</Key>
+			
+			<Key ID="STR_Killed_PlayerStarved">
+				<Original>%1 starved to death!</Original>
+			</Key>
+			
+			<Key ID="STR_Killed_PlayerDied">
+				<Original>%1 Died!</Original>
+			</Key>
+			
+			<Key ID="STR_Respawn_CopRespawnTime">
+				<Original>As a cop you have to wait %1 seconds to respawn, plus an additional %2 seconds for any players you killed.\nYour respawn time this death is %3 seconds.\nTo avoid a high respawn time, shock or arrest civilians instead of killing them.</Original>
+			</Key>
+			
+			<Key ID="STR_Respawn_CivRespawnTime">
+				<Original>You have now died %1 time(s) and suicided %2 time(s) with %3 cop(s) killed and %4 civilian(s) killed, you have to wait %5 seconds to respawn.</Original>
+			</Key>
+			
+			<Key ID="STR_Respawn_TimeRemaining">
+				<Original>%1 remaining</Original>
+			</Key>
+			
+			<Key ID="STR_Killed_MayorDied">
+				<Original>The mayor has died and is no longer the mayor</Original>
+			</Key>
+			
+			<Key ID="STR_Killed_LostVehLicense">
+				<Original>You are now wanted for Hit and Run and lost your %1 and %2</Original>
+			</Key>
+			
+			<Key ID="STR_Killed_LostWeaponLicense">
+				<Original>You are now wanted for Murder and lost your %1 and %2</Original>
+			</Key>
+			
+			<Key ID="STR_Killed_KilledForBounty">
+				<Original>You got 1/3 of %1 bounty totaling $%2</Original>
+			</Key>
+			
+			<Key ID="STR_Killed_KilledNoBounty">
+				<Original>You killed %1, They were not wanted!</Original>
+			</Key>
+			
+			<Key ID="STR_Killed_CopTeamKill">
+				<Original>You Team-killed %1 and $%2 has been removed from your bank</Original>
+			</Key>
+			
+			<Key ID="STR_Killed_CopTeamKillJail">
+				<Original>You Team-killed %1 and have been sent to jail</Original>
+			</Key>
+			
+		</Container>
+		
+		<Container name="Markers">
+			<Key ID="STR_Markers_HuntingGrounds">
+				<Original>Hunting Grounds</Original>
+			</Key>
+			
+			<Key ID="STR_Markers_TroutArea">
+				<Original>Trout Area</Original>
+			</Key>
+			
+			<Key ID="STR_Markers_BassArea">
+				<Original>Bass Area</Original>
+			</Key>
+			
+			<Key ID="STR_Markers_PerchArea">
+				<Original>Perch Area</Original>
+			</Key>
+			
+			<Key ID="STR_Markers_WalleyeArea">
+				<Original>Walleye Area</Original>
+			</Key>
+			
+			<Key ID="STR_Markers_IronMine">
+				<Original>Iron Mine</Original>
+			</Key>
+			
+			<Key ID="STR_Markers_CopperMine">
+				<Original>Copper Mine</Original>
+			</Key>
+			
+			<Key ID="STR_Markers_CoalMine">
+				<Original>Coal Mine</Original>
+			</Key>
+			
+			<Key ID="STR_Markers_DiamondRockMine">
+				<Original>Diamond Mine</Original>
+			</Key>
+			
+			<Key ID="STR_Markers_PlatinumMine">
+				<Original>Platinum Mine</Original>
+			</Key>
+			
+			<Key ID="STR_Markers_SiliconMine">
+				<Original>Silicon Mine</Original>
+			</Key>
+			
+			<Key ID="STR_Markers_SilverMine">
+				<Original>Silver Mine</Original>
+			</Key>
+			
+			<Key ID="STR_Markers_GoldMine">
+				<Original>Gold Mine</Original>
+			</Key>
+			
+			<Key ID="STR_Markers_OilMine">
+				<Original>Oil Field</Original>
+			</Key>
+			
+			<Key ID="STR_Markers_SandMine">
+				<Original>Sand Mine</Original>
+			</Key>
+			
+			<Key ID="STR_Markers_SulferMine">
+				<Original>Sulfer Mine</Original>
+			</Key>
+			
+			<Key ID="STR_Markers_CocaineField">
+				<Original>Coca Field</Original>
+			</Key>
+			
+			<Key ID="STR_Markers_MarijuanaField">
+				<Original>Marijuana Field</Original>
+			</Key>
+			
+			<Key ID="STR_Markers_LSdField">
+				<Original>LSD Field</Original>
+			</Key>
+			
+			<Key ID="STR_Markers_HeroinField">
+				<Original>Heroin Field</Original>
+			</Key>
+			
+			<Key ID="STR_Markers_JailText">
+				<Original>Jail</Original>
+			</Key>
+			
+			<Key ID="STR_Markers_ATM">
+				<Original>ATM</Original>
+			</Key>
+			
+			<Key ID="STR_Markers_WorkPlace">
+				<Original>Workplace %1</Original>
+			</Key>
+			
+			<Key ID="STR_Markers_CopBase">
+				<Original>Police Base</Original>
+			</Key>
+			
+			<Key ID="STR_Markers_TerrorHideout">
+				<Original>Terror Hideout</Original>
+			</Key>
+			
+			<Key ID="STR_Markers_VotingTerminal">
+				<Original>Mayor/Chief Election</Original>
+			</Key>
+			
+			<Key ID="STR_Markers_CheckPoint">
+				<Original>Checkpoint</Original>
+			</Key>
+			
+			<Key ID="STR_Markers_HostageArea">
+				<Original>Hostage Area</Original>
+			</Key>
+			
+			<Key ID="STR_Markers_Slaves">
+				<Original>Illegal Workers</Original>
+			</Key>
+			
+			<Key ID="STR_Markers_CarPark">
+				<Original>Car Park</Original>
+			</Key>
+			
+			<Key ID="STR_Markers_CivSpawn">
+				<Original>Civ Spawn</Original>
+			</Key>
+			
+		</Container>
+				
+		<Container name="MainMenu">
+			<Key ID="STR_MainMenu_MainMenu">
+				<Original>Main Menu</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_Settings">
+				<Original>Settings</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_ViewDistance">
+				<Original>View Distance</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_ViewDistanceChat">
+				<Original>View Distance: %1</Original>
+			</Key>
+			
+			
+			<Key ID="STR_MainMenu_TerrainSettings">
+				<Original>Terrain Settings</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_TerrainSettingChat">
+				<Original>Terrain Detail: %1/%2.</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_DynamicTextEnabled">
+				<Original>&lt;t valign='center'&gt;Dynamic Text</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_DynamicTextEnabledTT">
+				<Original>If messages should appear along the left side of the screen</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_ShoutTexts">
+				<Original>Shout Texts</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_Save">
+				<Original>Save</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_Tutorial">
+				<Original>Tutorial</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_TutorialText">
+				<Original>The E key is the interaction key, it's used to open up shop menus and a quick key for getting in and out of unlocked cars. Its also used to interact with other players, it will open up a menu depending if your a civ or cop and if the players hands are up or restrained&lt;br/&gt;&lt;br/&gt;
+						The L key is used to Lock and Unlock vehicles you have keys to.&lt;br/&gt;&lt;br/&gt;
+						Being in the driver seat of a vehicle that you have keys to and pressing T will open up the trunk so you can transfer items between you and the vehicle.&lt;br/&gt;&lt;br/&gt;
+						Tab will toggle your keys on and off, if your keys are off none of the key binds for this life mission will work. For example if your keys are off E wont get in and out of cars or open shops, L won't lock and unlock vehicles, 2 wont open up you inventory. So if for some reason you cant interact with anything make sure your keys are on.&lt;br/&gt;&lt;br/&gt;
+						Press 1 to open menu containing info about your player such as money, weight, deaths, and respawn time. Also that is displayed is the server uptime, factory info, number of players both cop and civ, laws and taxes, and some other useful info.&lt;br/&gt;&lt;br/&gt;
+						Press 2 to open up your inventory. On the right of the menu is the list of items you are currently carrying with the amount your carrying next to each item. The use button will use the selected item, drop button will drop the item on the ground, give button will give the item to the selected player. Typing the amount before clicking use, give, or drop will use, give, drop that many items.&lt;br/&gt;&lt;br/&gt;
+						Pressing 3 will put your hands on your head, use this as a sign of surrender. While your hands are on your head other civs will be able to rob and check your inventory. While cops will be able to restrain, jail, disarm, and search you.&lt;br/&gt;&lt;br/&gt;
+						Pressing 4 will put your hands down.&lt;br/&gt;&lt;br/&gt;
+						Pressing 5 will open up the gang menu this is only for civs. In the gang menu you can join, leave, manage, or create a gang.&lt;br/&gt;&lt;br/&gt;
+						Pressing Shift + H will holster your weapon.&lt;br/&gt;&lt;br/&gt;
+						If you are armed with some kind of weapon in hand you can press Shift+F to knock other players out, make sure your close to them first. This is used to rob other players or to restrain them if your a cop.&lt;br/&gt;&lt;br/&gt;
+						If you are a cop you can press Tilda (~) to open up a police menu, depending if you are in a vehicle it will open up a bigger menu for cops.&lt;br/&gt;&lt;br/&gt;
+						If you are a cop in a vehicle that you have the keys to you can press F to turn the siren on and off.&lt;br/&gt;&lt;br/&gt;
+						To rob the bank or a gas station make sure you have a weapon in hand for the option to show up.&lt;br/&gt;&lt;br/&gt;
+						If you're in a gang there are 3 gang areas around the map for you to capture. Capturing a gang area has several perks, First is the ability to access a gang shop to get low caliber weapons with out the need for a weapon License. Second is a bonus in your paychecks but note the more people in your gang the less the bonus. Third is the ability to process drugs, each gang area allows you to process a certain drug given that you have the correct License first.&lt;br/&gt;&lt;br/&gt;
+						Drugs can be bought and used for a trippy effect or can be farmed, processed, and sold for a profit. Note that the drugs MUST be processed in order to sell them, you can't sell unprocessed drugs.&lt;br/&gt;&lt;br/&gt;
+						Remember you need to eat or you will die, food can be bought from gas stations around the map. Different food types feed you different amounts.&lt;br/&gt;&lt;br/&gt;
+						If your a cop remember to arrest wanted players. To do so track down the player and either have them put their hands up or stun/knock them out and restrain them. Once done go up to them and press E to open up a menu, Once the menu is open find the slider to set there jail time then click arrest. Remember to arrest them for the appropriate time.&lt;br/&gt;&lt;br/&gt;	
+				</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_FAQ">
+				<Original>FAQ</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_FAQText">
+				<Original>Q: How do I unlock my car?&lt;br/&gt;
+						A: Press L&lt;br/&gt;&lt;br/&gt;
+						Q: Pressing L doesn't unlock my car or E doesn't interact with anything.&lt;br/&gt;
+						A: Press Tab and make sure your keys are on.&lt;br/&gt;&lt;br/&gt;
+						Q: I'm about to die of starvation how do I eat?&lt;br/&gt;
+						A: Make sure you have food if not then you can buy some from a gas station. Once you have food press 2 to open your inventory, select the food from the list on the right and click use. You can type in the amount for how many you want to eat.&lt;br/&gt;&lt;br/&gt;
+						Q: Someone is robbing me and telling me to put my hands up. How do I put my hands up?&lt;br/&gt;
+						A: Press 3 to put your hands up and press 4 to put them down.&lt;br/&gt;&lt;br/&gt;
+						Q: How do I get the money that's in my bank account?&lt;br/&gt;
+						A: Find an ATM and press E on it then type the amount you want to withdraw in the bottom box and click withdraw.&lt;br/&gt;&lt;br/&gt;
+						Q: How do I make money?&lt;br/&gt;
+						A: There are several different way to make money some legal and some illegal. Illegal does pay more but with the risk of being ticketed or sent to jail. Some legal ways include mining or delivery misisons. Some illegal ways includes slaves and drugs.&lt;br/&gt;&lt;br/&gt;
+						Q: How do I mine?&lt;br/&gt;
+						A: Go to the Oil Processing and Mining Tools marker there you can find tools that are used to mine Oil. If you want to mine any other legal resource just go the area and walk around, as you walk you will start to gather.&lt;br/&gt;&lt;br/&gt;
+						Q: How do I sell resources?&lt;br/&gt;
+						A: Go to the resource shop to sell your resources. If your trying to sell Oil you first need to process it at Oil Processing and Mining Tools then sell it at the Oil Barrel Trader.&lt;br/&gt;&lt;br/&gt;
+						Q: What can I do with resources?&lt;br/&gt;
+						A: You can either sell them for an instant profit or put them into factories to be used in making other things.&lt;br/&gt;&lt;br/&gt;
+						Q: How do factories work?&lt;br/&gt;
+						A: Find the factory you want on the map and go to it. Once at it buy the factory once bought you will need to hire workers, the more workers the faster stuff will manufacture. To manufacture an item first make sure you have the required resources in the factory some items require money as well. Once the required items are in the factory storage you can manufacture it, wait for it to finish then you have a few options. You can export the item to a shop for profit or you can create the item for personal use.&lt;br/&gt;&lt;br/&gt;
+						Q: How often do I get paychecks?&lt;br/&gt;
+						A: Every 4 minutes.&lt;br/&gt;&lt;br/&gt;
+						Q: How can I break out of jail or break a friend out of jail?&lt;br/&gt;
+						A: With a helicopter.&lt;br/&gt;&lt;br/&gt;
+						Q: My respawn time is really long how did that happen?&lt;br/&gt;
+						A: Respawn times go up based on who you killed. Killing either a cop or a civ will increase your respawn time but killing a cop will increase it more then killing a civ. Killing your self will also increase your respawn time.&lt;br/&gt;&lt;br/&gt;
+						Q: It just said I lost money, why?&lt;br/&gt;
+						A: You will lose money if the bank gets robbed. The amount lost is a small percent of what you have in your bank account. The less you have in your bank account the less you lose.&lt;br/&gt;&lt;br/&gt;
+						Q: A cop just gave me a ticket, do I have to pay it?&lt;br/&gt;
+						A: No, you never have to pay a ticket but if you refuse you could be arrested for failure to pay a ticket.&lt;br/&gt;&lt;br/&gt;
+						Q: What's terror?&lt;br/&gt;
+						A: Terror is a place on the map where once you buy the appropriate License can buy terror weapons and vehicles. Note the weapons and vehicles at terror are illegal and you may be shot on sight. If you're a cop trying to get into terror it will teleport you out so don't try.&lt;br/&gt;&lt;br/&gt;
+						Q: Are there vehicles that have more trunk space?&lt;br/&gt;
+						A: Yes check out the truck shop, just make sure you have a truck License.&lt;br/&gt;&lt;br/&gt;
+				</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_About">
+				<Original>About</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_AboutText">
+				<Original>Original Life Missions created by EddieV223, Pogoman, Issetea, Fewo. Zargabad Life in Arma 3 made by ZKB1325 and is a remake of the Arma 2 OA Zargabad Life with a lot of changes made to work in Arma 3.&lt;br/&gt;Addons used:&lt;br/&gt;Cup_Terrains-Maps&lt;br/&gt;Cup_Terrains-Core&lt;br/&gt;Cup_Vehicles&lt;br/&gt;Cup_Units&lt;br/&gt;Cup_weapons&lt;br/&gt;CBA_A3&lt;br/&gt;The goal of this Zargabad Life mission is to bring back the &lt;a href='https://www.youtube.com/watch?v=B17JYKdOt1g'&gt;fun times of Zargabad Life in Arma 2.&lt;/a&gt; Where RP wasn't that serious and crazy stuff happened all the time.</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_ItemInfoSpawnItem">
+				<Original>Spawn</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_ItemInfoSpawnInventory">
+				<Original>1 %1 has been added to your inventory</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_ItemInfoSpawnVehicle">
+				<Original>%1 has been created and keys added to your keychain</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_ItemInfoSpawnGear">
+				<Original>%1 has been created at your feet</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_ItemInfoApplyFilter">
+				<Original>Apply Filter</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_ItemInfoClearFilter">
+				<Original>Clear Filters</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_ItemInfoCurFilters">
+				<Original>Current Name Filters: %1&lt;br/&gt;Current Type Filters: %2</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_ItemInfo">
+				<Original>Item Info</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_TaxType">
+				<Original>Taxed Type: %1</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_BuyPrice">
+				<Original>Base buy Price With Tax: $%1</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_SellPrice">
+				<Original>Base sell Price With Tax: $%1</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_TrunkSpace">
+				<Original>Vehicle Trunk Space: %1</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_NeededCivLicense">
+				<Original>Needed License as Civ: %1</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_NeededCopLicense">
+				<Original>Needed License as Cop: %1</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_NeededLicenseBoth">
+				<Original>Additional Needed License: %1</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_ShopsAvailableAt">
+				<Original>Shops available at:</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_ShopItemInfo">
+				<Original>%1&lt;br/&gt; - Current Buy Price: $%2&lt;br/&gt; - Current Sell Price: $%3&lt;br/&gt; - Current Stock: %4</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_ShopItemInfoNotBuyable">
+				<Original>Not Available to Buy</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_ShopItemInfoNotSellable">
+				<Original>Not Available to Sell</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_NeededFactoryItems">
+				<Original>Needed Factory Items:</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_NeededFactoryItemsTotalCost">
+				<Original>Est. total price to buy resources from shop: $%1</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_InfoMenu">
+				<Original>Information Menu</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_InfoDate">
+				<Original>Date: %1/%2/%3</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_InfoUptime">
+				<Original>Uptime: %1</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_InfoPlayerInfo">
+				<Original>&lt;t align='center' size='1.6'&gt;P L A Y E R - I N F O&lt;/t&gt;</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_InfoPlayerInfoMoney">
+				<Original>Money: $%1</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_InfoPlayerInfoBank">
+				<Original>Bank Account: $%1</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_InfoPlayerInfoHunger">
+				<Original>Hunger: %1/100</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_InfoPlayerInfoWeight">
+				<Original>Weight: %1/%2</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_InfoPlayerInfoCopKills">
+				<Original>Cop Kills current life: %1 / Total: %2</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_InfoPlayerInfoCivKills">
+				<Original>Civ Kills current life: %1 / Total: %2</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_InfoPlayerInfoSuicides">
+				<Original>Suicides: %1</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_InfoPlayerInfoDeaths">
+				<Original>Deaths: %1</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_InfoPlayerInfoRespawnTime">
+				<Original>Respawn Time: %1</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_InfoPlayerInfoDemeritPoints">
+				<Original>Demerit Points: %1</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_InfoPlayerInfoShovelDurability">
+				<Original>Shovel Durability: %1/20</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_InfoPlayerInfoPickaxeDurability">
+				<Original>Pickaxe Durability: %1/50</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_InfoPlayerInfoJackHammerDurability">
+				<Original>JackHammer Durability: %1/100</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_InfoPlayerInfoLicense">
+				<Original>&lt;t align='center' size='1.6'&gt;L I C E N S E&lt;/t&gt;</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_InfoFactoryInfo">
+				<Original>&lt;t align='center' size='1.6'&gt;F A C T O R I E S&lt;/t&gt;</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_InfoFactoryInfoWorkers">
+				<Original>Workers: %1</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_InfoFactoryInfoCurProduction">
+				<Original>Currently in production: %1</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_InfoFactoryInfoCurQueue">
+				<Original>Current Queue:</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_InfoFactoryInfoCurComplete">
+				<Original>Completed Items:</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_InfoGovernment">
+				<Original>&lt;t align='center' size='1.6'&gt;G O V E R N M E N T&lt;/t&gt;</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_InfoGovernmentMayor">
+				<Original>Mayor: %1</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_InfoGovernmentChief">
+				<Original>Police Chief: %1</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_InfoGovernmentNotOnline">
+				<Original>Not Online</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_InfoGovernmentTaxes">
+				<Original>&lt;t align='center' size='1.6'&gt;T A X E S&lt;/t&gt;</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_InfoGovernmentItemTax">
+				<Original>Item Tax: %1%2</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_InfoGovernmentVehicleTax">
+				<Original>Vehicle Tax: %1%2</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_InfoGovernmentMagazineTax">
+				<Original>Magazine Tax: %1%2</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_InfoGovernmentWeaponTax">
+				<Original>Weapon Tax: %1%2</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_InfoGovernmentTransferTax">
+				<Original>Bank Transfer Tax: %1%2</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_InfoGovernmentLaws">
+				<Original>&lt;t align='center' size='1.6'&gt;L A W S&lt;/t&gt;</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_InfoBank">
+				<Original>&lt;t align='center' size='1.6'&gt;B A N K&lt;/t&gt;</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_InfoBanksSafes">
+				<Original>Est. Total funds in the main banks vaults: $%1</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_InfoWorkPlaces">
+				<Original>&lt;t align='center' size='1.6'&gt;W O R K P L A C E S&lt;/t&gt;</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_InfoWorkPlaceInAreaPayCheckBonus">
+				<Original>Current Paycheck bonus for sitting in a workplace: $%1</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_InfoWorkPlacesOwned">
+				<Original>Workplace %1, Paycheck Bonus: $%2</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_InfoGangs">
+				<Original>&lt;t align='center' size='1.6'&gt;G A N G S&lt;/t&gt;</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_InfoGangNocontrol">
+				<Original>No Areas Controlled</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_InfoGangsLeader">
+				<Original>(Leader)</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_InfoDemand">
+				<Original>&lt;t align='center' size='1.6'&gt;D E M A N D (Oil)&lt;/t&gt;</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_InfoDemandFuelDemand">
+				<Original>Oil Demand: %1</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_InfoDemandLow">
+				<Original>Low</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_InfoDemandNormal">
+				<Original>Normal</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_InfoDemandHigh">
+				<Original>High</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_InfoDemandFuelCost">
+				<Original>Fuel Cost: $%1</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_InfoPlayers">
+				<Original>&lt;t align='center' size='1.6'&gt;P L A Y E R S&lt;/t&gt;</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_InfoWanted">
+				<Original>&lt;t align='center' size='1.6'&gt;W A N T E D&lt;/t&gt;</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_MapTabServerRules">
+				<Original>Server Rules</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_MapTabMapLocations">
+				<Original>Map Locations</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_MapTabShops">
+				<Original>Shops</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_MapTabFactories">
+				<Original>Factories</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_MapTabResources">
+				<Original>Resources</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_MapTabCreditsInfo">
+				<Original>Controls and Credits</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_MapTabCredits">
+				<Original>Credits</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_MapTabControls">
+				<Original>Default Controls</Original>
+			</Key>
+			
+		</Container>
+			
+		<Container name="Inv">
+			<Key ID="STR_Inv_Inventory">
+				<Original>Inventory</Original>
+			</Key>
+			
+			<Key ID="STR_Inv_Use">
+				<Original>Use</Original>
+			</Key>
+			
+			<Key ID="STR_Inv_Drop">
+				<Original>Drop</Original>
+			</Key>
+			
+			<Key ID="STR_Inv_Give">
+				<Original>Give</Original>
+			</Key>
+			
+			<Key ID="STR_Inv_ItemName">
+				<Original>Item: %1</Original>
+			</Key>
+			
+			<Key ID="STR_Inv_ItemAmount">
+				<Original>Amount: %1</Original>
+			</Key>
+			
+			<Key ID="STR_Inv_ItemWeight">
+				<Original>Individual Weight: %1</Original>
+			</Key>
+			
+			<Key ID="STR_Inv_ItemTotalWeight">
+				<Original>Total Weight: %1</Original>
+			</Key>
+			
+			<Key ID="STR_Inv_ItemDesc">
+				<Original>Description: %1</Original>
+			</Key>
+			
+			<Key ID="STR_Inv_ItemCanDrop">
+				<Original>Can Drop: %1</Original>
+			</Key>
+			
+			<Key ID="STR_Inv_ItemCanGive">
+				<Original>Can Give: %1</Original>
+			</Key>
+			
+			<Key ID="STR_Inv_ItemIsIllegal">
+				<Original>Illegal: %1</Original>
+			</Key>
+			
+			<Key ID="STR_Inv_NoUse">
+				<Original>%1 has no use</Original>
+			</Key>
+			
+			<Key ID="STR_Inv_NotAllowedToDropInVeh">
+				<Original>Your not allowed to drop items from vehicles</Original>
+			</Key>
+			
+			<Key ID="STR_Inv_NotAllowedToDrop">
+				<Original>Your not allowed to drop %1</Original>
+			</Key>
+			
+			<Key ID="STR_Inv_NotEnoughToDrop">
+				<Original>You don't have %1 %2 to drop</Original>
+			</Key>
+			
+			<Key ID="STR_Inv_Dropped">
+				<Original>You dropped %1 %2</Original>
+			</Key>
+			
+			<Key ID="STR_Inv_ToMuchWeight">
+				<Original>You're not strong enough to carry %1 %2</Original>
+			</Key>
+			
+			<Key ID="STR_Inv_MaxWeight">
+				<Original>Max weight reached you can not carry any more items</Original>
+			</Key>
+			
+			<Key ID="STR_Inv_PickUp">
+				<Original>PickUp %1 (%2)</Original>
+			</Key>
+			
+			<Key ID="STR_Inv_PickedUp">
+				<Original>You picked up %1 (%2)</Original>
+			</Key>
+			
+			<Key ID="STR_Inv_GiveObjError">
+				<Original>The selected player can't be found</Original>
+			</Key>
+			
+			<Key ID="STR_InvCantGiveSelf">
+				<Original>You can't give your self items</Original>
+			</Key>
+			
+			<Key ID="STR_Inv_NotAllowedToGive">
+				<Original>Your not allowed to give %1</Original>
+			</Key>
+			
+			<Key ID="STR_Inv_GiveDistError">
+				<Original>You have to be within at least 20 meters of the selected player to give them items</Original>
+			</Key>
+			
+			<Key ID="STR_Inv_GiveAmountError">
+				<Original>You don't have enough to give away that many of the item</Original>
+			</Key>
+			
+			<Key ID="STR_Inv_GivenToSpaceError">
+				<Original>The selected player doesn't have enough space to carry that many items</Original>
+			</Key>
+			
+			<Key ID="STR_Inv_GivenItem">
+				<Original>%1 gave you %2 %3</Original>
+			</Key>
+			
+			<Key ID="STR_Inv_GiveSuccess">
+				<Original>You gave %1 %2 to %3</Original>
+			</Key>
+			
+			<Key ID="STR_Inv_DontHaveThatMany">
+				<Original>You don't have %1 %2 in your inventory</Original>
+			</Key>
+			
+		</Container>
+				
+		<Container name="Gang">
+			<Key ID="STR_Gang_GangMenu">
+				<Original>Gang Menu</Original>
+			</Key>
+				
+			<Key ID="STR_Gang_Join">
+				<Original>Join</Original>
+			</Key>
+
+			<Key ID="STR_Gang_Leave">
+				<Original>Leave</Original>
+			</Key>
+			
+			<Key ID="STR_Gang_Manage">
+				<Original>Manage</Original>
+			</Key>
+			
+			<Key ID="STR_Gang_Create">
+				<Original>Create</Original>
+			</Key>
+			
+			<Key ID="STR_Gang_GangMenuMemberList">
+				<Original>%1 - Member List: %2</Original>
+			</Key>
+			
+			<Key ID="STR_Gang_CreateNewGang">
+				<Original>Create New Gang</Original>
+			</Key>
+			
+			<Key ID="STR_Gang_GangName">
+				<Original>Gang Name</Original>
+			</Key>
+			
+			<Key ID="STR_Gang_NewGangInfo">
+				<Original>Note: Creation fee is $%1. The gang will never be deleted and if there is no members in a gang that is locked there is no way to join that gang.</Original>
+			</Key>
+			
+			<Key ID="STR_Gang_AlreadyInGang">
+				<Original>you are already in a gang!</Original>
+			</Key>
+			
+			<Key ID="STR_Gang_NotInGang">
+				<Original>you're not in a gang!</Original>
+			</Key>
+			
+			<Key ID="STR_Gang_GangNameTaken">
+				<Original>A gang with that name already exists or the name is not allowed!</Original>
+			</Key>
+			
+			<Key ID="STR_Gang_CreatedNewGang">
+				<Original>You have created a new gang called %1!</Original>
+			</Key>
+
+			<Key ID="STR_Gang_LeaderNotRecruiting">
+				<Original>The leader of this gang is not currently not recruiting</Original>
+			</Key>
+			
+			<Key ID="STR_Gang_JoinedGang">
+				<Original>You have joined %1!</Original>
+			</Key>
+			
+			<Key ID="STR_Gang_LeftGang">
+				<Original>You left your gang!</Original>
+			</Key>
+			
+			<Key ID="STR_Gang_NotGangLeader">
+				<Original>Your not the leader of the gang</Original>
+			</Key>
+			
+			<Key ID="STR_Gang_ManageGang">
+				<Original>Manage Gang</Original>
+			</Key>
+			
+			<Key ID="STR_Gang_KickMember">
+				<Original>Kick Member</Original>
+			</Key>
+			
+			<Key ID="STR_Gang_KickBtn">
+				<Original>Kick</Original>
+			</Key>
+			
+			<Key ID="STR_Gang_JoinAllowed">
+				<Original>Join Allowed?</Original>
+			</Key>
+			
+			<Key ID="STR_Gang_Update">
+				<Original>Update</Original>
+			</Key>
+			
+			<Key ID="STR_Gang_CantKickSelf">
+				<Original>You can't kick your self</Original>
+			</Key>
+			
+			<Key ID="STR_Gang_KickedMember">
+				<Original>You kicked %1 out of your gang</Original>
+			</Key>
+			
+			<Key ID="STR_Gang_KickedMemberNotInGame">
+				<Original>You kicked a member from the gang</Original>
+			</Key>
+			
+			<Key ID="STR_Gang_KickedFromGang">
+				<Original>You were kicked from the gang</Original>
+			</Key>
+			
+			<Key ID="STR_Gang_CanJoinGang">
+				<Original>Civilians can now join your gang</Original>
+			</Key>
+			
+			<Key ID="STR_Gang_CanNotJoinGang">
+				<Original>Civilians can no longer join your gang</Original>
+			</Key>
+			
+			<Key ID="STR_Gang_GangArea1">
+				<Original>Gang Area 1 (Cocaine - LSD)</Original>
+			</Key>
+			
+			<Key ID="STR_Gang_GangArea2">
+				<Original>Gang Area 2 (Heroin - LSD)</Original>
+			</Key>
+			
+			<Key ID="STR_Gang_GangArea3">
+				<Original>Gang Area 3 (Heroin - Marijuana)</Original>
+			</Key>
+			
+			<Key ID="STR_Gang_NeutraliseGangArea">
+				<Original>Neutralise Flag</Original>
+			</Key>
+			
+			<Key ID="STR_Gang_CaptureGangArea">
+				<Original>Capture Flag</Original>
+			</Key>
+			
+			<Key ID="STR_Gang_GangAreaNeutralised">
+				<Original>%1 has been neutralised by %2</Original>
+			</Key>
+			
+			<Key ID="STR_Gang_GangAreaCaptured">
+				<Original>%1 has been captured by %2</Original>
+			</Key>
+
+
+			
+		</Container>
+
+		<Container name="Civ">
+		
+			<Key ID="STR_Civ_InteractionMenuRob">
+				<Original>Rob</Original>
+			</Key>
+			
+			<Key ID="STR_Civ_InteractionMenuRobNoWeapon">
+				<Original>You need a weapon to rob a player</Original>
+			</Key>
+			
+			<Key ID="STR_Civ_InteractionMenuRobbedRecently">
+				<Original>%1 has been robbed recently</Original>
+			</Key>
+			
+			<Key ID="STR_Civ_InteractionMenuRobbedPlayer">
+				<Original>%1 Robbed %2</Original>
+			</Key>
+			
+			<Key ID="STR_Civ_InteractionMenuRobbedBy">
+				<Original>%1 Robbed you</Original>
+			</Key>
+			
+			<Key ID="STR_Civ_InteractionMenuOpenGear">
+				<Original>Open Gear</Original>
+			</Key>
+			
+			<Key ID="STR_Civ_DeliveryMission">
+				<Original>Delivery Mission</Original>
+			</Key>
+			
+			<Key ID="STR_Civ_DeliveryMissionCancel">
+				<Original>Cancel Delivery Mission</Original>
+			</Key>
+			
+			<Key ID="STR_Civ_DeliveryPoint">
+				<Original>Delivery Point</Original>
+			</Key>
+			
+			<Key ID="STR_Civ_DeliveryPointDesc">
+				<Original>Deliver the package to the drop-off point</Original>
+			</Key>
+			
+			<Key ID="STR_Civ_DeliveryPointAdded">
+				<Original>Delivery Point Added</Original>
+			</Key>
+			
+			<Key ID="STR_Civ_DeliveryPointComplete">
+				<Original>You finished your Delivery Mission and got $%1!</Original>
+			</Key>
+			
+			<Key ID="STR_Civ_DeliveryPointFailed">
+				<Original>You failed to deliver the package</Original>
+			</Key>
+			
+		</Container>
+		
+		<Container name="Cop">
+			<Key ID="STR_Cop_SirenOn">
+				<Original>Siren On</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_SirenOff">
+				<Original>Siren Off</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_KnockedOutBy">
+				<Original>You were knocked out by %1</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_StunnedBy">
+				<Original>%1 was stunned by %2</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_Disarm">
+				<Original>Disarm</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_Disarming">
+				<Original>You disarmed %1</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_Disarmed">
+				<Original>You have been disarmed by %1</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_DisarmedIllegal">
+				<Original>%1 had $%2 worth of illegal gear and is now wanted</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_Search">
+				<Original>Search</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_SearchNothing">
+				<Original>You Searched %1 and found nothing illegal</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_SearchIllegal">
+				<Original>%1 had $%2 worth of illegal items and is now wanted</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_Searched">
+				<Original>You were searched by %1</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_Arrest">
+				<Original>Arrest</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_ArrestTime">
+				<Original>Arrest Time: %1 Minute(s)</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_BountyCollect">
+				<Original>%1 had a bounty of $%2, Your cut is $%3</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_NoBounty">
+				<Original>%1 had no bounty</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_RestarainRelease">
+				<Original>Restrain/Release</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_NotRestrained">
+				<Original>%1 is not restrained</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_NotSurrendering">
+				<Original>%1 is not surrendering or knocked out</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_NotSurrenderingOrRestrained">
+				<Original>%1 is not surrendering or restrained</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_UnRestrainedPlayer">
+				<Original>You unRestrained %1</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_UnRestrained">
+				<Original>You are no longer restrained</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_RestrainedBy">
+				<Original>%1 was restrained by %2</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_GaveTicket">
+				<Original>%1 gave %2 a ticket of $%3</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_GiveTicket">
+				<Original>Give Ticket</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_PayTicket">
+				<Original>Pay Ticket?</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_TicketQuestion">
+				<Original>%1 gave you a ticket of $%2. Do you want to pay?</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_PayedTicket">
+				<Original>%1 paid the ticket of $%2</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_DidntPayTicket">
+				<Original>%1 chose not to pay the ticket</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_DidntPayTicketNoMoney">
+				<Original>%1 did not have enough money to pay the ticket of $%2</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_Heal">
+				<Original>Heal</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_Healed">
+				<Original>You healed %1</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_HealedBy">
+				<Original>You were healed by %1</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_CheckInventory">
+				<Original>Check Inventory</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_PlayersInventory">
+				<Original>%1's Inventory</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_PlayersLicenses"> 
+				<Original>Licenses:</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_PrimaryWeapon">
+				<Original>Primary Weapon + Attachments:</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_Handgun">
+				<Original>Secondary + Attachments:</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_Secondary">
+				<Original>Launcher + Attachments:</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_Uniform">
+				<Original>Uniform + Items:</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_Vest">
+				<Original>Vest + Items:</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_Backpack">
+				<Original>Backpack + Items:</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_OtherGear">
+				<Original>OtherGear:</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_CivInCopBase">
+				<Original>You entered a restricted area and have been teleported out</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_PoliceComputer">
+				<Original>Police Computer</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_PoliceComputerLite">
+				<Original>Police Computer Lite</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_PoliceComputerNoKeys">
+				<Original>You need the keys to the vehicle to access the police computer</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_PoliceComputerWantedMenu">
+				<Original>Wanted Menu</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_WantedMenuSetWantedMenu">
+				<Original>Set Wanted Menu</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_WantedMenuSetDescription">
+				<Original>Description of crime</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_WantedMenuSetWanted">
+				<Original>Set Wanted</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_WantedMenuSetWantedNoDescription">
+				<Original>You must enter a description of the crime</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_WantedMenuSetWantedGlobal">
+				<Original>%1 is now wanted for %2 by %3</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_WantedMenuPardon">
+				<Original>Pardon</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_WantedMenuPardonNotWanted">
+				<Original>%1 is not wanted</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_WantedMenuPardonBy">
+				<Original>%1 was pardoned by %2</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_WantedMenuJailRelease">
+				<Original>Jail Release Menu</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_WantedMenuSetFree">
+				<Original>Set them free!!!</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_WantedMenuSetFreeNotInJail">
+				<Original>%1 is not in jail</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_WantedMenuSetFreeBy">
+				<Original>%1 was released from jail by %2</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_CivcamMenu">
+				<Original>Civcam Menu</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_CivcamMenuSelectCiv">
+				<Original>Select Civ</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_CivcamMenuDuration">
+				<Original>Duration: %1</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_CivcamMenuCost">
+				<Original>Cost: $%1</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_CivcamMenuWatch">
+				<Original>Watch Them</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_CivcamMenuWatchNoMoney">
+				<Original>You don't have $%1 in your bank to watch %2</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_CameraNvgOn">
+				<Original>NVG On</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_CameraNvgOff">
+				<Original>NVG Off</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_CameraTimeLeft">
+				<Original>Time Left: %1</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_JailCam">
+				<Original>Jail Cam</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_SatCam">
+				<Original>Satellite Cam</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_SatCamMoveLeftRight">
+				<Original>Move Left/Right: %1</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_SatCamMoveUpDown">
+				<Original>Move Up/Down&lt;br/&gt;%1</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_SatCamMapGrid">
+				<Original>Current Grid: %1</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_WantedList">
+				<Original>Wanted List</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_WantedListWanted">
+				<Original>(%1) %2 (Bounty: $%3) is wanted for:</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_SearchedShopSold">
+				<Original>%1 was interrogated and found that %2 has sold $%3 worth of drugs</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_SearchedShopNothing">
+				<Original>%1 claims no one has sold them any drugs</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_GetPatrolMission">
+				<Original>Get Patrol Mission</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_CancelPatrolMission">
+				<Original>Cancel Patrol Mission</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_PatrolPoint">
+				<Original>Patrol Point</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_NewPatrolPoint">
+				<Original>A new patrol point will be available shortly, simply get to the patrol point, time is not a factor in how large the payment is.</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_NewPatrolPointAdded">
+				<Original>New Patrol point added</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_PatrolPointComplete">
+				<Original>You earned $%1 for patrolling</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_PatrolMissionEnded">
+				<Original>Patrol mission ended</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_RaiseLowerRoadblock">
+				<Original>Raise/Lower Roadblock</Original>
+			</Key>
+			
+			<Key ID="STR_Cop_RoadblockToggled">
+				<Original>Roadblock Toggled</Original>
+			</Key>
+			
+		</Container>		
+		
+		<Container name="GovConvoy">
+			<Key ID="STR_GovConvoy">
+				<Original>Government Convoy</Original>
+			</Key>
+			
+			<Key ID="STR_GovConvoy_LeaveInFewMinutes">
+				<Original>The Government convoy will leave in a few minutes</Original>
+			</Key>
+			
+			<Key ID="STR_GovConvoy_Started">
+				<Original>The government convoy is making its way to Cop Base, Civs kill the driver to stop it and steal the government funds. Cops your bonuses are inside make sure it gets to the Cop Base!</Original>
+			</Key>
+			
+			<Key ID="STR_GovConvoy_StealMoney">
+				<Original>Steal Police Bonus</Original>
+			</Key>
+			
+			<Key ID="STR_GovConvoy_Stole">
+				<Original>You stole $%1</Original>
+			</Key>
+			
+			<Key ID="STR_GovConvoy_TruckDestroyed">
+				<Original>The government convoy truck was destroyed and the money inside was lost</Original>
+			</Key>
+			
+			<Key ID="STR_GovConvoy_CivsWin">
+				<Original>Civs managed to steal the government funds, next truck leaves in %1 minutes</Original>
+			</Key>
+			
+			<Key ID="STR_GovConvoy_DriverDiedCiv">
+				<Original>The government convoy driver is dead, Steal the police paycheck</Original>
+			</Key>
+			
+			<Key ID="STR_GovConvoy_DriverDiedCop">
+				<Original>The government convoy driver is dead, Get in his truck and drive it to Cop Base</Original>
+			</Key>
+			
+			<Key ID="STR_GovConvoy_CopsWin">
+				<Original>The government convoy truck made it to Cop Base</Original>
+			</Key>
+			
+			<Key ID="STR_GovConvoy_CivToClose">
+				<Original>The Government is operating in this area! Turn back or you will be shot!</Original>
+			</Key>
+			
+			<Key ID="STR_GovConvoy_CopReward">
+				<Original>You got $%1 bonus in your bank account because the government convoy made it to Cop Base</Original>
+			</Key>
+			
+		</Container>
+		
+		<Container name="Hostage">
+			<Key ID="STR_Hostage">
+				<Original>Hostage</Original>
+			</Key>
+			
+			<Key ID="STR_Hostage_TakeHostage">
+				<Original>Take Hostage</Original>
+			</Key>
+			
+			<Key ID="STR_Hostage_FreeHostage">
+				<Original>Free Hostage</Original>
+			</Key>
+			
+			<Key ID="STR_Hostage_Start">
+				<Original>Someone has taken a hostage, Cops need to find him and set him free</Original>
+			</Key>
+			
+			<Key ID="STR_Hostage_Timer">
+				<Original>Hostage: %1</Original>
+			</Key>
+			
+			<Key ID="STR_Hostage_TimerCenter">
+				<Original>Hostage Area: %1</Original>
+			</Key>
+			
+			<Key ID="STR_Hostage_TakerFailed">
+				<Original>A hostage taker failed to keep their hostage</Original>
+			</Key>
+			
+			<Key ID="STR_Hostage_Freed">
+				<Original>A hostage has been rescued by the cops</Original>
+			</Key>
+			
+			<Key ID="STR_Hostage_HostageSafeCopBonus">
+				<Original>A hostage is no longer in danger and you got a bonus of $%1 for your efforts</Original>
+			</Key>
+			
+			<Key ID="STR_Hostage_TimePassed">
+				<Original>A hostage taker managed to maintain control over a hostage for %1 minutes</Original>
+			</Key>
+			
+			<Key ID="STR_Hostage_CivReward">
+				<Original>You maintained control over a hostage for %1 minutes and got $%2 as a reward</Original>
+			</Key>
+			
+			<Key ID="STR_Hostage_HostageKilled">
+				<Original>A hostage has been killed by (%1) %2</Original>
+			</Key>
+			
+			<Key ID="STR_Hostage_HostageKilledCop">
+				<Original>A hostage has been killed and you lose $%1 because of it</Original>
+			</Key>
+			
+			<Key ID="STR_Hostage_HostageKilledCiv">
+				<Original>You killed a hostage and now there's a $%1 bounty on you</Original>
+			</Key>
+			
+		</Container>
+		
+		<Container name="Assassin">
+			<Key ID="STR_Assassin">
+				<Original>Assassin Target</Original>
+			</Key>
+			
+			<Key ID="STR_Assassin_Started">
+				<Original>There is a VIP on the way to Cop Base. Cops help protect him as he makes his way to Cop Base for a bonus.</Original>
+			</Key>
+			
+			<Key ID="STR_Assassin_VipKilled">
+				<Original>The VIP has been killed</Original>
+			</Key>
+			
+			<Key ID="STR_Assassin_VipKilledReward">
+				<Original>You got $%1 for killing the VIP</Original>
+			</Key>
+			
+			<Key ID="STR_Assassin_DriverDead">
+				<Original>The VIP's driver is dead and the VIP is now driving the vehicle</Original>
+			</Key>
+			
+			<Key ID="STR_Assassin_VehicleDisabled">
+				<Original>The VIP's vehicle has been disabled and is continuing on foot</Original>
+			</Key>
+			
+			<Key ID="STR_Assassin_CopsWin">
+				<Original>The VIP made it to Cop Base</Original>
+			</Key>
+			
+			<Key ID="STR_Assassin_CivToClose">
+				<Original>You are getting to close to the VIP Turn back or you will be shot!</Original>
+			</Key>
+			
+			<Key ID="STR_Assassin_CopReward">
+				<Original>You got $%1 bonus in your bank account because the VIP made it to Cop Base</Original>
+			</Key>
+			
+		</Container>
+		
+		<Container name="Slave">
+			<Key ID="STR_Slave_Marker">
+				<Original>Slave ($%1)</Original>
+			</Key>
+			
+			<Key ID="STR_Slave_Buy">
+				<Original>Buy Slave</Original>
+			</Key>
+			
+			<Key ID="STR_Slave_InGang">
+				<Original>You can not buy a Slave while in a gang</Original>
+			</Key>
+			
+			<Key ID="STR_Slave_Max">
+				<Original>You already have the max number of slaves %1</Original>
+			</Key>
+			
+			<Key ID="STR_Slave_NoMoney">
+				<Original>You need $%1 to buy a slave</Original>
+			</Key>
+			
+			<Key ID="STR_Slave_Freed">
+				<Original>One of your slaves has been set free by the cops, you are now wanted</Original>
+			</Key>
+			
+			<Key ID="STR_Slave_Died">
+				<Original>One of your slaves has died! Protect them in future!</Original>
+			</Key>
+			
+			<Key ID="STR_Slave_InCopBase">
+				<Original>One of your slaves got to close to cop base</Original>
+			</Key>
+			
+			<Key ID="STR_Slave_JoinedGang">
+				<Original>You can't have slaves and be in a gang, A slave has been set free</Original>
+			</Key>
+			
+			<Key ID="STR_Slave_NoWeapons">
+				<Original>Slaves are not allowed to have weapons</Original>
+			</Key>
+			
+			<Key ID="STR_Slave_CollectMoney">
+				<Original>Collect Money</Original>
+			</Key>
+			
+			<Key ID="STR_Slave_CollectedMoney">
+				<Original>You collected $%1 from this slave</Original>
+			</Key>
+			
+			<Key ID="STR_Slave_Free">
+				<Original>Free Slave</Original>
+			</Key>
+			
+			<Key ID="STR_Slave_OwnerNotOnline">
+				<Original>The slave has been set free and you got a reward of $%1, but the owner is not online</Original>
+			</Key>
+			
+			<Key ID="STR_Slave_SetFree">
+				<Original>The slave has been set free and you got a reward of $%1, the owner was %2. They might be in the area</Original>
+			</Key>
+			
+		</Container>
+		
+		<Container name="Shop">
+			<Key ID="STR_Shop_MainBank">
+				<Original>Bank Insurance</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_Station1Shop">
+				<Original>Gas Station 1</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_Station2Shop">
+				<Original>Gas Station 2</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_Station3Shop">
+				<Original>Gas Station 3</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_Station4Shop">
+				<Original>Gas Station 4</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_CarShop1">
+				<Original>Car Shop 1</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_CarShop2">
+				<Original>Car Shop 2</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_CarShop3">
+				<Original>Car Shop 3</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_TruckShop">
+				<Original>Truck Shop</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_AirShop">
+				<Original>Air Shop</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_TuningShop1">
+				<Original>Tuning Shop 1</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_TuningShop2">
+				<Original>Tuning Shop 2</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_ItemShop1">
+				<Original>Shop 1</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_ItemShop2">
+				<Original>Shop 2</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_ItemShop3">
+				<Original>Shop 3</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_GunShop">
+				<Original>Gun Shop</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_EquipmentShop">
+				<Original>Equipment Shop</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_ClothingShop">
+				<Original>Clothing Shop</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_DoctorShop">
+				<Original>Doctor</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_MiningShop">
+				<Original>Oil Processing/Mining Tools</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_RingShop">
+				<Original>Ring Shop</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_ResourceShop">
+				<Original>Resource Shop</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_OilShop">
+				<Original>Oil Dealer</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_CocaineShop">
+				<Original>Cocaine Dealer</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_MarijuanaShop">
+				<Original>Marijuana Dealer</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_LSDShop">
+				<Original>LSD Dealer</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_HeroinShop">
+				<Original>Heroin Dealer</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_GangShop">
+				<Original>Gang Shop</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_CopShop">
+				<Original>Police Shop</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_CopPatrolShop">
+				<Original>Patrol-Officer Shop</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_CopResponseShop">
+				<Original>Response-Officer Shop</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_CopSobrShop">
+				<Original>SOBR-Officer Shop</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_CopVehicleShop">
+				<Original>Police Vehicle Shop</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_CopAirShop">
+				<Original>Police Air-Vehicle Shop</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_TerrorGearShop">
+				<Original>Terror Gear</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_TerrorVehicleShop">
+				<Original>Terror Vehicles</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_NotAllowed">
+				<Original>You're not allowed to use this shop!</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_Buy">
+				<Original>Buy</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_Sell">
+				<Original>Sell</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_BuyBtnGear">
+				<Original>Buy ($%1)</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_BuyBtnVirtItem">
+				<Original>Buy ($%1, %2kg)</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_SellBtnGear">
+				<Original>Sell ($%1)</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_SellBtnVirtItem">
+				<Original>Sell ($%1, %2kg)</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_ListStockVirtItem">
+				<Original>%1 ($%2, %3kg, Stock: %4)</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_ListStockGear">
+				<Original>%1 ($%2, Stock: %3)</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_ListVirtItem">
+				<Original>%1 ($%2, %3kg)</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_ListGear">
+				<Original>%1 ($%2)</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_CurStock">
+				<Original>Current Stock: %1/%2</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_TrunkSpace">
+				<Original>Trunk Space: %1</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_TrunkSpaceStock">
+				<Original>Current Stock: %1/%2\nTrunk Space: %3</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_SellListVirtItem">
+				<Original>%1 ($%2, %3kg, %4x)</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_SellListGear">
+				<Original>%1 ($%2 %3x)</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_SellListVeh">
+				<Original>%1 ($%2 - %3)</Original>
+			</Key>
+
+			<Key ID="STR_Shop_FalseCondition">
+				<Original>You do not meet the requirements to buy %1</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_BoughtItem">
+				<Original>You bought %1 %2 for $%3.</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_BoughtVeh">
+				<Original>You bought a %1 for $%2.</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_NotEnoughMoney">
+				<Original>You do not have enough money.</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_SellItem">
+				<Original>You sold %1 %2 for $%3.</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_SellVeh">
+				<Original>You sold %1 (%2) for $%3.</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_NotEnoughItems">
+				<Original>You do not have enough items to sell.</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_VehSellToFar">
+				<Original>The vehicle is too far away.</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_VehSellDestroyed">
+				<Original>The vehicles is destroyed.</Original>
+			</Key>
+				
+			<Key ID="STR_Shop_NoLicense">
+				<Original>You need the follow license to buy this %1</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_OutOfStock">
+				<Original>There are not that many items in stock.</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_MaxedStock">
+				<Original>The item has reached its max stock.</Original>
+			</Key>
+			
+			<Key ID="STR_Shop_VehSpawnBlocked">
+				<Original>there is a vehicle blocking the spawn!</Original>
+			</Key>
+
+		</Container>
+			
+		<Container name="Fac">
+		
+			<Key ID="STR_Fac_ResourceFactory">
+				<Original>Resource Factory</Original>
+			</Key>
+			
+			<Key ID="STR_Fac_RingFactory">
+				<Original>Ring Factory</Original>
+			</Key>
+			
+			<Key ID="STR_Fac_GeneralFactory">
+				<Original>General Factory</Original>
+			</Key>
+			
+			<Key ID="STR_Fac_VehicleFactory">
+				<Original>Vehicle Factory</Original>
+			</Key>
+			
+			<Key ID="STR_Fac_WeaponFactory">
+				<Original>Weapon Factory</Original>
+			</Key>
+			
+			<Key ID="STR_Fac_TerrorGearFactory">
+				<Original>Terror Gear Factory</Original>
+			</Key>
+			
+			<Key ID="STR_Fac_TerrorVehicleFactory">
+				<Original>Terror Vehicle Factory</Original>
+			</Key>
+			
+			<Key ID="STR_Fac_BoughtFactory">
+				<Original>Just bought %1</Original>
+			</Key>
+			
+			<Key ID="STR_Fac_FactoryStorage">
+				<Original>Factory Storage</Original>
+			</Key>
+			
+			<Key ID="STR_Fac_TakeItemBase">
+				<Original>Take Item</Original>
+			</Key>
+			
+			<Key ID="STR_Fac_TakeItem">
+				<Original>Take %1 (%2kg)</Original>
+			</Key>
+			
+			<Key ID="STR_Fac_StoreItemBase">
+				<Original>Store Item</Original>
+			</Key>
+			
+			<Key ID="STR_Fac_StoreItem">
+				<Original>Store %1 (%2kg)</Original>
+			</Key>
+			
+			<Key ID="STR_Fac_FacStoreList">
+				<Original>%1 (%2x %3Kg)</Original>
+			</Key>
+			
+			<Key ID="STR_Fac_AvailableStorage">
+				<Original>Available: (%1)</Original>
+			</Key>
+			
+			<Key ID="STR_Fac_NotEnoughToStore">
+				<Original>You don't have that many items to store</Original>
+			</Key>
+			
+			<Key ID="STR_Fac_NotEnoughToTake">
+				<Original>There is not that many items in the factories storage</Original>
+			</Key>
+			
+			<Key ID="STR_Fac_Available">
+				<Original>%1's Available: %2</Original>
+			</Key>
+			
+			<Key ID="STR_Fac_Pending">
+				<Original>%1's Pending: %2</Original>
+			</Key>
+			
+			<Key ID="STR_Fac_TotalPending">
+				<Original>Total Pending Items: %1</Original>
+			</Key>
+			
+			<Key ID="STR_Fac_InProduction">
+				<Original>In Production: %1</Original>
+			</Key>
+			
+			<Key ID="STR_Fac_ETA">
+				<Original>ETA: %1</Original>
+			</Key>
+			
+			<Key ID="STR_Fac_Manufacture">
+				<Original>Manufacture</Original>
+			</Key>
+			
+			<Key ID="STR_Fac_ManufactureNoWorkers">
+				<Original>You have no workers at this factory</Original>
+			</Key>
+			
+			<Key ID="STR_Fac_ManufactureQueueAdd">
+				<Original>%1 has been added to the production queue</Original>
+			</Key>
+			
+			<Key ID="STR_Fac_ManufactureNoResource">
+				<Original>You do not have the required amount of resources in the factories storage</Original>
+			</Key>
+			
+			<Key ID="STR_Fac_ManufactureDone">
+				<Original>A %1 is now available at one of your factories!</Original>
+			</Key>
+			
+			<Key ID="STR_Fac_Create">
+				<Original>Create</Original>
+			</Key>
+			
+			<Key ID="STR_Fac_CreateNoneReady">
+				<Original>There are no %1 available to create</Original>
+			</Key>
+			
+			<Key ID="STR_Fac_CreatedItem">
+				<Original>%1 created and put into the factories storage</Original>
+			</Key>
+			
+			<Key ID="STR_Fac_CreatedVeh">
+				<Original>%1 created, should be nearby</Original>
+			</Key>
+			
+			<Key ID="STR_Fac_CreatedGear">
+				<Original>%1 created, check nearby gear crate or on the ground</Original>
+			</Key>
+			
+			<Key ID="STR_Fac_Export">
+				<Original>Export</Original>
+			</Key>
+			
+			<Key ID="STR_Fac_ExportNoneReady">
+				<Original>There are no %1 available to export</Original>
+			</Key>
+			
+			<Key ID="STR_Fac_ExportNoShop">
+				<Original>There are no shops %1 can be exported to</Original>
+			</Key>
+			
+			<Key ID="STR_Fac_ExportBtnToolTip">
+				<Original>Export 1 %1 to %2 for $%3\nCurrent Stock: %4\nMax Stock: %5</Original>
+			</Key>
+			
+			<Key ID="STR_Fac_ExportMaxStock">
+				<Original>%1 is at the maximum stock for %2</Original>
+			</Key>
+
+			<Key ID="STR_Fac_Exported">
+				<Original>Exported %2 to %1 for $%3, The money has been put into the factories storage</Original>
+			</Key>
+			
+			<Key ID="STR_Fac_HireWorker">
+				<Original>Hire Worker ($%1)</Original>
+			</Key>
+			
+			<Key ID="STR_Fac_NoWorkers">
+				<Original>No Workers</Original>
+			</Key>
+			
+			<Key ID="STR_Fac_MaxWorkers">
+				<Original>Max Workers</Original>
+			</Key>
+			
+			<Key ID="STR_Fac_CurrentWorkers">
+				<Original>Current Workers: %1</Original>
+			</Key>
+
+		</Container>
+			
+		<Container name="ItemDesc">
+			<Key ID="STR_ItemDesc_KeyChain">
+				<Original>The Key Chain is used to open a menu that displays all your current keys. In that menu you can then lock/unlock the vehicle if its close enough or give the key to another player.</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_Phone">
+				<Original>The phone is used to privately message other players.</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_Money">
+				<Original>Money is used to buy things such as items, weapons, and vehicles. It's also needed to pay tickets and do other things like creating gangs. Money is the most important thing to have because the more you have the more you can do.</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_MedKit">
+				<Original>MedKit when used will heal you to 100% health.</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_RepKit">
+				<Original>RepairKits are used to repair the nearest vehicle within 8 meters to 100%.</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_Lighter">
+				<Original>Use the lighter while in a vehicle then quickly get out before the vehicle is destroyed.</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_LockPick">
+				<Original>The lockpick is used to get the keys of a vehicle that you don't have the keys to already. To use go next to a car that you don't have keys for and use the lockpick, it could take a couple of lockpicks before you actually get the keys.</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_RefuelCan">
+				<Original>Use the Refuel can in a vehicle to refuel the vehicle</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_SyphonFuelKit">
+				<Original>The Syphon Fuel Kit is used to syphon fuel out of vehicles. It will leave the syphoned vehicles fuel empty.</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_OilBarrel">
+				<Original>The oil barrel is a product of processed oil and can be sold for profit or used to refuel a vehicle like a refuel can. Recommended to be sold for profit.</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_WeaponBag">
+				<Original>When you use the weapon bag it will remove all the weapon on the ground within a 5 meter radius.</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_ItemBag">
+				<Original>The item bag will remove all items on the ground within a 10 meter radius that are not gear items. So virtual items only like money, repair kits, and lockpicks.</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_DefuseKit">
+				<Original>The Defuse Kit is used to defuse bombs. It will defuse and remove the closes IED within 3 meters or defuse any car bomb if used in a vehicle. Careful when defusing IEDs though, there is a good chance of messing it up and ending badly for everyone around.</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_SpikeStrip">
+				<Original>The spike strip is used to stop vehicle from fleeing. When used a spike strip will be placed down in front of you in a horizontal direction from you</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_BlueInk">
+				<Original>Blue Ink is something that appears in your inventory after you have robbed the bank. It will disappear after some time of robbing the bank.</Original>
+			</Key>	
+			
+			<Key ID="STR_ItemDesc_BankInsurance">
+				<Original>Bank Insurance is very important if you don't want to lose money more specifically lose money when the bank gets robbed. So every time the bank gets robbed and you have bank insurance on you, you wont lose any money. You will lose 1 bank insurance every time the bank is robbed.</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_FishingPole">
+				<Original>Use a FishingPole in side a fishing area to catch fish</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_Shovel">
+				<Original>A shovel is used to mine resources, use it in a resource area. It has a durability of 20 and is slow at mining.</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_PickAxe">
+				<Original>A PickAxe is used to mine resources, use it in a resource area. It has a durability of 50 and is moderate at mining.</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_JackHammer">
+				<Original>A JackHammer is used to mine resources, use it in a resource area. It has a durability of 100 and is really fast at mining.</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_VehicleAmmo">
+				<Original>Vehicle Ammo is used to add a reload to the currently equipped weapon of a vehicle. For example if you are sitting in the right door gunner of a helicopter and use vehicle ammo it will add another reload worth of ammo to it.</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_SpeedUpgrade">
+				<Original>Speed upgrades increase the max speed of your vehicle. The higher the speed upgrade number the faster your vehicle will go. Speed upgrades do NOT stack so if you were to add speed upgrade 5 then add speed upgrade 2 the vehicles max speed will only be that of speed upgrade 2. The vehicle being upgraded may experience unwanted results such as hardly any speed boost and the speed being limited with constant tire squealing. If you upgraded a vehicle that is not working to what you would like you can put speed upgrade 1 on the vehicle which will more or less reset the unwanted behaviour.</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_SuicideBomb">
+				<Original>A suicide bomb is a bomb that blows you and surrounding object up. Only use once your ready.</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_ActivationBomb">
+				<Original>Must be planted on a vehicle by sitting inside the vehicle in the driver seat. Once its planted it will only blow up if the engine turns on. With that said be careful when planting the bomb because if the engine is on when the car is running it could blow up right away. Also recommend using the scroll option to get out of the vehicle instead of using E to get out.</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_TimeBomb">
+				<Original>Must be planted on a vehicle by sitting inside the vehicle in the driver seat. Once used you will get a menu to set a timer until it blows up. If you leave the server including going to lobby the bomb will be cancelled.</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_SpeedBomb">
+				<Original>Must be planted on a vehicle by sitting inside the vehicle in the driver seat. Once used you will get a menu where you set the start speed and the min speed. The start speed is the speed the driver needs to hit to activate the bomb. The min speed is the speed the driver can NOT go below or the bomb will go off. The min speed will only take effect once the start speed is hit. The min speed can not be higher then the start speed.</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_RemoteBomb">
+				<Original>A Remote Bomb is as the name would suggest a bomb that is detonated by remote. To plant the bomb sit in the driver seat of a vehicle and use the bomb and pay attention to the code it gives you. The code is then used in a bomb remote to detonate the bomb.</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_BombRemote">
+				<Original>The bomb remote is used by imputing the correct code a to a vehicle that has a remote bomb in it. If the vehicle has a remote bomb in it then the bomb will go off blowing up the vehicle. If you forget a code its just the vehicles name/license plate which means if someone else puts a remote bomb on a vehicle any one can blow it up.</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_Goat">
+				<Original>Goat is a food item gathered from Goat that have been killed. You can eat Goat to fill up your hunger.</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_Rabbit">
+				<Original>Rabbit is a food item gathered from dead rabbits. You can eat rabbit to fill up your hunger.</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_StrangeMeat">
+				<Original>It's meat and its strange but at least is edible.</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_Donut">
+				<Original>The food of life... For cops</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_Fish">
+				<Original>Fishy tasting fish that you can eat mainly raw. Or you can catch it and sell it for profit</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_Bread">
+				<Original>Eat bread to fill your hunger</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_Iron">
+				<Original>Iron is a resource either sell it for a profit or use it in factories</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_ElectronicComponents">
+				<Original>Electronic Components are used in manufacturing other products such as vehicles</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_Copper">
+				<Original>Copper is a resource either sell it for a profit or use it in factories</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_Steel">
+				<Original>Steel is a manufactured resource either sell it for a profit or use it in factories</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_BlackPowder">
+				<Original>Black Powder is a manufactured resource either sell it for a profit or use it in factories</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_Coal">
+				<Original>Coal is a resource either sell it for a profit or use it in factories</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_Silicon">
+				<Original>Silicon is a resource either sell it for a profit or use it in factories</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_DamondRock">
+				<Original>Diamond Rock is a resource either sell it for a profit or use it in factories</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_Platinum">
+				<Original>Platinum is a resource either sell it for a profit or use it in factories</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_Silver">
+				<Original>Silver is a resource either sell it for a profit or use it in factories</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_Gold">
+				<Original>Gold is a resource either sell it for a profit or use it in factories</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_Oil">
+				<Original>Oil is a resource either processed into Oil Barrels and sold for a profit or use it in factories</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_Glass">
+				<Original>Glass is a manufactured resource either sell it for a profit or use it in factories</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_Plastic">
+				<Original>Plastic is a manufactured resource either sell it for a profit or use it in factories</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_Sand">
+				<Original>Sand is a resource either sell it for a profit or use it in factories</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_Sulfer">
+				<Original>Sulfer is a resource either sell it for a profit or use it in factories</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_DiamondRing">
+				<Original>Diamond Ring is a manufactured item that is meant to be sold for profit, it has no use</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_ExpensiveDiamondRing">
+				<Original>Expensive Diamond Ring is a manufactured item that is meant to be sold for profit, it has no use</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_PlatinumRing">
+				<Original>Platinum Ring is a manufactured item that is meant to be sold for profit, it has no use</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_ExpensivePlatinumRing">
+				<Original>Expensive Platinum Ring is a manufactured item that is meant to be sold for profit, it has no use</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_UnProcessedCocaine">
+				<Original>UnProcessed Cocaine is processed into Cocaine and then sold for a large profit. You must be in a gang to process it at a gang area and UnProcessed Cocaine is illegal so don't get caught with it.</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_Cocaine">
+				<Original>Cocaine is a drug that you can sell for a large profit or use it for some interesting effect. Cocaine is illegal so don't get caught with it. For every cocaine used it will increase your max carrying weight for the duration of the drug effect.</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_UnProcessedMarijuana">
+				<Original>UnProcessed Marijuana is processed into Marijuana and then sold for a large profit. You must be in a gang to process it at a gang area and UnProcessed Marijuana is illegal so don't get caught with it.</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_Marijuana">
+				<Original>Marijuana is a drug that you can sell for a large profit or use it for some interesting effect. Marijuana is illegal so don't get caught with it. Taking will remove your weapon sway for the duration of the effect.</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_UnProcessedLSD">
+				<Original>UnProcessed LSD is processed into LSD and then sold for a large profit. You must be in a gang to process it at a gang area and UnProcessed LSD is illegal so don't get caught with it.</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_LSD">
+				<Original>LSD is a drug that you can sell for a large profit or use it for some interesting effect. LSD is illegal so don't get caught with it.</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_UnProcessedHeroin">
+				<Original>UnProcessed Heroin is processed into Heroin and then sold for a large profit. You must be in a gang to process it at a gang area and UnProcessed Heroin is illegal so don't get caught with it.</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_Heroin">
+				<Original>Heroin is a drug that you can sell for a large profit or use it for some interesting effect. Heroin is illegal so don't get caught with it.</Original>
+			</Key>
+			
+			<Key ID="STR_ItemDesc_M2StaticMg">
+				<Original>M2 Static MG is a placeable M2 Mg that can be used then picked back up.</Original>
+			</Key>
+			
+
+		</Container>
+			
+		<Container name="ItemMisc">
+			<Key ID="STR_ItemMisc_KeyList">
+				<Original>%1 - (%2)</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_PhoneSend">
+				<Original>Send SMS</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_PhoneSendSelf">
+				<Original>Can't send a message to your self</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_PhoneSent">
+				<Original>You sent a message to %1: %2</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_PhoneRecieved">
+				<Original>You received a message from %1: %2</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_AlreadyHaveKey">
+				<Original>%1 already has this key</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_RecievedKey">
+				<Original>%1 gave you keys to %2</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_HealedSelf">
+				<Original>You are healed again.</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_NotNearVcl">
+				<Original>You are not near a vehicle.</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_ReparingVeh">
+				<Original>Repairing vehicle.</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_VehRepaired">
+				<Original>You repaired the vehicle.</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_LighterUsed">
+				<Original>The fuel is on fire!! GET OUT QUICKLY BEFORE IT EXPLODES!</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_LockpickAlreadyOwn">
+				<Original>You already have keys to this vehicle</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_LockpickInSafezone">
+				<Original>You can't lockpick vehicles in the carpark</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_LockpickSuccess">
+				<Original>You got the keys to this vehicle</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_LockpickFail">
+				<Original>The lockpick broke</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_AlreadyFuel">
+				<Original>The vehicle already full of fuel</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_Refuelling">
+				<Original>Refuelling vehicle</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_VehRefuelled">
+				<Original>Vehicle refuelled</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_NotEnoughFuelSyphon">
+				<Original>The vehicle doesn't have enough fuel to syphon</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_SyphoningFuel">
+				<Original>Draining fuel</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_VehSyphoned">
+				<Original>You syphoned the fuel out of the vehicle</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_WeaponBagVehCarogClear">
+				<Original>Weapon Cargo cleared!</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_WeaponBagWepRemoved">
+				<Original>%1 weapons deleted (Radius 5m).</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_ItemBagItemRemoved">
+				<Original>%1 items deleted (Radius 10m).</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_DefuseNoBomb">
+				<Original>No Bomb to defuse.</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_DefuseSuccess">
+				<Original>Bomb defused.</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_DefuseFailed">
+				<Original>You made a mistake while defusing the bomb and it exploded!</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_SpikeStripPlaced">
+				<Original>Spike Strip Placed</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_PickUpSpikestrip">
+				<Original>Pick Up Spike Strip</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_BombPlantInAirVeh">
+				<Original>You can not put bombs in air vehicles.</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_VehAlreadyBomb">
+				<Original>The vehicle already has a bomb in it.</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_SuicideBombCountDown">
+				<Original>Bomb CountDown --&lt;*%1*&gt;--</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_VehHadABomb">
+				<Original>The vehicle had a bomb in it.</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_PlantedBomb">
+				<Original>You planted a bomb in %1. The bomb will work for the next player to get in as driver.</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_BombTimer">
+				<Original>Timer: %1.</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_SpeedBombStartSpeed">
+				<Original>Start Speed: %1.</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_SpeedBombMinSpeed">
+				<Original>Min Speed: %1.</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_PlantedTimeBomb">
+				<Original>You planted a bomb in %1 it will blow up in %2.</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_PlantedSpeedBomb">
+				<Original>You planted a bomb in %1, the bomb will activate once the vehicle reaches %2 Kmh and blow up once it goes below %3 Kmh. The bomb will work for the next player to get in as driver.</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_PlantedRemoteBomb">
+				<Original>You planted a remote bomb in %1. The code to detonate is %1, if you forget the code its just the vehicles name/license plate.</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_VehHadASpeedBomb">
+				<Original>The vehicle has a bomb in it. It will blow up if you go below %1 Kmh.</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_PlantBomb">
+				<Original>Plant Bomb</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_Execute">
+				<Original>Execute</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_BombCode">
+				<Original>Bomb Code:</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_VehBombError">
+				<Original>%1 can't be found</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_VehHasNobomb">
+				<Original>%1 has no bomb in it</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_Starving">
+				<Original>You are starving.</Original>
+			</Key>
+
+			<Key ID="STR_ItemMisc_JustAte">
+				<Original>You ate %1, Hunger: %2.</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_TakeGoatMeat">
+				<Original>Take Goat Meat</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_CollectedGoatMeat">
+				<Original>You collected %1 goat meat</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_TakeRabbitMeat">
+				<Original>Take Rabbit Meat</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_CollectedRabbiMeat">
+				<Original>You collected %1 rabbit meat</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_NotNearFish">
+				<Original>Your not where the fish are</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_CaughtFish">
+				<Original>You caught %1 %2</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_NotNearMine">
+				<Original>You are not near a mine</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_Mining">
+				<Original>Mining...</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_CantMineInVehicle">
+				<Original>You can't mine while in a vehicle</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_ItemBroke">
+				<Original>A %1 broke</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_NoMineingTool">
+				<Original>You don't have a %1 to continue mining</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_JustMined">
+				<Original>You mined %1 %2</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_DoneMining">
+				<Original>Mining Finished</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_Gathered">
+				<Original>You gathered %1 %2</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_Processed">
+				<Original>%1 %2 was processed into %3 %4!</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_ProcessOil">
+				<Original>Process Oil</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_ProcessCocaine">
+				<Original>Process Cocaine</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_ProcessMarijuana">
+				<Original>Process Marijuana</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_ProcessLSD">
+				<Original>Process LSD</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_ProcessHeroin">
+				<Original>Process Heroin</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_VehAmmoAdded">
+				<Original>Ammo added to current weapon</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_CantUpgradeAirVeh">
+				<Original>You cant upgrade air vehicles.</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_SpeedUpgradetuning">
+				<Original>Tuning Vehicle...</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_SpeedUpgradeApplied">
+				<Original>Vehicle Tuned</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_PickUpCreatedObject">
+				<Original>Pick Up %1</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_TakenMoreDrugs">
+				<Original>You've taken more drugs, the effects of the drug have been extended</Original>
+			</Key>
+			
+			<Key ID="STR_ItemMisc_DrugEffectDiminish">
+				<Original>The effects of the drugs diminish</Original>
+			</Key>
+
+		</Container>
+
+	
+	</Package>
+</Project>
