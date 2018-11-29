@@ -9,8 +9,10 @@ if (count SETTING(getArray,"ZKB_MissionStartPositions") isEqualTo 0) exitWith {d
 
 sleep ((SETTING(getNumber,"ZKB_GovConvoyLoopTime") - 5)*60);
 ["STR_GovConvoy_LeaveInFewMinutes"] remoteExecCall ["ZKB_fnc_DynamicText",0,false];
+waitUntil {playersNumber west >= SETTING(getNumber,"ZKB_GovConvoyReqCops")};
 sleep (5*60);
 ["STR_GovConvoy_Started"] remoteExecCall ["ZKB_fnc_DynamicText",0,false];
+["STR_Admin_AdminLogsGovConvoyStart"] call ZKB_fnc_AdminAddAdminLog;
 
 private _startPos = GMVAR(selectRandom SETTING(getArray,"ZKB_MissionStartPositions"),objNull);
 
@@ -76,6 +78,7 @@ while {true} do
 		if (!isNull _convoyDriver) then {moveOut _convoyDriver; deleteVehicle _convoyDriver;};
 		if (!isNull _convoyTruck) then {deleteVehicle _convoyTruck;};
 		["STR_GovConvoy_TruckDestroyed"] remoteExecCall ["ZKB_fnc_DynamicText",0,false];
+		["STR_GovConvoy_TruckDestroyed"] call ZKB_fnc_AdminAddAdminLog;
 		};	
 		
 	if (_convoyTruck getVariable ["civWins",false]) exitWith
@@ -100,6 +103,7 @@ while {true} do
 		[] remoteExecCall ["ZKB_fnc_GovernmentConvoyCopWin",west,false];
 		if (!isNull _convoyDriver) then {deleteVehicle _convoyDriver;};
 		if (!isNull _convoyTruck) then {deleteVehicle _convoyTruck;};
+		["STR_Admin_AdminLogsGovConvoyMadeItToCopBase",playersNumber west,[SETTING(getNumber,"ZKB_GovConvoyCopReward")] call ZKB_fnc_FormatNumber] call ZKB_fnc_AdminAddAdminLog;
 		};
 	
 	_convoyMarker setMarkerPos (getPos _convoyTruck);

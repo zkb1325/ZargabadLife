@@ -27,7 +27,7 @@ private _physItem = switch _itemtodrop do
 	case "MedKit": {"Land_PainKillers_F"};
 	case "Lighter": {"Land_ButaneTorch_F"};
 	case "RefuelCan": {"Land_CanisterFuel_F"};
-	case "SyphonFuelKit": {"Land_CanisterFuel_F"};
+	case "SiphonFuelKit": {"Land_CanisterFuel_F"};
 	case "Oil";
 	case "OilBarrel": {"Land_MetalBarrel_F"};
 	case "WeaponBag": {"Land_Sleeping_bag_folded_F"};

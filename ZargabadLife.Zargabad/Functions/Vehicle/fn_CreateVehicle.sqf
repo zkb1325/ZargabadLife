@@ -22,6 +22,7 @@
 		True/False if the vehicle should just be spawned ignoring special placement
 */
 private _vehicleclass = param [0,"",[""]];
+if (_vehicleclass isEqualTo "") exitWith {};
 private _spawnPos = param [1,objNull,[objNull,"",[]]];
 if (_spawnPos isEqualTo objNull) exitWith {systemChat "ZKB_fnc_CreateVehicle not given a valid spawn point";};
 private _spawnDir = param [2,-1,[0]];
@@ -31,6 +32,8 @@ private _vehPlate = param [4,"",[""]];
 private _trunk = param [5,[],[[]]];
 private _speedUpgrade = param [6,0,[0]];
 private _justSpawn = param [7,false,[false]];
+private _vehUID = param [8,"",[""]];
+private _bomb = param [9,[],[[]]];
 
 
 switch (typeName _spawnPos) do
@@ -69,7 +72,11 @@ if !(_justSpawn) then
 
 _veh setVariable ["plate",_vehPlate,true];
 _veh setPlateNumber (_vehPlate select [8]);
-//[_veh, _vehPlate] remoteExecCall ["ZKB_fnc_setVehicleVarName", 0, _veh];
+if (_vehUID isEqualTo "") then
+	{
+	_vehUID = format ["Vehicle_%1%2%3%4%5%6%7",(missionStart select 0),(missionStart select 1),(missionStart select 2),(missionStart select 3),(missionStart select 4),(missionStart select 5),round(random 1000000)];
+	};
+_veh setVariable ["VehicleUniqueID",_vehUID,true];
 
 clearWeaponCargoGlobal _veh;
 clearMagazineCargoGlobal _veh;
@@ -81,6 +88,7 @@ _veh lock 2;
 _veh setVariable ["VehicleOwner", _ownerUID, true];
 _veh setVariable ["VehicleTrunk", _trunk, true];
 _veh setVariable ["VehUpgradeLvl", _speedUpgrade, true];
+_veh setVariable ["PlantedBomb",_bomb,true];
 
 _ownerkeys = _ownerUnit getVariable ["ZKB_Keys",[]];
 _ownerkeys pushBack _veh;

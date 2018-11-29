@@ -31,7 +31,7 @@ if (_forced) exitWith
 		}forEach _inv;
 		player setVariable ["ZKB_Inventory",_inv,true];
 		};
-	call ZKB_fnc_SavePlayer;
+	[] spawn ZKB_fnc_SavePlayer;
 	true;
 	};
 
@@ -51,5 +51,5 @@ if ([_item] call ZKB_fnc_GetInvItemAmount <= 0) then
 	}forEach _inv;
 	player setVariable ["ZKB_Inventory",_inv,true];
 	};
-call ZKB_fnc_SavePlayer;
+[] spawn ZKB_fnc_SavePlayer;
 true;

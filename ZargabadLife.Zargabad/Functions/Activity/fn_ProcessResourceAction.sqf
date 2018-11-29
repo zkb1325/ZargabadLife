@@ -39,5 +39,5 @@ if (_amountreturn == 0) exitWith {["STR_Common_NotEnoughToProcess"] call ZKB_fnc
 [_rawitem, _amounttoremove] call ZKB_fnc_InvRemoveItem;
 [_finalitem, _amountreturn] call ZKB_fnc_InvAddItem;
 
-["STR_ItemMisc_Processed", [_amounttoremove, [_rawitem] call ZKB_fnc_GetItemName, _amountreturn, [_finalitem] call ZKB_fnc_GetItemName]] call ZKB_fnc_DynamicText;
-call ZKB_fnc_SavePlayer;
+["STR_ItemMisc_Processed", [[_amounttoremove] call ZKB_fnc_FormatNumber, [_rawitem] call ZKB_fnc_GetItemName, [_amountreturn] call ZKB_fnc_FormatNumber, [_finalitem] call ZKB_fnc_GetItemName]] call ZKB_fnc_DynamicText;
+["STR_Admin_PlayerLogsProcessedItem",name player,[_amounttoremove] call ZKB_fnc_FormatNumber, [_rawitem] call ZKB_fnc_GetItemName, [_amountreturn] call ZKB_fnc_FormatNumber, [_finalitem] call ZKB_fnc_GetItemName] call ZKB_fnc_AdminAddPlayerLog;

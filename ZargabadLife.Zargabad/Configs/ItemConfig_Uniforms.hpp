@@ -340,32 +340,13 @@ class CUP_H_SLA_Helmet
 	Description = "";
 	reqResources[] = {};
 	};
-class CUP_H_C_Policecap_01
+class CUP_H_CDF_H_PASGT_UN
 	{
-	className = "CUP_H_C_Policecap_01";
-	displayName = "Police Hat";
+	className = "CUP_H_CDF_H_PASGT_UN";
+	displayName = "UN Helmet";
 	itemType = "Item";
 	Function = "";
 	buyPirce = 500;
-	sellPirce = -1;
-	Weight = 0;
-	trunkSpace = 0;
-	civLicense = "Terror_Training";
-	copLicense = "";
-	sharedLicense = "";
-	canDrop = true;
-	canGive = true;
-	isIllegal = true;
-	Description = "";
-	reqResources[] = {};
-	};
-class H_Cap_police
-	{
-	className = "H_Cap_police";
-	displayName = "Police Cap";
-	itemType = "Item";
-	Function = "";
-	buyPirce = 1000;
 	sellPirce = -1;
 	Weight = 0;
 	trunkSpace = 0;
@@ -378,10 +359,29 @@ class H_Cap_police
 	Description = "";
 	reqResources[] = {};
 	};
-class CUP_H_TK_Beret
+class CUP_H_CDF_OfficerCap_UN
 	{
-	className = "CUP_H_TK_Beret";
-	displayName = "Police Beret";
+	className = "CUP_H_CDF_OfficerCap_UN";
+	displayName = "UN Cap";
+	itemType = "Item";
+	Function = "";
+	buyPirce = 1000;
+	sellPirce = -1;
+	Weight = 0;
+	trunkSpace = 0;
+	civLicense = "Terror_Training";
+	copLicense = "";
+	sharedLicense = "";
+	canDrop = true;
+	canGive = true;
+	isIllegal = true;
+	Description = "";
+	reqResources[] = {};
+	};
+class CUP_H_CDF_Beret_UN
+	{
+	className = "CUP_H_CDF_Beret_UN";
+	displayName = "UN Beret";
 	itemType = "Item";
 	Function = "";
 	buyPirce = 1000;
@@ -416,10 +416,29 @@ class CUP_H_BAF_Officer_Beret
 	Description = "";
 	reqResources[] = {};
 	};
+class CUP_H_USArmy_HelmetMICH
+	{
+	className = "CUP_H_USArmy_HelmetMICH";
+	displayName = "US Armed Response Helmet";
+	itemType = "Item";
+	Function = "";
+	buyPirce = 2500;
+	sellPirce = -1;
+	Weight = 0;
+	trunkSpace = 0;
+	civLicense = "Terror_Training";
+	copLicense = "Armed_Response_Officer_Training";
+	sharedLicense = "";
+	canDrop = true;
+	canGive = true;
+	isIllegal = true;
+	Description = "";
+	reqResources[] = {};
+	};
 class CUP_H_USArmy_Helmet_Pro_gog
 	{
 	className = "CUP_H_USArmy_Helmet_Pro_gog";
-	displayName = "Armed Response Helmet";
+	displayName = "UK Armed Response Helmet";
 	itemType = "Item";
 	Function = "";
 	buyPirce = 2500;
@@ -720,10 +739,10 @@ class CUP_U_I_Ghillie_Top
 	Description = "";
 	reqResources[] = {};
 	};
-class CUP_U_C_Policeman_01
+class CUP_U_B_USArmy_Base
 	{
-	className = "CUP_U_C_Policeman_01";
-	displayName = "Police Uniform";
+	className = "CUP_U_B_USArmy_Base";
+	displayName = "UN Uniform";
 	itemType = "Item";
 	Function = "";
 	buyPirce = 1000;
@@ -732,25 +751,6 @@ class CUP_U_C_Policeman_01
 	trunkSpace = 0;
 	civLicense = "Terror_Training";
 	copLicense = "";
-	sharedLicense = "";
-	canDrop = true;
-	canGive = true;
-	isIllegal = true;
-	Description = "";
-	reqResources[] = {};
-	};
-class CUP_U_B_USArmy_Base
-	{
-	className = "CUP_U_B_USArmy_Base";
-	displayName = "US ArmedResponse Uniform";
-	itemType = "Item";
-	Function = "";
-	buyPirce = 5000;
-	sellPirce = -1;
-	Weight = 0;
-	trunkSpace = 0;
-	civLicense = "Terror_Training";
-	copLicense = "Armed_Response_Officer_Training";
 	sharedLicense = "";
 	canDrop = true;
 	canGive = true;

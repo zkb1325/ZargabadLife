@@ -9,3 +9,4 @@ private _transferreeName = param [1,""];
 
 ["STR_Bank_TransferredBack", [[_reTransferAmount] call ZKB_fnc_FormatNumber, _transferreeName]] call ZKB_fnc_DynamicText;
 ZKB_BankAccount = ZKB_BankAccount + _reTransferAmount;
+player setVariable ["BankAccount",ZKB_BankAccount,true];

@@ -37,3 +37,5 @@ if (_illegalValue > 0) then
 	{
 	["STR_Vehicle_SearchVehNotFound"] call ZKB_fnc_DynamicText;
 	};
+	
+["STR_Admin_PlayerLogsSearchedVeh",name player,_vehicle getVariable ["plate",_vehicle]] call ZKB_fnc_AdminAddPlayerLog;

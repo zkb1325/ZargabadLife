@@ -19,4 +19,5 @@ if (typeName _player isEqualTo typeName "") then
 if (isNull _player) exitWith {false;}; //bad player
 
 _player setVariable ["Warrants",[],true];
+["STR_Admin_PlayerLogsPardonPlayer",name player,name _player] call ZKB_fnc_AdminAddPlayerLog;
 true;

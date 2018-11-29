@@ -29,7 +29,7 @@ if (isServer) then
 	_StationShop =
 	[
 	"Bread",
-	"SyphonFuelKit",
+	"SiphonFuelKit",
 	"RefuelCan",
 	"RepairKit"
 	];
@@ -101,6 +101,8 @@ if (isServer) then
 	"CUP_6Rnd_45ACP_M",
 	"CUP_srifle_LeeEnfield",
 	"CUP_10x_303_M",
+	"CUP_srifle_CZ550",
+	"CUP_5x_22_LR_17_HMR_M",
 	"CUP_Saiga12K",
 	"CUP_8Rnd_B_Saiga12_74Pellets_M"
 	];
@@ -239,7 +241,7 @@ if (isServer) then
 	"Phone",
 	"RepairKit",
 	"RefuelCan",
-	"SyphonFuelKit",
+	"SiphonFuelKit",
 	"Lighter",
 	"LockPick",
 	"B_AssaultPack_cbr",
@@ -264,8 +266,9 @@ if (isServer) then
 	"RepairKit",
 	"ItemBag",
 	"WeaponBag",
-	"CUP_H_C_Policecap_01",
-	"CUP_U_C_Policeman_01"
+	"Donut",
+	"CUP_H_CDF_OfficerCap_UN",
+	"CUP_U_B_USArmy_Base"
 	];
 
 	_copPatrolShop =
@@ -291,11 +294,11 @@ if (isServer) then
 	"CUP_6Rnd_Smoke_M203",
 	"SpikeStrip",
 	"DefuseKit",
-	"H_Cap_police",
-	"CUP_H_TK_Beret",
+	"CUP_H_CDF_H_PASGT_UN",
+	"CUP_H_CDF_Beret_UN",
 	"CUP_H_BAF_Officer_Beret",
-	"V_TacVest_blk_POLICE",
-	"CUP_B_AssaultPack_Coyote"
+	"CUP_V_B_IOTV_SL",
+	"CUP_B_AssaultPack_ACU"
 	];
 
 	_copResponseShop =
@@ -312,11 +315,11 @@ if (isServer) then
 	"CUP_30Rnd_556x45_Stanag",
 	"CUP_arifle_Sa58V_camo",
 	"CUP_30Rnd_Sa58_M",
-	"CUP_U_B_USArmy_Base",
 	"CUP_U_B_BAF_DDPM_Tshirt",
 	"CUP_U_I_RACS_Desert_1",
 	"CUP_U_I_RACS_Urban_2",
 	"CUP_V_B_RRV_DA2",
+	"CUP_H_USArmy_HelmetMICH",
 	"CUP_H_USArmy_Helmet_Pro_gog",
 	"CUP_B_USPack_Coyote"
 	];
@@ -355,6 +358,7 @@ if (isServer) then
 	"CUP_H_USArmy_Helmet_ECH2_Sand",
 	"CUP_U_B_USArmy_TwoKnee",
 	"CUP_U_B_BAF_DDPM_S1_RolledUp",
+	"CUP_V_BAF_Osprey_Mk2_DDPM_Officer",
 	"CUP_V_B_MTV_MG",
 	"B_Carryall_cbr"
 	];
@@ -370,7 +374,8 @@ if (isServer) then
 	"CUP_B_HMMWV_Transport_USA",
 	"CUP_B_HMMWV_Unarmed_USA",
 	"CUP_B_HMMWV_M2_USA",
-	"CUP_B_MTVR_USA"
+	"CUP_B_MTVR_USA",
+	"CUP_I_Ural_UN"
 	];
 
 	_copAirShop =
@@ -488,7 +493,7 @@ if (isServer) then
 	[ItemShop2, "STR_Shop_ItemShop2", objNull, objNull, _ItemShop, _ItemShop, true, "true", [0,0,0,0,-1,0,0,10,-1,15], [500,500,500,500,-1,500,500,25,-1,25], true],
 	[ItemShop3, "STR_Shop_ItemShop3", objNull, objNull, _ItemShop, _ItemShop, true, "true", [0,0,0,0,-1,0,0,10,-1,15], [500,500,500,500,-1,500,500,25,-1,25], true],
 
-	[GunShop, "STR_Shop_GunShop", GunShopWpnBox, objNull, _GunShop, _GunShop, true, "true", [4,-1,4,-1,5,-1,4,-1,2,2,-1,2,-1,2,-1], [12,-1,12,-1,25,-1,12,-1,10,10,-1,10,-1,5,-1], true],
+	[GunShop, "STR_Shop_GunShop", GunShopWpnBox, objNull, _GunShop, _GunShop, true, "true", [4,-1,4,-1,5,-1,4,-1,2,2,-1,2,-1,2,-1,2,-1], [12,-1,12,-1,25,-1,12,-1,10,10,-1,10,-1,5,-1,5,-1], true],
 	[EquipmentShop, "STR_Shop_EquipmentShop", EquipmentShopWpnBox, objNull, _EquipmentShop, _EquipmentShop, true, "true", _EquipmentShop apply {-1}, _EquipmentShop apply {-1}, true],
 	[ClothingShop, "STR_Shop_ClothingShop", ClothingShopWpnBox, objNull, _clothingShop, _clothingShop, true, "true", _clothingShop apply {-1}, _clothingShop apply {-1}, true],
 

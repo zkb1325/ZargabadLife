@@ -34,5 +34,5 @@ if ((_x select 0) == _item) exitWith
 	_return = true;
 	};
 }forEach _inv;
-call ZKB_fnc_SavePlayer;
+[] spawn ZKB_fnc_SavePlayer;
 _return;

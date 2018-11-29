@@ -7,6 +7,11 @@
 	https://community.bistudio.com/wiki/DIK_KeyCodes
 */
 
+if (isclass (missionConfigFile >> "Admins" >> (getPlayerUID player))) then
+	{
+	["Zargabad Life","OpenAminMenu_Key", "Admin Menu", ZKB_fnc_OpenAdminMenu, ""] call CBA_fnc_addKeybind;
+	};
+
 ["Zargabad Life","OpenWelcomeMenu_Key", localize "STR_CBA_OpenWelcomeMenu", ZKB_fnc_OpenWelcomeMenu, "", [0x3B,[false,false,false]]] call CBA_fnc_addKeybind;
 ["Zargabad Life","VolumeDown_Key", localize "STR_CBA_VolumeDown", {0 fadeSound ((soundVolume - .1) max 0); titleText [format [localize "STR_CBA_VolumeAt",((soundVolume/1)*100),"%"],"PLAIN DOWN"];}, "", [0x3C,[false,false,false]]] call CBA_fnc_addKeybind;
 ["Zargabad Life","VolumeUp_Key", localize "STR_CBA_VolumeUp", {0 fadeSound ((soundVolume + .1) min 1); titleText [format [localize "STR_CBA_VolumeAt",((soundVolume/1)*100),"%"],"PLAIN DOWN"];}, "", [0x3D,[false,false,false]]] call CBA_fnc_addKeybind;
@@ -46,7 +51,7 @@
 "Lighter",
 "LockPick",
 "RefuelCan",
-"SyphonFuelKit",
+"SiphonFuelKit",
 "OilBarrel",
 "WeaponBag",
 "ItemBag",

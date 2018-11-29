@@ -264,6 +264,25 @@ class CUP_srifle_LeeEnfield
 	Description = "";
 	reqResources[] = {{"Steel",4},{"Plastic",8}};
 	};
+class CUP_srifle_CZ550
+	{
+	className = "CUP_srifle_CZ550";
+	displayName = "CZ 550";
+	itemType = "Weapon";
+	Function = "";
+	buyPirce = 50000;
+	sellPirce = -1;
+	Weight = 0;
+	trunkSpace = 0;
+	civLicense = "Rifle_License";
+	copLicense = "Civ_Shop_License";
+	sharedLicense = "";
+	canDrop = true;
+	canGive = true;
+	isIllegal = false;
+	Description = "";
+	reqResources[] = {{"Steel",4},{"Plastic",8}};
+	};
 class CUP_srifle_M14
 	{
 	className = "CUP_srifle_M14";

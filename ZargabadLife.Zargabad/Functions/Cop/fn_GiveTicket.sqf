@@ -13,3 +13,4 @@ if (_ticketAmount <= 0) exitWith {};
 
 ["STR_Cop_GaveTicket",[name player,name _ticketedPlayer,[_ticketAmount] call ZKB_fnc_FormatNumber]]remoteExecCall ["ZKB_fnc_DynamicText",[west,_ticketedPlayer],false]; 
 [_ticketAmount,name player] remoteExec ["ZKB_fnc_RecieveTicket",_ticketedPlayer,false];
+["STR_Admin_PlayerLogsGaveTicket",name player,[_ticketAmount] call ZKB_fnc_FormatNumber,name _ticketedPlayer] call ZKB_fnc_AdminAddPlayerLog;

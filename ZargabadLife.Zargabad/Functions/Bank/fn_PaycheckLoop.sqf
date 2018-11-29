@@ -58,6 +58,7 @@ while {true} do
 				};
 			
 			ZKB_BankAccount = ZKB_BankAccount + (round _payCheck);
+			player setVariable ["BankAccount",ZKB_BankAccount,true];
 			
 			["STR_Bank_CopPaycheck", [name player, [_payCheck] call ZKB_fnc_FormatNumber]] call ZKB_fnc_DynamicText;
 			
@@ -111,7 +112,8 @@ while {true} do
 				};
 				
 			ZKB_BankAccount = ZKB_BankAccount + (round _payCheck);
+			player setVariable ["BankAccount",ZKB_BankAccount,true];
 			};
 		};
-	call ZKB_fnc_SavePlayer;
+	[] spawn ZKB_fnc_SavePlayer;
 	};

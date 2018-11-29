@@ -11,5 +11,7 @@ if (_withdrawAmount < 1) exitWith {};
 if (ZKB_BankAccount < _withdrawAmount) exitWith {["STR_Bank_WithdrawNotEnough", [[_withdrawAmount] call ZKB_fnc_FormatNumber]] call ZKB_fnc_DynamicText;};
 
 ZKB_BankAccount = ZKB_BankAccount - _withdrawAmount;
+player setVariable ["BankAccount",ZKB_BankAccount,true];
 ["Money",_withdrawAmount] call ZKB_fnc_InvAddItem;
 ["STR_Bank_Withdrew", [[_withdrawAmount] call ZKB_fnc_FormatNumber]] call ZKB_fnc_DynamicText;
+["STR_Admin_PlayerLogsWithdrewBank",name player,[_withdrawAmount] call ZKB_fnc_FormatNumber] call ZKB_fnc_AdminAddPlayerLog;

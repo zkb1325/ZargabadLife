@@ -22,7 +22,7 @@ switch (_code) do
 	//Esc Key
 	case _escKey:
 		{
-		call ZKB_fnc_SavePlayer;
+		[] spawn ZKB_fnc_SavePlayer;
 		};
 		
 	//Map Key

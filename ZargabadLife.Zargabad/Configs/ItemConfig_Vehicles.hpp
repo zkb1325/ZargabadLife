@@ -20,7 +20,7 @@ class CUP_C_TT650_TK_CIV
 class CUP_B_M1030_USMC
 	{
 	className = "CUP_B_M1030_USMC";
-	displayName = "Police Motorcycle";
+	displayName = "Motorcycle";
 	itemType = "Vehicle";
 	Function = "";
 	buyPirce = 2500;
@@ -115,7 +115,7 @@ class CUP_C_Volha_Gray_TKCIV
 class CUP_C_Volha_Limo_TKCIV
 	{
 	className = "CUP_C_Volha_Limo_TKCIV";
-	displayName = "Police Volha";
+	displayName = "UN Volha";
 	itemType = "Vehicle";
 	Function = "";
 	buyPirce = 10000;
@@ -514,7 +514,7 @@ class CUP_B_Merlin_HC3_GB
 class CUP_I_UAZ_Unarmed_UN
 	{
 	className = "CUP_I_UAZ_Unarmed_UN";
-	displayName = "Police UAZ";
+	displayName = "UN UAZ";
 	itemType = "Vehicle";
 	Function = "";
 	buyPirce = 12000;
@@ -533,7 +533,7 @@ class CUP_I_UAZ_Unarmed_UN
 class CUP_B_LR_Transport_CZ_W
 	{
 	className = "CUP_B_LR_Transport_CZ_W";
-	displayName = "Police Offroad";
+	displayName = "UN Offroad";
 	itemType = "Vehicle";
 	Function = "";
 	buyPirce = 25000;
@@ -552,7 +552,7 @@ class CUP_B_LR_Transport_CZ_W
 class CUP_I_SUV_UNO
 	{
 	className = "CUP_I_SUV_UNO";
-	displayName = "Police SUV";
+	displayName = "UN SUV";
 	itemType = "Vehicle";
 	Function = "";
 	buyPirce = 30000;
@@ -641,6 +641,25 @@ class CUP_B_MTVR_USA
 	canDrop = true;
 	canGive = true;
 	isIllegal = false;
+	Description = "";
+	reqResources[] = {};
+	};
+class CUP_I_Ural_UN
+	{
+	className = "CUP_I_Ural_UN";
+	displayName = "UN Ural";
+	itemType = "Vehicle";
+	Function = "";
+	buyPirce = 60000;
+	sellPirce = -1;
+	Weight = 0;
+	trunkSpace = 300;
+	civLicense = "Terror_Training";
+	copLicense = "Armed_Response_Officer_Training";
+	sharedLicense = "";
+	canDrop = true;
+	canGive = true;
+	isIllegal = true;
 	Description = "";
 	reqResources[] = {};
 	};

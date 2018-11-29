@@ -46,4 +46,5 @@ _curBounty = _curBounty + _bounty;
 _curWarrentsArray set [0,_curWarrents];
 _curWarrentsArray set [1,_curBounty];
 _player setVariable ["Warrants",_curWarrentsArray,true];
+["STR_Admin_PlayerLogsWantedAdd",name _player,_crime,[_bounty] call ZKB_fnc_FormatNumber] call ZKB_fnc_AdminAddPlayerLog;
 true;

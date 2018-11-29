@@ -11,8 +11,7 @@ private _facVar = _this select 2;
 
 if ((["Money"] call ZKB_fnc_GetInvItemAmount) < _faccost) exitWith {["STR_Shop_NotEnoughMoney"] call ZKB_fnc_DynamicText;};
 
-["Money", _faccost] call ZKB_fnc_InvRemoveItem;
 ZKB_OwnedFactories pushBack _facVar;
-
+["Money", _faccost] call ZKB_fnc_InvRemoveItem;
 ["STR_Fac_BoughtFactory", [_facName]] call ZKB_fnc_DynamicText;
-call ZKB_fnc_SavePlayer;
+["STR_Admin_PlayerLogsBoughtFactory",name player,_facName] call ZKB_fnc_AdminAddPlayerLog;

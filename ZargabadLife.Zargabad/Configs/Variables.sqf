@@ -138,6 +138,7 @@ Cops are allowed to ""Camp"" Civ spawn and arrest wanted civilians as they run o
 "The player is not automatically pardoned after paying a ticket so in some cases the player should be pardoned after paying a ticket. For example if they are caught with $30,000 or less of illegal items/gear and pay the ticket.<br/>
 <br/>
 - Speeding: $2,000 Ticket or 2 minutes if ticket can't be paid<br/>
+- Operating vehicle without proper license: $2,000 Ticket and vehicle impounded or 2 minutes if ticket can't be paid and vehicle impounded<br/>
 - Reckless Driver (offRoading in town, wrong lane): $5,000 ticket or 4 minutes if ticket can't be paid<br/>
 - Evasion (Not pulling over within 1 minute): 3 minutes<br/>
 - Murder and any other life taking crime: 5 minutes per<br/>
@@ -179,7 +180,7 @@ Terrorism is a coordinated bombing or an attack on a specific target or location
 ];
 
 //Base loadout for cops
-ZKB_RespawnLoadOut = [[],[],["CUP_hgun_Makarov","","","",["CUP_8Rnd_9x18_MakarovSD_M",8],[],""],["CUP_U_C_Policeman_01",[["CUP_8Rnd_9x18_MakarovSD_M",6,8]]],["V_TacVest_blk_POLICE",[["SmokeShellYellow",2,1]]],[],"CUP_H_C_Policecap_01","",["Binocular","","","",[],[],""],["ItemMap","ItemGPS","ItemRadio","ItemCompass","ItemWatch",""]];
+ZKB_RespawnLoadOut = [[],[],["CUP_hgun_Makarov","","","",["CUP_8Rnd_9x18_MakarovSD_M",8],[],""],["CUP_U_B_USArmy_Base",[["CUP_8Rnd_9x18_MakarovSD_M",5,8],["SmokeShellYellow",2,1]]],[],[],"CUP_H_CDF_OfficerCap_UN","",["Binocular","","","",[],[],""],["ItemMap","ItemGPS","ItemRadio","ItemCompass","ItemWatch",""]];
 
 //True/False if the dynamic text along the left side of the screen should appear along with group chat messages or if just the group chat messages. The player can change this in settings
 ZKB_EnableDynamicText = true;
@@ -206,15 +207,22 @@ ZKB_PerformingAction = false;
 SirenLock = false;
 
 ZKB_BankAccount = SETTING(getNumber,"ZKB_StartingBankAccount");
+player setVariable ["BankAccount",ZKB_BankAccount,true];
 player setVariable ["ZKB_Inventory",SETTING(getArray,"ZKB_StartingInventory"),true]; //Starting inventory for first time players.
 player setVariable ["ZKB_MaxINVWeight",SETTING(getNumber,"ZKB_MaxINVWeight"),true];
 
 ZKB_CopsKilled = [0,0];
+player setVariable ["CopKills",ZKB_CopsKilled,true];
 ZKB_CivsKilled = [0,0];
+player setVariable ["CivKills",ZKB_CivsKilled,true];
 ZKB_Suicides = 0; //Serving jail time or being killed by another player will reset this to 0. Yes punish the player if they kill them self but don't punish them if they get killed by another player/RDMed
+player setVariable ["Suicides",ZKB_Suicides,true];
 ZKB_Deaths = 0;
+player setVariable ["Deaths",ZKB_Deaths,true];
 
 ZKB_Hunger = 5;
+player setVariable ["Hunger",ZKB_Hunger,true];
+
 ZKB_ShovelDur = 20;
 ZKB_PickaxeDur = 50;
 ZKB_JackhammerDur = 100;
@@ -227,6 +235,10 @@ if (iscop) then
 	if (call ZKB_fnc_IsMayor) then
 		{
 		missionNamespace setVariable ["currentMayor","",true];
+		if (SETTING(getNumber,"ZKB_StatSaveEnabled") isEqualTo 1) then
+			{
+			["mayor",""] remoteExecCall ["ZKB_fnc_ServerSaveStats",2,false];
+			};
 		};
 		
 	ZKB_RadioTextMsg_1 = "Put your fucking hands up!";				
@@ -239,6 +251,10 @@ if (iscop) then
 	if (call ZKB_fnc_IsChief) then 
 		{
 		missionNamespace setVariable ["currentChief","",true];
+		if (SETTING(getNumber,"ZKB_StatSaveEnabled") isEqualTo 1) then
+			{
+			["chief",""] remoteExecCall ["ZKB_fnc_ServerSaveStats",2,false];
+			};
 		};
 				
 	ZKB_RadioTextMsg_1 = "Put your fucking hands up now!";

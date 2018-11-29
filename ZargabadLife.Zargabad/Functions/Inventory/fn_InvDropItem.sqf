@@ -29,7 +29,7 @@ _physItem = switch _itemtodrop do
 	case "MedKit": {"Land_PainKillers_F"};
 	case "Lighter": {"Land_ButaneTorch_F"};
 	case "RefuelCan": {"Land_CanisterFuel_F"};
-	case "SyphonFuelKit": {"Land_CanisterFuel_F"};
+	case "SiphonFuelKit": {"Land_CanisterFuel_F"};
 	case "Oil";
 	case "OilBarrel": {"Land_MetalBarrel_F"};
 	case "WeaponBag": {"Land_Sleeping_bag_folded_F"};
@@ -89,3 +89,4 @@ _object setVariable ["ItemData", [_itemtodrop, _amountdropped], true];
 [_object, [format [localize "STR_Inv_PickUp", [_itemtodrop] call ZKB_fnc_GetItemName, [_amountdropped] call ZKB_fnc_FormatNumber], ZKB_fnc_InvPickUpItem, "", 1, true, true, "", "_var = (_target getVariable ""ItemData""); (!IsNil ""_var"")", 3]] remoteExecCall ["addAction", 0, _object];
 
 ["STR_Inv_Dropped", [[_amountdropped] call ZKB_fnc_FormatNumber, [_itemtodrop] call ZKB_fnc_GetItemName]] call ZKB_fnc_DynamicText;
+["STR_Admin_PlayerLogsDropItem",name player,[_amountdropped] call ZKB_fnc_FormatNumber,[_itemtodrop] call ZKB_fnc_GetItemName] call ZKB_fnc_AdminAddPlayerLog;

@@ -107,6 +107,8 @@ _WeaponFactory =
 "CUP_20Rnd_B_765x17_Ball_M",
 "CUP_srifle_LeeEnfield",
 "CUP_10x_303_M",
+"CUP_srifle_CZ550",
+"CUP_5x_22_LR_17_HMR_M",
 "CUP_Saiga12K",
 "CUP_8Rnd_B_Saiga12_74Pellets_M"
 ];
@@ -235,7 +237,7 @@ _factoryLocationString = _factoryLocationString + format ["<marker name='%1'>%2<
 		_factoryqueue = missionNameSpace getVariable [(_facarray select 6)+"Queue", []];
 		_factoryqueue deleteAt 0;
 		missionNameSpace setVariable [(_facarray select 6)+"Queue", _factoryqueue];
-		call ZKB_fnc_SavePlayer;
+		[] spawn ZKB_fnc_SavePlayer;
 		};
 	};
 }forEach ZKB_FactoryDefines;

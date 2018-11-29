@@ -28,5 +28,9 @@ closeDialog 0;
 
 private _impoundInfo = ((missionNamespace getVariable format ["%1_Impound",getPlayerUID player]) deleteAt _impoundIndex);
 missionNamespace setVariable [format ["%1_Impound",getPlayerUID player],missionNamespace getVariable format ["%1_Impound",getPlayerUID player],true];
-
-[(_impoundInfo select 0),ZKB_ImpoundSpawn,-1,(_impoundInfo select 1),(_impoundInfo select 2),(_impoundInfo select 3),(_impoundInfo select 4)] spawn ZKB_fnc_CreateVehicle;
+if (SETTING(getNumber,"ZKB_StatSaveEnabled") isEqualTo 1) then
+	{
+	[format ["%1_Impound",(_impoundInfo select 1)]] remoteExecCall ["ZKB_fnc_ServerUpdateImpound",2,false];
+	};
+[(_impoundInfo select 0),ZKB_ImpoundSpawn,-1,(_impoundInfo select 1),(_impoundInfo select 2),(_impoundInfo select 3),(_impoundInfo select 4),false,"",(_impoundInfo select 5)] spawn ZKB_fnc_CreateVehicle;
+["STR_Admin_PlayerLogsUnImpoundedVeh",name player,(_impoundInfo select 2)] call ZKB_fnc_AdminAddPlayerLog;

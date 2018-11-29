@@ -27,4 +27,6 @@ switch (_boughtlicensename) do
 		ZKB_DemeritPoints = 10;
 		};
 	};
-call ZKB_fnc_SavePlayer;
+[] spawn ZKB_fnc_SavePlayer;
+
+["STR_Admin_PlayerLogsBoughtLicense",name player,_boughtlicensedisplayname] call ZKB_fnc_AdminAddPlayerLog;

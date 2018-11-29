@@ -1,3 +1,4 @@
+#include "..\..\ConfigMacros.hpp"
 /*
     File: fn_KilledEH.sqf
 	Function: ZKB_fnc_KilledEH
@@ -20,17 +21,21 @@ player setVariable ["restrained",false,true];
 //if (IsCop) then {ZKB_RespawnLoadOut = getUnitLoadout player;};
 
 ZKB_Deaths = ZKB_Deaths + 1;
+player setVariable ["Deaths",ZKB_Deaths,true];
 
 if !(_instigator == player) then
 	{
-	[_unit] remoteExecCall ["ZKB_fnc_KilledPlayer",_instigator,false];
+	[player] remoteExecCall ["ZKB_fnc_KilledPlayer",_instigator,false];
 	ZKB_Suicides = 0;
+	player setVariable ["Suicides",ZKB_Suicides,true];
 	}
 	else
 	{
 	
 	["STR_Killed_PlayerSuicide"] call ZKB_fnc_DynamicText;
+	["STR_Killed_PlayerDied",name _unit] call ZKB_fnc_AdminAddPlayerLog;
 	ZKB_Suicides = ZKB_Suicides + 1;
+	player setVariable ["Suicides",ZKB_Suicides,true];
 	
 	switch (true) do
 		{
@@ -43,9 +48,16 @@ if (call ZKB_fnc_IsMayor) then
 	{
 	missionNamespace setVariable ["currentMayor","",true];
 	["STR_Killed_MayorDied"] remoteExecCall ["ZKB_fnc_DynamicText",0,false];
+	ZKB_TaxArray = [5,5,5,5,5];
+	publicVariable "ZKB_TaxArray";
+	if (SETTING(getNumber,"ZKB_StatSaveEnabled") isEqualTo 1) then
+		{
+		["mayor",""] remoteExecCall ["ZKB_fnc_ServerSaveStats",2,false];
+		};
 	};	
 
 ZKB_Hunger = 5;
+player setVariable ["Hunger",ZKB_Hunger,true];
 
 {
 [_x,(_x select 1)] call ZKB_fnc_DropItem;

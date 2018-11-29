@@ -48,7 +48,7 @@ while {true} do
 			};
 		};
 		
-	if ((isPlayer cursorObject) and (alive cursorObject) and (player distance cursorObject < 3)) then
+	if ((isPlayer cursorObject) and (alive cursorObject) and (player distance cursorObject < 3) and (cursorObject isKindOf "MAN")) then
 		{
 		_tagCtrl ctrlSetStructuredText parseText (name cursorObject);
 		if (side cursorObject isEqualTo west) then

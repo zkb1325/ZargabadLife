@@ -16,6 +16,33 @@ class ZargLife_Client
 		
 		};	
 		
+	class Admin
+		{
+		file = "Functions\Admin";
+		
+		class AdminAddAdminLog {};
+		class AdminAddPlayerLog {};
+		class AdminCompAddItemInfoFilter {};
+		class AdminCompBankReceive {};
+		class AdminCompItem {};
+		class AdminCompItemReceive {};
+		class AdminCompMenu {};
+		class AdminCompPlayer {};
+		class AdminGodMode {};
+		class AdminHealPlayer {};
+		class AdminSpectatePlayer {};
+		class AdminTPBack {};
+		class AdminTPHere {};
+		class AdminTPMap {};
+		class AdminTPTo {};
+		class AdminViewAdminLogs {};
+		class AdminViewPlayerInfo {};
+		class AdminViewPlayerLogs {};
+		class ExecAdminCommand {};
+		class OpenAdminMenu {};
+		
+		};	
+		
 	class Bank
 		{
 		file = "Functions\Bank";
@@ -27,6 +54,15 @@ class ZargLife_Client
 		class ReTransferBank {};
 		class TransferBank {};
 		class WithdrawBank {};
+		
+		};
+		
+	class CFG
+		{
+		file = "Functions\CFG";
+		
+		class CfgGetDisplayName {};
+		class CfgGetPicture {};
 		
 		};
 	
@@ -86,12 +122,27 @@ class ZargLife_Client
 
 		};
 		
+	class DualInv
+		{
+		file = "Functions\DualInv";
+		
+		class DualInvAddItem {};
+		class DualInvDraggingEvent {};
+		class DualInvDropEvent {};
+		class DualInvOpen {};
+		class DualInvRemoveItem {};
+		class DualInvTransfer {};
+		class DualInvUpdateBtn {};
+		class DualInvUpdateLists {};
+		};
+		
 	class EH
 		{
 		file = "Functions\EH";
 		
 		class EscMenuInterupt {};
 		class GetInEH {};
+		class GetOutEH {};
 		class HandleDamageEH {};
 		class InventoryOpenedEH {};
 		class KeyBindHandsDown {};
@@ -110,9 +161,7 @@ class ZargLife_Client
 		class KeyUpEH {};
 		class KilledEH {};
 		class KilledPlayer {};
-		class LoadPlayer {};
 		class RespawnEH {};
-		class SavePlayer {};
 
 		};
 		
@@ -129,12 +178,7 @@ class ZargLife_Client
 		class ManufactureItem {};
 		class OpenFactoryManufacture {};
 		class OpenFactoryStorage {};
-		class UpdateFacInvList {};
-		class UpdateFacStorage {};
 		class UpdateFacStorageCompleted {};
-		class UpdateFacStorageList {};
-		class UpdateFacStoreSelInfo {};
-		class UpdateFacTakeSelInfo {};
 
 		};
 		
@@ -148,6 +192,7 @@ class ZargLife_Client
 		class GangCreate {};
 		class GangCreated {};
 		class GetGangMembers {};
+		class GetGangMemberName {};
 		class GetGangName {};
 		class GroupGang {};
 		class IsGangLeader {};
@@ -180,6 +225,7 @@ class ZargLife_Client
 		class InitPlayer {};
 		class InitServer {};
 		class OpenWelcomeMenu {};
+		class SkipBriefing {preInit = 1; recompile = 0;};
 
 		};
 		
@@ -212,7 +258,7 @@ class ZargLife_Client
 		class SpikeStrip {};
 		class SpikeStripEffect {};
 		class SuicideBomb {};
-		class SyphonFuel {};
+		class SiphonFuel {};
 		class TakeGoatMeat {};
 		class TakeRabbitMeat {};
 		class TimeBomb {};
@@ -289,11 +335,14 @@ class ZargLife_Client
 		class AnimSync {};
 		class BuyLicense {};
 		class BuySlave {};
-		class CfgGetDisplayName {};
-		class CfgGetPicture {};
 		class CheckCharNum {};
 		class CheckValidChar {};
 		class CivMarkers {};
+		class CompareDay {};
+		class CompareHour {};
+		class CompareMinute {};
+		class CompareMonth {};
+		class CompareYear {};
 		class DynamicText {};
 		class FormatNumber {};
 		class GasStationInit {};
@@ -315,6 +364,7 @@ class ZargLife_Client
 		class SetUpLicenses {};
 		class SetUpWorkplaces {};
 		class SlaveLoop {};
+		class SubtractDate {};
 
 		};
 	
@@ -354,7 +404,26 @@ class ZargLife_Client
 		class UpdateShopSellSelInfo {};
 		class UpdateShopStock {};
 
-		};		
+		};
+	
+	class Stats
+		{
+		file = "Functions\Stats";
+		
+		class LoadPlayer {};
+		class SavePlayer {}
+		class ServerDeleteVehicle {};
+		class ServerLoadGangs {};
+		class ServerLoadImpound {};
+		class ServerLoadPlayerStats {};
+		class ServerLoadStats {};
+		class ServerLoadVehicles {};
+		class ServerSavePlayerStats {};
+		class ServerSaveStats {};
+		class ServerSaveVehicle {};
+		class ServerUpdateGangSave {};
+		class ServerUpdateImpound {};
+		};
 		
 	class Vehicle
 		{
@@ -365,15 +434,11 @@ class ZargLife_Client
 		class GetTrunkItemAmount {};
 		class Impound {};
 		class ImpoundMenu {};
-		class OpenVehicleTrunk {};
 		class PullOut {};
 		class SearchVehicle {};
 		class setVehicleVarName {};
 		class UnflipVeh {};
 		class UnImpound {};
-		class UpdateVehicleInvList {};
-		class UpdateVehicleTrunk {};
-		class UpdateVehicleTrunkList {};
 		class VehInfo {};
 		class ViewTrunk {};
 

@@ -34,7 +34,7 @@ switch _itemtype do
 	case "VirtualItem":
 		{
 		[ZKB_OpenFactory,"Remove",_item,1] call ZKB_fnc_UpdateFacStorageCompleted;
-		[ZKB_OpenFactory, "Add", [_item, 1], 1, true] call ZKB_fnc_UpdateFacStorage;
+		[missionNameSpace,(_facarray select 6)+"Storage",_item,1] call ZKB_fnc_DualInvAddItem;
 		["STR_Fac_CreatedItem",[([_item] call ZKB_fnc_GetItemName)]] call ZKB_fnc_DynamicText;
 		};	
 	case "CfgVehicles":

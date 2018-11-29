@@ -146,7 +146,13 @@ switch (_code) do
 		if !(missionNamespace getVariable ["keysEnabled",true]) exitWith {};
 		if (dialog) exitWith {};
 		if ([player] call ZKB_fnc_IsRestrained) exitWith {};
-		[(vehicle player)] spawn ZKB_fnc_OpenVehicleTrunk;
+		if (!(driver (vehicle player) isEqualTo player) or ((vehicle player) isEqualTo player)) exitWith {["STR_Common_NotInVehDriver"] call ZKB_fnc_DynamicText; true;};
+		if !((vehicle player) in (player getVariable ["ZKB_Keys",[]])) exitWith {["STR_Common_VehLockNotYours"] call ZKB_fnc_DynamicText; true;};
+
+		[
+		[(vehicle player),"VehicleTrunk",[typeOf (vehicle player)] call ZKB_fnc_GetItemTrunkSpace,true,"STR_Vehicle_VehicleTrunk","STR_Fac_TakeItem",SETTING(getArray,"ZKB_VehicleTrunkBlacklist")],
+		[player,"ZKB_Inventory",player getVariable ["ZKB_MaxINVWeight",SETTING(getNumber,"ZKB_MaxINVWeight")],true,"STR_Inv_Inventory","STR_Fac_StoreItem",[],true,true]
+		] spawn ZKB_fnc_DualInvOpen;
 		_handle = true;
 		};
 	

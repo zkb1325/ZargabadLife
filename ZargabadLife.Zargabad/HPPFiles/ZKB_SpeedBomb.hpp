@@ -29,7 +29,7 @@ class controls
 	class SpeedBomb_StartSpeed: RscSlider
 	{
 		idc = 10010;
-		onSliderPosChanged = "[""UpdateStartSlider""] spawn ZKB_fnc_SpeedBomb";
+		onSliderPosChanged = "((uiNameSpace getVariable ""ZKB_SpeedBomb"") displayCTRL 10020) ctrlSetText format [localize ""STR_ItemMisc_SpeedBombStartSpeed"", round (_this select 1)];";
 		x = 0.2 * safezoneW + safezoneX;
 		y = 0.32 * safezoneH + safezoneY;
 		w = 0.325 * safezoneW;
@@ -38,6 +38,7 @@ class controls
 	class SpeedBomb_StartSpeedInfo: RscStructuredText
 	{
 		idc = 10020;
+		text = "";
 		x = 0.525 * safezoneW + safezoneX;
 		y = 0.32 * safezoneH + safezoneY;
 		w = 0.1 * safezoneW;
@@ -46,7 +47,7 @@ class controls
 	class SpeedBomb_MinSpeed: RscSlider
 	{
 		idc = 10030;
-		onSliderPosChanged = "[""UpdateMinSlider""] spawn ZKB_fnc_SpeedBomb";
+		onSliderPosChanged = "((uiNameSpace getVariable ""ZKB_SpeedBomb"") displayCTRL 10040) ctrlSetText format [localize ""STR_ItemMisc_SpeedBombMinSpeed"", round (_this select 1)];";
 		x = 0.2 * safezoneW + safezoneX;
 		y = 0.4 * safezoneH + safezoneY;
 		w = 0.325 * safezoneW;
@@ -56,6 +57,7 @@ class controls
 	class SpeedBomb_MinSpeedInfo: RscStructuredText
 	{
 		idc = 10040;
+		text = "";
 		x = 0.525 * safezoneW + safezoneX;
 		y = 0.4 * safezoneH + safezoneY;
 		w = 0.1 * safezoneW;

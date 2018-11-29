@@ -30,4 +30,5 @@ if (_action == "Execute") exitWith
 	_carbomb = "Bo_GBU12_LGB" createVehicle (getposATL _executecode);
 	_executecode setVariable ["PlantedBomb", nil, true];
 	[[_carbomb, player],{(_this select 0) setShotParents [(_this select 1), (_this select 1)];}] remoteExecCall ["BIS_fnc_call", 2];
+	["STR_Admin_PlayerLogsRemoteDetonatedBomb",name player,(vehicle player) getVariable ["plate",(vehicle player)]] call ZKB_fnc_AdminAddPlayerLog;
 	};

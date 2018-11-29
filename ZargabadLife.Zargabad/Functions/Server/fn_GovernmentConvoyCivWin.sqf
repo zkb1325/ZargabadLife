@@ -10,3 +10,4 @@ private _stoleAmount = round ((playersNumber west) * SETTING(getNumber,"ZKB_GovC
 ["STR_GovConvoy_Stole",[[_stoleAmount] call ZKB_fnc_FormatNumber]] call ZKB_fnc_DynamicText;
 ["Money",_stoleAmount] call ZKB_fnc_InvAddItem;
 [player,format ["Theft of Government Funds ($%1)",_stoleAmount],_stoleAmount] call ZKB_fnc_AddWanted;
+["STR_Admin_AdminLogsGovConvoyRobbed",name player,playersNumber west,[_stoleAmount] call ZKB_fnc_FormatNumber] call ZKB_fnc_AdminAddAdminLog;

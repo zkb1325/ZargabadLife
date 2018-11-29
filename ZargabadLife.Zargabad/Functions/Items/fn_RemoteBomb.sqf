@@ -15,5 +15,7 @@ _item = _this select 1;
 [_item, 1] call ZKB_fnc_InvRemoveItem;
 
 (vehicle player) setVariable ["PlantedBomb", ["RemoteBomb", getPlayerUID player], true];
-["STR_ItemMisc_PlantedRemoteBomb", [(vehicle player)]] call ZKB_fnc_DynamicText;
-hint format [localize "STR_ItemMisc_PlantedRemoteBomb", (vehicle player)];
+missionNameSpace setVariable [(vehicle player) getVariable ["plate","simplecode"],(vehicle player),true];
+["STR_ItemMisc_PlantedRemoteBomb", [(vehicle player) getVariable ["plate","simplecode"]]] call ZKB_fnc_DynamicText;
+hint format [localize "STR_ItemMisc_PlantedRemoteBomb", (vehicle player) getVariable ["plate","simplecode"]];
+["STR_Admin_PlayerLogsPlantedRemoteBomb",name player,(vehicle player) getVariable ["plate",(vehicle player)]] call ZKB_fnc_AdminAddPlayerLog;

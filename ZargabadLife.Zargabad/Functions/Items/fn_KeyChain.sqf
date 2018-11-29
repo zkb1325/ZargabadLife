@@ -93,5 +93,7 @@ if (_action == "GiveKey") exitWith
 	
 	_givenplayerkeys pushBack _givenkey;
 	_givenplayer setVariable ["ZKB_Keys", _givenplayerkeys, true];
+	["STR_ItemMisc_GaveKey",[name _givenplayer,(_givenkey getVariable ["plate",_givenkey])]] call ZKB_fnc_DynamicText;
 	["STR_ItemMisc_RecievedKey", [name player, _givenkey getVariable ["plate",_givenkey]]] remoteExecCall ["ZKB_fnc_DynamicText", _givenplayer, false];
+	["STR_Admin_PlayerLogsPlayerGaveKeys",name player,name _givenplayer,[configName ("getText (_x >> ""className"") isEqualTo (typeOf _givenkey)" configClasses (missionConfigFile >> "Item_Config") select 0)] call ZKB_fnc_GetItemName,(_givenkey getVariable ["plate",_givenkey])] call ZKB_fnc_AdminAddPlayerLog;
 	};

@@ -8,7 +8,9 @@
 if (count SETTING(getArray,"ZKB_MissionStartPositions") isEqualTo 0) exitWith {diag_log "No start points for the assassin mission";};
 
 sleep (SETTING(getNumber,"ZKB_VipLoopTime")*60);
+waitUntil {playersNumber west >= SETTING(getNumber,"ZKB_VipReqCops")};
 ["STR_Assassin_Started"] remoteExecCall ["ZKB_fnc_DynamicText",0,false];
+["STR_Admin_AdminLogVipStart"] call ZKB_fnc_AdminAddAdminLog;
 
 private _startPos = GMVAR(selectRandom SETTING(getArray,"ZKB_MissionStartPositions"),objNull);
 
@@ -55,6 +57,12 @@ for "_i" from 1 to 2 do {_assassinDriver addItemToUniform "CUP_30Rnd_556x45_Stan
 for "_i" from 1 to 8 do {_assassinDriver addItemToVest "CUP_30Rnd_556x45_Stanag";};
 _assassinDriver moveInDriver _assassinVehicle;
 _assassinDriver assignAsDriver _assassinVehicle;
+_assassinDriver addEventHandler ["Killed", 
+	{
+	private _unit = param [0];
+	removeAllWeapons _unit;
+	}];
+	
 
 _assassinGroup setBehaviour "AWARE";
 _assassinGroup setCombatMode "RED";
@@ -84,6 +92,12 @@ for "_i" from 1 to 2 do {_assassinGuard addItemToUniform "CUP_30Rnd_556x45_Stana
 for "_i" from 1 to 8 do {_assassinGuard addItemToVest "CUP_30Rnd_556x45_Stanag";};
 _assassinGuard moveInGunner _assassinVehicle;
 _assassinGuard assignAsGunner _assassinVehicle;
+_assassinGuard addEventHandler ["Killed", 
+	{
+	private _unit = param [0];
+	removeAllWeapons _unit;
+	}];
+	
 
 private _assassinTarget = _assassinGroup createUnit ["CUP_B_US_Soldier", _startPos, [], 10, "FORM"];
 _assassinTarget allowFleeing 0;
@@ -121,7 +135,9 @@ _assassinTarget addEventHandler ["Killed",
 		if (side _instigator isEqualTo west) exitWith {};
 		[] remoteExecCall ["ZKB_fnc_AssassinMissionCivWin",_instigator,false];
 		};
+	removeAllWeapons _unit;
 	["STR_Assassin_VipKilled"] remoteExecCall ["ZKB_fnc_DynamicText",0,false];
+	["STR_Admin_AdminLogsVipCivWin",name _instigator,playersNumber west] call ZKB_fnc_AdminAddAdminLog;
 	}];
 
 sleep 1;
@@ -190,6 +206,7 @@ while {true} do
 		if (!isNull _assassinGuard) then {deleteVehicle _assassinGuard;};
 		if (!isNull _assassinTarget) then {deleteVehicle _assassinTarget;};
 		if (!isNull _assassinVehicle) then {deleteVehicle _assassinVehicle;};
+		["STR_Admin_AdminLogsVipMadeItToCopBase",playersNumber west,[SETTING(getNumber,"ZKB_VipReward")] call ZKB_fnc_FormatNumber] call ZKB_fnc_AdminAddAdminLog;
 		};
 	
 	_assassinMarker setMarkerPos (getPos _assassinTarget);

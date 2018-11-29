@@ -340,6 +340,25 @@ class CUP_10x_303_M
 	Description = "";
 	reqResources[] = {{"Copper",1},{"BlackPowder",2}};
 	};
+class CUP_5x_22_LR_17_HMR_M
+	{
+	className = "CUP_5x_22_LR_17_HMR_M";
+	displayName = "CZ 550 Magazine";
+	itemType = "Magazine";
+	Function = "";
+	buyPirce = 800;
+	sellPirce = -1;
+	Weight = 0;
+	trunkSpace = 0;
+	civLicense = "Rifle_License";
+	copLicense = "Civ_Shop_License";
+	sharedLicense = "";
+	canDrop = true;
+	canGive = true;
+	isIllegal = false;
+	Description = "";
+	reqResources[] = {{"Copper",1},{"BlackPowder",2}};
+	};
 class CUP_20Rnd_762x51_DMR
 	{
 	className = "CUP_20Rnd_762x51_DMR";

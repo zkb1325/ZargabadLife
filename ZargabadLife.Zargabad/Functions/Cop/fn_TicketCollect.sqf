@@ -13,3 +13,4 @@ private _ticketSpreadMultiplier = (param [1,1,[1]]) max 1;
 private _ticketCollected = floor (_ticketAmount/_ticketSpreadMultiplier);
 
 ZKB_BankAccount = (ZKB_BankAccount + _ticketCollected) min SETTING(getNumber,"ZKB_MaxBankAccount");
+player setVariable ["BankAccount",ZKB_BankAccount,true];

@@ -31,7 +31,8 @@ switch _action do
 		if (_neutralPoints <= 0) then
 			{
 			format [localize "STR_Gang_GangAreaNeutralised", _flag getVariable ["GangAreaName","Gang Area"], ([player] call ZKB_fnc_GetGangName)] remoteExec ["Hint",0];
-			_flag setVariable ["GangControl","",true];	
+			_flag setVariable ["GangControl","",true];
+			["STR_Admin_PlayerLogsNeutralisedGangArea",name player,[player] call ZKB_fnc_GetGangName,_flag getVariable ["GangAreaName","Gang Area"]] call ZKB_fnc_AdminAddPlayerLog;
 			};
 		};
 		
@@ -41,6 +42,7 @@ switch _action do
 		_flag setVariable ["GangControl",([player] call ZKB_fnc_GetGangName),true];
 		_flag setVariable ["NeutralPoints",1,true];
 		_flag setFlagAnimationPhase 1;
+		["STR_Admin_PlayerLogsCapturedGangArea",name player,[player] call ZKB_fnc_GetGangName,_flag getVariable ["GangAreaName","Gang Area"]] call ZKB_fnc_AdminAddPlayerLog;
 		};
 	};
 	

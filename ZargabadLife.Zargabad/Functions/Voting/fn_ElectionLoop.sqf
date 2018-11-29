@@ -6,6 +6,7 @@
 */
 [] spawn
 	{
+	#include "..\..\ConfigMacros.hpp"
 	private _mayorElectionLoopTime = time + 1800;
 	private _voteTally = [];
 	private _sortedVotes = [];
@@ -92,6 +93,10 @@
 				["STR_Voting_NewMayor",[name ([(_newMayor select 0)] call ZKB_fnc_GetPlayerFromID),(_newMayor select 1)]] remoteExecCall ["ZKB_fnc_DynamicText",0,false];
 				};
 			missionNamespace setVariable ["currentMayor",(_newMayor select 0),true];
+			if (SETTING(getNumber,"ZKB_StatSaveEnabled") isEqualTo 1) then
+				{
+				["mayor",(_newMayor select 0)] call ZKB_fnc_ServerSaveStats;
+				};
 			}
 			else
 			{
@@ -107,6 +112,7 @@
 //Police cheif	
 [] spawn
 	{
+	#include "..\..\ConfigMacros.hpp"
 	private _chiefElectionLoopTime = time + 1200;
 	private _voteTally = [];
 	private _sortedVotes = [];
@@ -193,6 +199,10 @@
 				["STR_Voting_NewCheif",[name ([(_newChief select 0)] call ZKB_fnc_GetPlayerFromID),(_newChief select 1)]] remoteExecCall ["ZKB_fnc_DynamicText",0,false];
 				};
 			missionNamespace setVariable ["currentChief",(_newChief select 0),true];
+			if (SETTING(getNumber,"ZKB_StatSaveEnabled") isEqualTo 1) then
+				{
+				["chief",(_newChief select 0)] remoteExecCall ["ZKB_fnc_ServerSaveStats",2,false];
+				};
 			}
 			else
 			{

@@ -32,28 +32,6 @@ if (_action == "Use") exitWith
 	_startspeedinfo ctrlSetText format [localize "STR_ItemMisc_SpeedBombStartSpeed", [round (sliderPosition _startspeedslider)] call ZKB_fnc_FormatNumber];
 	_minspeedinfo ctrlSetText format [localize "STR_ItemMisc_SpeedBombMinSpeed", [round (sliderPosition _minspeedslider)] call ZKB_fnc_FormatNumber];
 	};
-
-if (_action == "UpdateStartSlider") exitWith 
-	{
-	disableSerialization;
-	_display = uiNameSpace getVariable "ZKB_SpeedBomb";
-	_startspeedslider = (_display displayCTRL 10010);
-	_startspeedinfo = (_display displayCTRL 10020);
-
-	
-	
-	_startspeedinfo ctrlSetText format [localize "STR_ItemMisc_SpeedBombStartSpeed", [round (sliderPosition _startspeedslider)] call ZKB_fnc_FormatNumber];
-	};
-	
-if (_action == "UpdateMinSlider") exitWith 
-	{
-	disableSerialization;
-	_display = uiNameSpace getVariable "ZKB_SpeedBomb";
-	_minspeedslider = (_display displayCTRL 10030);
-	_minspeedinfo = (_display displayCTRL 10040);
-
-	_minspeedinfo ctrlSetText format [localize "STR_ItemMisc_SpeedBombMinSpeed", [round (sliderPosition _minspeedslider)] call ZKB_fnc_FormatNumber];
-	};
 	
 if (_action == "Plant") exitWith
 	{
@@ -69,7 +47,8 @@ if (_action == "Plant") exitWith
 	_minspeed = round (sliderPosition _minspeedslider);
 	closeDialog 0;
 	if (_startspeed < _minspeed) then {_minspeed = _startspeed;};
-	["STR_ItemMisc_PlantedSpeedBomb", [(vehicle player), _startspeed, _minspeed]] call ZKB_fnc_DynamicText;	
+	["STR_ItemMisc_PlantedSpeedBomb", [(vehicle player) getVariable ["plate",(vehicle player)], _startspeed, _minspeed]] call ZKB_fnc_DynamicText;	
 	
 	(vehicle player) setVariable ["PlantedBomb", ["SpeedBomb", getPlayerUID player, _startspeed, _minspeed], true];
+	["STR_Admin_PlayerLogsPlantedSpeedBomb",name player,(vehicle player) getVariable ["plate",(vehicle player)]] call ZKB_fnc_AdminAddPlayerLog;
 	};

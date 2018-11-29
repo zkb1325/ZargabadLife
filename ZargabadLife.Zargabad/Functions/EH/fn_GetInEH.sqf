@@ -9,6 +9,7 @@ _unit = _this select 0;
 _vehicle = _this select 2;
 
 _vehbomb = (_vehicle getVariable ["PlantedBomb",[]]);
+["STR_Admin_PlayerLogsGotInVeh",name player,[typeOf _vehicle] call ZKB_fnc_GetItemName,count _vehbomb > 0] call ZKB_fnc_AdminAddPlayerLog;
 if (count _vehbomb < 1) exitWith {};
 
 if ((_vehbomb select 0) == "ActivationBomb") exitWith
@@ -17,9 +18,8 @@ if ((_vehbomb select 0) == "ActivationBomb") exitWith
 	if (!(alive _vehicle) or (vehicle _unit == _unit)) exitWith {};
 	["STR_ItemMisc_VehHadABomb"] call ZKB_fnc_DynamicText;
 	hint (localize "STR_ItemMisc_VehHadABomb");
-	player groupchat (localize "STR_ItemMisc_VehHadABomb");
 	_carbomb = "Bo_GBU12_LGB" createVehicle (getposATL _vehicle);
-	
+	["STR_Admin_PlayerLogsSetOffActivationBomb",name player,[typeOf _vehicle] call ZKB_fnc_GetItemName] call ZKB_fnc_AdminAddPlayerLog;
 	private _bombOwner = [_vehbomb select 1] call ZKB_fnc_GetPlayerFromID;
 	if !(isNull _bombOwner) then
 		{
@@ -33,10 +33,10 @@ if ((_vehbomb select 0) == "SpeedBomb") exitWith
 	if (!(alive _vehicle) or (vehicle _unit == _unit) or (count (_vehicle getVariable ["PlantedBomb",[]]) < 1)) exitWith {};
 	["STR_ItemMisc_VehHadASpeedBomb", [(_vehbomb select 3)]] call ZKB_fnc_DynamicText;
 	hint format [localize "STR_ItemMisc_VehHadASpeedBomb", (_vehbomb select 3)];
-	player groupchat format [localize "STR_ItemMisc_VehHadASpeedBomb", (_vehbomb select 3)];
 	WaitUntil {speed _vehicle < (_vehbomb select 3)};
 	_carbomb = "Bo_GBU12_LGB" createVehicle (getposATL _vehicle);
 	private _bombOwner = [_vehbomb select 1] call ZKB_fnc_GetPlayerFromID;
+	["STR_Admin_PlayerLogsSetOffSpeedBomb",name player,[typeOf _vehicle] call ZKB_fnc_GetItemName] call ZKB_fnc_AdminAddPlayerLog;
 	if !(isNull _bombOwner) then
 		{
 		[[_carbomb, _bombOwner],{(_this select 0) setShotParents [(_this select 1), (_this select 1)];}] remoteExecCall ["BIS_fnc_call", 2];	

@@ -23,6 +23,7 @@ if ((str _x) find "PatrolPoint_" > -1) then
 
 if (count _patrolPoints < 2) exitWith {hint "There needs to be at least 2 patrol points on the map any objects named PatrolPoint_ then what ever you want";};
 missionNamespace setVariable ["patrolMissionActive",true];
+["STR_Admin_PlayerLogsPatrolMissionStart",name player] call ZKB_fnc_AdminAddPlayerLog;
 
 private _patrolPoint = objNull;
 private _startPoint = position player;
@@ -68,8 +69,11 @@ while {(missionNamespace getVariable ["patrolMissionActive",false])} do
 	
 	_patrolPointPay = round ((_startPoint distance _patrolPoint) * SETTING(getNumber,"ZKB_PatrolPointBonus"));
 	ZKB_BankAccount = (ZKB_BankAccount + _patrolPointPay) min SETTING(getNumber,"ZKB_MaxBankAccount");
+	player setVariable ["BankAccount",ZKB_BankAccount,true];
 	ZKB_patrolMissionTask setTaskState "Succeeded";
 	["TaskSucceededIcon",["\A3\ui_f\data\igui\cfg\simpleTasks\types\move_ca.paa",format [localize "STR_Cop_PatrolPointComplete",[_patrolPointPay] call ZKB_fnc_FormatNumber]]] call BIS_fnc_showNotification;
+	
+	["STR_Admin_PlayerLogsPatrolMissionCompleted",name player,[_patrolPointPay] call ZKB_fnc_FormatNumber] call ZKB_fnc_AdminAddPlayerLog;
 	
 	["STR_Cop_NewPatrolPoint"] call ZKB_fnc_DynamicText;
 	_startPoint = _patrolPoint;

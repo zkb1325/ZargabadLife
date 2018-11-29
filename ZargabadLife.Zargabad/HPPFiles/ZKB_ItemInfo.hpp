@@ -20,7 +20,7 @@ class controls
 	class ItemInfo_Frame: RscFrame
 	{
 		idc = 6002;
-		text = $STR_MainMenu_ItemInfo;
+		text = "$STR_MainMenu_ItemInfo";
 		x = 0.175 * safezoneW + safezoneX;
 		y = 0.16 * safezoneH + safezoneY;
 		w = 0.65 * safezoneW;
@@ -29,7 +29,7 @@ class controls
 	class ItemInfo_NameFilterText: RscStructuredText
 	{
 		idc = -1;
-		text = "Item Name:";
+		text = "$STR_MainMenu_ItemInfoItemNameFilterText";
 		x = 0.2 * safezoneW + safezoneX;
 		y = 0.2 * safezoneH + safezoneY;
 		w = 0.05 * safezoneW;
@@ -50,7 +50,7 @@ class controls
 	class ItemInfo_TypeFilterText: RscStructuredText
 	{
 		idc = -1;
-		text = "Item Type:";
+		text = "$STR_MainMenu_ItemInfoItemTypeFilterText";
 		x = 0.2 * safezoneW + safezoneX;
 		y = 0.24 * safezoneH + safezoneY;
 		w = 0.05 * safezoneW;

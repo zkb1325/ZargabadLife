@@ -15,3 +15,4 @@ private _bountyCollected = floor (_bounty/_bountySpreadMultiplier);
 
 ["STR_Cop_BountyCollect",[_bountiesName,[_bounty] call ZKB_fnc_FormatNumber,[_bountyCollected] call ZKB_fnc_FormatNumber]] call ZKB_fnc_DynamicText;
 ZKB_BankAccount = (ZKB_BankAccount + _bountyCollected) min SETTING(getNumber,"ZKB_MaxBankAccount");
+player setVariable ["BankAccount",ZKB_BankAccount,true];

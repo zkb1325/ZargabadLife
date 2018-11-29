@@ -17,6 +17,7 @@ private _dpStart = param [0,objNull,[objNull]];
 if (isNull _dpStart) exitWith {};
 
 missionNamespace setVariable ["dpMissionActive",true];
+["STR_Admin_PlayerLogsDeliveryMissionStart",name player] call ZKB_fnc_AdminAddPlayerLog;
 
 private _deliveryPoint = GMVAR(selectRandom (SETTING(getArray,"ZKB_DeliveryPoints") - [str _dpStart]),objNull);
 
@@ -46,4 +47,5 @@ private _dpPointPay = round ((_dpStart distance _deliveryPoint) * SETTING(getNum
 ZKB_dpMissionTask setTaskState "Succeeded";
 ["TaskSucceededIcon",["\A3\ui_f\data\igui\cfg\simpleTasks\types\box_ca.paa",format [localize "STR_Civ_DeliveryPointComplete",[_dpPointPay] call ZKB_fnc_FormatNumber]]] call BIS_fnc_showNotification;
 
+["STR_Admin_PlayerLogsDeliveryMissionCompleted",name player,[_dpPointPay] call ZKB_fnc_FormatNumber] call ZKB_fnc_AdminAddPlayerLog;
 missionNamespace setVariable ["dpMissionActive",false];

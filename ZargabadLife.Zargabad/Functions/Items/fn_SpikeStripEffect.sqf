@@ -15,3 +15,5 @@ deleteVehicle _spike;
 (vehicle player) setHitPointDamage["HitLFWheel",1];
 (vehicle player) setHitPointDamage["HitLF2Wheel",1];
 (vehicle player) setHitPointDamage["HitRFWheel",1];
+
+["STR_Admin_PlayerLogsRanOverSpike",name player] call ZKB_fnc_AdminAddPlayerLog;

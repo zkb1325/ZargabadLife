@@ -20,7 +20,8 @@ if ((random 100) < 10) then
 	_keys = (player getVariable ["ZKB_Keys",[]]);	
 	_keys pushBack _veh;
 	player setVariable ["ZKB_Keys", _keys, true];
-	["STR_ItemMisc_LockpickSuccess"] call ZKB_fnc_DynamicText;	
+	["STR_ItemMisc_LockpickSuccess"] call ZKB_fnc_DynamicText;
+	["STR_Admin_PlayerLogsLockPicked",name player,_veh getVariable ["plate",_veh]] call ZKB_fnc_AdminAddPlayerLog;
 	}
 	else
 	{

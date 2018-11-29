@@ -22,17 +22,20 @@ if ((["Money"] call ZKB_fnc_GetInvItemAmount) >= _curBail) exitWith
 		[player,round (_curBail/_numOfCops)] remoteExec ["ZKB_fnc_PayBailCopReward",west,false];	
 		};
 	["STR_Jail_PaidBail",[name player,[_curBail] call ZKB_fnc_FormatNumber]] remoteExecCall ["ZKB_fnc_DynamicText",0,false];
+	["STR_Jail_PaidBail",name player,[_curBail] call ZKB_fnc_FormatNumber] call ZKB_fnc_AdminAddPlayerLog;
 	player setVariable ["InJail",false,true];
 	};
 	
 if (ZKB_BankAccount >= _curBail) exitWith
 	{
 	ZKB_BankAccount = ZKB_BankAccount - _curBail;
+	player setVariable ["BankAccount",ZKB_BankAccount,true];
 	if (_numOfCops > 0) then
 		{
 		[player,round (_curBail/_numOfCops)] remoteExec ["ZKB_fnc_PayBailCopReward",west,false];	
 		};
 	["STR_Jail_PaidBail",[name player,[_curBail] call ZKB_fnc_FormatNumber]] remoteExecCall ["ZKB_fnc_DynamicText",0,false];
+	["STR_Jail_PaidBail",name player,[_curBail] call ZKB_fnc_FormatNumber] call ZKB_fnc_AdminAddPlayerLog;
 	player setVariable ["InJail",false,true];
 	};
 	

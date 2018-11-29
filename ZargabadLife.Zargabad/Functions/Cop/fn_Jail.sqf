@@ -1,3 +1,4 @@
+#include "..\..\ConfigMacros.hpp"
 /*
     File: fn_Jail.sqf
 	Function: ZKB_fnc_Jail
@@ -25,6 +26,12 @@ if (call ZKB_fnc_IsMayor) then
 	{
 	missionNamespace setVariable ["currentMayor","",true];
 	["STR_Jail_MayorArrested"] remoteExecCall ["ZKB_fnc_DynamicText",0,false];
+	ZKB_TaxArray = [5,5,5,5,5];
+	publicVariable "ZKB_TaxArray";
+	if (SETTING(getNumber,"ZKB_StatSaveEnabled") isEqualTo 1) then
+		{
+		["mayor",""] remoteExecCall ["ZKB_fnc_ServerSaveStats",2,false];
+		};
 	};
 
 private _bail = param [1,0,[0]];
@@ -58,7 +65,7 @@ private _remainingJailTime = _jailTimeSeconds;
 player setpos (getMarkerPos "JailMarker");
 player setDamage 0;
 player setVariable ["restrained",false,true];
-call ZKB_fnc_SavePlayer;
+[] spawn ZKB_fnc_SavePlayer;
 
 [] spawn 
 	{
@@ -112,6 +119,7 @@ while {true} do
 	_bail = round (_bail - _bailSub);
 	player setVariable ["Bail",_bail];
 	ZKB_Hunger = 5;
+	player setVariable ["Hunger",ZKB_Hunger,true];
 	};
 
 hintsilent "";	
@@ -126,7 +134,9 @@ if (_servedTime) exitWith
 	player setpos (getMarkerPos "JailFreeMarker");
 	player setDamage 0;
 	ZKB_Suicides = 0;
-	call ZKB_fnc_SavePlayer;
+	player setVariable ["Suicides",ZKB_Suicides,true];
+	[] spawn ZKB_fnc_SavePlayer;
+	["STR_Admin_PlayerLogsServedJailTime",name player] call ZKB_fnc_AdminAddPlayerLog;
 	};	
 	
 if (_released) exitWith
@@ -139,7 +149,9 @@ if (_released) exitWith
 	player setpos (getMarkerPos "JailFreeMarker");
 	player setDamage 0;
 	ZKB_Suicides = 0;
-	call ZKB_fnc_SavePlayer;
+	player setVariable ["Suicides",ZKB_Suicides,true];
+	[] spawn ZKB_fnc_SavePlayer;
+	["STR_Admin_PlayerLogsServedJailTime",name player] call ZKB_fnc_AdminAddPlayerLog;
 	};
 	
 if (_died) exitWith
@@ -153,5 +165,6 @@ if (_escapedJail) exitWith
 	player setVariable ["Bail",0];
 	player setVariable ["InJail",false,true];
 	[player,"Escaping Jail",50000] call ZKB_fnc_AddWanted;
-	call ZKB_fnc_SavePlayer;
+	[] spawn ZKB_fnc_SavePlayer;
+	["STR_Admin_PlayerLogsEscapedJail",name player,_remainingJailTime/60] call ZKB_fnc_AdminAddPlayerLog;
 	};

@@ -23,12 +23,12 @@ _this spawn //Need to spawn because the trigger didn't let me put spawn in it
 					if ((([player] call ZKB_fnc_GetInvTotalWeight) + (([_resource] call ZKB_fnc_GetItemWeight)*_amount)) > (player getVariable ["ZKB_MaxINVWeight",SETTING(getNumber,"ZKB_MaxINVWeight")])) exitWith {["STR_Inv_MaxWeight"] call ZKB_fnc_DynamicText;};	
 					[_resource, _amount] call ZKB_fnc_InvAddItem;	
 					["STR_ItemMisc_Gathered", [_amount, [_resource] call ZKB_fnc_GetItemName]] call ZKB_fnc_DynamicText;
+					["STR_Admin_PlayerLogsPlayerGatherdResource",name player,[_amount] call ZKB_fnc_FormatNumber,[_resource] call ZKB_fnc_GetItemName] call ZKB_fnc_AdminAddPlayerLog;
 					};
 				};
 			sleep 1.5;	
 			};
 		missionNameSpace setVariable ["InResourceArea", false];
-		call ZKB_fnc_SavePlayer;
 		};
 		
 	if (_resource == "UnProcessedMarijuana") exitWith
@@ -43,12 +43,12 @@ _this spawn //Need to spawn because the trigger didn't let me put spawn in it
 					if ((([player] call ZKB_fnc_GetInvTotalWeight) + (([_resource] call ZKB_fnc_GetItemWeight)*_amount)) > (player getVariable ["ZKB_MaxINVWeight",SETTING(getNumber,"ZKB_MaxINVWeight")])) exitWith {["STR_Inv_MaxWeight"] call ZKB_fnc_DynamicText;};	
 					[_resource, _amount] call ZKB_fnc_InvAddItem;	
 					["STR_ItemMisc_Gathered", [_amount, [_resource] call ZKB_fnc_GetItemName]] call ZKB_fnc_DynamicText;
+					["STR_Admin_PlayerLogsPlayerGatherdResource",name player,[_amount] call ZKB_fnc_FormatNumber,[_resource] call ZKB_fnc_GetItemName] call ZKB_fnc_AdminAddPlayerLog;
 					};
 				};
 			sleep 1.5;	
 			};
 		missionNameSpace setVariable ["InResourceArea", false];
-		call ZKB_fnc_SavePlayer;
 		};
 	
 	if (_resource == "UnProcessedLSD") exitWith
@@ -63,12 +63,12 @@ _this spawn //Need to spawn because the trigger didn't let me put spawn in it
 					if ((([player] call ZKB_fnc_GetInvTotalWeight) + (([_resource] call ZKB_fnc_GetItemWeight)*_amount)) > (player getVariable ["ZKB_MaxINVWeight",SETTING(getNumber,"ZKB_MaxINVWeight")])) exitWith {["STR_Inv_MaxWeight"] call ZKB_fnc_DynamicText;};	
 					[_resource, _amount] call ZKB_fnc_InvAddItem;	
 					["STR_ItemMisc_Gathered", [_amount, [_resource] call ZKB_fnc_GetItemName]] call ZKB_fnc_DynamicText;
+					["STR_Admin_PlayerLogsPlayerGatherdResource",name player,[_amount] call ZKB_fnc_FormatNumber,[_resource] call ZKB_fnc_GetItemName] call ZKB_fnc_AdminAddPlayerLog;
 					};
 				};
 			sleep 1.5;	
 			};
 		missionNameSpace setVariable ["InResourceArea", false];
-		call ZKB_fnc_SavePlayer;
 		};
 		
 	if (_resource == "UnProcessedHeroin") exitWith
@@ -83,11 +83,11 @@ _this spawn //Need to spawn because the trigger didn't let me put spawn in it
 					if ((([player] call ZKB_fnc_GetInvTotalWeight) + (([_resource] call ZKB_fnc_GetItemWeight)*_amount)) > (player getVariable ["ZKB_MaxINVWeight",SETTING(getNumber,"ZKB_MaxINVWeight")])) exitWith {["STR_Inv_MaxWeight"] call ZKB_fnc_DynamicText;};	
 					[_resource, _amount] call ZKB_fnc_InvAddItem;	
 					["STR_ItemMisc_Gathered", [_amount, [_resource] call ZKB_fnc_GetItemName]] call ZKB_fnc_DynamicText;
+					["STR_Admin_PlayerLogsPlayerGatherdResource",name player,[_amount] call ZKB_fnc_FormatNumber,[_resource] call ZKB_fnc_GetItemName] call ZKB_fnc_AdminAddPlayerLog;
 					};
 				};
 			sleep 1.5;	
 			};
 		missionNameSpace setVariable ["InResourceArea", false];
-		call ZKB_fnc_SavePlayer;
 		};
 	};

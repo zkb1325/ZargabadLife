@@ -1,3 +1,4 @@
+#include "..\..\ConfigMacros.hpp"
 /*
 	Author: ZKB1325
 	File: fn_RemoveFromGang.sqf
@@ -23,7 +24,10 @@ _removedgangmembers = _removedgangmembers - ["Remove"];
 _removedganginfo set [1, _removedgangmembers];
 
 missionNameSpace setVariable [_removedgangvar, _removedganginfo, true];
-
+if (SETTING(getNumber,"ZKB_StatSaveEnabled") isEqualTo 1) then
+	{
+	[] remoteExecCall ["ZKB_fnc_ServerUpdateGangSave",2,false];
+	};
 
 _removedunit = [_removedUID] call ZKB_fnc_GetPlayerFromID;
 

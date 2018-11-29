@@ -11,4 +11,5 @@ private _bailPlayer = param [0,objNull,[objNull]];
 private _bailReward = param [1,0,[0]];
 
 ZKB_BankAccount = (ZKB_BankAccount + _bailReward) min SETTING(getNumber,"ZKB_MaxBankAccount");
+player setVariable ["BankAccount",ZKB_BankAccount,true];
 ["STR_Jail_BailCopReward",[[_bailReward] call ZKB_fnc_FormatNumber,name _bailPlayer]] call ZKB_fnc_DynamicText;

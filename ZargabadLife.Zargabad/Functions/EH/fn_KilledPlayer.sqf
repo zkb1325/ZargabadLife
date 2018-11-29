@@ -20,6 +20,7 @@ switch (_ranOver) do
 	case true:
 		{
 		["STR_Killed_PlayerRanOver", [name player, name _killedPlayer]] remoteExecCall ["ZKB_fnc_DynamicText",0,false];
+		["STR_Admin_PlayerLogsPlayerRanoverPlayer",name player, name _killedPlayer,[typeOf (vehicle player)] call ZKB_fnc_GetItemName,round (speed (vehicle player))] call ZKB_fnc_AdminAddPlayerLog;
 		if (IsCop) then
 			{
 			if (side _killedPlayer isEqualTo civilian) then
@@ -36,6 +37,7 @@ switch (_ranOver) do
 					{
 					["STR_Killed_KilledForBounty",[name _killedPlayer,[_bounty] call ZKB_fnc_FormatNumber]] call ZKB_fnc_DynamicText;
 					ZKB_BankAccount = (ZKB_BankAccount + _bounty) min SETTING(getNumber,"ZKB_MaxBankAccount");
+					player setVariable ["BankAccount",ZKB_BankAccount,true];
 					}
 					else
 					{
@@ -48,6 +50,7 @@ switch (_ranOver) do
 				private _totalCivsKilled = ZKB_CivsKilled select 1;
 				ZKB_CivsKilled set [0,_civsKilled+1];
 				ZKB_CivsKilled set [1,_totalCivsKilled+1];
+				player setVariable ["CivKills",ZKB_CivsKilled,true];
 				}
 				else
 				{
@@ -55,6 +58,7 @@ switch (_ranOver) do
 				private _totalCopsKilled = ZKB_CopsKilled select 1;
 				ZKB_CopsKilled set [0,_copsKilled+1];
 				ZKB_CopsKilled set [1,_totalCopsKilled+1];
+				player setVariable ["CopKills",ZKB_CopsKilled,true];
 				
 				if ((ZKB_BankAccount - SETTING(getNumber,"ZKB_CopKillCopPenalty")) < 0) exitWith
 					{
@@ -62,6 +66,7 @@ switch (_ranOver) do
 					//Add jail function
 					};
 				ZKB_BankAccount = (ZKB_BankAccount - SETTING(getNumber,"ZKB_CopKillCopPenalty")) max 0;
+				player setVariable ["BankAccount",ZKB_BankAccount,true];
 				["STR_Killed_CopTeamKill",[name _killedPlayer,SETTING(getNumber,"ZKB_CopKillCopPenalty")]] call ZKB_fnc_DynamicText;
 				};
 			}
@@ -79,6 +84,7 @@ switch (_ranOver) do
 				private _totalCivsKilled = ZKB_CivsKilled select 1;
 				ZKB_CivsKilled set [0,_civsKilled+1];
 				ZKB_CivsKilled set [1,_totalCivsKilled+1];
+				player setVariable ["CivKills",ZKB_CivsKilled,true];
 				}
 				else
 				{
@@ -86,6 +92,7 @@ switch (_ranOver) do
 				private _totalCopsKilled = ZKB_CopsKilled select 1;
 				ZKB_CopsKilled set [0,_copsKilled+1];
 				ZKB_CopsKilled set [1,_totalCopsKilled+1];
+				player setVariable ["CopKills",ZKB_CopsKilled,true];
 				};
 			};
 		};
@@ -93,6 +100,7 @@ switch (_ranOver) do
 	case false:
 		{
 		["STR_Killed_PlayerKilledBy", [name _killedPlayer, name player]] remoteExecCall ["ZKB_fnc_DynamicText",0,false];
+		["STR_Admin_PlayerLogsPlayerKilledPlayer",name player,name _killedPlayer,[currentWeapon player] call ZKB_fnc_GetItemName,[round (player distance _killedPlayer)] call ZKB_fnc_FormatNumber] call ZKB_fnc_AdminAddPlayerLog;
 		if (IsCop) then
 			{
 			if (side _killedPlayer isEqualTo civilian) then
@@ -109,6 +117,7 @@ switch (_ranOver) do
 					{
 					["STR_Killed_KilledForBounty",[name _killedPlayer,[_bounty] call ZKB_fnc_FormatNumber]] call ZKB_fnc_DynamicText;
 					ZKB_BankAccount = (ZKB_BankAccount + _bounty) min SETTING(getNumber,"ZKB_MaxBankAccount");
+					player setVariable ["BankAccount",ZKB_BankAccount,true];
 					}
 					else
 					{
@@ -121,6 +130,7 @@ switch (_ranOver) do
 				private _totalCivsKilled = ZKB_CivsKilled select 1;
 				ZKB_CivsKilled set [0,_civsKilled+1];
 				ZKB_CivsKilled set [1,_totalCivsKilled+1];
+				player setVariable ["CivKills",ZKB_CivsKilled,true];
 				}
 				else
 				{
@@ -128,6 +138,7 @@ switch (_ranOver) do
 				private _totalCopsKilled = ZKB_CopsKilled select 1;
 				ZKB_CopsKilled set [0,_copsKilled+1];
 				ZKB_CopsKilled set [1,_totalCopsKilled+1];
+				player setVariable ["CopKills",ZKB_CopsKilled,true];
 				
 				if ((ZKB_BankAccount - SETTING(getNumber,"ZKB_CopKillCopPenalty")) < 0) exitWith
 					{
@@ -135,6 +146,7 @@ switch (_ranOver) do
 					//Add jail function
 					};
 				ZKB_BankAccount = (ZKB_BankAccount - SETTING(getNumber,"ZKB_CopKillCopPenalty")) max 0;
+				player setVariable ["BankAccount",ZKB_BankAccount,true];
 				["STR_Killed_CopTeamKill",[name _killedPlayer,SETTING(getNumber,"ZKB_CopKillCopPenalty")]] call ZKB_fnc_DynamicText;
 				};
 			}
@@ -152,6 +164,7 @@ switch (_ranOver) do
 				private _totalCivsKilled = ZKB_CivsKilled select 1;
 				ZKB_CivsKilled set [0,_civsKilled+1];
 				ZKB_CivsKilled set [1,_totalCivsKilled+1];
+				player setVariable ["CivKills",ZKB_CivsKilled,true];
 				}
 				else
 				{
@@ -159,9 +172,10 @@ switch (_ranOver) do
 				private _totalCopsKilled = ZKB_CopsKilled select 1;
 				ZKB_CopsKilled set [0,_copsKilled+1];
 				ZKB_CopsKilled set [1,_totalCopsKilled+1];
+				player setVariable ["CopKills",ZKB_CopsKilled,true];
 				};
 			};
 		};
 	};
-call ZKB_fnc_SavePlayer;
+[] spawn ZKB_fnc_SavePlayer;
 [100000] call ZKB_fnc_SetRating

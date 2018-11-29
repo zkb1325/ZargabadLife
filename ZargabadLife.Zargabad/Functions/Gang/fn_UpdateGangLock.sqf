@@ -1,3 +1,4 @@
+#include "..\..\ConfigMacros.hpp"
 /*
 	Author: ZKB1325
 	File: fn_UpdateGangLock.sqf
@@ -27,4 +28,8 @@ switch _updateoption do
 		missionNameSpace setVariable [_gangvar, _gangtoupdate, true];	
 		["STR_Gang_CanNotJoinGang"] call ZKB_fnc_DynamicText;
 		};
+	};
+if (SETTING(getNumber,"ZKB_StatSaveEnabled") isEqualTo 1) then
+	{
+	[] remoteExecCall ["ZKB_fnc_ServerUpdateGangSave",2,false];
 	};

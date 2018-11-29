@@ -22,7 +22,7 @@ private _exportPrice = round((_price*(_priceWithTaxe/_price)) - _demand);
 if ((_curStock+1 > _maxStock) and !(_curStock isEqualTo -1)) exitWith {["STR_Fac_ExportMaxStock",[(if (isLocalized ((_shop getVariable "ShopData") select 1)) then {localize ((_shop getVariable "ShopData") select 1)}else{((_shop getVariable "ShopData") select 1)}),([_item] call ZKB_fnc_GetItemName)]] call ZKB_fnc_DynamicText;};
 
 [ZKB_OpenFactory,"Remove",_item,1] call ZKB_fnc_UpdateFacStorageCompleted;
-[ZKB_OpenFactory, "Add", ["Money", _exportPrice], _exportPrice, true] call ZKB_fnc_UpdateFacStorage;
+[missionNameSpace,((ZKB_OpenFactory getVariable "FactoryInfo") select 6)+"Storage","Money",_exportPrice] call ZKB_fnc_DualInvAddItem;
 [_shop,_stockIndex,1,true] call ZKB_fnc_UpdateShopStock;
 
 ["STR_Fac_Exported",[(if (isLocalized ((_shop getVariable "ShopData") select 1)) then {localize ((_shop getVariable "ShopData") select 1)}else{((_shop getVariable "ShopData") select 1)}),([_item] call ZKB_fnc_GetItemName),[_exportPrice] call ZKB_fnc_FormatNumber]] call ZKB_fnc_DynamicText;

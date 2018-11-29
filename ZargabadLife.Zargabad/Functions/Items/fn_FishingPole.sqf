@@ -45,7 +45,8 @@ if(animationState player != "normal") then
 	};
 	
 [_caughtfish, _caughtamount] call ZKB_fnc_InvAddItem;	
-["STR_ItemMisc_CaughtFish", [_caughtamount, [_caughtfish] call ZKB_fnc_GetItemName]] call ZKB_fnc_DynamicText;
+["STR_ItemMisc_CaughtFish", [[_caughtamount] call ZKB_fnc_FormatNumber,[_caughtfish] call ZKB_fnc_GetItemName]] call ZKB_fnc_DynamicText;
+["STR_Admin_PlayerLogsCaughtFish",name player,[_caughtamount] call ZKB_fnc_FormatNumber,[_caughtfish] call ZKB_fnc_GetItemName] call ZKB_fnc_AdminAddPlayerLog;
 
 ZKB_PerformingAction = false;
 	

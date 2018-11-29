@@ -188,12 +188,12 @@ class RefuelCan
 	Description = "STR_ItemDesc_RefuelCan";
 	reqResources[] = {{"Plastic",1},{"Oil",2}};
 	};
-class SyphonFuelKit
+class SiphonFuelKit
 	{
-	className = "SyphonFuelKit";
-	displayName = "Syphon Fuel-Kit";
+	className = "SiphonFuelKit";
+	displayName = "Siphon Fuel-Kit";
 	itemType = "Item";
-	Function = "ZKB_fnc_SyphonFuel";
+	Function = "ZKB_fnc_SiphonFuel";
 	buyPirce = 1000;
 	sellPirce = -1;
 	Weight = 1;
@@ -204,7 +204,7 @@ class SyphonFuelKit
 	canDrop = true;
 	canGive = true;
 	isIllegal = false;
-	Description = "STR_ItemDesc_SyphonFuelKit";
+	Description = "STR_ItemDesc_SiphonFuelKit";
 	reqResources[] = {{"Plastic",2}};
 	};
 class OilBarrel

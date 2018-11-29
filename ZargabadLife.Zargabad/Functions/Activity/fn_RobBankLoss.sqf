@@ -21,10 +21,12 @@ if ((["BankInsurance"] call ZKB_fnc_GetInvItemAmount) > 0) exitWith
 if (ZKB_BankAccount <= _lostAmount) exitWith
 	{
 	ZKB_BankAccount = 0;
+	player setVariable ["BankAccount",ZKB_BankAccount,true];
 	["STR_Bank_BankRobbedLostAll"] call ZKB_fnc_DynamicText;
-	call ZKB_fnc_SavePlayer;
+	[] spawn ZKB_fnc_SavePlayer;
 	};	
 
 ZKB_BankAccount = ZKB_BankAccount - _lostAmount;
+player setVariable ["BankAccount",ZKB_BankAccount,true];
 ["STR_Bank_BankRobbedLostSome",[[_lostAmount] call ZKB_fnc_FormatNumber,[ZKB_BankAccount] call ZKB_fnc_FormatNumber]] call ZKB_fnc_DynamicText;
-call ZKB_fnc_SavePlayer;
+[] spawn ZKB_fnc_SavePlayer;

@@ -55,6 +55,7 @@ switch _boughttype do
 		["STR_Shop_BoughtItem", [([_boughtamount] call ZKB_fnc_FormatNumber), ([_boughtItem] call ZKB_fnc_GetItemName), ([(_boughtItemPrice*_boughtamount)] call ZKB_fnc_FormatNumber)]] call ZKB_fnc_DynamicText;
 		if !(_boughtitemstock <= -1) then {[ZKB_shopobject, _boughtItemIndex, _boughtamount, false] call ZKB_fnc_UpdateShopStock;};
 		ZKB_shopobject setVariable ["curTax",(ZKB_shopobject getVariable ["curTax",0]) + (_paidTaxes*_boughtamount),true];
+		["STR_Admin_PlayerLogsBoughtItem",name player,[_boughtamount] call ZKB_fnc_FormatNumber,[_boughtItem] call ZKB_fnc_GetItemName,[(_boughtItemPrice*_boughtamount)] call ZKB_fnc_FormatNumber] call ZKB_fnc_AdminAddPlayerLog;
 		};
 		
 	case "CfgVehicles":
@@ -67,6 +68,7 @@ switch _boughttype do
 		if !(_boughtitemstock <= -1) then {[ZKB_shopobject, _boughtItemIndex, _boughtamount, false] call ZKB_fnc_UpdateShopStock;};
 		ZKB_shopobject setVariable ["curTax",(ZKB_shopobject getVariable ["curTax",0]) + (_paidTaxes*_boughtamount),true];
 		closeDialog 0;
+		["STR_Admin_PlayerLogsBoughtItem",name player,[_boughtamount] call ZKB_fnc_FormatNumber,[_boughtItem] call ZKB_fnc_GetItemName,[(_boughtItemPrice*_boughtamount)] call ZKB_fnc_FormatNumber] call ZKB_fnc_AdminAddPlayerLog;
 		};
 	default
 		{
@@ -91,6 +93,7 @@ switch _boughttype do
 		["STR_Shop_BoughtItem", [([_boughtamount] call ZKB_fnc_FormatNumber), ([_boughtItem] call ZKB_fnc_GetItemName), ([(_boughtItemPrice*_boughtamount)] call ZKB_fnc_FormatNumber)]] call ZKB_fnc_DynamicText;
 		if !(_boughtitemstock <= -1) then {[ZKB_shopobject, _boughtItemIndex, _boughtamount, false] call ZKB_fnc_UpdateShopStock;};
 		ZKB_shopobject setVariable ["curTax",(ZKB_shopobject getVariable ["curTax",0]) + (_paidTaxes*_boughtamount),true];
+		["STR_Admin_PlayerLogsBoughtItem",name player,[_boughtamount] call ZKB_fnc_FormatNumber,[_boughtItem] call ZKB_fnc_GetItemName,[(_boughtItemPrice*_boughtamount)] call ZKB_fnc_FormatNumber] call ZKB_fnc_AdminAddPlayerLog;
 		};
 	};
 	

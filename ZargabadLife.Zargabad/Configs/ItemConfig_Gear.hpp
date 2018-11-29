@@ -473,10 +473,10 @@ class CUP_V_RUS_Smersh_1
 	Description = "";
 	reqResources[] = {};
 	};
-class V_TacVest_blk_POLICE
+class CUP_V_B_IOTV_SL
 	{
-	className = "V_TacVest_blk_POLICE";
-	displayName = "Police Vest";
+	className = "CUP_V_B_IOTV_SL";
+	displayName = "UN Vest";
 	itemType = "Item";
 	Function = "";
 	buyPirce = 2000;
@@ -530,6 +530,25 @@ class CUP_V_B_MTV_MG
 	Description = "";
 	reqResources[] = {};
 	};
+class CUP_V_BAF_Osprey_Mk2_DDPM_Officer
+	{
+	className = "CUP_V_BAF_Osprey_Mk2_DDPM_Officer";
+	displayName = "UK SWAT Vest";
+	itemType = "Item";
+	Function = "";
+	buyPirce = 4500;
+	sellPirce = -1;
+	Weight = 0;
+	trunkSpace = 0;
+	civLicense = "Terror_Training";
+	copLicense = "SOBR_Training";
+	sharedLicense = "";
+	canDrop = true;
+	canGive = true;
+	isIllegal = true;
+	Description = "";
+	reqResources[] = {};
+	};
 class B_AssaultPack_cbr
 	{
 	className = "B_AssaultPack_cbr";
@@ -568,10 +587,10 @@ class B_Carryall_khk
 	Description = "";
 	reqResources[] = {};
 	};
-class CUP_B_AssaultPack_Coyote
+class CUP_B_AssaultPack_ACU
 	{
-	className = "CUP_B_AssaultPack_Coyote";
-	displayName = "Patrol Backpack";
+	className = "CUP_B_AssaultPack_ACU";
+	displayName = "UN Patrol Backpack";
 	itemType = "Item";
 	Function = "";
 	buyPirce = 7500;

@@ -127,8 +127,10 @@ sleep 10;
 
 player setVariable ["ZKB_MaxINVWeight",SETTING(getNumber,"ZKB_MaxINVWeight"),true];	
 ZKB_CopsKilled set [0,0];
+player setVariable ["CopKills",ZKB_CopsKilled,true];
 ZKB_CivsKilled set [0,0];
-call ZKB_fnc_SavePlayer;
+player setVariable ["CivKills",ZKB_CivsKilled,true];
+[] spawn ZKB_fnc_SavePlayer;
 _unit allowDamage true;
 player enableStamina false;
 [100000] call ZKB_fnc_SetRating;

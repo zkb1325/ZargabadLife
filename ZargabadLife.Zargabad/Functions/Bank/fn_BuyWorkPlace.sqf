@@ -19,3 +19,5 @@ private _workPlacePay = ((SETTING(getArray,"ZKB_WorkPlaces") select (SETTING(get
 private _ownedWorkPlaces = (missionNamespace getVariable ["ownedWorkplaces",[]]);
 _ownedWorkPlaces pushBack _workPlace;
 missionNamespace setVariable ["ownedWorkplaces",_ownedWorkPlaces];
+
+["STR_Admin_PlayerLogsBoughtWorkplace",name player,(SETTING(getArray,"ZKB_WorkPlaces") findIf {_workPlace in _x})+1] call ZKB_fnc_AdminAddPlayerLog;

@@ -105,15 +105,19 @@
 			</Key>
 			
 			<Key ID="STR_Common_NotInVeh">
-				<Original>You are not in a vehicle.</Original>
+				<Original>You are not in a vehicle</Original>
 			</Key>
 			
 			<Key ID="STR_Common_NotInVehDriver">
-				<Original>You are not in the driver seat of a vehicle.</Original>
+				<Original>You are not in the driver seat of a vehicle</Original>
 			</Key>
 			
 			<Key ID="STR_Common_CantUseInVeh">
-				<Original>You can't use this item in a vehicle.</Original>
+				<Original>You can't use this item in a vehicle</Original>
+			</Key>
+			
+			<Key ID="STR_Common_CantUseDetained">
+				<Original>You can't use items while surrendering, restrained, or knocked out</Original>
 			</Key>
 			
 			<Key ID="STR_Common_AlreadyPerformingAction">
@@ -121,6 +125,721 @@
 			</Key>
 			
 			
+		</Container>
+		
+		<Container name="Loading">
+		
+		<Key ID="STR_Loading_Server">
+				<Original>Waiting for server</Original>
+			</Key>
+			
+		</Container>
+		<Container name="Admin">
+		
+			<Key ID="STR_Admin_Menu">
+				<Original>Admin Menu</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_Nothing">
+				<Original>Nothing</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_NothingDesc">
+				<Original>Does nothing and hides all the menu's</Original>
+			</Key>
+
+			<Key ID="STR_Admin_GodMode">
+				<Original>Toggle God Mode</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_GodModeDesc">
+				<Original>Toggle God Mode on and off</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_GodModeEnabled">
+				<Original>God Mode Enabled</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_GodModeDisabled">
+				<Original>God Mode Disabled</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_HealPlayer">
+				<Original>Heal Player</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_HealPlayerDesc">
+				<Original>Heals the Selected Player to 100% health</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_HealedPlayerMsg"> 
+				<Original>You healed %1</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_HealPlayerMsg">
+				<Original>You were healed by %1</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_Teleport">
+				<Original>Teleport</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_TeleportDesc">
+				<Original>Opens the teleport menu where you can teleport to a player or teleport the player to you</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_TeleportIncludeVeh">
+				<Original>Include Vehicle</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_TeleportTo">
+				<Original>TP To Selected</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_TeleportToMsg">
+				<Original>You teleported to %1</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_TeleportToMsgEnd">
+				<Original>%1 teleported to you</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_TeleportToMsgWithVeh">
+				<Original>You teleported your self and vehicle to %1</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_TeleportToMsgWithVehEnd">
+				<Original>%1 teleported to you with their vehicle</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_TeleportHere">
+				<Original>TP Selected Here</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_TeleportHereMsg">
+				<Original>You teleported %1 to you</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_TeleportHereMsgEnd">
+				<Original>%1 teleported you to them</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_TeleportHereMsgWithVeh">
+				<Original>You teleported %1 and their vehicle to you</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_TeleportHereMsgWithVehEnd">
+				<Original>%1 teleported you and your vehicle to them</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_TeleportBack">
+				<Original>TP Selected Back</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_TeleportBackNoPos">
+				<Original>%1 has either already been teleported back or haven't been teleported yet</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_TeleportBackMsg">
+				<Original>You teleported %1 back to their previous location</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_TeleportBackMsgEnd">
+				<Original>%1 has teleported you back to your previous location</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_TeleportMap">
+				<Original>Map Teleport</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_Comp"> 
+				<Original>Compensate</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_CompDesc"> 
+				<Original>Compensate a player with money to their bank account or an item, gear item, or vehicle</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_Comp"> 
+				<Original>Compensate</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_CompCheckBoxText"> 
+				<Original>Add Comp To Inventory</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_CompSelectedPlayer"> 
+				<Original>Comp Selected Player</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_CompEveryone"> 
+				<Original>Comp Everyone</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_CompGivePlayerItem"> 
+				<Original>Give Selected Player Item</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_CompGiveEveryoneItem"> 
+				<Original>Give Everyone Item</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_CompGivenCompBank"> 
+				<Original>You gave %1 $%2 comp to their bank account</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_CompReceiveBank"> 
+				<Original>%1 comped $%2 to your bank account</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_CompGivenCompInv"> 
+				<Original>You gave %1 $%2 to their inventory</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_CompGaveItem"> 
+				<Original>You gave %1 %2 %3</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_CompGaveEveryoneItem"> 
+				<Original>You gave all players %1 %2</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_CompReceiveItem"> 
+				<Original>%1 comped you %2 %3 to your inventory</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_CompReceiveVehicle"> 
+				<Original>%1 comped you a %2 that should be somewhere around you</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_CompReceiveGearItem"> 
+				<Original>%1 comped you %2 %3 that should be on the ground near your feet</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_CompGivenEveryoneCompBank"> 
+				<Original>You gave all players $%1 comp to their bank account</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_CompGivenEveryoneCompInv"> 
+				<Original>You gave all players $%1 to their inventory</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_Spectate"> 
+				<Original>Spectate</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_SpectateDesc"> 
+				<Original>Toggles Spectating between the selected player and your self</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_SpectateOther"> 
+				<Original>Your now spectating %1</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_SpectateSelf"> 
+				<Original>Stopped Spectating</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_AdminLogs"> 
+				<Original>Admin Logs</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_AdminLogsDesc"> 
+				<Original>View the Admin logs</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_AdminLogTpTo"> 
+				<Original>%1 teleported to %2</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_AdminLogTpHere"> 
+				<Original>%1 teleported %2 to them</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_AdminLogTpBack"> 
+				<Original>%1 teleported %2 back</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_AdminLogTpMap"> 
+				<Original>%1 map teleported to %2</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_AdminLogGaveItem"> 
+				<Original>%1 gave %2 %3 %4</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_AdminLogGaveItemAll"> 
+				<Original>%1 gave everyone %2 %3</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_AdminLogCompInv"> 
+				<Original>%1 comped %2 $%3 to their inventory</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_AdminLogCompBank"> 
+				<Original>%1 comped %2 $%3 to their bank account</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_AdminLogCompAllInv"> 
+				<Original>%1 comped everyone $%2 to their inventories</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_AdminLogCompAllBank"> 
+				<Original>%1 comped everyone $%2 to their bank accounts</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_AdminLogEnableGodMode"> 
+				<Original>%1 Enabled GodMode</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_AdminLogDisabledGodMode"> 
+				<Original>%1 Disabled GodMode</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_AdminLogHealedPlayer"> 
+				<Original>%1 Healed %2</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_AdminLogHealedSelf"> 
+				<Original>%1 Healed them self</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_AdminLogSpectatePlayer"> 
+				<Original>%1 Spectated %2</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_AdminLogSpectateStop"> 
+				<Original>%1 Stopped Spectating</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_AdminLogPlayerConnected"> 
+				<Original>%1 Connected</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_AdminLogPlayerDisconnected"> 
+				<Original>%1 Disconnected</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogs"> 
+				<Original>Player Logs</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsDesc"> 
+				<Original>View the player logs</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsUseItem"> 
+				<Original>%1 used %2 %3</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsDropItem"> 
+				<Original>%1 dropped %2 %3</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsGaveItem"> 
+				<Original>%1 gave %2 %3 %4</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsPickUpItem"> 
+				<Original>%1 picked up %2 %3</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsDepositBank"> 
+				<Original>%1 deposited $%2 into their bank account</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsWithdrewBank"> 
+				<Original>%1 withdrew $%2 from their bank account</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsTransferedBank"> 
+				<Original>%1 transfered $%2 to %3</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsTransferedItem"> 
+				<Original>%1 transfered %2x %3 from %4 to %5</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsBoughtItem"> 
+				<Original>%1 bought %2 %3 for $%4</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsSoldItem"> 
+				<Original>%1 sold %2 %3 for $%4</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsPlayerGaveKeys"> 
+				<Original>%1 gave %2 keys to %3 (%4)</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsPlayerKilledPlayer"> 
+				<Original>%1 killed %2 with (%3) (%4m)</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsPlayerRanoverPlayer"> 
+				<Original>%1 ran over %2 in (%3) (%4 km/h)</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsPardonPlayer"> 
+				<Original>%1 pardoned %2</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsDeliveryMissionStart"> 
+				<Original>%1 started a delivery mission</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsDeliveryMissionCompleted"> 
+				<Original>%1 completed a delivery mission ($%2)</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsPatrolMissionStart"> 
+				<Original>%1 started a patrol mission</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsPatrolMissionCompleted"> 
+				<Original>%1 completed a patrol mission ($%2)</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsPlayerGatherdResource"> 
+				<Original>%1 gathered %2x %3</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsProcessedItem"> 
+				<Original>%1 processed %2x %3 into %4x %5</Original>
+			</Key>
+
+			<Key ID="STR_Admin_PlayerLogsRobbedBank"> 
+				<Original>%1 robbed the bank of $%2</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsRobbedShop"> 
+				<Original>%1 robbed %2 of $%3</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsRobbedPlayer"> 
+				<Original>%1 robbed %2</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsWantedAdd"> 
+				<Original>%1 is now wanted for %2 ($%3)</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsPlayerArrested"> 
+				<Original>%1 was arrested by %2 for %3 minute(s)</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsCheckedInventory"> 
+				<Original>%1 checked %2 Inventory</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsDisarmedPlayer"> 
+				<Original>%1 disarmed %2</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsFreedPlayer"> 
+				<Original>%1 released %2 from jail</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsGaveTicket"> 
+				<Original>%1 gave a ticket of $%2 to %3</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsPaidTicket"> 
+				<Original>%1 paid a ticket of $%2 from %3</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsPaidTicketNoMoney"> 
+				<Original>%1 didn't have enough money to pay the ticket of $%2 from %3</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsRefusedTicket"> 
+				<Original>%1 refused to pay the ticket of $%2 from %3</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsCopHealed"> 
+				<Original>%1 healed %2</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsServedJailTime"> 
+				<Original>%1 served their jail time</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsEscapedJail"> 
+				<Original>%1 escaped jail with %2 minute(s) left</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsKnockedOut"> 
+				<Original>%1 was knocked out by %2</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsRestrainedPlayer"> 
+				<Original>%1 was Restrained by %2</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsUnRestrainedPlayer"> 
+				<Original>%1 was unRestrained by %2</Original>
+			</Key>
+
+			<Key ID="STR_Admin_PlayerLogsPlayerSearched"> 
+				<Original>%1 was searched by %2</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsCivCammed"> 
+				<Original>%1 used civ cam on %2 for %3</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsGotInVeh"> 
+				<Original>%1 got into %2 (Has Bomb: %3)</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsGotOutVeh"> 
+				<Original>%1 got out of %2</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsBoughtFactory"> 
+				<Original>%1 bought %2</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsCreatedGang"> 
+				<Original>%1 created a gang called %2</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsJoinedGang"> 
+				<Original>%1 joined gang %2</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsLeftGang"> 
+				<Original>%1 left gang %2</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsKickedFromGang"> 
+				<Original>%1 kicked %2 from gang %3</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsNeutralisedGangArea"> 
+				<Original>%1 in gang: %2 neutralised: %3</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsCapturedGangArea"> 
+				<Original>%1 in gang: %2 captured: %3</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsPlantedActivationBomb"> 
+				<Original>%1 planted activation bomb in %2</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsRemoteDetonatedBomb"> 
+				<Original>%1 remote detonated a bomb in %2</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsPlantedRemoteBomb"> 
+				<Original>%1 planted remote bomb in %2</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsPlantedSpeedBomb"> 
+				<Original>%1 planted speed bomb in %2</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsSetOffActivationBomb"> 
+				<Original>%1 set off an activation bomb in %2</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsSetOffSpeedBomb"> 
+				<Original>%1 set off a speed bomb in %2</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsCaughtFish"> 
+				<Original>%1 caught %2x %3</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsStarved"> 
+				<Original>%1 starved to death</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsLockPicked"> 
+				<Original>%1 lockpicked %2</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsSentPhoneMessage"> 
+				<Original>%1 sent a phone message to %2 - %3</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsRanOverSpike"> 
+				<Original>%1 ran over a spike strip</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsSiphonedFuel"> 
+				<Original>%1 siphoned fuel out of %2</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsBoughtLicense"> 
+				<Original>%1 bought license: %2</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsBoughtSlave"> 
+				<Original>%1 bought an illegal worker</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsCollectSlaveMoney"> 
+				<Original>%1 collected $%2 from a illegal worker owned by %3</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsBoughtWorkplace"> 
+				<Original>%1 bought workplace %2</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_AdminLogsVipStart"> 
+				<Original>The VIP mission has started</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_AdminLogsVipMadeItToCopBase"> 
+				<Original>VIP made it to cop base %1 cops got $%2</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_AdminLogsVipCivWin"> 
+				<Original>The VIP was killed by %1 with %2 cops online</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_AdminLogsGovConvoyStart"> 
+				<Original>The Government Convoy mission has started</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_AdminLogsGovConvoyMadeItToCopBase"> 
+				<Original>Government convoy made it to cop base %1 cops got $%2</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_AdminLogsGovConvoyRobbed"> 
+				<Original>Government convoy was robbed by %1 with %2 for $%3</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_AdminLogsHostageTaken"> 
+				<Original>%1 took a hostage with %2 cops online</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_AdminLogsHostageKilled"> 
+				<Original>%1 killed a hostage with %2 cops online</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_AdminLogsHostageTakerLeft"> 
+				<Original>The hostage taker %1 left the hostage area and failed</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_AdminLogsHostageFreed"> 
+				<Original>The hostage was freed by the cops</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_AdminLogsHostageTakerWin"> 
+				<Original>%1 kept the hostage for %2 and received $%3</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsImpoundedVeh"> 
+				<Original>%1 impounded %2</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsUnImpoundedVeh"> 
+				<Original>%1 retrieved %2 from impound</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsPullOut"> 
+				<Original>%1 pulled %2 out of a vehicle</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsSearchedVeh"> 
+				<Original>%1 searched %2</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsAddItemTrunk"> 
+				<Original>%1 put %2 %3 into the trunk of %4</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsRemoveItemTrunk"> 
+				<Original>%1 removed %2 %3 from the trunk of %4</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_AdminLogsChangedTaxes"> 
+				<Original>%1 changed taxes %2</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_AdminLogsChangedLaw"> 
+				<Original>%1 changed law #%2: %3</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsVotedForMayor"> 
+				<Original>%1 voted %2 to be mayor</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerLogsVotedForChief"> 
+				<Original>%1 voted %2 to be UN commander</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerInfo"> 
+				<Original>Player Info</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerInfoDesc"> 
+				<Original>Views the selected players info and logs</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerInfoFrame"> 
+				<Original>%1 Info</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerInfoLogsFrame"> 
+				<Original>%1 Logs</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerInfoName"> 
+				<Original>Name: %1</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerInfoPlayer"> 
+				<Original>Player: %1</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerInfoBankAccount"> 
+				<Original>Bank Account: $%1</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerInfoCopKills"> 
+				<Original>Cop Kills - Current: %1 Total: %2</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerInfoCivKills"> 
+				<Original>Civ Kills - Current: %1 Total: %2</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerInfoSuicides"> 
+				<Original>Suicides: %1</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerInfoDeaths"> 
+				<Original>Deaths: %1</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerInfoHunger"> 
+				<Original>Hunger: %1</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerInfoInventory"> 
+				<Original>Inventory:</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerInfoHat"> 
+				<Original>Hat:</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerInfoVehicles"> 
+				<Original>Vehicles:</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerInfoVehOwner"> 
+				<Original>Owner: %1</Original>
+			</Key>
+			
+			<Key ID="STR_Admin_PlayerInfoWanted"> 
+				<Original>Wanted:</Original>
+			</Key>
+
 		</Container>
 		
 		<Container name="ZKB_CBA">
@@ -346,6 +1065,10 @@
 			<Key ID="STR_Robbing_RobbedGlobal">
 				<Original>Someone robbed %1!</Original>
 			</Key>
+			
+			<Key ID="STR_Robbing_RequiredCops">
+				<Original>There needs to be %1 cop(s) online to do this</Original>
+			</Key>
 		
 		</container>
 		
@@ -546,14 +1269,6 @@
 				<Original>Storage: %1/%2Kg</Original>
 			</Key>
 			
-			<Key ID="STR_Vehicle_VehicleTrunkFull">
-				<Original>The vehicle's storage is full or can't hold that much</Original>
-			</Key>
-			
-			<Key ID="STR_Vehicle_NotEnoughToTake">
-				<Original>There is not that many items in the vehicles trunk</Original>
-			</Key>
-			
 			<Key ID="STR_Vehicle_ImpoundLot">
 				<Original>Impound Lot</Original>
 			</Key>
@@ -662,7 +1377,7 @@
 			</Key>
 			
 			<Key ID="STR_Jail_MayorArrested">
-				<Original>The mayor has been arrested and is no longer mayor</Original>
+				<Original>The mayor has been arrested and is no longer mayor. The taxes have been reset to 5%.</Original>
 			</Key>
 			
 			<Key ID="STR_Jail_PlayerArrested">
@@ -729,7 +1444,7 @@
 			</Key>
 			
 			<Key ID="STR_Killed_MayorDied">
-				<Original>The mayor has died and is no longer the mayor</Original>
+				<Original>The mayor has died and is no longer the mayor. The taxes have been reset to 5%.</Original>
 			</Key>
 			
 			<Key ID="STR_Killed_LostVehLicense">
@@ -902,7 +1617,6 @@
 				<Original>View Distance: %1</Original>
 			</Key>
 			
-			
 			<Key ID="STR_MainMenu_TerrainSettings">
 				<Original>Terrain Settings</Original>
 			</Key>
@@ -943,7 +1657,7 @@
 						Pressing 5 will open up the gang menu this is only for civs. In the gang menu you can join, leave, manage, or create a gang.&lt;br/&gt;&lt;br/&gt;
 						Pressing Shift + H will holster your weapon.&lt;br/&gt;&lt;br/&gt;
 						If you are armed with some kind of weapon in hand you can press Shift+F to knock other players out, make sure your close to them first. This is used to rob other players or to restrain them if your a cop.&lt;br/&gt;&lt;br/&gt;
-						If you are a cop you can press Tilda (~) to open up a police menu, depending if you are in a vehicle it will open up a bigger menu for cops.&lt;br/&gt;&lt;br/&gt;
+						If you are a cop you can press Tilda (~) to open up a computer, depending if you are in a vehicle it will open up a bigger menu for cops.&lt;br/&gt;&lt;br/&gt;
 						If you are a cop in a vehicle that you have the keys to you can press F to turn the siren on and off.&lt;br/&gt;&lt;br/&gt;
 						To rob the bank or a gas station make sure you have a weapon in hand for the option to show up.&lt;br/&gt;&lt;br/&gt;
 						If you're in a gang there are 3 gang areas around the map for you to capture. Capturing a gang area has several perks, First is the ability to access a gang shop to get low caliber weapons with out the need for a weapon License. Second is a bonus in your paychecks but note the more people in your gang the less the bonus. Third is the ability to process drugs, each gang area allows you to process a certain drug given that you have the correct License first.&lt;br/&gt;&lt;br/&gt;
@@ -1019,6 +1733,14 @@
 				<Original>%1 has been created at your feet</Original>
 			</Key>
 			
+			<Key ID="STR_MainMenu_ItemInfoItemNameFilterText">
+				<Original>Item Name:</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_ItemInfoItemTypeFilterText">
+				<Original>Item Type:</Original>
+			</Key>
+			
 			<Key ID="STR_MainMenu_ItemInfoApplyFilter">
 				<Original>Apply Filter</Original>
 			</Key>
@@ -1091,8 +1813,16 @@
 				<Original>Information Menu</Original>
 			</Key>
 			
+			<Key ID="STR_MainMenu_ServerNextStatWipeIn">
+				<Original>Next Stat Wipe in: %1 Years, %2 Months, %3 Days, %4 Hours, %5 Minutes</Original>
+			</Key>
+			
+			<Key ID="STR_MainMenu_ServerNextStatWipeOnRestart">
+				<Original>Next Stat Wipe in: Next Server Restart</Original>
+			</Key>
+			
 			<Key ID="STR_MainMenu_InfoDate">
-				<Original>Date: %1/%2/%3</Original>
+				<Original>InGame Date: %1/%2/%3</Original>
 			</Key>
 			
 			<Key ID="STR_MainMenu_InfoUptime">
@@ -1442,6 +2172,13 @@
 				<Original>You don't have %1 %2 in your inventory</Original>
 			</Key>
 			
+			<Key ID="STR_Inv_InventoryFull">
+				<Original>The desired inventory is full or can't hold that much</Original>
+			</Key>
+			
+			<Key ID="STR_Inv_TransferedItem">
+				<Original>You transfered %1x %2 from %3 to %4</Original>
+			</Key>
 		</Container>
 				
 		<Container name="Gang">
@@ -1823,15 +2560,15 @@
 			</Key>
 			
 			<Key ID="STR_Cop_PoliceComputer">
-				<Original>Police Computer</Original>
+				<Original>Computer</Original>
 			</Key>
 			
 			<Key ID="STR_Cop_PoliceComputerLite">
-				<Original>Police Computer Lite</Original>
+				<Original>Computer Lite</Original>
 			</Key>
 			
 			<Key ID="STR_Cop_PoliceComputerNoKeys">
-				<Original>You need the keys to the vehicle to access the police computer</Original>
+				<Original>You need the keys to the vehicle to access the computer</Original>
 			</Key>
 			
 			<Key ID="STR_Cop_PoliceComputerWantedMenu">
@@ -2010,7 +2747,7 @@
 			</Key>
 			
 			<Key ID="STR_GovConvoy_StealMoney">
-				<Original>Steal Police Bonus</Original>
+				<Original>Steal Government Bonus</Original>
 			</Key>
 			
 			<Key ID="STR_GovConvoy_Stole">
@@ -2151,7 +2888,7 @@
 			</Key>
 			
 			<Key ID="STR_Slave_Buy">
-				<Original>Buy Slave</Original>
+				<Original>Buy Slave $%1</Original>
 			</Key>
 			
 			<Key ID="STR_Slave_InGang">
@@ -2680,8 +3417,8 @@
 				<Original>Use the Refuel can in a vehicle to refuel the vehicle</Original>
 			</Key>
 			
-			<Key ID="STR_ItemDesc_SyphonFuelKit">
-				<Original>The Syphon Fuel Kit is used to syphon fuel out of vehicles. It will leave the syphoned vehicles fuel empty.</Original>
+			<Key ID="STR_ItemDesc_SiphonFuelKit">
+				<Original>The Siphon Fuel Kit is used to siphon fuel out of vehicles. It will leave the siphoned vehicles fuel empty.</Original>
 			</Key>
 			
 			<Key ID="STR_ItemDesc_OilBarrel">
@@ -2928,6 +3665,10 @@
 				<Original>%1 already has this key</Original>
 			</Key>
 			
+			<Key ID="STR_ItemMisc_GaveKey">
+				<Original>You gave %1 keys to %2</Original>
+			</Key>
+			
 			<Key ID="STR_ItemMisc_RecievedKey">
 				<Original>%1 gave you keys to %2</Original>
 			</Key>
@@ -2980,16 +3721,16 @@
 				<Original>Vehicle refuelled</Original>
 			</Key>
 			
-			<Key ID="STR_ItemMisc_NotEnoughFuelSyphon">
-				<Original>The vehicle doesn't have enough fuel to syphon</Original>
+			<Key ID="STR_ItemMisc_NotEnoughFuelSiphon">
+				<Original>The vehicle doesn't have enough fuel to siphon</Original>
 			</Key>
 			
-			<Key ID="STR_ItemMisc_SyphoningFuel">
+			<Key ID="STR_ItemMisc_SiphoningFuel">
 				<Original>Draining fuel</Original>
 			</Key>
 			
-			<Key ID="STR_ItemMisc_VehSyphoned">
-				<Original>You syphoned the fuel out of the vehicle</Original>
+			<Key ID="STR_ItemMisc_VehSiphoned">
+				<Original>You siphoned the fuel out of the vehicle</Original>
 			</Key>
 			
 			<Key ID="STR_ItemMisc_WeaponBagVehCarogClear">

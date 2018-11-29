@@ -1,3 +1,4 @@
+#include "..\..\ConfigMacros.hpp"
 /*
 	Author: ZKB1325
 	FileName: fn_ChangeTaxes.sqf
@@ -18,3 +19,8 @@ ZKB_TaxArray = [_itemTax,_vehicleTax,_magazineTax,_weaponTax,_transferTax];
 publicVariable "ZKB_TaxArray";
 
 localize "STR_Tax_TaxesChanged" remoteExecCall ["hint",0,false];
+["STR_Admin_AdminLogsChangedTaxes",name player,ZKB_TaxArray] call ZKB_fnc_AdminAddAdminLog;
+if (SETTING(getNumber,"ZKB_StatSaveEnabled") isEqualTo 1) then
+	{
+	["taxes",ZKB_TaxArray] remoteExecCall ["ZKB_fnc_ServerSaveStats",2,false];
+	};

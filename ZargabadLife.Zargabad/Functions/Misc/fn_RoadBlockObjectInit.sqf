@@ -2,23 +2,42 @@
 	Author: ZKB1325
 	FileName: fn_RoadBlockObjectInit.sqf
 	Function: ZKB_fnc_RoadBlockObjectInit
-	Description: Should be put on every roadblock object to get the objects original position and to determine if it should start lowered or not. Will only run on server
+	Description: Ran on the roadblock controller or where the addAction was added to toggle the roadblock
 	
-	[this,true] call ZKB_fnc_RoadBlockObjectInit;
+	[this,[object1],true] call ZKB_fnc_RoadBlockObjectInit;
 	
 	0: Object
-		Object to act as roadBlock
-		
-	1: Bool
+		Object to act as the controller. The object the toggle addaction is added to
+	1: Array
+		Array of roadblock objects
+	2: Bool
 		True/False if the object should start down
 */
 if !(isServer) exitWith {};
-private _object = param [0,objNull,[objNull]];
-if (isNull _object) exitWith {};
-private _startDown = param [1,false,[true]];
-private _objectPos = getposATL _object;
-_object setVariable ["rbStartPos",_objectPos,true];
+private _controller = param [0,objNull,[objNull]];
+if (isNull _controller) exitWith {};
+private _objects = param [1,[],[[]]];
+if (_objects isEqualTo []) exitWith {};
+private _startDown = param [2,false,[true]];
+
+private _objectArray = [];
+private _objectsArray = [];
+
+{
+_objectArray = [];
+_objectArray pushBack (typeOf _x);
+_objectArray pushBack (getPosATL _x);
+_objectArray pushBack [vectorDir _x,vectorUp _x];
+_objectsArray pushBack _objectArray;
+}forEach _objects;
+
+_controller setVariable ["roadBlockArray",_objectsArray,true];
+_controller setVariable ["curRoadBlockObjects",_objects,true];
+
 if (_startDown) then
 	{
-	_object setPosATL [_objectPos select 0,_objectPos select 1,-1000];
+	{
+	deleteVehicle _x;
+	}forEach _objects;
+	_controller setVariable ["curRoadBlockObjects",[],true];
 	};
