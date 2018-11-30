@@ -51,11 +51,11 @@ if ((_seliteminfo in (_x select 4)) or (_seliteminfo in (_x select 5))) then
 		{
 		if ((_x select 0) in ZKB_NonTaxedShops) then
 			{
-			_finalBuyCost = _buyCost;	
+			_finalBuyCost = round _buyCost;	
 			}
 			else
 			{
-			_finalBuyCost = _buyCostWithTax;
+			_finalBuyCost = round _buyCostWithTax;
 			};
 		}
 		else
@@ -76,11 +76,11 @@ if ((_seliteminfo in (_x select 4)) or (_seliteminfo in (_x select 5))) then
 		{
 		if ((_x select 0) in ZKB_NonTaxedShops) then
 			{
-			_finalSellCost = _sellCost;	
+			_finalSellCost = round _sellCost;	
 			}
 			else
 			{
-			_finalSellCost = _sellCostWithTax;
+			_finalSellCost = round _sellCostWithTax;
 			};
 		}
 		else

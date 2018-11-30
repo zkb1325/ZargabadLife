@@ -23,7 +23,7 @@ if ((_vehbomb select 0) == "ActivationBomb") exitWith
 	private _bombOwner = [_vehbomb select 1] call ZKB_fnc_GetPlayerFromID;
 	if !(isNull _bombOwner) then
 		{
-		[[_carbomb, _bombOwner],{(_this select 0) setShotParents [(_this select 1), (_this select 1)];}] remoteExecCall ["BIS_fnc_call", 2];	
+		[_carbomb, _bombOwner] remoteExecCall ["ZKB_fnc_SetShotParents", 2];	
 		};
 	};
 	
@@ -39,7 +39,7 @@ if ((_vehbomb select 0) == "SpeedBomb") exitWith
 	["STR_Admin_PlayerLogsSetOffSpeedBomb",name player,[typeOf _vehicle] call ZKB_fnc_GetItemName] call ZKB_fnc_AdminAddPlayerLog;
 	if !(isNull _bombOwner) then
 		{
-		[[_carbomb, _bombOwner],{(_this select 0) setShotParents [(_this select 1), (_this select 1)];}] remoteExecCall ["BIS_fnc_call", 2];	
+		[_carbomb, _bombOwner] remoteExecCall ["ZKB_fnc_SetShotParents", 2];	
 		};
 	};
 	

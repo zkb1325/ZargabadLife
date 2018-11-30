@@ -7,6 +7,8 @@
 	Description: Init for joining players. Handles first time joining and stat loading for session
 */
 
+["STR_Admin_PlayerJoined",name player,playerSide] call ZKB_fnc_AdminAddPlayerLog;
+
 //Disabled by default because CBA Keybinds are used.
 (findDisplay 46) displayAddEventHandler ["KeyDown", {_this call ZKB_fnc_KeyDownEH;}]; //still needed for map key and escape key
 //(findDisplay 46) displayAddEventHandler ["KeyUp", {_this call ZKB_fnc_KeyUpEH;}];

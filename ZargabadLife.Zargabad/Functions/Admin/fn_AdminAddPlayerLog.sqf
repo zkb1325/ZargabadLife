@@ -21,7 +21,7 @@ missionNamespace setVariable ["ZKB_PlayerLogs",_curPlayerLogs,true];
 
 if !(isDedicated) then
 	{
-	private _curPlayersLogs = player getVariable ["ZKB_PlayersLogs",[]];
+	private _curPlayersLogs = missionNamespace getVariable [format ["ZKB_%1Logs",getPlayerUID player],[]];
 	_curPlayersLogs pushBack ([serverTime] + _logArray);
-	player setVariable ["ZKB_PlayersLogs",_curPlayersLogs,true];
+	missionNamespace setVariable [format ["ZKB_%1Logs",getPlayerUID player],_curPlayersLogs,true];
 	};

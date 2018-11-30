@@ -386,6 +386,7 @@ class ZargLife_Client
 		class HostageKilled {};
 		class HostageKilledKiller {};
 		class KilledGoatEH {};
+		class SetShotParents {};
 		class TakeHostageLoop {};
 
 		};

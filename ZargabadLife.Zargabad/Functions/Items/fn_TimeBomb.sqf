@@ -35,7 +35,7 @@ if (_action == "Plant") exitWith
 	[_item, 1] call ZKB_fnc_InvRemoveItem;
 
 	(vehicle player) setVariable ["PlantedBomb", ["TimeBomb", getPlayerUID player], true];
-	["STR_ItemMisc_PlantedTimeBomb", [(vehicle player), [round _time,"MM:SS"] call BIS_fnc_secondsToString]] call ZKB_fnc_DynamicText;	
+	["STR_ItemMisc_PlantedTimeBomb", [(vehicle player) getVariable ["plate",(vehicle player)], [round _time,"MM:SS"] call BIS_fnc_secondsToString]] call ZKB_fnc_DynamicText;	
 	
 	sleep _time;
 	if ((count (_veh getVariable ["PlantedBomb",[]]) < 1) or (isNull _veh)) exitWith {};

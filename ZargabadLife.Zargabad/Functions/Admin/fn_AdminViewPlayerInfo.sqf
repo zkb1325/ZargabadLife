@@ -275,7 +275,7 @@ _playerInfoBoxCtrl ctrlSetPosition [(ctrlPosition _playerInfoBoxCtrl) select 0, 
 _playerInfoBoxCtrl ctrlCommit 0;
 
 
-private _playerLogs = _player getVariable ["ZKB_PlayersLogs",[]];
+private _playerLogs = missionNamespace getVariable [format ["ZKB_%1Logs",getPlayerUID _player],[]];
 private _playerLogsStr = "";
 
 {

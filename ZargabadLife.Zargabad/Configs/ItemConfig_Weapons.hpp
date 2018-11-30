@@ -528,7 +528,7 @@ class CUP_arifle_M16A2
 	canGive = true;
 	isIllegal = true;
 	Description = "";
-	reqResources[] = {{"Steel",12},{"Plastic",5}};
+	reqResources[] = {{"Steel",10},{"Plastic",2}};
 	};
 class CUP_arifle_M16A4_Base
 	{
@@ -547,7 +547,26 @@ class CUP_arifle_M16A4_Base
 	canGive = true;
 	isIllegal = true;
 	Description = "";
-	reqResources[] = {{"Steel",13},{"Plastic",5}};
+	reqResources[] = {{"Steel",10},{"Plastic",2}};
+	};
+class CUP_arifle_L85A2
+	{
+	className = "CUP_arifle_L85A2";
+	displayName = "L85A2";
+	itemType = "Weapon";
+	Function = "";
+	buyPirce = 58000;
+	sellPirce = -1;
+	Weight = 0;
+	trunkSpace = 0;
+	civLicense = "Terror_Training";
+	copLicense = "Armed_Response_Officer_Training";
+	sharedLicense = "";
+	canDrop = true;
+	canGive = true;
+	isIllegal = true;
+	Description = "";
+	reqResources[] = {{"Steel",10},{"Plastic",2}};
 	};
 class CUP_arifle_M4A3_desert
 	{

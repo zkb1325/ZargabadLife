@@ -428,6 +428,10 @@
 				<Original>View the player logs</Original>
 			</Key>
 			
+			<Key ID="STR_Admin_PlayerJoined"> 
+				<Original>%1 connected as %2</Original>
+			</Key>
+			
 			<Key ID="STR_Admin_PlayerLogsUseItem"> 
 				<Original>%1 used %2 %3</Original>
 			</Key>

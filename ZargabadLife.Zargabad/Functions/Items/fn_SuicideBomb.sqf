@@ -21,4 +21,4 @@ for [{_i=5}, {_i >= 0}, {_i=_i-1}] do
 	
 if !(alive player) exitWith {};
 _bomb = "Bo_GBU12_LGB" createVehicle (getposATL player);
-[[_bomb, player],{(_this select 0) setShotParents [(_this select 1), (_this select 1)];}] remoteExecCall ["BIS_fnc_call", 2];
+[_bomb, player] remoteExecCall ["ZKB_fnc_SetShotParents", 2];

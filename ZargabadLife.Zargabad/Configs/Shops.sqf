@@ -307,6 +307,8 @@ if (isServer) then
 	"CUP_arifle_M16A4_Base",
 	"CUP_optic_CompM2_Black",
 	"CUP_optic_ACOG",
+	"CUP_arifle_L85A2_NG",
+	"CUP_optic_SUSAT",
 	"CUP_arifle_Mk16_CQC",
 	"CUP_arifle_Mk16_CQC_FG",
 	"CUP_arifle_Mk16_STD",

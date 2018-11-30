@@ -60,11 +60,11 @@ if !((_itemstockarray select 0) isEqualTo -1) then
 	{
 	if (ZKB_shopobject in ZKB_NonTaxedShops) then
 		{
-		_finalcost =  ([_x] call ZKB_fnc_GetItemBuyPrice);	
+		_finalcost =  round ([_x] call ZKB_fnc_GetItemBuyPrice);	
 		}
 		else
 		{
-		_finalcost =  ([_x] call ZKB_fnc_GetItemBuyPriceWithTax);
+		_finalcost =  round ([_x] call ZKB_fnc_GetItemBuyPriceWithTax);
 		};
 	
 	if (([_x] call ZKB_fnc_GetConfigByClass) == "VirtualItem") then

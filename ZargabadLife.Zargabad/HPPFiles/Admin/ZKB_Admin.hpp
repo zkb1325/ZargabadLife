@@ -15,7 +15,7 @@ class controls
 		x = 0.05 * safezoneW + safezoneX;
 		y = 0.08 * safezoneH + safezoneY;
 		w = 0.225 * safezoneW;
-		h = 0.48 * safezoneH;
+		h = 0.9 * safezoneH;
 		};
 	class Admin_Frame: RscFrame
 		{
@@ -24,7 +24,7 @@ class controls
 		x = 0.05 * safezoneW + safezoneX;
 		y = 0.08 * safezoneH + safezoneY;
 		w = 0.225 * safezoneW;
-		h = 0.48 * safezoneH;
+		h = 0.82 * safezoneH;
 		};
 	class Admin_ActionList: RscListbox
 		{
@@ -33,15 +33,16 @@ class controls
 		x = 0.0625 * safezoneW + safezoneX;
 		y = 0.1 * safezoneH + safezoneY;
 		w = 0.2 * safezoneW;
-		h = 0.42 * safezoneH;
+		h = 0.395 * safezoneH;
 		};	
-	class Admin_TP_PlayerList: RscCombo
+	class Admin_TP_PlayerList: RscListbox
 		{
 		idc = 50002;
-		x = 0.05 * safezoneW + safezoneX;
-		y = 0.58 * safezoneH + safezoneY;
-		w = 0.225 * safezoneW;
-		h = 0.04 * safezoneH;
+		onLBSelChanged = "[lbData [50001,lbCurSel 50001],((_this select 0) lbData (_this select 1)),((findDisplay 50000) displayCtrl 50001),lbCurSel 50001] call ZKB_fnc_ExecAdminCommand";
+		x = 0.0625 * safezoneW + safezoneX;
+		y = 0.505 * safezoneH + safezoneY;
+		w = 0.2 * safezoneW;
+		h = 0.445 * safezoneH;
 		};
 		
 	#include "Admin_TP.hpp" //50010 - 50016
