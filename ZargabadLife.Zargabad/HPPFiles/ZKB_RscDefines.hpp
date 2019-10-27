@@ -96,7 +96,7 @@
 ///////////////////////////////////////////////////////////////////////////
 /// Base Classes
 ///////////////////////////////////////////////////////////////////////////
-class RscText
+class ZKB_RscText
 {
 	deletable = 0;
 	fade = 0;
@@ -122,7 +122,7 @@ class RscText
 	tooltipColorShade[] = {0,0,0,0.65};
 };
 
-class RscStructuredText
+class ZKB_RscStructuredText
 {
 	deletable = 0;
 	fade = 0;
@@ -148,7 +148,7 @@ class RscStructuredText
 	shadow = 1;
 };
 
-class RscPicture
+class ZKB_RscPicture
 {
 	deletable = 0;
 	fade = 0;
@@ -173,7 +173,7 @@ class RscPicture
 	tooltipColorShade[] = {0,0,0,0.65};
 };
 
-class RscEdit
+class ZKB_RscEdit
 {
 	deletable = 0;
 	fade = 0;
@@ -206,7 +206,7 @@ class RscEdit
 	tooltipColorShade[] = {0,0,0,0.65};
 };
 
-class RscCombo
+class ZKB_RscCombo
 {
 	deletable = 0;
 	fade = 0;
@@ -267,7 +267,7 @@ class RscCombo
 	colorActive[] = {1,0,0,1};
 };
 
-class RscListBox
+class ZKB_RscListBox
 {
 	deletable = 0;
 	fade = 0;
@@ -336,7 +336,7 @@ class RscListBox
 	maxHistoryDelay = 1;
 };
 
-class RscButton
+class ZKB_RscButton
 {
 	deletable = 0;
 	fade = 0;
@@ -391,7 +391,7 @@ class RscButton
 	borderSize = 0;
 };
 
-class RscFrame
+class ZKB_RscFrame
 {
 	type = 0;
 	idc = -1;
@@ -408,7 +408,7 @@ class RscFrame
 	h = 0.3;
 };
 
-class RscSlider
+class ZKB_RscSlider
 {
 	deletable = 0;
 	fade = 0;
@@ -424,7 +424,7 @@ class RscSlider
 	h = 0.025;
 };
 
-class RscVSlider
+class ZKB_RscVSlider
 {
 	deletable = 0;
 	fade = 0;
@@ -463,7 +463,7 @@ class IGUIBack
 	};
 };
 
-class RscCheckBox
+class ZKB_RscCheckBox
 {
 	idc = -1;
 	type = 77;
@@ -502,7 +502,7 @@ class RscCheckBox
 	soundEscape[] = {"",0.1,1};
 };
 
-class RscTextCheckBox
+class ZKB_RscTextCheckBox
 {
 	idc = -1;
 	type = 7;
@@ -542,7 +542,7 @@ class RscTextCheckBox
 	};
 };
 
-class RscScrollBar
+class ZKB_RscScrollBar
 {
 	color[] = {1,1,1,0.6};
 	colorActive[] = {1,1,1,1};
@@ -561,7 +561,7 @@ class RscScrollBar
 	autoScrollRewind = 0;
 };
 
-class RscControlsGroup
+class ZKB_RscControlsGroup
 {
 	type = 15;
 	idc = -1;
@@ -572,13 +572,13 @@ class RscControlsGroup
 	shadow = 0;
 	style = 16;
 	
-	class VScrollBar : RscScrollBar
+	class VScrollBar : ZKB_RscScrollBar
 	{
 		width = 0.021;
 		autoScrollEnabled = 1;
 	};
 	
-	class HScrollBar : RscScrollBar
+	class HScrollBar : ZKB_RscScrollBar
 	{
 		height = 0.028;
 	};
@@ -586,7 +586,7 @@ class RscControlsGroup
 	class Controls {};
 };
 
-class RscControlsGroup_NoScroll : RscControlsGroup
+class ZKB_RscControlsGroup_NoScroll : ZKB_RscControlsGroup
 {
 	class VScrollbar
 	{

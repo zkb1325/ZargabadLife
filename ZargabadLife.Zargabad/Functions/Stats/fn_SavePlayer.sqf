@@ -84,7 +84,12 @@ switch (playerSide) do
 	
 if (SETTING(getNumber,"ZKB_StatSaveEnabled") isEqualTo 1) then
 	{
-	[format ["stats_%1_%2",getPlayerUID player,playerSide]] remoteExecCall ["ZKB_fnc_ServerSavePlayerStats",2,false];	
+	if (isNil "ZKB_PlayerSaveDelay") then
+		{
+		[format ["stats_%1_%2",getPlayerUID player,playerSide]] remoteExecCall ["ZKB_fnc_ServerSavePlayerStats",2,false];
+		ZKB_PlayerSaveDelay = true;
+		[] spawn {sleep 10; ZKB_PlayerSaveDelay = nil;};
+		};
 	};
 	
 private _saveArrayShared = 

@@ -126,7 +126,7 @@ if (hmd player != "") then
 if (_illegalGearValue > 0) then
 	{
 	[player,"Illegal Gear",_illegalGearValue] call ZKB_fnc_AddWanted;
-	["STR_Cop_DisarmedIllegal",[name _disrmedBy,[_illegalGearValue] call ZKB_fnc_FormatNumber]] remoteExecCall ["ZKB_fnc_DynamicText",[west,player],false];
+	["STR_Cop_DisarmedIllegal",[name player,[_illegalGearValue] call ZKB_fnc_FormatNumber]] remoteExecCall ["ZKB_fnc_DynamicText",[west,player],false];
 	};
 [] spawn ZKB_fnc_SavePlayer;
 	

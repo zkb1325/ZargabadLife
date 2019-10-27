@@ -13,7 +13,7 @@ saving = 0;
 onPauseScript[] = {ZKB_fnc_EscMenuInterupt};
 
 respawn       = 3;
-respawnDelay  = 2;
+respawnDelay  = 1;
 respawnDialog = 0;
 
 disabledAI    = 1;
@@ -32,8 +32,8 @@ https://community.bistudio.com/wiki/CfgRemoteExec
 
 corpseManagerMode = 1;
 corpseLimit = 1;
-corpseRemovalMinTime = 3; //Value should be at least 1 above respawnDelay
-corpseRemovalMaxTime = 3;
+corpseRemovalMinTime = 2; //Value should be at least 1 above respawnDelay
+corpseRemovalMaxTime = 2;
 	
 wreckManagerMode = 1;
 wreckLimit = 1;

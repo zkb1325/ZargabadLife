@@ -31,6 +31,7 @@ if (call ZKB_fnc_IsMayor) then
 	if (SETTING(getNumber,"ZKB_StatSaveEnabled") isEqualTo 1) then
 		{
 		["mayor",""] remoteExecCall ["ZKB_fnc_ServerSaveStats",2,false];
+		["taxes",ZKB_TaxArray] remoteExecCall ["ZKB_fnc_ServerSaveStats",2,false];
 		};
 	};
 
@@ -67,7 +68,7 @@ player setDamage 0;
 player setVariable ["restrained",false,true];
 [] spawn ZKB_fnc_SavePlayer;
 
-[] spawn 
+/* [] spawn 
 	{
 	kickforce = 2;
 	private _soccerMouseZChangedEH = (findDisplay 46) displayAddEventHandler ["MouseZChanged", 
@@ -92,9 +93,8 @@ player setVariable ["restrained",false,true];
 	private _playerDir = direction player;
 	while {true} do 
 		{
-		if !(player inArea "JailAreaMarker") exitWith {};
-		
 		waitUntil {player distance SoccerBall <= .5 or !(player inArea "JailAreaMarker")};
+		if !(player inArea "JailAreaMarker") exitWith {};
 		_playerVel = velocity player;
 		_playerDir = direction player;
 		[SoccerBall,[(_playervel select 0) + (sin _playerDir * kickforce), (_playervel select 1) + (cos _playerDir * kickforce), kickforce/1.5]] remoteExecCall ["ZKB_fnc_AddForce",SoccerBall,false];
@@ -102,7 +102,7 @@ player setVariable ["restrained",false,true];
 		};
 	(findDisplay 46) displayRemoveEventHandler ["MouseZChanged",_soccerMouseZChangedEH];
 	removeMissionEventHandler ["Draw3D",_soccerDraw3DEH];
-	};
+	}; */
 	
 while {true} do
 	{

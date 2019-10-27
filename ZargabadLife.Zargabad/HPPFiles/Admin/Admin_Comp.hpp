@@ -6,7 +6,7 @@ class Admin_Comp_BG: IGUIBack
 	w = 0.175 * safezoneW;
 	h = 0.3 * safezoneH;
 };
-class Admin_Comp_Amount: RscEdit
+class Admin_Comp_Amount: ZKB_RscEdit
 {
 	idc = 50021;
 	text = "1";
@@ -15,7 +15,7 @@ class Admin_Comp_Amount: RscEdit
 	w = 0.125 * safezoneW;
 	h = 0.04 * safezoneH;
 };
-class Admin_Comp_InventoryToggle: RscCheckbox
+class Admin_Comp_InventoryToggle: ZKB_RscCheckbox
 {
 	idc = 50022;
 	x = 0.325 * safezoneW + safezoneX;
@@ -23,7 +23,7 @@ class Admin_Comp_InventoryToggle: RscCheckbox
 	w = 0.025 * safezoneW;
 	h = 0.04 * safezoneH;
 };
-class Admin_Comp_InventoryToggleText: RscStructuredText
+class Admin_Comp_InventoryToggleText: ZKB_RscStructuredText
 {
 	idc = 50023;
 	text = "$STR_Admin_CompCheckBoxText";
@@ -32,7 +32,7 @@ class Admin_Comp_InventoryToggleText: RscStructuredText
 	w = 0.1 * safezoneW;
 	h = 0.04 * safezoneH;
 };
-class Admin_Comp_CompMoneyBtn: RscButton
+class Admin_Comp_CompMoneyBtn: ZKB_RscButton
 {
 	idc = 50024;
 	text = "$STR_Admin_CompSelectedPlayer";
@@ -42,7 +42,7 @@ class Admin_Comp_CompMoneyBtn: RscButton
 	w = 0.125 * safezoneW;
 	h = 0.04 * safezoneH;
 };
-class Admin_Comp_CompEveryoneMoneyBtn: RscButton
+class Admin_Comp_CompEveryoneMoneyBtn: ZKB_RscButton
 {
 	idc = 50025;
 	text = "$STR_Admin_CompEveryone";
@@ -60,7 +60,7 @@ class Admin_Comp_BG2: IGUIBack
 	w = 0.275 * safezoneW;
 	h = 0.74 * safezoneH;
 };
-class Admin_Comp_ItemList: RscListbox
+class Admin_Comp_ItemList: ZKB_RscListbox
 {
 	idc = 50027;
 	x = 0.4875 * safezoneW + safezoneX;
@@ -68,7 +68,7 @@ class Admin_Comp_ItemList: RscListbox
 	w = 0.25 * safezoneW;
 	h = 0.36 * safezoneH;
 };
-class Admin_Comp_ItemAmount: RscEdit
+class Admin_Comp_ItemAmount: ZKB_RscEdit
 {
 	idc = 50028;
 	text = "1";
@@ -77,7 +77,7 @@ class Admin_Comp_ItemAmount: RscEdit
 	w = 0.225 * safezoneW;
 	h = 0.04 * safezoneH;
 };
-class Admin_Comp_CompItemBtn: RscButton
+class Admin_Comp_CompItemBtn: ZKB_RscButton
 {
 	idc = 50029;
 	text = "$STR_Admin_CompGivePlayerItem";
@@ -87,7 +87,7 @@ class Admin_Comp_CompItemBtn: RscButton
 	w = 0.225 * safezoneW;
 	h = 0.04 * safezoneH;
 };
-class Admin_Comp_CompEveryoneItemBtn: RscButton
+class Admin_Comp_CompEveryoneItemBtn: ZKB_RscButton
 {
 	idc = 50030;
 	text = "$STR_Admin_CompGiveEveryoneItem";
@@ -98,7 +98,7 @@ class Admin_Comp_CompEveryoneItemBtn: RscButton
 	h = 0.04 * safezoneH;
 };
 
-class Admin_Comp_ItemFilterText: RscStructuredText
+class Admin_Comp_ItemFilterText: ZKB_RscStructuredText
 {
 	idc = 50031;
 	text = "$STR_MainMenu_ItemInfoItemNameFilterText";
@@ -107,7 +107,7 @@ class Admin_Comp_ItemFilterText: RscStructuredText
 	w = 0.05 * safezoneW;
 	h = 0.03 * safezoneH;
 };
-class Admin_Comp_ItemFilterEdit: RscEdit
+class Admin_Comp_ItemFilterEdit: ZKB_RscEdit
 {
 	idc = 50032;
 	x = 0.55 * safezoneW + safezoneX;
@@ -115,7 +115,7 @@ class Admin_Comp_ItemFilterEdit: RscEdit
 	w = 0.1 * safezoneW;
 	h = 0.03 * safezoneH;
 };
-class Admin_Comp_TypeFilterText: RscStructuredText
+class Admin_Comp_TypeFilterText: ZKB_RscStructuredText
 {
 	idc = 50033;
 	text = "$STR_MainMenu_ItemInfoItemTypeFilterText";
@@ -124,7 +124,7 @@ class Admin_Comp_TypeFilterText: RscStructuredText
 	w = 0.05 * safezoneW;
 	h = 0.03 * safezoneH;
 };
-class Admin_Comp_TypeFilterEdit: RscEdit
+class Admin_Comp_TypeFilterEdit: ZKB_RscEdit
 {
 	idc = 50034;
 	x = 0.55 * safezoneW + safezoneX;
@@ -132,7 +132,7 @@ class Admin_Comp_TypeFilterEdit: RscEdit
 	w = 0.1 * safezoneW;
 	h = 0.03 * safezoneH;
 };
-class ItemInfo_CurTypeFilterCtrl: RscControlsGroup
+class ItemInfo_CurTypeFilterCtrl: ZKB_RscControlsGroup
 		{
 		idc = 50035;
 		x = 0.5 * safezoneW + safezoneX;
@@ -142,7 +142,7 @@ class ItemInfo_CurTypeFilterCtrl: RscControlsGroup
 		
 		class controls
 			{
-			class Admin_Comp_CurFilters: RscStructuredText
+			class Admin_Comp_CurFilters: ZKB_RscStructuredText
 			{
 				idc = 50036;
 				text = "";
@@ -153,7 +153,7 @@ class ItemInfo_CurTypeFilterCtrl: RscControlsGroup
 			};
 			};
 		};
-class Admin_Comp_ApplyFilter: RscButton
+class Admin_Comp_ApplyFilter: ZKB_RscButton
 {
 	idc = 50037;
 	text = "$STR_MainMenu_ItemInfoApplyFilter";
@@ -163,7 +163,7 @@ class Admin_Comp_ApplyFilter: RscButton
 	w = 0.0625 * safezoneW;
 	h = 0.03 * safezoneH;
 };
-class Admin_Comp_ClearFilter: RscButton
+class Admin_Comp_ClearFilter: ZKB_RscButton
 {
 	idc = 50038;
 	text = "$STR_MainMenu_ItemInfoClearFilter";

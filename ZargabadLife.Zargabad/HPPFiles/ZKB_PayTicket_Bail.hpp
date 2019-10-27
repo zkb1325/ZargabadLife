@@ -17,7 +17,7 @@ class controls
 		w = 0.4125 * safezoneW;
 		h = 0.32 * safezoneH;
 	};
-	class PayTicket_Bail_Header: RscStructuredText
+	class PayTicket_Bail_Header: ZKB_RscStructuredText
 	{
 		idc = 20010;
 		x = 0.3125 * safezoneW + safezoneX;
@@ -25,7 +25,7 @@ class controls
 		w = 0.3625 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class PayTicket_Bail_YesBtn: RscButton
+	class PayTicket_Bail_YesBtn: ZKB_RscButton
 	{
 		idc = 20020;
 		text = "Pay Bail"; //--- ToDo: Localize;
@@ -35,7 +35,7 @@ class controls
 		h = 0.04 * safezoneH;
 		action = "closedialog 0;";
 	};
-	class PayTicket_Bail_NoBtn: RscButton
+	class PayTicket_Bail_NoBtn: ZKB_RscButton
 	{
 		idc = 20030;
 		text = "Cancel"; //--- ToDo: Localize;

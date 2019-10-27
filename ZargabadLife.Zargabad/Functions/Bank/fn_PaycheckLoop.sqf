@@ -115,5 +115,4 @@ while {true} do
 			player setVariable ["BankAccount",ZKB_BankAccount,true];
 			};
 		};
-	[] spawn ZKB_fnc_SavePlayer;
 	};

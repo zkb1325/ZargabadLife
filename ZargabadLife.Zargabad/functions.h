@@ -158,7 +158,6 @@ class ZargLife_Client
 		class KeyBindSirenOnOff {};
 		class KeyBindVehicleLock {};
 		class KeyDownEH {};
-		class KeyUpEH {};
 		class KilledEH {};
 		class KilledPlayer {};
 		class RespawnEH {};

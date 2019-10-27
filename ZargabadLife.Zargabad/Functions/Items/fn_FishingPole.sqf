@@ -16,10 +16,10 @@ _caughtamount = 0;
 
 switch (true) do
 	{
-	case (player distance getMarkerpos "FishingAreaBass" <= 30): {_caughtfish = "Bass"; _caughtamount = round random 3;};	
-	case(player distance getMarkerpos "FishingAreaTrout" <= 30): {_caughtfish = "Trout"; _caughtamount = round random 6;};	
-	case (player distance getMarkerpos "FishingAreaPerch" <= 30): {_caughtfish = "Perch"; _caughtamount = round random 4;};	
-	case (player distance getMarkerpos "FishingAreaWalleye" <= 30): {_caughtfish = "Walleye"; _caughtamount = round random 5;};
+	case (player distance getMarkerpos "FishingAreaBass" <= 30): {_caughtfish = "Bass"; _caughtamount = ceil random 3;};	
+	case(player distance getMarkerpos "FishingAreaTrout" <= 30): {_caughtfish = "Trout"; _caughtamount = ceil random 6;};	
+	case (player distance getMarkerpos "FishingAreaPerch" <= 30): {_caughtfish = "Perch"; _caughtamount = ceil random 4;};	
+	case (player distance getMarkerpos "FishingAreaWalleye" <= 30): {_caughtfish = "Walleye"; _caughtamount = ceil random 5;};
 	};
 	
 if (_caughtfish == "") exitWith {["STR_ItemMisc_NotNearFish"] call ZKB_fnc_DynamicText;};
@@ -43,7 +43,7 @@ if(animationState player != "normal") then
 	player switchMove "normal";
 	player playMoveNow "normal";
 	};
-	
+
 [_caughtfish, _caughtamount] call ZKB_fnc_InvAddItem;	
 ["STR_ItemMisc_CaughtFish", [[_caughtamount] call ZKB_fnc_FormatNumber,[_caughtfish] call ZKB_fnc_GetItemName]] call ZKB_fnc_DynamicText;
 ["STR_Admin_PlayerLogsCaughtFish",name player,[_caughtamount] call ZKB_fnc_FormatNumber,[_caughtfish] call ZKB_fnc_GetItemName] call ZKB_fnc_AdminAddPlayerLog;

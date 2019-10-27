@@ -18,7 +18,7 @@ class controls
 		w = 0.22 * safezoneW;
 		h = 0.65 * safezoneH;
 	};
-	class CopToCivMenu_Frame: RscFrame
+	class CopToCivMenu_Frame: ZKB_RscFrame
 	{
 		idc = 14002;
 		x = 0.4 * safezoneW + safezoneX;
@@ -26,7 +26,7 @@ class controls
 		w = 0.22 * safezoneW;
 		h = 0.65 * safezoneH;
 	};
-	class CopToCivMenu_DisarmBtn: RscButton
+	class CopToCivMenu_DisarmBtn: ZKB_RscButton
 	{
 		idc = 14010;
 		text = "$STR_Cop_Disarm";
@@ -36,7 +36,7 @@ class controls
 		h = 0.04 * safezoneH;
 		action = "[ZKB_CopInteractionTarget] call ZKB_fnc_Disarm;";
 	};
-	class CopToCivMenu_DrugSearch: RscButton
+	class CopToCivMenu_DrugSearch: ZKB_RscButton
 	{
 		idc = 14020;
 		text = "$STR_Cop_Search";
@@ -46,7 +46,7 @@ class controls
 		h = 0.04 * safezoneH;
 		action = "[ZKB_CopInteractionTarget] call ZKB_fnc_SearchPlayer;";
 	};
-	class CopToCivMenu_ArrestTimeTxt: RscText
+	class CopToCivMenu_ArrestTimeTxt: ZKB_RscText
 	{
 		idc = 14030;
 		text = "$STR_Cop_ArrestTime";
@@ -55,7 +55,7 @@ class controls
 		w = 0.2 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class CopToCivMenu_ArrestTimeSlider: RscSlider
+	class CopToCivMenu_ArrestTimeSlider: ZKB_RscSlider
 	{
 		idc = 14040;
 		onSliderPosChanged = "ctrlSetText [14030, format [localize ""STR_Cop_ArrestTime"",round (_this select 1)]];";
@@ -64,7 +64,7 @@ class controls
 		w = 0.2 * safezoneW;
 		h = 0.03 * safezoneH;
 	};
-	class CopToCivMenu_ArrestBtn: RscButton
+	class CopToCivMenu_ArrestBtn: ZKB_RscButton
 	{
 		idc = 14050;
 		text = "$STR_Cop_Arrest";
@@ -74,7 +74,7 @@ class controls
 		h = 0.04 * safezoneH;
 		action = "[ZKB_CopInteractionTarget,round (sliderPosition 14040)] call ZKB_fnc_ArrestPlayer;";
 	};
-	class CopToCivMenu_RestrainBtn: RscButton
+	class CopToCivMenu_RestrainBtn: ZKB_RscButton
 	{
 		idc = 14060;
 		text = "$STR_Cop_RestarainRelease";
@@ -84,7 +84,7 @@ class controls
 		h = 0.04 * safezoneH;
 		action = "[ZKB_CopInteractionTarget] call ZKB_fnc_RestrainPlayer;";
 	};
-	class CopToCivMenu_TicketAmount: RscEdit
+	class CopToCivMenu_TicketAmount: ZKB_RscEdit
 	{
 		idc = 14070;
 		text = "0";
@@ -94,7 +94,7 @@ class controls
 		w = 0.2 * safezoneW;
 		h = 0.03 * safezoneH;
 	};
-	class CopToCivMenu_TicketBtn: RscButton
+	class CopToCivMenu_TicketBtn: ZKB_RscButton
 	{
 		idc = 14080;
 		text = "$STR_Cop_GiveTicket";
@@ -104,7 +104,7 @@ class controls
 		h = 0.04 * safezoneH;
 		action = "[ZKB_CopInteractionTarget,round (parseNumber (ctrlText 14070))] call ZKB_fnc_GiveTicket;";
 	};
-	class CopToCivMenu_HealBtn: RscButton
+	class CopToCivMenu_HealBtn: ZKB_RscButton
 	{
 		idc = 14090;
 		text = "$STR_Cop_Heal";
@@ -114,7 +114,7 @@ class controls
 		h = 0.04 * safezoneH;
 		action = "[ZKB_CopInteractionTarget] call ZKB_fnc_HealPlayer;";
 	};
-	class CopToCivMenu_InvCheck: RscButton
+	class CopToCivMenu_InvCheck: ZKB_RscButton
 	{
 		idc = 14100;
 		text = "$STR_Cop_CheckInventory";
@@ -124,7 +124,7 @@ class controls
 		h = 0.04 * safezoneH;
 		action = "[ZKB_CopInteractionTarget] call ZKB_fnc_CheckInventory";
 	};
-	class CopToCivMenu_Cancel: RscButton
+	class CopToCivMenu_Cancel: ZKB_RscButton
 	{
 		idc = 14110;
 		text = "Cancel"; //--- ToDo: Localize;

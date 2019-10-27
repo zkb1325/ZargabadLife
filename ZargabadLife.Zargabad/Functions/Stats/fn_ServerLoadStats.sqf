@@ -18,6 +18,8 @@ missionNameSpace setVariable ["currentChief",["read",["Chief","ChiefUID",""]] ca
 private ["_shopData"];
 {
 _shopData = (_x select 0) getVariable "ShopData";
-_shopData set [8,["read",["ShopStock",format ["Shop_%1",_forEachIndex],_shopData select 9]] call ZKB_ServerStats];
+_shopData set [8,["read",["ShopStock",format ["Shop_%1",_forEachIndex],_shopData select 8]] call ZKB_ServerStats];
 (_x select 0) setVariable ["ShopData",_shopData,true];
 }forEach ZKB_ShopDefines;
+
+setDate (["read",["Date","Date",date]] call ZKB_ServerStats);

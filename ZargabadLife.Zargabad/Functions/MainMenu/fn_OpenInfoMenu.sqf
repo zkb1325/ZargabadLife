@@ -18,17 +18,20 @@ while {!isNull _display} do
 {
 _info = "";
 _info = _info + "<t size='1.2'>";
-private _statWipeDate = [(ZKB_ServerStartTime select 0),(ZKB_ServerStartTime select 1),(ZKB_ServerStartTime select 2),(ZKB_ServerStartTime select 3),(ZKB_ServerStartTime select 4)+(serverTime/60)] call BIS_fnc_fixDate;
-if ([_statWipeDate,ZKB_NextStatWipe] call ZKB_fnc_CompareMinute) then
+if (SETTING(getNumber,"ZKB_StatSaveEnabled") isEqualTo 1) then
 	{
-	_info = _info + localize "STR_MainMenu_ServerNextStatWipeOnRestart";
-	_info = _info + "<br/>";
-	}
-	else
-	{
-	private _statWipeIn = [ZKB_NextStatWipe,_statWipeDate] call ZKB_fnc_SubtractDate;
-	_info = _info + format [localize "STR_MainMenu_ServerNextStatWipeIn",(_statwipein select 0),(_statwipein select 1),(_statwipein select 2),(_statwipein select 3),(_statwipein select 4)];
-	_info = _info + "<br/>";
+	private _statWipeDate = [(ZKB_ServerStartTime select 0),(ZKB_ServerStartTime select 1),(ZKB_ServerStartTime select 2),(ZKB_ServerStartTime select 3),(ZKB_ServerStartTime select 4)+(serverTime/60)] call BIS_fnc_fixDate;
+	if ([_statWipeDate,ZKB_NextStatWipe] call ZKB_fnc_CompareMinute) then
+		{
+		_info = _info + localize "STR_MainMenu_ServerNextStatWipeOnRestart";
+		_info = _info + "<br/>";
+		}
+		else
+		{
+		private _statWipeIn = [ZKB_NextStatWipe,_statWipeDate] call ZKB_fnc_SubtractDate;
+		_info = _info + format [localize "STR_MainMenu_ServerNextStatWipeIn",(_statwipein select 0),(_statwipein select 1),(_statwipein select 2),(_statwipein select 3),(_statwipein select 4)];
+		_info = _info + "<br/>";
+		};
 	};
 _info = _info + format [localize "STR_MainMenu_InfoDate",(date select 2),(date select 1),(date select 0)];
 _info = _info + "<br/>";

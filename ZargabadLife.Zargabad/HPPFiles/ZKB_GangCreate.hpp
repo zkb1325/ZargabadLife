@@ -17,7 +17,7 @@ class controls
 		w = 0.4125 * safezoneW;
 		h = 0.32 * safezoneH;
 	};
-	class GangCreate_Frame: RscFrame
+	class GangCreate_Frame: ZKB_RscFrame
 	{
 		idc = 19002;
 		x = 0.2925 * safezoneW + safezoneX;
@@ -25,7 +25,7 @@ class controls
 		w = 0.4125 * safezoneW;
 		h = 0.32 * safezoneH;
 	};
-	class GangCreate_Header: RscStructuredText
+	class GangCreate_Header: ZKB_RscStructuredText
 	{
 		idc = 19010;
 		text = $STR_Gang_CreateNewGang;
@@ -38,7 +38,7 @@ class controls
 		align = "center";
 		};
 	};
-	class GangCreate_GangName: RscEdit
+	class GangCreate_GangName: ZKB_RscEdit
 	{
 		idc = 19020;
 		text = $STR_Gang_GangName;
@@ -48,7 +48,7 @@ class controls
 		h = 0.04 * safezoneH;
 		onChar = "[_this, 19020] spawn ZKB_fnc_CheckValidChar;";
 	};
-	class GangCreate_CreateBtn: RscButton
+	class GangCreate_CreateBtn: ZKB_RscButton
 	{
 		idc = 19030;
 		text = $STR_Gang_Create;
@@ -58,7 +58,7 @@ class controls
 		h = 0.04 * safezoneH;
 		action = "call ZKB_fnc_GangCreated;";
 	};
-	class GangCreate_GangCreateInfo: RscStructuredText
+	class GangCreate_GangCreateInfo: ZKB_RscStructuredText
 	{
 		idc = 19040;
 		text = $STR_Gang_NewGangInfo;
@@ -67,7 +67,7 @@ class controls
 		w = 0.3625 * safezoneW;
 		h = 0.08 * safezoneH;
 	};
-	class GangCreate_Cancel: RscButton
+	class GangCreate_Cancel: ZKB_RscButton
 	{
 		idc = 19050;
 		text = $STR_Common_Close;

@@ -1,12 +1,32 @@
 class ZKB_Settings
 	{
+	//True/False if stats should save over restarts Default: false
+	//Requires the server to be running INIDBI2
+	ZKB_StatSaveEnabled = false;
+	ZKB_SavePlayerPos = true; //True/False if the players position should be saved so they login where they last were Default: true
+	ZKB_StatWipeStartDate[] = {2018,1,1,24,0}; //Start date (servers local timezone) for stat wipes. All future stat wipes will be based off this date as well the first stat wipe will not happen until this date
+	ZKB_StatWipeDelay[] = {0,0,7,0,0}; //Delay between each stat wipe {years,months,days,hours,minutes}
 	
-	ZKB_StatSaveEnabled = true; //True/False if stats should save over restarts
-	ZKB_SavePlayerPos = true; //True/False if the players position should be saved so they login where they last were
-	ZKB_StatWipeStartDate[] = {2018,1,1,0,0}; //Start date (servers local timezone) for stat wipes. All future stat wipes will be based off this date as well the first stat wipe will not happen until this date
-	ZKB_StatWipeDelay[] = {0,0,1,0,0}; //Delay between each stat wipe {years,months,days,hours,minutes}
+	ZKB_UseCBAKeyBinds = true; //True/False if CBA is used for keybinds. False will remove the requirement for CBA
+
+	ZKB_DayTimeAcc = 7; //Time acceleration during the day Default: 7
+	ZKB_NightTimeAcc = 15; //Time acceleration during the night Default: 15
 	
-	//Array of head gear/helmet/hat classNames the player could start with
+	ZKB_CopsOnlyLoseWeapons = true; //True/False if cops will only lose weapons on respawn Default: true
+	ZKB_CopsLoseNothing = false; //True/False if cops lose no gear when killed. ZKB_CopsOnlyLoseWeapons must = false Default: false
+	
+	//Base loadout for cops
+	class ZKB_CopLoadout
+		{
+		uniformClass = "CUP_U_B_USArmy_Base"; //Uniform
+		backpack = ""; //Backpack
+		linkedItems[] = {"CUP_H_CDF_OfficerCap_UN","Binocular","ItemMap","ItemGPS","ItemRadio","ItemCompass","ItemWatch"}; //Vest, Helmet, binocular, Map, GPS, Radio, Compass, Watch
+		weapons[] = {"CUP_hgun_Makarov"}; //Primary, Handgun, Secondary
+		items[] = {}; //Inventory Items (Any Item you want in inventory)
+		magazines[] = {"CUP_8Rnd_9x18_MakarovSD_M","CUP_8Rnd_9x18_MakarovSD_M","CUP_8Rnd_9x18_MakarovSD_M","CUP_8Rnd_9x18_MakarovSD_M","CUP_8Rnd_9x18_MakarovSD_M","CUP_8Rnd_9x18_MakarovSD_M","SmokeShellYellow","SmokeShellYellow"};
+		};
+
+	//Array of head gear/helmet/hat classNames the player could start with as civ
 	ZKB_StartingHeadGear[] =
 	{
 	"CUP_H_TKI_Lungee_Open_01",
@@ -27,7 +47,7 @@ class ZKB_Settings
 	"CUP_H_TKI_Pakol_2_06"
 	};
 	
-	//Array of uniform classNames the player could start with
+	//Array of uniform classNames the player could start with as civ
 	ZKB_StartingUniforms[] =
 	{
 	"CUP_O_TKI_Khet_Jeans_04",
@@ -43,7 +63,7 @@ class ZKB_Settings
 	"CUP_O_TKI_Khet_Partug_06"
 	};
 	
-	ZKB_StartingGear[] = {"ItemMap","ItemWatch","ItemCompass","ItemRadio"}; //Array of gear classNames that the player starts with (NVG, Map, GPS, Watch, radio)
+	ZKB_StartingGear[] = {"ItemMap","ItemWatch","ItemCompass","ItemRadio"}; //Array of gear classNames that the player starts with as civ (NVG, Map, GPS, Watch, radio)
 	
 	ZKB_StartingInventory[] = {{"KeyChain",1}}; //Starting inventory for new players
 	ZKB_MaxINVWeight = 60; //Default max amount of weight a player can hold for virtual items Default: 60
@@ -58,6 +78,9 @@ class ZKB_Settings
 	
 	ZKB_MaxStationMoney = 25000; //Max amount that can be robbed from a gas station Default: 25000
 	ZKB_MaxVaultMoney = 300000; //Max amount that can be robbed from a bank vault Default: 300000
+	
+	ZKB_MinMayorVotes = 1; //Minimum number of votes needed to be considered for mayor Default: 1
+	ZKB_MinChiefVotes = 1; //Minimum number of votes needed to be considered for police chief Default: 1
 	
 	ZKB_CopRespawnTimeBase = 15; //Base/min respawn time a cop gets before punishments added. Players respawn time resets to this + ZKB_SuicidePenalty once the player dies. Default: 15
 	ZKB_CivRespawnTimeBase = 25; //Base/min respawn time a civ gets before punishments added. Players respawn time resets to this + ZKB_SuicidePenalty once the player dies. Default: 25
@@ -76,7 +99,7 @@ class ZKB_Settings
 	ZKB_SlaveCost = 50000; //Cost to buy a slave Default: 50000
 	ZKB_MaxSlaves = 3; //Max number of slaves a player can own Default: 3
 	ZKB_SlaveBonus = 5000; //How much the slave makes per minute Default: 5000
-	ZKB_SlaveFreeReward = 15000; //How much the slave makes per minute Default: 15000
+	ZKB_SlaveFreeReward = 15000; //How much the player (Cop) gets for freeing a slave Default: 15000
 	ZKB_SlaveClass = "CUP_C_TK_Man_02"; //Unit className to spawn as the slave unit
 	
 	//Array of delivery point objects objects should be in array as a string 

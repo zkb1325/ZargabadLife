@@ -18,7 +18,7 @@ class controls
 		w = 0.24 * safezoneW;
 		h = 0.13 * safezoneH;
 	};
-	class BombRemote_Frame: RscFrame
+	class BombRemote_Frame: ZKB_RscFrame
 	{
 		idc = 11002;
 		x = 0.38 * safezoneW + safezoneX;
@@ -26,7 +26,7 @@ class controls
 		w = 0.24 * safezoneW;
 		h = 0.13 * safezoneH;
 	};
-	class BombRemote_BombCode: RscStructuredText
+	class BombRemote_BombCode: ZKB_RscStructuredText
 	{
 		idc = 11010;
 		text = $STR_ItemMisc_BombCode;
@@ -35,7 +35,7 @@ class controls
 		w = 0.08 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class BombRemote_Code: RscEdit
+	class BombRemote_Code: ZKB_RscEdit
 	{
 		idc = 11020;
 		x = 0.47 * safezoneW + safezoneX;
@@ -44,7 +44,7 @@ class controls
 		h = 0.04 * safezoneH;
 		onChar = "[_this, 11020] spawn ZKB_fnc_CheckValidChar;";
 	};
-	class BombRemote_Execute: RscButton
+	class BombRemote_Execute: ZKB_RscButton
 	{
 		idc = 11030;
 		text = $STR_ItemMisc_Execute;
@@ -54,7 +54,7 @@ class controls
 		h = 0.04 * safezoneH;
 		action = "[""Execute""] call ZKB_fnc_BombRemote";
 	};
-	class BombRemote_Cancel: RscButton
+	class BombRemote_Cancel: ZKB_RscButton
 	{
 		idc = 11040;
 		text = $STR_Common_Close;

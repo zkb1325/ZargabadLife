@@ -10,7 +10,7 @@ onUnload = "uiNamespace setVariable ['HudTags', displayNull]";
 
 class controls	
 {
-	class HudTags_Tag: RscStructuredText
+	class HudTags_Tag: ZKB_RscStructuredText
 	{
 		idc = 30001;
 		text = "Hud Tag";
@@ -24,7 +24,7 @@ class controls
 			};
 	};	
 	
-	class HudTags_Interaction: RscStructuredText
+	class HudTags_Interaction: ZKB_RscStructuredText
 	{
 		idc = 30002;
 		text = "Hud Tag";

@@ -18,7 +18,7 @@ class controls
 		w = 0.225 * safezoneW;
 		h = 0.6 * safezoneH;
 	};
-	class VoteList_Frame: RscFrame
+	class VoteList_Frame: ZKB_RscFrame
 	{
 		idc = 21002;
 		x = 0.3875 * safezoneW + safezoneX;
@@ -26,7 +26,7 @@ class controls
 		w = 0.225 * safezoneW;
 		h = 0.6 * safezoneH;
 	};
-	class VoteList_PlayerList: RscListBox
+	class VoteList_PlayerList: ZKB_RscListBox
 	{
 		idc = 21010;
 		x = 0.4125 * safezoneW + safezoneX;
@@ -34,7 +34,7 @@ class controls
 		w = 0.175 * safezoneW;
 		h = 0.38 * safezoneH;
 	};
-	class VoteList_VoteBtn: RscButton
+	class VoteList_VoteBtn: ZKB_RscButton
 	{
 		idc = 21020;
 		text = "$STR_Voting_Vote";
@@ -43,7 +43,7 @@ class controls
 		w = 0.15 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class VoteList_CancelBtn: RscButton
+	class VoteList_CancelBtn: ZKB_RscButton
 	{
 		idc = 21030;
 		text = "$STR_Common_Close";

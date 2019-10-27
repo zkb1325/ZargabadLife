@@ -1,3 +1,4 @@
+#include "ConfigMacros.hpp"
 enableSaving [false,false];
 
 if (isServer) then
@@ -40,7 +41,10 @@ if !(isdedicated) then
 	//Player Init
 	call ZKB_fnc_InitPlayer;
 	progressLoadingScreen .7;
-	call ZKB_fnc_InitCBAKeyBinds;
+	if (SETTING(getNumber,"ZKB_UseCBAKeyBinds") isEqualTo 1) then 
+		{
+		call ZKB_fnc_InitCBAKeyBinds;
+		};
 	progressLoadingScreen .8;
 	
 	[] spawn ZKB_fnc_GasStationInit;

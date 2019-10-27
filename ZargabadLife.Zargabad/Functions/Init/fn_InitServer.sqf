@@ -12,6 +12,7 @@ diag_log format ["Server Init - Started: %1",_initStartTime];
 addMissionEventHandler ["PlayerConnected",{["STR_Admin_AdminLogPlayerConnected",(_this select 2)] call ZKB_fnc_AdminAddAdminLog;}]; //Move connection logs to player logs
 addMissionEventHandler ["HandleDisconnect",{deleteVehicle (_this select 0); ["STR_Admin_AdminLogPlayerDisconnected",(_this select 3)] call ZKB_fnc_AdminAddAdminLog;}];
 
+[] execFSM "FSM\ZKB_TimeMultiplier.fsm";
 
 //Array of laws have as many as you want or just add "" to let the player come up with some on there own
 ZKB_LawArray = ["Always Drive on the RIGHT side of the road","Always Holster weapons in Towns.","Speed limits 60 in town 90 out","","","","","","","","","","","",""];
@@ -88,8 +89,18 @@ if (SETTING(getNumber,"ZKB_StatSaveEnabled") isEqualTo 1) then
 		[_killed getVariable "VehicleUniqueID"] call ZKB_fnc_ServerDeleteVehicle;
 		};
 	}];
-	addMissionEventHandler ["HandleDisconnect",{["shopstocks"] call ZKB_fnc_ServerSaveStats;}];
+	//addMissionEventHandler ["HandleDisconnect",{["shopstocks"] call ZKB_fnc_ServerSaveStats; ["date"] call ZKB_fnc_ServerSaveStats;}];
 	diag_log format ["Server Init - Stat loading done: %1",diag_tickTime];
+	
+	[] spawn
+		{
+		while {true} do
+			{
+			sleep 300;
+			["shopstocks"] call ZKB_fnc_ServerSaveStats; 
+			["date"] call ZKB_fnc_ServerSaveStats;
+			};
+		};
 	};
 
 [] spawn ZKB_fnc_ElectionLoop;

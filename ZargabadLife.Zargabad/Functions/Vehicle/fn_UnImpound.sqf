@@ -17,8 +17,9 @@ _playerside = switch (true) do
 	};
 private _vehInfo = ((missionNamespace getVariable format ["%1_Impound",getPlayerUID player]) select _impoundIndex);
 if !((_vehInfo select 2) find _playerside > -1) exitWith {["STR_Vehicle_ImpoundWrongSide"] call ZKB_fnc_DynamicText;};
-if(count (nearestobjects [getpos ZKB_ImpoundSpawn,["motorcycle","Car","Tank","Ship","Air"], 3]) > 0) exitWith {["STR_Shop_VehSpawnBlocked"] call ZKB_fnc_DynamicText;};
-
+private _impounded = false;
+if (count (nearestobjects [getpos ZKB_ImpoundSpawn,["motorcycle","Car","Tank","Ship","Air"], 3]) > 0) then {_impounded = [(nearestobjects [getpos ZKB_ImpoundSpawn,["motorcycle","Car","Tank","Ship","Air"], 3]) # 0,true] call ZKB_fnc_Impound;};
+if ((count (nearestobjects [getpos ZKB_ImpoundSpawn,["motorcycle","Car","Tank","Ship","Air"], 3]) > 0) and !_impounded) exitWith {["STR_Shop_VehSpawnBlocked"] call ZKB_fnc_DynamicText;};
 
 if ((["Money"] call ZKB_fnc_GetInvItemAmount) < SETTING(getNumber,"ZKB_UnImpoundCost")) exitWith {["STR_Vehicle_ImpoundNoMoney",[[SETTING(getNumber,"ZKB_UnImpoundCost")] call ZKB_fnc_FormatNumber,[_vehInfo select 0] call ZKB_fnc_GetItemName]] call ZKB_fnc_DynamicText;};
 ["Money",SETTING(getNumber,"ZKB_UnImpoundCost")] call ZKB_fnc_InvRemoveItem;

@@ -34,7 +34,7 @@ class CUP_NVG_PVS7
 	canGive = true;
 	isIllegal = false;
 	Description = "Used to help see at night";
-	reqResources[] = {{"Plastic",1},{"Glass",2},{"ElectronicComponents",1}};
+	reqResources[] = {{"Plastic",1},{"Glass",1},{"ElectronicComponents",1}};
 	};
 class ItemMap
 	{
@@ -72,7 +72,7 @@ class ItemGPS
 	canGive = true;
 	isIllegal = false;
 	Description = "";
-	reqResources[] = {{"Plastic",1},{"Glass",1},{"ElectronicComponents",1}};
+	reqResources[] = {{"Plastic",1},{"ElectronicComponents",1}};
 	};
 class ItemRadio
 	{
@@ -110,7 +110,7 @@ class ItemCompass
 	canGive = true;
 	isIllegal = false;
 	Description = "";
-	reqResources[] = {{"Plastic",1},{"Glass",1}};
+	reqResources[] = {{"Plastic",1}};
 	};
 class ItemWatch
 	{
@@ -129,7 +129,7 @@ class ItemWatch
 	canGive = true;
 	isIllegal = false;
 	Description = "";
-	reqResources[] = {{"Plastic",1},{"Glass",1},{"ElectronicComponents",1}};
+	reqResources[] = {{"Plastic",1}};
 	};
 class FirstAidKit
 	{

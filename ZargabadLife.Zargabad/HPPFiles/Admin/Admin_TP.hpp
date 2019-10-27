@@ -7,7 +7,7 @@
 		w = 0.175 * safezoneW;
 		h = 0.32 * safezoneH;
 	};
-	class Admin_TP_IncludeVeh: RscCheckbox
+	class Admin_TP_IncludeVeh: ZKB_RscCheckbox
 	{
 		idc = 50011;
 		x = 0.325 * safezoneW + safezoneX;
@@ -15,7 +15,7 @@
 		w = 0.025 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class Admin_TP_IncludeVehText: RscStructuredText
+	class Admin_TP_IncludeVehText: ZKB_RscStructuredText
 	{
 		idc = 50012;
 		text = "$STR_Admin_TeleportIncludeVeh";
@@ -24,7 +24,7 @@
 		w = 0.1 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class Admin_TP_TpToBtn: RscButton
+	class Admin_TP_TpToBtn: ZKB_RscButton
 	{
 		idc = 50013;
 		text = "$STR_Admin_TeleportTo";
@@ -34,7 +34,7 @@
 		w = 0.125 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class Admin_TP_TpHere: RscButton
+	class Admin_TP_TpHere: ZKB_RscButton
 	{
 		idc = 50014;
 		text = "$STR_Admin_TeleportHere";
@@ -44,7 +44,7 @@
 		w = 0.125 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class Admin_TP_TpBack: RscButton
+	class Admin_TP_TpBack: ZKB_RscButton
 	{
 		idc = 50015;
 		text = "$STR_Admin_TeleportBack";
@@ -54,7 +54,7 @@
 		w = 0.125 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class Admin_TP_MapTp: RscButton
+	class Admin_TP_MapTp: ZKB_RscButton
 	{
 		idc = 50016;
 		text = "$STR_Admin_TeleportMap";

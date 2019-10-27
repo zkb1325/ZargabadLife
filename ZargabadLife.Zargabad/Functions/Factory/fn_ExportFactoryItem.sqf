@@ -51,11 +51,13 @@ _btn1 buttonSetAction "closeDialog 0;";
 
 private _btnpos = ctrlPosition _btn1;
 private _btnY = _btnpos select 1;
+private _yOffset = .045 * safezoneH;
 
+private ["_ctrlPos"];
 for "_i" from 0 to ((count _shopsToExportTo)-1) do
 	{
 	private _ctrl = _display ctrlCreate ["RscButton", -1, _display displayCtrl 15505];
-	_btnpos set [1,_btnY + .08];
+	_btnpos set [1,_btnY + _yOffset];
 	_btnY = _btnpos select 1;
 	_ctrl ctrlSetPosition _btnpos;
 	_ctrl ctrlCommit 0;

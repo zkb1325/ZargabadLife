@@ -15,7 +15,7 @@ class CUP_acc_Glock17_Flashlight
 	canGive = true;
 	isIllegal = false;
 	Description = "";
-	reqResources[] = {{"Plastic",1},{"Glass",1},{"ElectronicComponents",1}};
+	reqResources[] = {{"Plastic",1},{"ElectronicComponents",1}};
 	};
 class CUP_muzzle_snds_MicroUzi
 	{
@@ -34,7 +34,7 @@ class CUP_muzzle_snds_MicroUzi
 	canGive = true;
 	isIllegal = true;
 	Description = "";
-	reqResources[] = {{"Iron",1},{"Plastic",1}};
+	reqResources[] = {{"Iron",1}};
 	};
 class CUP_optic_Leupold_VX3
 	{
@@ -53,7 +53,7 @@ class CUP_optic_Leupold_VX3
 	canGive = true;
 	isIllegal = true;
 	Description = "";
-	reqResources[] = {{"Plastic",2},{"Glass",2}};
+	reqResources[] = {{"Plastic",1},{"Glass",1}};
 	};
 class CUP_muzzle_snds_M9
 	{
@@ -72,7 +72,7 @@ class CUP_muzzle_snds_M9
 	canGive = true;
 	isIllegal = true;
 	Description = "";
-	reqResources[] = {{"Iron",1},{"Plastic",1}};
+	reqResources[] = {{"Iron",1}};
 	};
 class CUP_optic_LeupoldMk4_10x40_LRT_Desert
 	{
@@ -91,7 +91,7 @@ class CUP_optic_LeupoldMk4_10x40_LRT_Desert
 	canGive = true;
 	isIllegal = true;
 	Description = "";
-	reqResources[] = {{"Plastic",3},{"Glass",2}};
+	reqResources[] = {{"Plastic",1},{"Glass",1}};
 	};
 class CUP_optic_SB_3_12x50_PMII
 	{
@@ -110,7 +110,7 @@ class CUP_optic_SB_3_12x50_PMII
 	canGive = true;
 	isIllegal = true;
 	Description = "";
-	reqResources[] = {{"Plastic",3},{"Glass",3}};
+	reqResources[] = {{"Plastic",1},{"Glass",1}};
 	};
 class CUP_optic_PSO_3
 	{
@@ -129,7 +129,7 @@ class CUP_optic_PSO_3
 	canGive = true;
 	isIllegal = true;
 	Description = "";
-	reqResources[] = {{"Plastic",3},{"Glass",3}};
+	reqResources[] = {{"Plastic",1},{"Glass",1}};
 	};
 class CUP_optic_PSO_1
 	{
@@ -148,7 +148,7 @@ class CUP_optic_PSO_1
 	canGive = true;
 	isIllegal = true;
 	Description = "";
-	reqResources[] = {{"Plastic",2},{"Glass",2}};
+	reqResources[] = {{"Plastic",1},{"Glass",1}};
 	};
 class CUP_optic_CompM2_Black
 	{
@@ -167,7 +167,7 @@ class CUP_optic_CompM2_Black
 	canGive = true;
 	isIllegal = true;
 	Description = "";
-	reqResources[] = {{"Plastic",2},{"Glass",2}};
+	reqResources[] = {{"Plastic",1},{"Glass",1}};
 	};
 class CUP_optic_CompM2_Desert
 	{
@@ -186,7 +186,7 @@ class CUP_optic_CompM2_Desert
 	canGive = true;
 	isIllegal = true;
 	Description = "";
-	reqResources[] = {{"Plastic",2},{"Glass",2}};
+	reqResources[] = {{"Plastic",1},{"Glass",1}};
 	};
 class CUP_acc_Flashlight_desert
 	{
@@ -224,7 +224,7 @@ class CUP_optic_SUSAT
 	canGive = true;
 	isIllegal = true;
 	Description = "";
-	reqResources[] = {{"Plastic",2},{"Glass",1}};
+	reqResources[] = {{"Plastic",1},{"Glass",1}};
 	};
 class CUP_optic_ACOG
 	{
@@ -243,7 +243,7 @@ class CUP_optic_ACOG
 	canGive = true;
 	isIllegal = true;
 	Description = "";
-	reqResources[] = {{"Plastic",2},{"Glass",1}};
+	reqResources[] = {{"Plastic",1},{"Glass",1}};
 	};
 class CUP_optic_LeupoldM3LR
 	{
@@ -262,7 +262,7 @@ class CUP_optic_LeupoldM3LR
 	canGive = true;
 	isIllegal = true;
 	Description = "";
-	reqResources[] = {{"Plastic",3},{"Glass",3}};
+	reqResources[] = {{"Plastic",1},{"Glass",1}};
 	};
 class CUP_optic_Kobra
 	{
@@ -281,7 +281,7 @@ class CUP_optic_Kobra
 	canGive = true;
 	isIllegal = true;
 	Description = "";
-	reqResources[] = {{"Plastic",2},{"Glass",2}};
+	reqResources[] = {{"Plastic",1},{"Glass",1}};
 	};
 class CUP_optic_HoloBlack
 	{
@@ -300,7 +300,7 @@ class CUP_optic_HoloBlack
 	canGive = true;
 	isIllegal = true;
 	Description = "";
-	reqResources[] = {{"Plastic",2},{"Glass",2}};
+	reqResources[] = {{"Plastic",1},{"Glass",1}};
 	};
 class CUP_muzzle_snds_G36_black
 	{
@@ -319,5 +319,5 @@ class CUP_muzzle_snds_G36_black
 	canGive = true;
 	isIllegal = true;
 	Description = "";
-	reqResources[] = {{"Iron",1},{"Plastic",1}};
+	reqResources[] = {{"Iron",1}};
 	};

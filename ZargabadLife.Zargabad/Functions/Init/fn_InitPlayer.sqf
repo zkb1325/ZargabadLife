@@ -9,9 +9,7 @@
 
 ["STR_Admin_PlayerJoined",name player,playerSide] call ZKB_fnc_AdminAddPlayerLog;
 
-//Disabled by default because CBA Keybinds are used.
 (findDisplay 46) displayAddEventHandler ["KeyDown", {_this call ZKB_fnc_KeyDownEH;}]; //still needed for map key and escape key
-//(findDisplay 46) displayAddEventHandler ["KeyUp", {_this call ZKB_fnc_KeyUpEH;}];
 
 player addEventHandler ["HandleDamage", {_this call ZKB_fnc_HandleDamageEH;}];
 player addEventHandler ["Killed", {_this call ZKB_fnc_KilledEH;}];
@@ -66,7 +64,7 @@ switch (playerSide) do
 			}
 			else
 			{
-			if (SETTING(getNumber,"ZKB_StatSaveEnabled") isEqualTo 1) exitWith
+			if (SETTING(getNumber,"ZKB_StatSaveEnabled") isEqualTo 1) then
 				{
 				[format ["stats_%1_%2",getPlayerUID player,playerSide]] remoteExecCall ["ZKB_fnc_ServerLoadPlayerStats",2,false];
 
@@ -105,6 +103,27 @@ switch (playerSide) do
 					}forEach (nearestObjects [getArray(configFile >> "CfgWorlds" >> worldName >> "centerPosition"),["motorcycle","Car","Tank","Ship","Air"],(getNumber (configFile >> "CfgWorlds" >> worldName >> "MapSize"))]);
 					player setVariable ["ZKB_Keys",_keys,true];
 					};
+				}
+				else
+				{
+				if (count SETTING(getArray,"ZKB_StartingHeadGear") > 0) then
+					{
+					player addHeadgear (selectRandom SETTING(getArray,"ZKB_StartingHeadGear"));
+					};
+					
+				if (count SETTING(getArray,"ZKB_StartingUniforms") > 0) then
+					{
+					player forceAddUniform (selectRandom SETTING(getArray,"ZKB_StartingUniforms"));
+					};
+					
+				if (count SETTING(getArray,"ZKB_StartingGear") > 0) then
+					{
+					{
+					player addWeapon _x;
+					}forEach SETTING(getArray,"ZKB_StartingGear");
+					};
+					
+				ZKB_RespawnLoadOut = getUnitLoadout player;
 				};
 			};
 		};
@@ -147,7 +166,7 @@ call ZKB_fnc_OpenWelcomeMenu;
 reverse ZKB_Rules;
 player createDiarySubject ["serverRules",localize "STR_MainMenu_MapTabServerRules"];
 {
-ZKB_DiaryRules = player createDiaryRecord ["serverRules", _x];
+player createDiaryRecord ["serverRules", _x];
 }forEach ZKB_Rules;
 
 if !(player diarySubjectExists "locations") then

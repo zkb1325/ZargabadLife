@@ -93,7 +93,7 @@ class controls
 	class MainCameraDialog_VLine_15: MainCameraDialog_VLine_1 {x = 0.885 * safezoneW + safezoneX;};
 	
 	
-	class MainCameraDialog_CamZoomSlider: RscVSlider
+	class MainCameraDialog_CamZoomSlider: ZKB_RscVSlider
 	{
 		idc = 25020;
 		x = 0.725 * safezoneW + safezoneX;
@@ -101,7 +101,7 @@ class controls
 		w = 0.0375 * safezoneW;
 		h = 0.52 * safezoneH;
 	};
-	class MainCameraDialog_CamUpDownSlider: RscVSlider
+	class MainCameraDialog_CamUpDownSlider: ZKB_RscVSlider
 	{
 		idc = 25030;
 		x = 0.225 * safezoneW + safezoneX;
@@ -109,7 +109,7 @@ class controls
 		w = 0.04 * safezoneW;
 		h = 0.52 * safezoneH;
 	};
-	class MainCameraDialog_UpDownText: RscStructuredText
+	class MainCameraDialog_UpDownText: ZKB_RscStructuredText
 	{
 		idc = 25040;
 		text = "$STR_Cop_SatCamMoveUpDown";
@@ -122,7 +122,7 @@ class controls
 			align = "center";
 			};
 	};
-	class MainCameraDialog_CamLeftRightSlider: RscSlider
+	class MainCameraDialog_CamLeftRightSlider: ZKB_RscSlider
 	{
 		idc = 25050;
 		x = 0.3 * safezoneW + safezoneX;
@@ -130,7 +130,7 @@ class controls
 		w = 0.4 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class MainCameraDialog_LeftRightText: RscStructuredText
+	class MainCameraDialog_LeftRightText: ZKB_RscStructuredText
 	{
 		idc = 25060;
 		text = "$STR_Cop_SatCamMoveLeftRight";
@@ -143,7 +143,7 @@ class controls
 			align = "center";
 			};
 	};
-	class MainCameraDialog_NVGOnBtn: RscButton
+	class MainCameraDialog_NVGOnBtn: ZKB_RscButton
 	{
 		idc = 25070;
 		text = "$STR_Cop_CameraNvgOn";
@@ -154,7 +154,7 @@ class controls
 		colorBackground[] = {0.5,0.5,0.5,.5};
 		action = "camUseNVG true;";
 	};
-	class MainCameraDialog_NVGOffBtn: RscButton
+	class MainCameraDialog_NVGOffBtn: ZKB_RscButton
 	{
 		idc = 25080;
 		text = "$STR_Cop_CameraNvgOff";
@@ -165,7 +165,7 @@ class controls
 		colorBackground[] = {0.5,0.5,0.5,.5};
 		action = "camUseNVG false;";
 	};
-	class MainCameraDialog_Info: RscStructuredText
+	class MainCameraDialog_Info: ZKB_RscStructuredText
 	{
 		idc = 25090;
 		text = "";
@@ -178,7 +178,7 @@ class controls
 			align = "center";
 			};
 	};
-	class MainCameraDialog_Close: RscButton
+	class MainCameraDialog_Close: ZKB_RscButton
 	{
 		idc = 25100;
 		text = "$STR_Common_Close";

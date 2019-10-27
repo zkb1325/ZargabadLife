@@ -15,7 +15,7 @@ class CUP_C_TT650_TK_CIV
 	canGive = true;
 	isIllegal = false;
 	Description = "";
-	reqResources[] = {{"Steel",2},{"Plastic",1},{"Oil",1}};
+	reqResources[] = {{"Steel",2},{"Plastic",1}};
 	};
 class CUP_B_M1030_USMC
 	{
@@ -34,7 +34,7 @@ class CUP_B_M1030_USMC
 	canGive = true;
 	isIllegal = true;
 	Description = "";
-	reqResources[] = {{"Steel",2},{"Plastic",1},{"Oil",1}};
+	reqResources[] = {{"Steel",2},{"Plastic",1}};
 	};
 class C_Quadbike_01_white_F
 	{
@@ -53,7 +53,7 @@ class C_Quadbike_01_white_F
 	canGive = true;
 	isIllegal = false;
 	Description = "";
-	reqResources[] = {{"Steel",2},{"Plastic",1},{"Oil",1}};
+	reqResources[] = {{"Steel",2},{"Plastic",1}};
 	};
 class C_Quadbike_01_black_F
 	{
@@ -72,7 +72,7 @@ class C_Quadbike_01_black_F
 	canGive = true;
 	isIllegal = false;
 	Description = "";
-	reqResources[] = {{"Steel",2},{"Plastic",1},{"Oil",1}};
+	reqResources[] = {{"Steel",2},{"Plastic",1}};
 	};
 class CUP_C_Volha_Blue_TKCIV
 	{
@@ -91,7 +91,7 @@ class CUP_C_Volha_Blue_TKCIV
 	canGive = true;
 	isIllegal = false;
 	Description = "";
-	reqResources[] = {{"Steel",4},{"Glass",1},{"Plastic",1},{"Oil",1}};
+	reqResources[] = {{"Steel",4},{"Glass",1},{"Plastic",1}};
 	};
 class CUP_C_Volha_Gray_TKCIV
 	{
@@ -110,7 +110,7 @@ class CUP_C_Volha_Gray_TKCIV
 	canGive = true;
 	isIllegal = false;
 	Description = "";
-	reqResources[] = {{"Steel",4},{"Glass",1},{"Plastic",1},{"Oil",1}};
+	reqResources[] = {{"Steel",4},{"Glass",1},{"Plastic",1}};
 	};
 class CUP_C_Volha_Limo_TKCIV
 	{
@@ -129,7 +129,7 @@ class CUP_C_Volha_Limo_TKCIV
 	canGive = true;
 	isIllegal = true;
 	Description = "";
-	reqResources[] = {{"Steel",4},{"Glass",1},{"Plastic",1},{"Oil",1}};
+	reqResources[] = {{"Steel",4},{"Glass",1},{"Plastic",1}};
 	};
 class CUP_C_Lada_GreenTK_CIV
 	{
@@ -148,7 +148,7 @@ class CUP_C_Lada_GreenTK_CIV
 	canGive = true;
 	isIllegal = false;
 	Description = "";
-	reqResources[] = {{"Steel",4},{"Glass",1},{"Plastic",1},{"Oil",1}};
+	reqResources[] = {{"Steel",4},{"Glass",1},{"Plastic",1}};
 	};
 class CUP_C_Lada_TK2_CIV
 	{
@@ -167,7 +167,7 @@ class CUP_C_Lada_TK2_CIV
 	canGive = true;
 	isIllegal = false;
 	Description = "";
-	reqResources[] = {{"Steel",4},{"Glass",1},{"Plastic",1},{"Oil",1}};
+	reqResources[] = {{"Steel",4},{"Glass",1},{"Plastic",1}};
 	};
 class CUP_C_S1203_CIV
 	{
@@ -186,7 +186,7 @@ class CUP_C_S1203_CIV
 	canGive = true;
 	isIllegal = false;
 	Description = "";
-	reqResources[] = {{"Steel",6},{"Glass",1},{"Plastic",1},{"Oil",1}};
+	reqResources[] = {{"Steel",6},{"Glass",1},{"Plastic",1}};
 	};
 class CUP_C_Datsun
 	{
@@ -205,7 +205,7 @@ class CUP_C_Datsun
 	canGive = true;
 	isIllegal = false;
 	Description = "";
-	reqResources[] = {{"Steel",4},{"Glass",1},{"Plastic",1},{"Oil",1}};
+	reqResources[] = {{"Steel",4},{"Glass",1},{"Plastic",1}};
 	};
 class CUP_C_Datsun_4seat
 	{
@@ -224,7 +224,7 @@ class CUP_C_Datsun_4seat
 	canGive = true;
 	isIllegal = false;
 	Description = "";
-	reqResources[] = {{"Steel",4},{"Glass",1},{"Plastic",1},{"Oil",1}};
+	reqResources[] = {{"Steel",4},{"Glass",1},{"Plastic",1}};
 	};
 class CUP_C_Datsun_Tubeframe
 	{
@@ -243,7 +243,7 @@ class CUP_C_Datsun_Tubeframe
 	canGive = true;
 	isIllegal = false;
 	Description = "";
-	reqResources[] = {{"Steel",4},{"Glass",1},{"Plastic",1},{"Oil",1}};
+	reqResources[] = {{"Steel",4},{"Glass",1},{"Plastic",1}};
 	};
 class CUP_C_Datsun_Covered
 	{
@@ -262,7 +262,7 @@ class CUP_C_Datsun_Covered
 	canGive = true;
 	isIllegal = false;
 	Description = "";
-	reqResources[] = {{"Steel",4},{"Glass",1},{"Plastic",1},{"Oil",1}};
+	reqResources[] = {{"Steel",4},{"Glass",1},{"Plastic",1}};
 	};
 class CUP_C_UAZ_Unarmed_TK_CIV
 	{
@@ -281,7 +281,7 @@ class CUP_C_UAZ_Unarmed_TK_CIV
 	canGive = true;
 	isIllegal = false;
 	Description = "";
-	reqResources[] = {{"Steel",4},{"Glass",1},{"Plastic",1},{"Oil",1}};
+	reqResources[] = {{"Steel",4},{"Glass",1},{"Plastic",1}};
 	};
 class CUP_C_LR_Transport_CTK
 	{
@@ -300,7 +300,7 @@ class CUP_C_LR_Transport_CTK
 	canGive = true;
 	isIllegal = false;
 	Description = "";
-	reqResources[] = {{"Steel",5},{"Glass",1},{"Plastic",2},{"Oil",1}};
+	reqResources[] = {{"Steel",5},{"Glass",1},{"Plastic",2}};
 	};
 class CUP_C_SUV_TK
 	{
@@ -319,7 +319,7 @@ class CUP_C_SUV_TK
 	canGive = true;
 	isIllegal = false;
 	Description = "";
-	reqResources[] = {{"Steel",5},{"Glass",2},{"Plastic",2},{"Oil",1}};
+	reqResources[] = {{"Steel",5},{"Glass",2},{"Plastic",2}};
 	};
 class CUP_O_V3S_Open_TKA
 	{
@@ -338,7 +338,7 @@ class CUP_O_V3S_Open_TKA
 	canGive = true;
 	isIllegal = false;
 	Description = "";
-	reqResources[] = {{"Steel",8},{"Glass",1},{"Plastic",1},{"Oil",4}};
+	reqResources[] = {{"Steel",8},{"Glass",1},{"Plastic",1}};
 	};
 class CUP_O_V3S_Covered_TKA
 	{
@@ -357,7 +357,7 @@ class CUP_O_V3S_Covered_TKA
 	canGive = true;
 	isIllegal = false;
 	Description = "";
-	reqResources[] = {{"Steel",8},{"Glass",1},{"Plastic",1},{"Oil",4}};
+	reqResources[] = {{"Steel",8},{"Glass",1},{"Plastic",1}};
 	};
 class CUP_C_Ural_Civ_02
 	{
@@ -376,7 +376,7 @@ class CUP_C_Ural_Civ_02
 	canGive = true;
 	isIllegal = false;
 	Description = "";
-	reqResources[] = {{"Steel",8},{"Glass",1},{"Plastic",1},{"Oil",4}};
+	reqResources[] = {{"Steel",8},{"Glass",1},{"Plastic",1}};
 	};
 class CUP_O_V3S_Refuel_TKA
 	{
@@ -395,7 +395,7 @@ class CUP_O_V3S_Refuel_TKA
 	canGive = true;
 	isIllegal = false;
 	Description = "";
-	reqResources[] = {{"Steel",10},{"Glass",1},{"Plastic",1},{"Oil",10}};
+	reqResources[] = {{"Steel",10},{"Glass",1},{"Plastic",1}};
 	};
 class CUP_C_Ikarus_TKC
 	{
@@ -414,7 +414,7 @@ class CUP_C_Ikarus_TKC
 	canGive = true;
 	isIllegal = false;
 	Description = "";
-	reqResources[] = {{"Steel",8},{"Glass",5},{"Plastic",10},{"Oil",4}};
+	reqResources[] = {{"Steel",8},{"Glass",5},{"Plastic",10}};
 	};
 class C_Heli_light_01_red_F
 	{
@@ -433,7 +433,7 @@ class C_Heli_light_01_red_F
 	canGive = true;
 	isIllegal = false;
 	Description = "";
-	reqResources[] = {{"Steel",20},{"Glass",5},{"Plastic",10},{"Oil",10}};
+	reqResources[] = {{"Steel",20},{"Glass",5},{"Plastic",10}};
 	};
 class CUP_B_AH6X_USA
 	{
@@ -452,7 +452,7 @@ class CUP_B_AH6X_USA
 	canGive = true;
 	isIllegal = false;
 	Description = "";
-	reqResources[] = {{"Steel",20},{"Glass",5},{"Plastic",10},{"Oil",10}};
+	reqResources[] = {{"Steel",20},{"Glass",5},{"Plastic",10}};
 	};
 class CUP_C_AN2_AEROSCHROT_TK_CIV
 	{
@@ -471,7 +471,7 @@ class CUP_C_AN2_AEROSCHROT_TK_CIV
 	canGive = true;
 	isIllegal = false;
 	Description = "";
-	reqResources[] = {{"Steel",15},{"Glass",5},{"Plastic",15},{"Oil",10}};
+	reqResources[] = {{"Steel",15},{"Glass",5},{"Plastic",15}};
 	};
 class CUP_C_AN2_AIRTAK_TK_CIV
 	{
@@ -490,7 +490,7 @@ class CUP_C_AN2_AIRTAK_TK_CIV
 	canGive = true;
 	isIllegal = false;
 	Description = "";
-	reqResources[] = {{"Steel",15},{"Glass",5},{"Plastic",15},{"Oil",10}};
+	reqResources[] = {{"Steel",15},{"Glass",5},{"Plastic",15}};
 	};
 class CUP_B_Merlin_HC3_GB
 	{
@@ -509,7 +509,7 @@ class CUP_B_Merlin_HC3_GB
 	canGive = true;
 	isIllegal = false;
 	Description = "";
-	reqResources[] = {{"Steel",30},{"Glass",10},{"Plastic",15},{"Oil",20}};
+	reqResources[] = {{"Steel",30},{"Glass",10},{"Plastic",15}};
 	};
 class CUP_I_UAZ_Unarmed_UN
 	{
@@ -718,7 +718,7 @@ class CUP_I_Datsun_PK_TK_Random
 	canGive = true;
 	isIllegal = false;
 	Description = "";
-	reqResources[] = {{"Steel",6},{"Glass",1},{"Plastic",2},{"Oil",2},{"Copper",5},{"BlackPowder",5}};
+	reqResources[] = {{"Steel",6},{"Glass",1},{"Plastic",2},{"BlackPowder",5}};
 	};
 class CUP_O_UAZ_MG_TKA
 	{
@@ -737,7 +737,7 @@ class CUP_O_UAZ_MG_TKA
 	canGive = true;
 	isIllegal = false;
 	Description = "";
-	reqResources[] = {{"Steel",10},{"Glass",1},{"Plastic",2},{"Oil",2},{"Copper",8},{"BlackPowder",8}};
+	reqResources[] = {{"Steel",10},{"Glass",1},{"Plastic",2},{"BlackPowder",8}};
 	};
 class CUP_O_BTR40_TKA
 	{
@@ -756,7 +756,7 @@ class CUP_O_BTR40_TKA
 	canGive = true;
 	isIllegal = false;
 	Description = "";
-	reqResources[] = {{"Steel",8},{"Glass",1},{"Plastic",1},{"Oil",5}};
+	reqResources[] = {{"Steel",8},{"Glass",1},{"Plastic",1}};
 	};
 class CUP_O_BTR40_MG_TKA
 	{
@@ -775,7 +775,7 @@ class CUP_O_BTR40_MG_TKA
 	canGive = true;
 	isIllegal = false;
 	Description = "";
-	reqResources[] = {{"Steel",10},{"Glass",1},{"Plastic",2},{"Oil",6},{"Copper",8},{"BlackPowder",8}};
+	reqResources[] = {{"Steel",10},{"Glass",1},{"Plastic",2},{"BlackPowder",8}};
 	};
 class CUP_I_BRDM2_TK_Gue
 	{
@@ -794,7 +794,7 @@ class CUP_I_BRDM2_TK_Gue
 	canGive = true;
 	isIllegal = false;
 	Description = "";
-	reqResources[] = {{"Steel",30},{"Glass",5},{"Plastic",5},{"Oil",10},{"Copper",20},{"BlackPowder",20}};
+	reqResources[] = {{"Steel",30},{"Glass",5},{"Plastic",5},{"BlackPowder",20}};
 	};
 class CUP_O_UH1H_TKA
 	{
@@ -813,5 +813,5 @@ class CUP_O_UH1H_TKA
 	canGive = true;
 	isIllegal = false;
 	Description = "";
-	reqResources[] = {{"Steel",50},{"Glass",5},{"Plastic",5},{"Oil",15},{"Copper",20},{"BlackPowder",20}};
+	reqResources[] = {{"Steel",50},{"Glass",5},{"Plastic",5},{"BlackPowder",20}};
 	};

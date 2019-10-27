@@ -18,7 +18,7 @@ class controls
 		w = 0.93 * safezoneW;
 		h = 0.43 * safezoneH;
 	};
-	class LawMenu_Fame: RscFrame
+	class LawMenu_Fame: ZKB_RscFrame
 	{
 		idc = 22002;
 		text = "$STR_Law_LawMenu";
@@ -27,7 +27,7 @@ class controls
 		w = 0.93 * safezoneW;
 		h = 0.43 * safezoneH;
 	};
-	class LawEditMenu_LawList: RscListBox
+	class LawEditMenu_LawList: ZKB_RscListBox
 	{
 		idc = 22010;
 		x = 0.04 * safezoneW + safezoneX;
@@ -36,7 +36,7 @@ class controls
 		h = 0.34 * safezoneH;
 		onLBSelChanged = "ctrlSetText [22020,(_this select 0) lbData (_this select 1)]";
 	};
-	class LawEditMenu_NewLawEdit: RscEdit
+	class LawEditMenu_NewLawEdit: ZKB_RscEdit
 	{
 		idc = 22020;
 		x = 0.04 * safezoneW + safezoneX;
@@ -44,7 +44,7 @@ class controls
 		w = 0.71 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class LawEditMenu_UpdateLawBtn: RscButton
+	class LawEditMenu_UpdateLawBtn: ZKB_RscButton
 	{
 		idc = 22030;
 		text = "$STR_Law_ChangeLaw";

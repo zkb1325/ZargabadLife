@@ -7,12 +7,34 @@
 
 */
 private _healedPlayer = param [0,objNull,[objNull]];
-if (isNull _healedPlayer and (MYADMINLEVEL >= 3))  exitWith {player setDamage 0; vehicle player setDamage 0; ["STR_Admin_AdminLogHealedSelf",name player] call ZKB_fnc_AdminAddAdminLog;};
+if (isNull _healedPlayer and (MYADMINLEVEL >= 3))  exitWith 
+	{
+	player setDamage 0; 
+	vehicle player setDamage 0; 
+	_healedPlayer setVariable ["weedInSystem",nil,true];
+	_healedPlayer setVariable ["lsdInSystem",nil,true];
+	_healedPlayer setVariable ["cocaineInSystem",nil,true];
+	_healedPlayer setVariable ["heroinInSystem",nil,true];
+	["STR_Admin_AdminLogHealedSelf",name player] call ZKB_fnc_AdminAddAdminLog;
+	};
 if (isNull _healedPlayer) exitWith {["STR_Bank_TransferPlayerNotInGame"] call ZKB_fnc_DynamicText;};
-if (_healedPlayer isEqualTo player) exitWith {player setDamage 0; vehicle player setDamage 0; ["STR_Admin_AdminLogHealedSelf",name player] call ZKB_fnc_AdminAddAdminLog;};
+if (_healedPlayer isEqualTo player) exitWith 
+	{
+	player setDamage 0; 
+	vehicle player setDamage 0; 
+	_healedPlayer setVariable ["weedInSystem",nil,true];
+	_healedPlayer setVariable ["lsdInSystem",nil,true];
+	_healedPlayer setVariable ["cocaineInSystem",nil,true];
+	_healedPlayer setVariable ["heroinInSystem",nil,true];
+	["STR_Admin_AdminLogHealedSelf",name player] call ZKB_fnc_AdminAddAdminLog;
+	};
 
 _healedPlayer setDamage 0;
 vehicle _healedPlayer setDamage 0;
+_healedPlayer setVariable ["weedInSystem",nil,true];
+_healedPlayer setVariable ["lsdInSystem",nil,true];
+_healedPlayer setVariable ["cocaineInSystem",nil,true];
+_healedPlayer setVariable ["heroinInSystem",nil,true];
 ["STR_Admin_HealedPlayerMsg",[name _healedPlayer]] call ZKB_fnc_DynamicText;
 ["STR_Admin_HealPlayerMsg",[name player]] remoteExecCall ["ZKB_fnc_DynamicText",_healedPlayer,false];
 

@@ -6,7 +6,7 @@ class Admin_PlayerLogs_BG: IGUIBack
 	w = 0.625 * safezoneW;
 	h = 0.84 * safezoneH;
 };
-class Admin_PlayerLogs_Frame: RscFrame
+class Admin_PlayerLogs_Frame: ZKB_RscFrame
 {
 	idc = 50051;
 	text = "$STR_Admin_PlayerLogs";
@@ -15,7 +15,7 @@ class Admin_PlayerLogs_Frame: RscFrame
 	w = 0.625 * safezoneW;
 	h = 0.84 * safezoneH;
 };
-class Admin_PlayerLogs_LogsCtrlGroup: RscControlsGroup
+class Admin_PlayerLogs_LogsCtrlGroup: ZKB_RscControlsGroup
 		{
 		idc = 50052;
 		x = 0.3125 * safezoneW + safezoneX;
@@ -24,7 +24,7 @@ class Admin_PlayerLogs_LogsCtrlGroup: RscControlsGroup
 		h = 0.8 * safezoneH;
 		class controls
 			{
-			class Admin_PlayerLogs_Logs: RscStructuredText
+			class Admin_PlayerLogs_Logs: ZKB_RscStructuredText
 			{
 				idc = 50053;
 				text = "";

@@ -72,7 +72,7 @@ class CUP_hgun_BallisticShield_Armed
 	canGive = true;
 	isIllegal = true;
 	Description = "";
-	reqResources[] = {{"Steel",10},{"Plastic",3},{"Glass",1}};
+	reqResources[] = {{"Steel",10},{"Plastic",3}};
 	};
 class CUP_hgun_Makarov
 	{
@@ -452,7 +452,7 @@ class CUP_arifle_XM8_Carbine
 	canGive = true;
 	isIllegal = true;
 	Description = "";
-	reqResources[] = {{"Steel",10},{"Plastic",10},{"Glass",1}};
+	reqResources[] = {{"Steel",10},{"Plastic",10}};
 	};
 class CUP_arifle_Mk16_CQC
 	{
@@ -680,7 +680,7 @@ class CUP_arifle_AKS_Gold
 	canGive = true;
 	isIllegal = true;
 	Description = "";
-	reqResources[] = {{"Steel",10},{"Plastic",5},{"Gold",2}};
+	reqResources[] = {{"Steel",10},{"Plastic",5},{"Gold",1}};
 	};
 class CUP_arifle_AK47
 	{
@@ -870,7 +870,7 @@ class CUP_arifle_AK107_GL
 	canGive = true;
 	isIllegal = true;
 	Description = "";
-	reqResources[] = {{"Steel",18},{"Plastic",10}};
+	reqResources[] = {{"Steel",16},{"Plastic",10}};
 	};
 class CUP_arifle_G36C_camo
 	{
@@ -984,7 +984,7 @@ class CUP_launch_FIM92Stinger
 	canGive = true;
 	isIllegal = true;
 	Description = "";
-	reqResources[] = {{"Steel",30},{"Plastic",20},{"ElectronicComponents",2}};
+	reqResources[] = {{"Steel",30},{"Plastic",20},{"ElectronicComponents",1}};
 	};
 class CUP_launch_M136
 	{
@@ -1003,7 +1003,7 @@ class CUP_launch_M136
 	canGive = true;
 	isIllegal = true;
 	Description = "";
-	reqResources[] = {{"Steel",25},{"Plastic",15},{"ElectronicComponents",1}};
+	reqResources[] = {{"Steel",25},{"Plastic",15}};
 	};
 class CUP_launch_RPG7V
 	{
@@ -1022,7 +1022,7 @@ class CUP_launch_RPG7V
 	canGive = true;
 	isIllegal = true;
 	Description = "";
-	reqResources[] = {{"Steel",30},{"Plastic",15}};
+	reqResources[] = {{"Steel",30},{"Plastic",10}};
 	};
 class CUP_glaunch_M32
 	{
@@ -1041,7 +1041,7 @@ class CUP_glaunch_M32
 	canGive = true;
 	isIllegal = true;
 	Description = "";
-	reqResources[] = {{"Steel",25},{"Plastic",15}};
+	reqResources[] = {{"Steel",20},{"Plastic",10}};
 	};
 class CUP_glaunch_M79
 	{
@@ -1060,5 +1060,5 @@ class CUP_glaunch_M79
 	canGive = true;
 	isIllegal = true;
 	Description = "";
-	reqResources[] = {{"Steel",20},{"Plastic",15}};
+	reqResources[] = {{"Steel",16},{"Plastic",8}};
 	};

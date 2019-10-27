@@ -17,7 +17,7 @@ class controls
 		w = 0.4 * safezoneW;
 		h = 0.8 * safezoneH;
 	};
-	class GenericList_List: RscListBox
+	class GenericList_List: ZKB_RscListBox
 	{
 		idc = 12010;
 		x = 0.325 * safezoneW + safezoneX;
@@ -25,7 +25,7 @@ class controls
 		w = 0.35 * safezoneW;
 		h = 0.64 * safezoneH;
 	};
-	class GenericList_Btn1: RscButton
+	class GenericList_Btn1: ZKB_RscButton
 	{
 		idc = 12020;
 		x = 0.325 * safezoneW + safezoneX;
@@ -34,7 +34,7 @@ class controls
 		h = 0.04 * safezoneH;
 		action = "closedialog 0;";
 	};
-	class GenericList_Btn2: RscButton
+	class GenericList_Btn2: ZKB_RscButton
 	{
 		idc = 12030;
 		x = 0.525 * safezoneW + safezoneX;

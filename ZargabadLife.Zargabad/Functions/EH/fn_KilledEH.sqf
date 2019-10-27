@@ -18,14 +18,59 @@ closeDialog 0;
 player setVariable ["respawning",true,true];
 player setVariable ["restrained",false,true];
 
-//if (IsCop) then {ZKB_RespawnLoadOut = getUnitLoadout player;};
+if (IsCop) then
+	{
+	if (SETTING(getNumber,"ZKB_CopsOnlyLoseWeapons") isEqualTo 1) exitWith 
+		{
+		private _uniform = uniform player;
+		private _vest = vest player;
+		private _backPack = backpack player;
+		private _helmet = headgear player;
+		private _uniformArray = ZKB_RespawnLoadOut select 3;
+		private _vestArray = ZKB_RespawnLoadOut select 4;
+		private _backPackArray = ZKB_RespawnLoadOut select 5;
+		if (_uniformArray isEqualTo []) then
+			{
+			_uniformArray = [_uniform,[]];
+			}
+			else
+			{
+			_uniformArray set [0,_uniform];
+			};
+		if (_vestArray isEqualTo []) then
+			{
+			_vestArray = [_vest,[]];
+			}
+			else
+			{
+			_vestArray set [0,_vest];
+			};
+		if (_backPackArray isEqualTo []) then
+			{
+			_backPackArray = [_backPack,[]];
+			}
+			else
+			{
+			_backPackArray set [0,_backPack];
+			};
+		ZKB_RespawnLoadOut set [6,_helmet];
+		ZKB_RespawnLoadOut set [3,_uniformArray];
+		ZKB_RespawnLoadOut set [4,_vestArray];
+		ZKB_RespawnLoadOut set [5,_backPackArray];
+		};
+		
+	if (SETTING(getNumber,"ZKB_CopsLoseNothing") isEqualTo 1) exitWith
+		{
+		ZKB_RespawnLoadOut = getUnitLoadout player;
+		};
+	};
 
 ZKB_Deaths = ZKB_Deaths + 1;
 player setVariable ["Deaths",ZKB_Deaths,true];
 
 if !(_instigator == player) then
 	{
-	[player] remoteExecCall ["ZKB_fnc_KilledPlayer",_instigator,false];
+	ZKB_LastKilledBy = _instigator;
 	ZKB_Suicides = 0;
 	player setVariable ["Suicides",ZKB_Suicides,true];
 	}
@@ -53,6 +98,7 @@ if (call ZKB_fnc_IsMayor) then
 	if (SETTING(getNumber,"ZKB_StatSaveEnabled") isEqualTo 1) then
 		{
 		["mayor",""] remoteExecCall ["ZKB_fnc_ServerSaveStats",2,false];
+		["taxes",ZKB_TaxArray] remoteExecCall ["ZKB_fnc_ServerSaveStats",2,false];
 		};
 	};	
 

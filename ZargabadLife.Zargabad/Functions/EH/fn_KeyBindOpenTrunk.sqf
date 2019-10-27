@@ -16,4 +16,12 @@ if !((vehicle player) in (player getVariable ["ZKB_Keys",[]])) exitWith {["STR_C
 [(vehicle player),"VehicleTrunk",[typeOf (vehicle player)] call ZKB_fnc_GetItemTrunkSpace,true,"STR_Vehicle_VehicleTrunk","STR_Fac_TakeItem",SETTING(getArray,"ZKB_VehicleTrunkBlacklist")],
 [player,"ZKB_Inventory",player getVariable ["ZKB_MaxINVWeight",SETTING(getNumber,"ZKB_MaxINVWeight")],true,"STR_Inv_Inventory","STR_Fac_StoreItem",[],true,true]
 ] spawn ZKB_fnc_DualInvOpen;
+
+[] spawn
+	{
+	waitUntil {!isNull (uiNamespace getVariable ["ZKB_DualInvListMenu",displayNull])};
+	waitUntil {isNull (objectParent player) or !(driver (vehicle player) isEqualTo player)};
+	if (isNull (uiNamespace getVariable ["ZKB_DualInvListMenu",displayNull])) exitWith {};
+	closeDialog 0;
+	};
 true;

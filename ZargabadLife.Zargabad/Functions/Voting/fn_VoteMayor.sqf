@@ -8,7 +8,7 @@ closeDialog 0;
 private _selectedCandidate = param [0];
 if (_selectedCandidate isEqualTo "") exitWith 
 	{
-	player getVariable ["mayorVote",_selectedCandidate,true];
+	player setVariable ["mayorVote",nil,true];
 	["STR_Voting_VoteNoOneMayor"] call ZKB_fnc_DynamicText;
 	};
 

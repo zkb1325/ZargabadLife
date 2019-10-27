@@ -17,6 +17,8 @@ if !((_vehicle getVariable ["VehicleUniqueID",""]) isEqualTo "") then
 	{
 	if (SETTING(getNumber,"ZKB_StatSaveEnabled") isEqualTo 1) then
 		{
+		if (serverTime < (_vehicle getVariable ["lastSaved",0])) exitWith {};
+		_vehicle setVariable ["lastSaved",serverTime + 10,true];
 		[_vehicle] remoteExecCall ["ZKB_fnc_ServerSaveVehicle",2,false];
 		};
 	};

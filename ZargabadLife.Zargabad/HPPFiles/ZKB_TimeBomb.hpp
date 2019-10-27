@@ -18,7 +18,7 @@ class controls
 		w = 0.55 * safezoneW;
 		h = 0.08 * safezoneH;
 	};
-	class TimeBomb_Frame: RscFrame
+	class TimeBomb_Frame: ZKB_RscFrame
 	{
 		idc = 9002;
 		x = 0.225 * safezoneW + safezoneX;
@@ -26,7 +26,7 @@ class controls
 		w = 0.55 * safezoneW;
 		h = 0.08 * safezoneH;
 	};
-	class TimeBomb_TimeSlider: RscSlider
+	class TimeBomb_TimeSlider: ZKB_RscSlider
 	{
 		idc = 9010;
 		onSliderPosChanged = "((uiNameSpace getVariable ""ZKB_TimeBomb"") displayCTRL 9020) ctrlSetText format [localize ""STR_ItemMisc_BombTimer"", [round (_this select 1),""MM:SS""] call BIS_fnc_secondsToString]";
@@ -35,7 +35,7 @@ class controls
 		w = 0.2375 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class TimeBomb_Info: RscStructuredText
+	class TimeBomb_Info: ZKB_RscStructuredText
 	{
 		idc = 9020;
 		x = 0.4875 * safezoneW + safezoneX;
@@ -43,7 +43,7 @@ class controls
 		w = 0.0875 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class TimeBomb_Plant: RscButton
+	class TimeBomb_Plant: ZKB_RscButton
 	{
 		idc = 9030;
 		text = $STR_ItemMisc_PlantBomb;
@@ -53,7 +53,7 @@ class controls
 		w = 0.0875 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class TimeBomb_Cancel: RscButton
+	class TimeBomb_Cancel: ZKB_RscButton
 	{
 		idc = 9040;
 		text = $STR_Common_Close;

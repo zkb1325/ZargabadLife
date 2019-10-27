@@ -13,6 +13,10 @@ if !(vehicle player == player) exitWith {["STR_Common_CantUseInVeh"] call ZKB_fn
 _item = _this select 1;
 [_item, 1] call ZKB_fnc_InvRemoveItem;
 
+private _soundPath = [(str missionConfigFile), 0, -15] call BIS_fnc_trimString; 
+private _soundToPlay = _soundPath + "sounds\Jihad.ogg"; 
+playSound3D [_soundToPlay, player, false, getPosASL player, 5, 1, 300];
+
 for [{_i=5}, {_i >= 0}, {_i=_i-1}] do 
 	{
 	titletext [format [localize "STR_ItemMisc_SuicideBombCountDown", _i],"plain"];

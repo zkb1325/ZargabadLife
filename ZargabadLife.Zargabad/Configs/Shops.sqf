@@ -4,19 +4,25 @@
 	Function: Not a function
 	Description: Defines Shops and what items are in them
 	
-	[shop_Object, "Shop Name", Box_For_Gear_To_Spawn, GameLogic_For_Vehicles_To_Spawn, [buyables array], [sellables array], CheckForLicense, "allowed to use condition", [array of starting stock], [array of max stock], ExportTo]
+	*IMPORTANT*
+	If stat saving is enabled (ZKB_StatSaveEnabled = true; in Settings.hpp) and you add or remove and item from a shop OR if you add or remove a shop entirely you Must
+	delete everything below [ShopStock] found in ServerStats.ini in the INIDBI addon folder
+
+	
+	[shop_Object, "Shop Name", Box_For_Gear_To_Spawn, GameLogic_For_Vehicles_To_Spawn, [buyables array], [sellables array], CheckForLicense, "allowed to use condition", [array of starting stock], [array of max stock], ExportTo, stockBleedRate]
 	
 	shop_Object: The map object for the shop
 	"Shop Name": The name of the shop
 	Box_For_Gear_To_Spawn: The gear box gear will go into when gear is bought use objNull for no gear box
 	GameLogic_For_Vehicles_To_Spawn: The location a bought vehicle will spawn use objNull for no vehicle spawn
-	[buyables array]: List of buyable items that are defined in the masterarray.sqf
-	[sellables array]: List of sellable items that are defined in the masterarray.sqf
+	[buyables array]: List of buyable items that are defined in the Item_Config.hpp
+	[sellables array]: List of sellable items that are defined in the Item_Config.hpp
 	CheckForLicense: True or False if buying an item from the shop requires any licenses
 	"allowed to use condition": Condition in order to access shop
 	[array of starting stock]: Array of numbers defining the starting stock for the shop items, MUST be a number for each item that is in the buy array use -1 for unlimited stock
 	[array of max stock]: Array of numbers defining the max stock an item can have in the shop, MUST be a number for each item that is in the buy array use -1 for unlimited stock
 	ExportTo: If the player is allowed to export items from a factory to the shop
+	stockBleedRate: How often in minutes 1 stock is removed from each item in shop if item has limited stock. 0 = no bleed
 
 */
 if (isServer) then
@@ -289,9 +295,9 @@ if (isServer) then
 	"CUP_8Rnd_B_Saiga12_74Pellets_M",
 	"CUP_8Rnd_B_Saiga12_74Slug_M",
 	"CUP_glaunch_M79",
-	"CUP_1Rnd_Smoke_M203",
+	"CUP_1Rnd_SmokeYellow_M203",
 	"CUP_glaunch_M32",
-	"CUP_6Rnd_Smoke_M203",
+	"CUP_6Rnd_SmokeYellow_M203",
 	"SpikeStrip",
 	"DefuseKit",
 	"CUP_H_CDF_H_PASGT_UN",
@@ -307,7 +313,7 @@ if (isServer) then
 	"CUP_arifle_M16A4_Base",
 	"CUP_optic_CompM2_Black",
 	"CUP_optic_ACOG",
-	"CUP_arifle_L85A2_NG",
+	"CUP_arifle_L85A2",
 	"CUP_optic_SUSAT",
 	"CUP_arifle_Mk16_CQC",
 	"CUP_arifle_Mk16_CQC_FG",
@@ -438,6 +444,7 @@ if (isServer) then
 	"CUP_optic_PSO_3",
 	"CUP_launch_RPG7V",
 	"CUP_PG7V_M",
+	"CUP_OG7_M",
 	"CUP_launch_Igla",
 	"CUP_Igla_M",
 	"CUP_IED_V1_M",
@@ -473,68 +480,90 @@ if (isServer) then
 
 	ZKB_ShopDefines =
 	[
-	[MainBank, "STR_Shop_MainBank", objNull, objNull, _BankShop, [], true, "true", _BankShop apply {-1}, _BankShop apply {-1}, false],
+	[MainBank, "STR_Shop_MainBank", objNull, objNull, _BankShop, [], true, "true", _BankShop apply {-1}, _BankShop apply {-1}, false, 0],
 
-	[Station1Shop, "STR_Shop_Station1Shop", objNull, objNull, _StationShop, _StationShop, true, "true", _StationShop apply {-1}, _StationShop apply {-1}, true],
-	[Station2Shop, "STR_Shop_Station2Shop", objNull, objNull, _StationShop, _StationShop, true, "true", _StationShop apply {-1}, _StationShop apply {-1}, true],
-	[Station3Shop, "STR_Shop_Station3Shop", objNull, objNull, _StationShop, _StationShop, true, "true", _StationShop apply {-1}, _StationShop apply {-1}, true],
-	[Station4Shop, "STR_Shop_Station4Shop", objNull, objNull, _StationShop, _StationShop, true, "true", _StationShop apply {-1}, _StationShop apply {-1}, true],
+	[Station1Shop, "STR_Shop_Station1Shop", objNull, objNull, _StationShop, _StationShop, true, "true", _StationShop apply {-1}, _StationShop apply {-1}, true, 0],
+	[Station2Shop, "STR_Shop_Station2Shop", objNull, objNull, _StationShop, _StationShop, true, "true", _StationShop apply {-1}, _StationShop apply {-1}, true, 0],
+	[Station3Shop, "STR_Shop_Station3Shop", objNull, objNull, _StationShop, _StationShop, true, "true", _StationShop apply {-1}, _StationShop apply {-1}, true, 0],
+	[Station4Shop, "STR_Shop_Station4Shop", objNull, objNull, _StationShop, _StationShop, true, "true", _StationShop apply {-1}, _StationShop apply {-1}, true, 0],
 
-	[CarShop1, "STR_Shop_CarShop1", objNull, CarShop1VehSpawn, _CarShop, _CarShop, true, "true ", [-1,-1,-1,-1,10,10,10,10,10], [-1,-1,-1,-1,20,20,20,20,20], true],
-	[CarShop2, "STR_Shop_CarShop2", objNull, CarShop2VehSpawn, _CarShop, _CarShop, true, "true", [-1,-1,-1,-1,10,10,10,10,10], [-1,-1,-1,-1,20,20,20,20,20], true],
-	[CarShop3, "STR_Shop_CarShop3", objNull, CarShop3VehSpawn, _CarShop, _CarShop, true, "true", [-1,-1,-1,-1,10,10,10,10,10], [-1,-1,-1,-1,20,20,20,20,20], true],
+	[CarShop1, "STR_Shop_CarShop1", objNull, CarShop1VehSpawn, _CarShop, _CarShop, true, "true", [-1,-1,-1,-1,10,10,10,10,10], [-1,-1,-1,-1,20,20,20,20,20], true, 0],
+	[CarShop2, "STR_Shop_CarShop2", objNull, CarShop2VehSpawn, _CarShop, _CarShop, true, "true", [-1,-1,-1,-1,10,10,10,10,10], [-1,-1,-1,-1,20,20,20,20,20], true, 0],
+	[CarShop3, "STR_Shop_CarShop3", objNull, CarShop3VehSpawn, _CarShop, _CarShop, true, "true", [-1,-1,-1,-1,10,10,10,10,10], [-1,-1,-1,-1,20,20,20,20,20], true, 0],
 
-	[TruckShop, "STR_Shop_TruckShop", objNull, TruckShopVehSpawn, _TruckShop, _TruckShop, true, "true", [5,5,5,5,5], [10,10,10,10,10], true],
+	[TruckShop, "STR_Shop_TruckShop", objNull, TruckShopVehSpawn, _TruckShop, _TruckShop, true, "true", [5,5,5,5,5], [10,10,10,10,10], true, 0],
 
-	[AirShop, "STR_Shop_AirShop", objNull, AirShopVehSpawn, _AirShop, _AirShop, true, "true", [5,5,5], [10,10,10], true],
+	[AirShop, "STR_Shop_AirShop", objNull, AirShopVehSpawn, _AirShop, _AirShop, true, "true", [5,5,5], [10,10,10], true, 0],
 
 	//[TuningShop1, "STR_Shop_TuningShop1", objNull, objNull, _TuningShop, _TuningShop, true, "true", [15,10,5,3,2], [30,20,10,5,5], true],
 	//[TuningShop2, "STR_Shop_TuningShop2", objNull, objNull, _TuningShop, _TuningShop, true, "true", [15,10,5,3,2], [30,20,10,5,5], true],
 
-	[ItemShop1, "STR_Shop_ItemShop1", objNull, objNull, _ItemShop, _ItemShop, true, "true", [0,0,0,0,-1,0,0,10,-1,15], [500,500,500,500,-1,500,500,25,-1,25], true],
-	[ItemShop2, "STR_Shop_ItemShop2", objNull, objNull, _ItemShop, _ItemShop, true, "true", [0,0,0,0,-1,0,0,10,-1,15], [500,500,500,500,-1,500,500,25,-1,25], true],
-	[ItemShop3, "STR_Shop_ItemShop3", objNull, objNull, _ItemShop, _ItemShop, true, "true", [0,0,0,0,-1,0,0,10,-1,15], [500,500,500,500,-1,500,500,25,-1,25], true],
+	[ItemShop1, "STR_Shop_ItemShop1", objNull, objNull, _ItemShop, _ItemShop, true, "true", [0,0,0,0,-1,0,0,10,-1,15], [1000,1000,1000,1000,-1,1000,1000,25,-1,25], true, 0],
+	[ItemShop2, "STR_Shop_ItemShop2", objNull, objNull, _ItemShop, _ItemShop, true, "true", [0,0,0,0,-1,0,0,10,-1,15], [1000,1000,1000,1000,-1,1000,1000,25,-1,25], true, 0],
+	[ItemShop3, "STR_Shop_ItemShop3", objNull, objNull, _ItemShop, _ItemShop, true, "true", [0,0,0,0,-1,0,0,10,-1,15], [1000,1000,1000,1000,-1,1000,1000,25,-1,25], true, 0],
 
-	[GunShop, "STR_Shop_GunShop", GunShopWpnBox, objNull, _GunShop, _GunShop, true, "true", [4,-1,4,-1,5,-1,4,-1,2,2,-1,2,-1,2,-1,2,-1], [12,-1,12,-1,25,-1,12,-1,10,10,-1,10,-1,5,-1,5,-1], true],
-	[EquipmentShop, "STR_Shop_EquipmentShop", EquipmentShopWpnBox, objNull, _EquipmentShop, _EquipmentShop, true, "true", _EquipmentShop apply {-1}, _EquipmentShop apply {-1}, true],
-	[ClothingShop, "STR_Shop_ClothingShop", ClothingShopWpnBox, objNull, _clothingShop, _clothingShop, true, "true", _clothingShop apply {-1}, _clothingShop apply {-1}, true],
+	[GunShop, "STR_Shop_GunShop", GunShopWpnBox, objNull, _GunShop, _GunShop, true, "true", [4,-1,4,-1,5,-1,4,-1,2,2,-1,2,-1,2,-1,2,-1], [12,-1,12,-1,25,-1,12,-1,10,10,-1,10,-1,5,-1,5,-1], true, 0],
+	[EquipmentShop, "STR_Shop_EquipmentShop", EquipmentShopWpnBox, objNull, _EquipmentShop, _EquipmentShop, true, "true", _EquipmentShop apply {-1}, _EquipmentShop apply {-1}, true, 0],
+	[ClothingShop, "STR_Shop_ClothingShop", ClothingShopWpnBox, objNull, _clothingShop, _clothingShop, true, "true", _clothingShop apply {-1}, _clothingShop apply {-1}, true, 0],
 
-	[DoctorShop, "STR_Shop_DoctorShop", DoctorShopWpnBox, objNull, _DoctorShop, _DoctorShop, true, "true", _DoctorShop apply {-1}, _DoctorShop apply {-1}, true],
-	[MiningShop, "STR_Shop_MiningShop", objNull, objNull, _MiningShop, _MiningShop, true, "true", [15,15,10], [30,30,10], true],
+	[DoctorShop, "STR_Shop_DoctorShop", DoctorShopWpnBox, objNull, _DoctorShop, _DoctorShop, true, "true", _DoctorShop apply {-1}, _DoctorShop apply {-1}, true, 0],
+	[MiningShop, "STR_Shop_MiningShop", objNull, objNull, _MiningShop, _MiningShop, true, "true", [15,15,10], [30,30,10], true, 0],
 
-	[RingShop, "STR_Shop_RingShop", objNull, objNull, _RingShop, _RingShop, true, "true", _RingShop apply {-1}, _RingShop apply {-1}, false],
-	[ResourceShop, "STR_Shop_ResourceShop", objNull, objNull, _ResourceShop, _ResourceShop, true, "true", [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], [500,1000,4000,600,300,400,500,400,600,4000,4000,500,500,500,500,500], false],
-	[OilShop, "STR_Shop_OilShop", objNull, objNull, [], _OilShop, true, "true", [0], [100], false],
+	[RingShop, "STR_Shop_RingShop", objNull, objNull, _RingShop, _RingShop, true, "true", _RingShop apply {-1}, _RingShop apply {-1}, false, 0],
+	[ResourceShop, "STR_Shop_ResourceShop", objNull, objNull, _ResourceShop, _ResourceShop, true, "true", [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], [500,1000,4000,600,300,400,500,400,600,4000,4000,500,500,500,500,500], false, 3],
+	[OilShop, "STR_Shop_OilShop", objNull, objNull, [], _OilShop, true, "true", [0], [100], false, 5],
 
-	[CocaineShop, "STR_Shop_CocaineShop", objNull, objNull, _CocaineShop, _CocaineShop, true, "true", _CocaineShop apply {-1}, _CocaineShop apply {-1}, false],
-	[MarijuanaShop, "STR_Shop_MarijuanaShop", objNull, objNull, _MarijuanaShop, _MarijuanaShop, true, "true", _MarijuanaShop apply {-1}, _MarijuanaShop apply {-1}, false],
-	[LSDShop, "STR_Shop_LSDShop", objNull, objNull, _LSDShop, _LSDShop, true, "true", _LSDShop apply {-1}, _LSDShop apply {-1}, false],
-	[HeroinShop, "STR_Shop_HeroinShop", objNull, objNull, _HeroinShop, _HeroinShop, true, "true", _HeroinShop apply {-1}, _HeroinShop apply {-1}, false],
+	[CocaineShop, "STR_Shop_CocaineShop", objNull, objNull, _CocaineShop, _CocaineShop, true, "true", _CocaineShop apply {-1}, _CocaineShop apply {-1}, false, 0],
+	[MarijuanaShop, "STR_Shop_MarijuanaShop", objNull, objNull, _MarijuanaShop, _MarijuanaShop, true, "true", _MarijuanaShop apply {-1}, _MarijuanaShop apply {-1}, false, 0],
+	[LSDShop, "STR_Shop_LSDShop", objNull, objNull, _LSDShop, _LSDShop, true, "true", _LSDShop apply {-1}, _LSDShop apply {-1}, false, 0],
+	[HeroinShop, "STR_Shop_HeroinShop", objNull, objNull, _HeroinShop, _HeroinShop, true, "true", _HeroinShop apply {-1}, _HeroinShop apply {-1}, false, 0],
 
-	[GangArea1, "STR_Shop_GangShop", GangArea1ShopBox, objNull, _gangShop, _gangShop, false, "IsCiv", _gangShop apply {-1}, _gangShop apply {-1}, false],
-	[GangArea2, "STR_Shop_GangShop", GangArea2ShopBox, objNull, _gangShop, _gangShop, false, "IsCiv", _gangShop apply {-1}, _gangShop apply {-1}, false],
-	[GangArea3, "STR_Shop_GangShop", GangArea3ShopBox, objNull, _gangShop, _gangShop, false, "IsCiv", _gangShop apply {-1}, _gangShop apply {-1}, false],
+	[GangArea1, "STR_Shop_GangShop", GangArea1ShopBox, objNull, _gangShop, _gangShop, false, "IsCiv", _gangShop apply {-1}, _gangShop apply {-1}, false, 0],
+	[GangArea2, "STR_Shop_GangShop", GangArea2ShopBox, objNull, _gangShop, _gangShop, false, "IsCiv", _gangShop apply {-1}, _gangShop apply {-1}, false, 0],
+	[GangArea3, "STR_Shop_GangShop", GangArea3ShopBox, objNull, _gangShop, _gangShop, false, "IsCiv", _gangShop apply {-1}, _gangShop apply {-1}, false, 0],
 
-	[CopShop, "STR_Shop_CopShop", CopShop, objNull, _copShop, _copShop, true, "IsCop", _copShop apply {-1}, _copShop apply {-1}, false],
-	[CopPatrolShop, "STR_Shop_CopPatrolShop", CopPatrolShop, objNull, _copPatrolShop, _copPatrolShop, true, "IsCop", _copPatrolShop apply {-1}, _copPatrolShop apply {-1}, false],
-	[CopResponseShop, "STR_Shop_CopResponseShop", CopResponseShop, objNull, _copResponseShop, _copResponseShop, true, "IsCop", _copResponseShop apply {-1}, _copResponseShop apply {-1}, false],
-	[CopSobrShop, "STR_Shop_CopSobrShop", CopSobrShop, objNull, _copSobrShop, _copSobrShop, true, "IsCop", _copSobrShop apply {-1}, _copSobrShop apply {-1}, false],
-	[CopVehicleShop, "STR_Shop_CopVehicleShop", objNull, CopVehicleShopSpawn, _copVehicleShop, _copVehicleShop, true, "IsCop", _copVehicleShop apply {-1}, _copVehicleShop apply {-1}, false],
-	[CopAirShop, "STR_Shop_CopAirShop", objNull, CopAirShopSpawn, _copAirShop, _copAirShop, true, "IsCop", _copAirShop apply {-1}, _copAirShop apply {-1}, false],
+	[CopShop, "STR_Shop_CopShop", CopShop, objNull, _copShop, _copShop, true, "IsCop", _copShop apply {-1}, _copShop apply {-1}, false, 0],
+	[CopPatrolShop, "STR_Shop_CopPatrolShop", CopPatrolShop, objNull, _copPatrolShop, _copPatrolShop, true, "IsCop", _copPatrolShop apply {-1}, _copPatrolShop apply {-1}, false, 0],
+	[CopResponseShop, "STR_Shop_CopResponseShop", CopResponseShop, objNull, _copResponseShop, _copResponseShop, true, "IsCop", _copResponseShop apply {-1}, _copResponseShop apply {-1}, false, 0],
+	[CopSobrShop, "STR_Shop_CopSobrShop", CopSobrShop, objNull, _copSobrShop, _copSobrShop, true, "IsCop", _copSobrShop apply {-1}, _copSobrShop apply {-1}, false, 0],
+	[CopVehicleShop, "STR_Shop_CopVehicleShop", objNull, CopVehicleShopSpawn, _copVehicleShop, _copVehicleShop, true, "IsCop", _copVehicleShop apply {-1}, _copVehicleShop apply {-1}, false, 0],
+	[CopAirShop, "STR_Shop_CopAirShop", objNull, CopAirShopSpawn, _copAirShop, _copAirShop, true, "IsCop", _copAirShop apply {-1}, _copAirShop apply {-1}, false, 0],
 
-	[TerrorGearShop, "STR_Shop_TerrorGearShop", TerrorGearShopWpnBox, objNull, _terrorGear, _terrorGear, true, "IsCiv", _terrorGear apply {-1}, _terrorGear apply {-1}, false],
-	[TerrorVehicleShop, "STR_Shop_TerrorVehicleShop", objNull, TerrorVehicleShopSpawn, _terrorVehicles, _terrorVehicles, true, "IsCiv", _terrorVehicles apply {-1}, _terrorVehicles apply {-1}, false]
+	[TerrorGearShop, "STR_Shop_TerrorGearShop", TerrorGearShopWpnBox, objNull, _terrorGear, _terrorGear, true, "IsCiv", _terrorGear apply {-1}, _terrorGear apply {-1}, false, 0],
+	[TerrorVehicleShop, "STR_Shop_TerrorVehicleShop", objNull, TerrorVehicleShopSpawn, _terrorVehicles, _terrorVehicles, true, "IsCiv", _terrorVehicles apply {-1}, _terrorVehicles apply {-1}, false, 0]
 	];
 	publicVariable "ZKB_ShopDefines";
 	
-	
+	//Array of shops that wont have tax calculated when buying an item
 	ZKB_NonTaxedShops = [GangArea1,GangArea2,GangArea3,TerrorGearShop,TerrorVehicleShop];
 	publicVariable "ZKB_NonTaxedShops";
 	
 	
-	//Set the shop data to each shop object through setVariable
+	//Set the shop data to each shop object through setVariable and set up stock bleed
 	{
 	(_x select 0) setVariable ["ShopData", _x, true];
+	
+	if !((_x select 11) isEqualTo 0) then
+		{
+		_x spawn
+			{
+			private _shopObj = param [0];
+			private _shopItems = param [4];
+			if (_shopItems isEqualTo []) then {_shopItems = param [5];};
+			private ["_itemStock"];
+			while {true} do
+				{
+				sleep ((param [11])*60);
+				{
+				_itemStock = [_x,_shopObj] call ZKB_fnc_ShopGetItemStock;
+				if !((_itemStock select 0) isEqualTo -1) then
+					{
+					[_shopObj,(_itemStock select 2),1,false] call ZKB_fnc_UpdateShopStock;
+					};
+				}forEach _shopItems;
+				};
+			};
+		};
 	}forEach ZKB_ShopDefines;
 	};
 

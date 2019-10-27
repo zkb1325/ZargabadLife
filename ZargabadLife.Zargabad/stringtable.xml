@@ -169,7 +169,7 @@
 			</Key>
 			
 			<Key ID="STR_Admin_HealPlayerDesc">
-				<Original>Heals the Selected Player to 100% health</Original>
+				<Original>Heals the Selected Player and players vehicle to 100% health also removes all drug effects</Original>
 			</Key>
 			
 			<Key ID="STR_Admin_HealedPlayerMsg"> 
@@ -921,7 +921,7 @@
 			</Key>
 			
 			<Key ID="STR_CBA_PoliceComputer">
-				<Original>Open Police Computer</Original>
+				<Original>Open Computer</Original>
 			</Key>
 			
 		</Container>
@@ -933,7 +933,7 @@
 			</Key>
 			
 			<Key ID="STR_Voting_ChiefVoteAction">
-				<Original>Elect a Police Chief</Original>
+				<Original>Elect a UN Commander</Original>
 			</Key>
 			
 			<Key ID="STR_Voting_Vote">
@@ -953,7 +953,7 @@
 			</Key>
 			
 			<Key ID="STR_Voting_VotedForChief">
-				<Original>You voted for %1 to be police chief</Original>
+				<Original>You voted for %1 to be UN Commander</Original>
 			</Key>
 			
 			<Key ID="STR_Voting_VoteNoOneMayor">
@@ -961,7 +961,7 @@
 			</Key>
 			
 			<Key ID="STR_Voting_VoteNoOneChief">
-				<Original>You cleared your vote for police chief</Original>
+				<Original>You cleared your vote for UN Commander</Original>
 			</Key>
 			
 			<Key ID="STR_Voting_VoteError">
@@ -981,15 +981,15 @@
 			</Key>
 			
 			<Key ID="STR_Voting_NewCheif">
-				<Original>%1 is now the Police Chief! They won with %2 votes</Original>
+				<Original>%1 is now the UN Commander! They won with %2 votes</Original>
 			</Key>
 			
 			<Key ID="STR_Voting_ChiefStays">
-				<Original>The current chief of police stays</Original>
+				<Original>The current UN Commander stays</Original>
 			</Key>
 			
 			<Key ID="STR_Voting_NoneChiefElected">
-				<Original>Currently no Chief of police has been elected</Original>
+				<Original>Currently no UN Commander has been elected</Original>
 			</Key>
 			
 			<Key ID="STR_Tax_TaxMenu">
@@ -1171,7 +1171,7 @@
 			</Key>
 			
 			<Key ID="STR_Bank_CheifPaycheck">
-				<Original>As a Police Chief you get an extra paycheck of $%1</Original>
+				<Original>As a UN Commander you get an extra paycheck of $%1</Original>
 			</Key>
 			
 			<Key ID="STR_Bank_CivPaycheck">
@@ -1297,6 +1297,14 @@
 				<Original>Impound %1</Original>
 			</Key>
 			
+			<Key ID="STR_Vehicle_ImpoundconfirmTitle">
+				<Original>Confirm Impound</Original>
+			</Key>
+			
+			<Key ID="STR_Vehicle_ImpoundconfirmMessage">
+				<Original>Are you sure you want to impound %1?</Original>
+			</Key>
+			
 			<Key ID="STR_Vehicle_ImpoundSuccess">
 				<Original>You have impounded this vehicle!</Original>
 			</Key>
@@ -1311,6 +1319,10 @@
 			
 			<Key ID="STR_Vehicle_ImpoundNotAllowed">
 				<Original>you cannot impound this vehicle!</Original>
+			</Key>
+			
+			<Key ID="STR_Vehicle_ImpoundToFar">
+				<Original>The vehicle you are trying to impound is to far away!</Original>
 			</Key>
 			
 			<Key ID="STR_Vehicle_UnFlipVeh">
@@ -1571,7 +1583,7 @@
 			</Key>
 			
 			<Key ID="STR_Markers_CopBase">
-				<Original>Police Base</Original>
+				<Original>UN Base</Original>
 			</Key>
 			
 			<Key ID="STR_Markers_TerrorHideout">
@@ -1922,7 +1934,7 @@
 			</Key>
 			
 			<Key ID="STR_MainMenu_InfoGovernmentChief">
-				<Original>Police Chief: %1</Original>
+				<Original>UN Commander: %1</Original>
 			</Key>
 			
 			<Key ID="STR_MainMenu_InfoGovernmentNotOnline">
@@ -2767,7 +2779,7 @@
 			</Key>
 			
 			<Key ID="STR_GovConvoy_DriverDiedCiv">
-				<Original>The government convoy driver is dead, Steal the police paycheck</Original>
+				<Original>The government convoy driver is dead, Steal the UN paycheck</Original>
 			</Key>
 			
 			<Key ID="STR_GovConvoy_DriverDiedCop">
@@ -3063,7 +3075,7 @@
 			</Key>
 			
 			<Key ID="STR_Shop_CopShop">
-				<Original>Police Shop</Original>
+				<Original>UN Shop</Original>
 			</Key>
 			
 			<Key ID="STR_Shop_CopPatrolShop">
@@ -3079,11 +3091,11 @@
 			</Key>
 			
 			<Key ID="STR_Shop_CopVehicleShop">
-				<Original>Police Vehicle Shop</Original>
+				<Original>UN Vehicle Shop</Original>
 			</Key>
 			
 			<Key ID="STR_Shop_CopAirShop">
-				<Original>Police Air-Vehicle Shop</Original>
+				<Original>UN Air-Vehicle Shop</Original>
 			</Key>
 			
 			<Key ID="STR_Shop_TerrorGearShop">

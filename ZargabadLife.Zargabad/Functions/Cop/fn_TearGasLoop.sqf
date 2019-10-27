@@ -12,8 +12,8 @@ While {true} do
 	{
 	"dynamicBlur" ppEffectAdjust [0];  
 	"dynamicBlur" ppEffectCommit 10; 
-
-	waituntil{_nearGas = ((player nearObjects ["SmokeShellYellow",10]) + (player nearObjects ["CUP_1Rnd_Smoke_M203",10]) + (player nearObjects ["CUP_6Rnd_Smoke_M203",10])); count _nearGas > 0 and ({speed _x <= 1}count _nearGas) > 0};
+	
+	waituntil{_nearGas = ((player nearObjects ["SmokeShellYellow",10]) + (player nearObjects ["G_40mm_SmokeYellow",10])); count _nearGas > 0 and ({speed _x <= 1}count _nearGas) > 0};
 
 	"dynamicBlur" ppEffectEnable true;
 	"dynamicBlur" ppEffectAdjust [20];   

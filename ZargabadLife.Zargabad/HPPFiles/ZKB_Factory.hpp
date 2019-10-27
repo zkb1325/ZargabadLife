@@ -17,7 +17,7 @@ class controls
 		w = 0.34 * safezoneW;
 		h = 0.8 * safezoneH;
 	};
-	class FactoryItemListFrame: RscFrame
+	class FactoryItemListFrame: ZKB_RscFrame
 	{
 		idc = 4002;
 		x = 0.32 * safezoneW + safezoneX;
@@ -25,7 +25,7 @@ class controls
 		w = 0.3 * safezoneW;
 		h = 0.25 * safezoneH;
 	};
-	class FactoryCurrentProductionFrame: RscFrame
+	class FactoryCurrentProductionFrame: ZKB_RscFrame
 	{
 		idc = 4003;
 		x = 0.32 * safezoneW + safezoneX;
@@ -33,7 +33,7 @@ class controls
 		w = 0.3 * safezoneW;
 		h = 0.12 * safezoneH;
 	};	
-	class FactoryItemInfoFrame: RscFrame
+	class FactoryItemInfoFrame: ZKB_RscFrame
 	{
 		idc = 4004;
 		x = 0.32 * safezoneW + safezoneX;
@@ -41,7 +41,7 @@ class controls
 		w = 0.3 * safezoneW;
 		h = 0.12 * safezoneH;
 	};
-	class Factory_Frame: RscFrame
+	class Factory_Frame: ZKB_RscFrame
 	{
 		idc = 4005;
 		x = 0.3 * safezoneW + safezoneX;
@@ -49,7 +49,7 @@ class controls
 		w = 0.34 * safezoneW;
 		h = 0.8 * safezoneH;
 	};
-	class FactoryItemList: RscListBox
+	class FactoryItemList: ZKB_RscListBox
 	{
 		idc = 4010;
 		x = 0.32 * safezoneW + safezoneX;
@@ -57,7 +57,7 @@ class controls
 		w = 0.3 * safezoneW;
 		h = 0.25 * safezoneH;
 	};
-	class FactoryCurrentProduction: RscListBox
+	class FactoryCurrentProduction: ZKB_RscListBox
 	{
 		idc = 4020;
 		text = "Currently In Production";
@@ -66,7 +66,7 @@ class controls
 		w = 0.3 * safezoneW;
 		h = 0.12 * safezoneH;
 	};
-	class FactoryItemInfo_CTRLGrp: RscControlsGroup
+	class FactoryItemInfo_CTRLGrp: ZKB_RscControlsGroup
 		{
 		idc = -1;
 		x = 0.32 * safezoneW + safezoneX;
@@ -76,7 +76,7 @@ class controls
 		
 		class controls
 			{	
-			class FactoryItemInfo: RscStructuredText
+			class FactoryItemInfo: ZKB_RscStructuredText
 				{
 				idc = 4030;
 				text = "Factory Info";
@@ -87,7 +87,7 @@ class controls
 				};	
 			};
 		};
-	class FactoryCreate: RscButton
+	class FactoryCreate: ZKB_RscButton
 	{
 		idc = 4040;
 		action = "[lbData [4010, (lbCurSel 4010)]] call ZKB_fnc_CreateFactoryItem";
@@ -97,7 +97,7 @@ class controls
 		w = 0.3 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class FactoryExport: RscButton
+	class FactoryExport: ZKB_RscButton
 	{
 		idc = 4050;
 		action = "[lbData [4010, (lbCurSel 4010)]] call ZKB_fnc_ExportFactoryItem";
@@ -107,7 +107,7 @@ class controls
 		w = 0.3 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class FactoryManufacture: RscButton
+	class FactoryManufacture: ZKB_RscButton
 	{
 		idc = 4060;
 		action = "[lbData [4010, (lbCurSel 4010)]] call ZKB_fnc_ManufactureItem";
@@ -117,7 +117,7 @@ class controls
 		w = 0.3 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class FactoryClose: RscButton
+	class FactoryClose: ZKB_RscButton
 	{
 		idc = 4070;
 		text = "$STR_Common_Close";

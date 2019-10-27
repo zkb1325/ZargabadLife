@@ -17,16 +17,16 @@ class controls
 		w = 0.225 * safezoneW;
 		h = 0.9 * safezoneH;
 		};
-	class Admin_Frame: RscFrame
+	class Admin_Frame: ZKB_RscFrame
 		{
 		idc = -1;
 		text = "$STR_Admin_Menu";
 		x = 0.05 * safezoneW + safezoneX;
 		y = 0.08 * safezoneH + safezoneY;
 		w = 0.225 * safezoneW;
-		h = 0.82 * safezoneH;
+		h = 0.9 * safezoneH;
 		};
-	class Admin_ActionList: RscListbox
+	class Admin_ActionList: ZKB_RscListbox
 		{
 		idc = 50001;
 		onLBSelChanged = "[((_this select 0) lbData (_this select 1)),lbData [50002,lbCurSel 50002],(_this select 0),(_this select 1)] call ZKB_fnc_ExecAdminCommand";
@@ -35,7 +35,7 @@ class controls
 		w = 0.2 * safezoneW;
 		h = 0.395 * safezoneH;
 		};	
-	class Admin_TP_PlayerList: RscListbox
+	class Admin_TP_PlayerList: ZKB_RscListbox
 		{
 		idc = 50002;
 		onLBSelChanged = "[lbData [50001,lbCurSel 50001],((_this select 0) lbData (_this select 1)),((findDisplay 50000) displayCtrl 50001),lbCurSel 50001] call ZKB_fnc_ExecAdminCommand";

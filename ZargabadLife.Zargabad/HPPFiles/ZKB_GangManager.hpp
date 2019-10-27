@@ -18,7 +18,7 @@ class controls
 		w = 0.47 * safezoneW;
 		h = 0.43 * safezoneH;
 	};
-	class GangManager_Frame: RscFrame
+	class GangManager_Frame: ZKB_RscFrame
 	{
 		idc = 18002;
 		text = $STR_Gang_ManageGang;
@@ -27,7 +27,7 @@ class controls
 		w = 0.47 * safezoneW;
 		h = 0.43 * safezoneH;
 	};
-	class GangManager_KickHeader: RscStructuredText
+	class GangManager_KickHeader: ZKB_RscStructuredText
 	{
 		idc = 18010;
 		text = $STR_Gang_KickMember;
@@ -41,7 +41,7 @@ class controls
 		};
 	};
 	
-	class GangManager_GangMemberList: RscListBox
+	class GangManager_GangMemberList: ZKB_RscListBox
 	{
 		idc = 18020;
 		x = 0.26 * safezoneW + safezoneX;
@@ -49,7 +49,7 @@ class controls
 		w = 0.2 * safezoneW;
 		h = 0.15 * safezoneH;
 	};
-	class GangManager_KickBtn: RscButton
+	class GangManager_KickBtn: ZKB_RscButton
 	{
 		idc = 18030;
 		text = $STR_Gang_KickBtn;
@@ -59,7 +59,7 @@ class controls
 		h = 0.04 * safezoneH;
 		action = "[lbData [18020, (lbCurSel 18020)]] call ZKB_fnc_KickFromGang;";
 	};
-	class GangManager_JoinHeader: RscStructuredText
+	class GangManager_JoinHeader: ZKB_RscStructuredText
 	{
 		idc = 18040;
 		text = $STR_Gang_JoinAllowed;
@@ -72,7 +72,7 @@ class controls
 		align = "center";
 		}
 	};
-	class GangManager_JoinAllowList: RscListBox
+	class GangManager_JoinAllowList: ZKB_RscListBox
 	{
 		idc = 18050;
 		x = 0.5 * safezoneW + safezoneX;
@@ -80,7 +80,7 @@ class controls
 		w = 0.2 * safezoneW;
 		h = 0.08 * safezoneH;
 	};
-	class GangManager_JoinAllowUpdateBtn: RscButton
+	class GangManager_JoinAllowUpdateBtn: ZKB_RscButton
 	{
 		idc = 18060;
 		text = $STR_Gang_Update;
@@ -90,7 +90,7 @@ class controls
 		h = 0.04 * safezoneH;
 		action = "[lbData [18050, (lbCurSel 18050)]] call ZKB_fnc_UpdateGangLock;";
 	};
-	class GangManager_Cancel: RscButton
+	class GangManager_Cancel: ZKB_RscButton
 	{
 		idc = 18070;
 		text = $STR_Common_Close;

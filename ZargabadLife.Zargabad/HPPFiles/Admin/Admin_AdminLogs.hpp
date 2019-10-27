@@ -6,7 +6,7 @@ class Admin_AdminLogs_BG: IGUIBack
 	w = 0.625 * safezoneW;
 	h = 0.84 * safezoneH;
 };
-class Admin_AdminLogs_Frame: RscFrame
+class Admin_AdminLogs_Frame: ZKB_RscFrame
 {
 	idc = 50041;
 	text = "$STR_Admin_AdminLogs";
@@ -15,7 +15,7 @@ class Admin_AdminLogs_Frame: RscFrame
 	w = 0.625 * safezoneW;
 	h = 0.84 * safezoneH;
 };
-class Admin_AdminLogs_LogsCtrlGroup: RscControlsGroup
+class Admin_AdminLogs_LogsCtrlGroup: ZKB_RscControlsGroup
 		{
 		idc = 50042;
 		x = 0.3125 * safezoneW + safezoneX;
@@ -24,7 +24,7 @@ class Admin_AdminLogs_LogsCtrlGroup: RscControlsGroup
 		h = 0.8 * safezoneH;
 		class controls
 			{
-			class Admin_AdminLogs_Logs: RscStructuredText
+			class Admin_AdminLogs_Logs: ZKB_RscStructuredText
 			{
 				idc = 50043;
 				text = "";

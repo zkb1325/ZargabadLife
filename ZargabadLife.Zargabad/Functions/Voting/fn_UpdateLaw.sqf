@@ -12,6 +12,8 @@ private _forced = param [2,false];
 
 if (!(call ZKB_fnc_IsMayor) and !_forced) exitWith {};
 
+_lawString = toString ((toArray _lawString) - [60,62]); //Prevent players from trolling with structured text
+
 disableSerialization;
 private _display = uiNamespace getVariable "ZKB_LawEditMenu";
 private _lawListCtrl = _display displayCtrl 22010;

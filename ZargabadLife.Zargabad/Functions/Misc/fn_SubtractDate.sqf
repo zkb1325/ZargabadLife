@@ -9,7 +9,7 @@ private _startDate = param [1,[],[]];
 //Figure out the days
 private _targetDateDays = if ((_targetDate select 1) in [1,2]) then
 	{
-	floor (365*(_targetDate select 0) + (_targetDate select 0)/4 - (_targetDate select 0)/100 + (_targetDate select 0)/400 + (_targetDate select 2) + (153*((_targetDate select 1) + ([12,13] select ((_targetDate select 0)-1)))+8)/5)
+	floor (365*(_targetDate select 0) + (_targetDate select 0)/4 - (_targetDate select 0)/100 + (_targetDate select 0)/400 + (_targetDate select 2) + (153*((_targetDate select 1) + ([12,13] select ((_targetDate select 1)-1)))+8)/5)
 	}
 	else
 	{
@@ -18,7 +18,7 @@ private _targetDateDays = if ((_targetDate select 1) in [1,2]) then
 	
 private _startDateDays = if ((_startDate select 1) in [1,2]) then
 	{
-	floor (365*(_startDate select 0) + (_startDate select 0)/4 - (_startDate select 0)/100 + (_startDate select 0)/400 + (_startDate select 2) + (153*((_startDate select 1) + ([12,13] select ((_startDate select 0)-1)))+8)/5)
+	floor (365*(_startDate select 0) + (_startDate select 0)/4 - (_startDate select 0)/100 + (_startDate select 0)/400 + (_startDate select 2) + (153*((_startDate select 1) + ([12,13] select ((_startDate select 1)-1)))+8)/5)
 	}
 	else
 	{
@@ -72,12 +72,9 @@ while {_daysDifferent > [_startMonthYear,_startMonth] call BIS_fnc_monthDays} do
 	_daysDifferent = _daysDifferent - ([_startMonthYear,_startMonth] call BIS_fnc_monthDays);
 	};
 	
+if ((_months isEqualTo 0) and !((_targetDate select 1) isEqualTo (_startDate select 1))) then
+	{
+	_daysDifferent = _daysDifferent - 1;
+	};
 //Put it into date array and return
 [_years,_months,_daysDifferent,_hoursLeft,_minutesLeft]
-	
-	
-	
-	
-	
-	
-	

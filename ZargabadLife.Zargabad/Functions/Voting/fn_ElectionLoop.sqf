@@ -27,7 +27,6 @@
 		
 		private _playerCurVote = _x getVariable ["mayorVote",""];
 		private _playerCurVoteUnit = [_playerCurVote] call ZKB_fnc_GetPlayerFromID;
-		_x setVariable ["mayorVote","",true];
 		_inArray = false;
 		
 		//See if the voted for player is already in the tally
@@ -61,7 +60,7 @@
 		
 		//Remove candidates if they don't have enough votes
 		{
-		if ((_x select 1) < 2) then //Need at least this many votes to be considered 
+		if ((_x select 1) < SETTING(getNumber,"ZKB_MinMayorVotes")) then //Need at least this many votes to be considered 
 			{
 			_voteTally set [_forEachIndex,"remove"];
 			};
@@ -91,6 +90,9 @@
 				else
 				{
 				["STR_Voting_NewMayor",[name ([(_newMayor select 0)] call ZKB_fnc_GetPlayerFromID),(_newMayor select 1)]] remoteExecCall ["ZKB_fnc_DynamicText",0,false];
+				{
+				_x setVariable ["mayorVote",nil,true];
+				}forEach playAbleUnits;
 				};
 			missionNamespace setVariable ["currentMayor",(_newMayor select 0),true];
 			if (SETTING(getNumber,"ZKB_StatSaveEnabled") isEqualTo 1) then
@@ -133,7 +135,6 @@
 		
 		private _playerCurVote = _x getVariable ["chiefVote",""];
 		private _playerCurVoteUnit = [_playerCurVote] call ZKB_fnc_GetPlayerFromID;
-		_x setVariable ["chiefVote","",true];
 		_inArray = false;
 		
 		//See if the voted for player is already in the tally
@@ -167,7 +168,7 @@
 		
 		//Remove candidates if they don't have enough votes
 		{
-		if ((_x select 1) < 1) then //Need at least this many votes to be considered 
+		if ((_x select 1) < SETTING(getNumber,"ZKB_MinMayorVotes")) then //Need at least this many votes to be considered 
 			{
 			_voteTally set [_forEachIndex,"remove"];
 			};
@@ -197,6 +198,9 @@
 				else
 				{
 				["STR_Voting_NewCheif",[name ([(_newChief select 0)] call ZKB_fnc_GetPlayerFromID),(_newChief select 1)]] remoteExecCall ["ZKB_fnc_DynamicText",0,false];
+				{
+				_x setVariable ["chiefVote",nil,true];
+				}forEach playAbleUnits;
 				};
 			missionNamespace setVariable ["currentChief",(_newChief select 0),true];
 			if (SETTING(getNumber,"ZKB_StatSaveEnabled") isEqualTo 1) then

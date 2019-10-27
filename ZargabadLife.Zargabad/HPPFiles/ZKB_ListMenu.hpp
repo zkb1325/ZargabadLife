@@ -19,7 +19,7 @@ class controls
 		w = 0.425 * safezoneW;
 		h = 0.58 * safezoneH;
 	};
-	class UniversalListMenu_BG1Frame: RscFrame
+	class UniversalListMenu_BG1Frame: ZKB_RscFrame
 	{
 		idc = 5002;
 
@@ -37,7 +37,7 @@ class controls
 		w = 0.425 * safezoneW;
 		h = 0.58 * safezoneH;
 	};
-	class UniversalListMenu_BG2Frame: RscFrame
+	class UniversalListMenu_BG2Frame: ZKB_RscFrame
 	{
 		idc = 5004;
 
@@ -46,7 +46,7 @@ class controls
 		w = 0.425 * safezoneW;
 		h = 0.58 * safezoneH;
 	};
-	class UniversalListMenu_List1: RscListBox
+	class UniversalListMenu_List1: ZKB_RscListBox
 	{
 		idc = 5010;
 
@@ -55,7 +55,7 @@ class controls
 		w = 0.375 * safezoneW;
 		h = 0.4 * safezoneH;
 	};
-	class UniversalListMenu_List2: RscListBox
+	class UniversalListMenu_List2: ZKB_RscListBox
 	{
 		idc = 5020;
 
@@ -64,7 +64,7 @@ class controls
 		w = 0.375 * safezoneW;
 		h = 0.4 * safezoneH;
 	};
-	class UniversalListMenu_Amount1: RscEdit
+	class UniversalListMenu_Amount1: ZKB_RscEdit
 	{
 		idc = 5030;
 		onChar = "_this spawn ZKB_fnc_CheckCharNum;";
@@ -75,7 +75,7 @@ class controls
 		w = 0.175 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class UniversalListMenu_Amount2: RscEdit
+	class UniversalListMenu_Amount2: ZKB_RscEdit
 	{
 		idc = 5040;
 		onChar = "_this spawn ZKB_fnc_CheckCharNum;";
@@ -86,7 +86,7 @@ class controls
 		w = 0.1875 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class UniversalListMenu_Submit1: RscButton
+	class UniversalListMenu_Submit1: ZKB_RscButton
 	{
 		idc = 5050;
 
@@ -95,7 +95,7 @@ class controls
 		w = 0.2 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class UniversalListMenu_Submit2: RscButton
+	class UniversalListMenu_Submit2: ZKB_RscButton
 	{
 		idc = 5060;
 
@@ -104,7 +104,7 @@ class controls
 		w = 0.2 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class UniversalListMenu_Cancel1: RscButton
+	class UniversalListMenu_Cancel1: ZKB_RscButton
 	{
 		idc = 5070;
 		action = "closedialog 0";
@@ -115,7 +115,7 @@ class controls
 		w = 0.2 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class UniversalListMenu_Cancel2: RscButton
+	class UniversalListMenu_Cancel2: ZKB_RscButton
 	{
 		idc = 5080;
 		action = "closedialog 0";
@@ -126,7 +126,7 @@ class controls
 		w = 0.2 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class UniversalListMenu_Info1: RscText
+	class UniversalListMenu_Info1: ZKB_RscText
 	{
 		idc = 5090;
 
@@ -135,7 +135,7 @@ class controls
 		w = 0.175 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class UniversalListMenu_Info2: RscText
+	class UniversalListMenu_Info2: ZKB_RscText
 	{
 		idc = 5095;
 

@@ -6,7 +6,7 @@ class Admin_PlayerInfo_BG: IGUIBack
 	w = 0.2 * safezoneW;
 	h = 0.72 * safezoneH;
 };
-class Admin_PlayerInfo_Frame: RscFrame
+class Admin_PlayerInfo_Frame: ZKB_RscFrame
 {
 	idc = 50061;
 	text = "";
@@ -15,7 +15,7 @@ class Admin_PlayerInfo_Frame: RscFrame
 	w = 0.2 * safezoneW;
 	h = 0.72 * safezoneH;
 };
-class Admin_PlayerInfo_InfoCtrlGroup: RscControlsGroup
+class Admin_PlayerInfo_InfoCtrlGroup: ZKB_RscControlsGroup
 		{
 		idc = 50062;
 		x = 0.3125 * safezoneW + safezoneX;
@@ -24,7 +24,7 @@ class Admin_PlayerInfo_InfoCtrlGroup: RscControlsGroup
 		h = 0.68 * safezoneH;
 		class controls
 			{
-			class Admin_PlayerInfo_Info: RscStructuredText
+			class Admin_PlayerInfo_Info: ZKB_RscStructuredText
 			{
 				idc = 50063;
 				x = 0;
@@ -42,7 +42,7 @@ class Admin_PlayerInfo_BG2: IGUIBack
 	w = 0.425 * safezoneW;
 	h = 0.72 * safezoneH;
 };
-class Admin_PlayerInfo_Frame2: RscFrame
+class Admin_PlayerInfo_Frame2: ZKB_RscFrame
 {
 	idc = 50065;
 	text = "";
@@ -51,7 +51,7 @@ class Admin_PlayerInfo_Frame2: RscFrame
 	w = 0.425 * safezoneW;
 	h = 0.72 * safezoneH;
 };
-class Admin_PlayerInfo_LogsCtrlGroup: RscControlsGroup
+class Admin_PlayerInfo_LogsCtrlGroup: ZKB_RscControlsGroup
 		{
 		idc = 50066;
 		x = 0.5375 * safezoneW + safezoneX;
@@ -60,7 +60,7 @@ class Admin_PlayerInfo_LogsCtrlGroup: RscControlsGroup
 				h = 0.68 * safezoneH;
 		class controls
 			{
-			class Admin_PlayerInfo_Logs: RscStructuredText
+			class Admin_PlayerInfo_Logs: ZKB_RscStructuredText
 			{
 				idc = 50067;
 				x = 0;

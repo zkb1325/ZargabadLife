@@ -18,7 +18,7 @@ if (isLocalized _str) then
 	{
 	_playerLogsStr = _playerLogsStr + (switch (count _formatArr) do
 		{
-		case 0: {_str;};
+		case 0: {localize _str;};
 		case 1: {format [localize _str, (_formatArr select 0)]};
 		case 2: {format [localize _str, (_formatArr select 0), (_formatArr select 1)]};
 		case 3: {format [localize _str, (_formatArr select 0), (_formatArr select 1), (_formatArr select 2)]};
@@ -35,7 +35,7 @@ if (isLocalized _str) then
 	{
 	_playerLogsStr = _playerLogsStr + (switch (count _formatArr) do
 		{
-		case 0: {_str;};
+		case 0: {localize _str;};
 		case 1: {format [_str, (_formatArr select 0)]};
 		case 2: {format [_str, (_formatArr select 0), (_formatArr select 1)]};
 		case 3: {format [_str, (_formatArr select 0), (_formatArr select 1), (_formatArr select 2)]};

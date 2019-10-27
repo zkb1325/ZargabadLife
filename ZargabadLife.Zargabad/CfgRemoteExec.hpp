@@ -22,8 +22,6 @@ class CfgRemoteExec
 			F(ZKB_fnc_ServerLoadPlayerStats,SERVER)
 			F(ZKB_fnc_ServerDeleteVehicle,SERVER)
 			F(ZKB_fnc_SetShotParents,SERVER)
-			F(ZKB_fnc_InvAddItem,SERVER)
-			F(ZKB_fnc_SpikeStripEffect,SERVER)
 			F(ZKB_fnc_TakeHostageLoop,SERVER)
 			
 			//Client Only
@@ -50,13 +48,16 @@ class CfgRemoteExec
 			F(ZKB_fnc_GovernmentConvoyCivLoop,CLIENT)
 			F(ZKB_fnc_GovernmentConvoyCopWin,CLIENT)
 			F(ZKB_fnc_HostageKilledKiller,CLIENT)
+			F(ZKB_fnc_SpikeStripEffect,CLIENT)
+			F(ZKB_fnc_InvAddItem,CLIENT)
 			
 			//ALL
 			F(BIS_fnc_error,ALL)
-			F(bis_fnc_settasklocal,ALL)
+			F(BIS_fnc_settasklocal,ALL)
 			F(BIS_fnc_effectKilledAirDestruction,ALL)
 			F(BIS_fnc_effectKilledSecondaries,ALL)
 			F(BIS_fnc_objectVar,ALL)
+			F(BIS_fnc_debugConsoleExec,ALL)
 			F(ZKB_fnc_DynamicText,ALL)
 			F(ZKB_fnc_AddForce,ALL)
 			F(ZKB_fnc_AnimSync,ALL)
@@ -74,11 +75,11 @@ class CfgRemoteExec
 			jip = 0;
 			
 			//Client
-			F(addAction,CLIENT)
 			F(cutText,CLIENT)
 			F(hint,CLIENT)
 			
 			//ALL
+			F(addAction,ALL)
 			F(lock,ALL)
 			F(selectLeader,ALL)
 			F(setUserActionText,ALL)

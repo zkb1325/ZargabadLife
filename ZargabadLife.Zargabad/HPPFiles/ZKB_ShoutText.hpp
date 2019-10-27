@@ -18,7 +18,7 @@ class controls
 		w = 0.6375 * safezoneW;
 		h = 0.4 * safezoneH;
 	};
-	class ShoutText_Frame: RscFrame
+	class ShoutText_Frame: ZKB_RscFrame
 	{
 		idc = 7002;
 		
@@ -28,7 +28,7 @@ class controls
 		w = 0.6375 * safezoneW;
 		h = 0.4 * safezoneH;
 	};
-	class ShoutText_Text1: RscEdit
+	class ShoutText_Text1: ZKB_RscEdit
 	{
 		idc = 7010;
 		onChar = "[_this, 7010] spawn ZKB_fnc_CheckValidChar;";
@@ -38,7 +38,7 @@ class controls
 		w = 0.375 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class ShoutText_ChatOption1: RscCombo
+	class ShoutText_ChatOption1: ZKB_RscCombo
 	{
 		idc = 7020;
 
@@ -47,7 +47,7 @@ class controls
 		w = 0.17 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class ShoutText_Text2: RscEdit
+	class ShoutText_Text2: ZKB_RscEdit
 	{
 		idc = 7030;
 		onChar = "[_this, 7030] spawn ZKB_fnc_CheckValidChar;";
@@ -57,7 +57,7 @@ class controls
 		w = 0.375 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class ShoutText_ChatOption2: RscCombo
+	class ShoutText_ChatOption2: ZKB_RscCombo
 	{
 		idc = 7040;
 
@@ -66,7 +66,7 @@ class controls
 		w = 0.17 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class ShoutText_Text3: RscEdit
+	class ShoutText_Text3: ZKB_RscEdit
 	{
 		idc = 7050;
 		onChar = "[_this, 7050] spawn ZKB_fnc_CheckValidChar;";
@@ -76,7 +76,7 @@ class controls
 		w = 0.375 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class ShoutText_ChatOption3: RscCombo
+	class ShoutText_ChatOption3: ZKB_RscCombo
 	{
 		idc = 7060;
 
@@ -85,7 +85,7 @@ class controls
 		w = 0.17 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class ShoutText_Text4: RscEdit
+	class ShoutText_Text4: ZKB_RscEdit
 	{
 		idc = 7070;
 		onChar = "[_this, 7070] spawn ZKB_fnc_CheckValidChar;";
@@ -95,7 +95,7 @@ class controls
 		w = 0.375 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class ShoutText_ChatOption4: RscCombo
+	class ShoutText_ChatOption4: ZKB_RscCombo
 	{
 		idc = 7080;
 
@@ -104,7 +104,7 @@ class controls
 		w = 0.17 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class ShoutText_SaveBtn: RscButton
+	class ShoutText_SaveBtn: ZKB_RscButton
 	{
 		idc = 7090;
 		action = "[""Save""] call ZKB_fnc_SayTextMenu";
@@ -115,7 +115,7 @@ class controls
 		w = 0.21 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class ShoutText_Close: RscButton
+	class ShoutText_Close: ZKB_RscButton
 	{
 		idc = 7095;
 		action = "closedialog 0; createDialog ""ZKB_MainMenu"";";

@@ -34,155 +34,118 @@ switch (_code) do
             case civilian: {if (!visibleMap) then {[] spawn ZKB_fnc_CivMarkers;}};
 			};
 		};
-	/*	
-	//1
-	case 2:
-		{
-		if !(missionNamespace getVariable ["keysEnabled",true]) exitWith {};
-		if (dialog) exitWith {};
-		_handle = true;
-		};	
-		
-	//2	
-	case 3: {if !(missionNamespace getVariable ["keysEnabled",true]) exitWith {}; if (([player] call ZKB_fnc_IsRestrained) or ([player] call ZKB_fnc_IsSurrending)) exitWith {}; _handle = true;};
 	
-	//3
-	case 4:
+	//F5
+	case 0x3F: 
 		{
-		if !(missionNamespace getVariable ["keysEnabled",true]) exitWith {};
-		if ([player] call ZKB_fnc_IsRestrained) exitWith {};
-		if ([player] call ZKB_fnc_IsSurrending) exitWith {};
-		if ([player] call ZKB_fnc_IsKnockedOut) exitWith {};
-		if !(isNull objectParent player) exitWith {};
+		if (SETTING(getNumber,"ZKB_UseCBAKeyBinds") isEqualTo 1) exitWith {};
+		if (isclass (missionConfigFile >> "Admins" >> (getPlayerUID player))) then
+			{
+			_handle = call ZKB_fnc_OpenAdminMenu;
+			};
+		};
+	//F1
+	case 0x3B: 
+		{
+		if (SETTING(getNumber,"ZKB_UseCBAKeyBinds") isEqualTo 1) exitWith {};
+		_handle = call ZKB_fnc_OpenWelcomeMenu;
+		};
+	//F2
+	case 0x3C: 
+		{
+		if (SETTING(getNumber,"ZKB_UseCBAKeyBinds") isEqualTo 1) exitWith {};
+		0 fadeSound ((soundVolume - .1) max 0); titleText [format [localize "STR_CBA_VolumeAt",((soundVolume/1)*100),"%"],"PLAIN DOWN"];
 		_handle = true;
 		};
-		
-	//4
-	case 5:
+	//F3
+	case 0x3D: 
 		{
-		if !(missionNamespace getVariable ["keysEnabled",true]) exitWith {};
-		if ([player] call ZKB_fnc_IsRestrained) exitWith {};
-		if !(isNull objectParent player) exitWith {};
+		if (SETTING(getNumber,"ZKB_UseCBAKeyBinds") isEqualTo 1) exitWith {};
+		0 fadeSound ((soundVolume + .1) min 1); titleText [format [localize "STR_CBA_VolumeAt",((soundVolume/1)*100),"%"],"PLAIN DOWN"];
 		_handle = true;
 		};
-		
-	//5
-	case 6: 
+	//Tab
+	case 0x0F: 
 		{
-		if !(missionNamespace getVariable ["keysEnabled",true]) exitWith {};
-		if ([player] call ZKB_fnc_IsRestrained) exitWith {};
-		if ([player] call ZKB_fnc_IsSurrending) exitWith {};
-		if ([player] call ZKB_fnc_IsKnockedOut) exitWith {};
-		if (IsCiv) then {_handle = true;};
-		};
-	
-	//E Interaction
-	case 18:
-		{
-		if !(missionNamespace getVariable ["keysEnabled",true]) exitWith {};
-		if ([player] call ZKB_fnc_IsRestrained) exitWith {};
-		if ([player] call ZKB_fnc_IsSurrending) exitWith {};
-		if ([player] call ZKB_fnc_IsKnockedOut) exitWith {};
-		
-		if ((isPlayer cursorObject) and IsCop and (side cursorObject isEqualTo civilian) and (player distance cursorObject < 3)) exitWith
+		if (SETTING(getNumber,"ZKB_UseCBAKeyBinds") isEqualTo 1) exitWith {};
+		if (missionNamespace getVariable ["keysEnabled",true]) then
 			{
-			_handle = true;
-			};
-			
-		if ((isPlayer cursorObject) and IsCiv and (player distance cursorObject < 3)) exitWith
-			{
-			_handle = true;
-			};
-		
-		if ((vehicle player == player) and ((locked cursorObject) == 0) and (!isNil {cursorObject getVariable "plate"}) and (player distance cursorObject < 5)) exitWith
-			{
-			_vcl = cursorObject;	
-			if(_vcl emptyPositions "Driver" > 0)exitwith {_handle = true;};
-			if(_vcl emptyPositions "Gunner" > 0)exitwith {_handle = true;};
-			if(_vcl emptyPositions "Commander" > 0)exitwith {_handle = true;};
-			if(_vcl emptyPositions "Cargo" > 0)exitwith {_handle = true;};	
-			};
-			
-		if (!(vehicle player == player) and ((locked (vehicle player) == 0))) exitWith 
-			{
-			_vcl = (vehicle player);
-			if((locked _vcl) == 2)exitwith{};
-			if((speed _vcl) > 30)exitwith{};
-			_handle = true;	
-			};
-		
-		if ((count (cursorObject getVariable ["ShopData",[]]) > 0) and (player distance cursorObject < 5)) exitWith {if ((str cursorObject) in SETTING(getArray,"ZKB_GangAreas")) exitWith {};_handle = true;};
-		
-		if ((str cursorObject)in SETTING(getArray,"ZKB_ATMArray")) exitWith {_handle = true;};
-		};
-	
-	//T
-	case 20:
-		{
-		if !(missionNamespace getVariable ["keysEnabled",true]) exitWith {};
-		if (dialog) exitWith {};
-		if ([player] call ZKB_fnc_IsRestrained) exitWith {};
-		_handle = true;
-		};
-		
-	//F
-	case 33:
-		{
-		if !(missionNamespace getVariable ["keysEnabled",true]) exitWith {};
-		if (_shift and !isNull cursorObject and cursorObject isKindOf "Man" and isPlayer cursorObject and alive cursorObject and cursorObject distance player < 4 and speed cursorObject < 3 and (vehicle player isEqualTo player) and !((playerSide isEqualTo west) and (side cursorObject isEqualTo west))) exitWith 
-			{
-			if (!([cursorObject] call ZKB_fnc_IsKnockedOut) and (currentWeapon player == primaryWeapon player || currentWeapon player == handgunWeapon player) and currentWeapon player != "" and !([player] call ZKB_fnc_IsKnockedOut) and !(missionNamespace getVariable ["knockingOut",false]) and !([player] call ZKB_fnc_IsSurrending)) then 
-				{
-                _handle = true;	
-				};
-			};
-			
-		if (vehicle player == player or !(driver (vehicle player) == player) or !IsCop) exitWith {};
-		if ((vehicle player) getVariable ["SirenOn",false]) then
-			{
-			_handle = true;		
-			};
-		};
-		
-	//L Lock/Unlock
-	case 38:
-		{
-		if !(missionNamespace getVariable ["keysEnabled",true]) exitWith {};
-		if ([player] call ZKB_fnc_IsRestrained) exitWith {};
-		if ([player] call ZKB_fnc_IsSurrending) exitWith {};
-		if ([player] call ZKB_fnc_IsKnockedOut) exitWith {};
-		if (vehicle player == player) then
-			{
-			_veh = cursorObject;	
+			missionNamespace setVariable ["keysEnabled",false];
+			titleText [format [localize "STR_Common_KeysEnabled",localize "STR_Common_No"],"PLAIN DOWN"];
 			}
 			else
 			{
-			_veh = vehicle player;	
+			missionNamespace setVariable ["keysEnabled",true];
+			titleText [format [localize "STR_Common_KeysEnabled",localize "STR_Common_Yes"],"PLAIN DOWN"];
 			};
-		if (!(_veh in (player getVariable ["ZKB_Keys",[]])) and !((_veh getVariable ["VehicleOwner",""]) == "")) exitWith {};
-		if (!(_veh in (player getVariable ["ZKB_Keys",[]]) or player distance _veh > 8)) exitWith {};
-		_handle = true;	
 		};
-		
-	//Tilda `/~
-	case 41:
+	//1
+	case 0x02: 
 		{
-		if !(missionNamespace getVariable ["keysEnabled",true]) exitWith {};
-		if (IsCop) then
-			{
-			if (isNull objectParent player) then
-				{
-				if (dialog) exitwith {};
-				_handle = true;
-				}
-				else
-				{
-				if !((vehicle player) in (player getVariable ["ZKB_Keys",[]])) exitwith {};
-				if (dialog) exitwith {};
-				_handle = true;
-				};
-			};
+		if (SETTING(getNumber,"ZKB_UseCBAKeyBinds") isEqualTo 1) exitWith {};
+		_handle = call ZKB_fnc_KeyBindOpenInfoMenu;
 		};
+	//2
+	case 0x03: 
+		{
+		if (SETTING(getNumber,"ZKB_UseCBAKeyBinds") isEqualTo 1) exitWith {};
+		_handle = call ZKB_fnc_KeyBindOpenInventory;
+		};
+	//3
+	case 0x04: 
+		{
+		if (SETTING(getNumber,"ZKB_UseCBAKeyBinds") isEqualTo 1) exitWith {};
+		_handle = call ZKB_fnc_KeyBindHandsUp;
+		};
+	//4
+	case 0x05: 
+		{
+		if (SETTING(getNumber,"ZKB_UseCBAKeyBinds") isEqualTo 1) exitWith {};
+		_handle = call ZKB_fnc_KeyBindHandsDown;
+		};
+	//5
+	case 0x06: 
+		{
+		if (SETTING(getNumber,"ZKB_UseCBAKeyBinds") isEqualTo 1) exitWith {};
+		_handle = call ZKB_fnc_KeyBindOpenGangMenu;
+		};
+	//E
+	case 0x12: 
+		{
+		if (SETTING(getNumber,"ZKB_UseCBAKeyBinds") isEqualTo 1) exitWith {};
+		_handle = call ZKB_fnc_KeyBindInteractionKey;
+		};
+	//T
+	case 0x14: 
+		{
+		if (SETTING(getNumber,"ZKB_UseCBAKeyBinds") isEqualTo 1) exitWith {};
+		_handle = call ZKB_fnc_KeyBindOpenTrunk;
+		};
+	//F
+	case 0x21: 
+		{
+		if (SETTING(getNumber,"ZKB_UseCBAKeyBinds") isEqualTo 1) exitWith {};
+		_handle = if (_shift) then {call ZKB_fnc_KeyBindKnockOut;} else {call ZKB_fnc_KeyBindSirenOnOff};
+		};
+	//H
+	case 0x23: 
+		{
+		if (SETTING(getNumber,"ZKB_UseCBAKeyBinds") isEqualTo 1) exitWith {};
+		if (_shift) then {_handle = call ZKB_fnc_KeyBindHolsterWeapon;};
+		};
+	//L
+	case 0x26: 
+		{
+		if (SETTING(getNumber,"ZKB_UseCBAKeyBinds") isEqualTo 1) exitWith {};
+		_handle = call ZKB_fnc_KeyBindVehicleLock;
+		};
+	//Tilda `
+	case 0x29: 
+		{
+		if (SETTING(getNumber,"ZKB_UseCBAKeyBinds") isEqualTo 1) exitWith {};
+		_handle = call ZKB_fnc_KeyBindPoliceComputer;
+		};
+	
 	
 	/*
 	//W key

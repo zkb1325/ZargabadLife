@@ -19,7 +19,7 @@ class controls
 		h = 0.68 * safezoneH;
 		};
 		
-	class DynamicButtonMenu_Frame: RscFrame
+	class DynamicButtonMenu_Frame: ZKB_RscFrame
 		{
 		idc = 15502;
 		text = "";
@@ -29,7 +29,7 @@ class controls
 		h = 0.68 * safezoneH;
 		};
 		
-	class DynamicButtonMenu_BtnGroup: RscControlsGroup
+	class DynamicButtonMenu_BtnGroup: ZKB_RscControlsGroup
 		{
 		
 		idc = 15505;
@@ -40,7 +40,7 @@ class controls
 		
 		class controls
 			{
-			class DynamicButtonMenu_Btn1: RscButton
+			class DynamicButtonMenu_Btn1: ZKB_RscButton
 				{
 				idc = 15510;
 				text = "Button 1"; //--- ToDo: Localize;

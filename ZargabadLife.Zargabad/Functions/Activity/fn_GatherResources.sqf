@@ -15,7 +15,7 @@ _this spawn //Need to spawn because the trigger didn't let me put spawn in it
 		{
 		while {player inArea _resourcearea}	do
 			{
-			if (20 > (random 100)) then
+			if (40 > (random 100)) then
 				{
 				if (((vehicle player) == player) and ((speed (vehicle player)) > 2)) then
 					{
@@ -35,7 +35,7 @@ _this spawn //Need to spawn because the trigger didn't let me put spawn in it
 		{
 		while {player inArea _resourcearea}	do
 			{
-			if (30 > (random 100)) then
+			if (50 > (random 100)) then
 				{
 				if (((vehicle player) == player) and ((speed (vehicle player)) > 2)) then
 					{
@@ -55,7 +55,7 @@ _this spawn //Need to spawn because the trigger didn't let me put spawn in it
 		{
 		while {player inArea _resourcearea}	do
 			{
-			if (20 > (random 100)) then
+			if (35 > (random 100)) then
 				{
 				if (((vehicle player) == player) and ((speed (vehicle player)) > 2)) then
 					{
@@ -75,7 +75,7 @@ _this spawn //Need to spawn because the trigger didn't let me put spawn in it
 		{
 		while {player inArea _resourcearea}	do
 			{
-			if (20 > (random 100)) then
+			if (40 > (random 100)) then
 				{
 				if (((vehicle player) == player) and ((speed (vehicle player)) > 2)) then
 					{

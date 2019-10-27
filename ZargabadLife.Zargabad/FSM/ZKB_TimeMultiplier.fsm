@@ -1,0 +1,98 @@
+/*%FSM<COMPILE "E:\BIS TOOLS 2\FSM Editor Personal Edition\scriptedFSM.cfg, ZKB_TimeMultiplier">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"Init",0,250,-6.841799,-138.171326,83.158180,-88.171364,0.000000,"Init"};
+item1[] = {"WaitUntil_Day",4,218,-17.744183,-28.238960,94.969116,44.474342,0.000000,"WaitUntil Day"};
+item2[] = {"Set_DayTime_Mult",2,250,-166.743484,54.437477,-27.682726,128.059326,0.000000,"Set DayTime Multiplier"};
+item3[] = {"WaitUntil_Night",4,218,-19.560915,162.553284,92.243851,236.175125,0.000000,"WaitUntil Night"};
+item4[] = {"Set_Nighttime_Mu",2,4346,105.816559,56.255005,261.230896,130.785385,0.000000,"Set Nighttime Multiplier"};
+link0[] = {0,1};
+link1[] = {1,2};
+link2[] = {2,3};
+link3[] = {3,4};
+link4[] = {4,1};
+globals[] = {0.000000,0,0,0,0,640,480,1,6,6316128,1,-434.278259,503.327087,233.888275,-323.041870,1032,613,1};
+window[] = {0,-1,-1,-1,-1,993,234,1674,234,1,1050};
+*//*%FSM</HEAD>*/
+class FSM
+{
+  fsmName = "ZKB_TimeMultiplier";
+  class States
+  {
+    /*%FSM<STATE "Init">*/
+    class Init
+    {
+      name = "Init";
+      init = /*%FSM<STATEINIT""">*/"if (sunOrMoon == 1) then" \n
+       "	{" \n
+       "	setTimeMultiplier (getNumber (missionConfigFile >> ""ZKB_Settings"" >> ""ZKB_DayTimeAcc""));" \n
+       "	}" \n
+       "	else" \n
+       "	{" \n
+       "	setTimeMultiplier  (getNumber (missionConfigFile >> ""ZKB_Settings"" >> ""ZKB_NightTimeAcc""));" \n
+       "	};"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "WaitUntil_Day">*/
+        class WaitUntil_Day
+        {
+          priority = 0.000000;
+          to="Set_DayTime_Mult";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"sunOrMoon == 1;"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Set_DayTime_Mult">*/
+    class Set_DayTime_Mult
+    {
+      name = "Set_DayTime_Mult";
+      init = /*%FSM<STATEINIT""">*/"setTimeMultiplier (getNumber (missionConfigFile >> ""ZKB_Settings"" >> ""ZKB_DayTimeAcc""));"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "WaitUntil_Night">*/
+        class WaitUntil_Night
+        {
+          priority = 0.000000;
+          to="Set_Nighttime_Mu";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"sunOrMoon == 0;"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Set_Nighttime_Mu">*/
+    class Set_Nighttime_Mu
+    {
+      name = "Set_Nighttime_Mu";
+      init = /*%FSM<STATEINIT""">*/"setTimeMultiplier (getNumber (missionConfigFile >> ""ZKB_Settings"" >> ""ZKB_NightTimeAcc""));"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "WaitUntil_Day">*/
+        class WaitUntil_Day
+        {
+          priority = 0.000000;
+          to="Set_DayTime_Mult";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"sunOrMoon == 1;"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+  };
+  initState="Init";
+  finalStates[] =
+  {
+  };
+};
+/*%FSM</COMPILE>*/

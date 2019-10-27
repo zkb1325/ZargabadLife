@@ -36,5 +36,9 @@ switch _statID do
 		["write",["ShopStock",format ["Shop_%1",_forEachIndex],_curShopStock]] call ZKB_ServerStats;
 		}forEach ZKB_ShopDefines;
 		};
+	case "date":
+		{
+		["write",["Date","Date",date]] call ZKB_ServerStats;
+		};
 	default {diag_log format ["Error saving server stat, Unknown ID: %1 - Data: %2",_statID,_statData];};
 	};

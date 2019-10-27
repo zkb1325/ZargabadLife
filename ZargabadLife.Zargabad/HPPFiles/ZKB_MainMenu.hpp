@@ -18,7 +18,7 @@ class controls
 		w = 0.2 * safezoneW;
 		h = 0.46 * safezoneH;
 	};
-	class Menu_Fame: RscFrame
+	class Menu_Fame: ZKB_RscFrame
 	{
 		idc = -1;
 		
@@ -28,7 +28,7 @@ class controls
 		w = 0.2 * safezoneW;
 		h = 0.46 * safezoneH;
 	};
-	class Menu_GraphicBtn: RscButton
+	class Menu_GraphicBtn: ZKB_RscButton
 	{
 		action = "closedialog 0; createDialog ""ZKB_ViewSettings"";";
 
@@ -39,7 +39,7 @@ class controls
 		w = 0.15 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class Menu_SayTextBtn: RscButton
+	class Menu_SayTextBtn: ZKB_RscButton
 	{
 		action = "closedialog 0; [""Open""] call ZKB_fnc_SayTextMenu;";
 
@@ -50,7 +50,7 @@ class controls
 		w = 0.15 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class Menu_TutorialBtn: RscButton
+	class Menu_TutorialBtn: ZKB_RscButton
 	{
 		action = "closedialog 0; [localize ""STR_MainMenu_TutorialText"", localize ""STR_MainMenu_Tutorial""] call ZKB_fnc_FillMenuGenText;";
 
@@ -61,7 +61,7 @@ class controls
 		w = 0.15 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class Menu_FAQBtn: RscButton
+	class Menu_FAQBtn: ZKB_RscButton
 	{
 		action = "closedialog 0; [localize ""STR_MainMenu_FAQText"", localize ""STR_MainMenu_FAQ""] call ZKB_fnc_FillMenuGenText;";
 
@@ -72,7 +72,7 @@ class controls
 		w = 0.15 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class Menu_AboutBtn: RscButton
+	class Menu_AboutBtn: ZKB_RscButton
 	{
 		action = "closedialog 0; [localize ""STR_MainMenu_AboutText"", localize ""STR_MainMenu_About""] call ZKB_fnc_FillMenuGenText;";
 
@@ -83,7 +83,7 @@ class controls
 		w = 0.15 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class Menu_ItemInfoBtn: RscButton
+	class Menu_ItemInfoBtn: ZKB_RscButton
 	{
 		action = "closedialog 0; call ZKB_fnc_ItemInfoMenu;";
 
@@ -94,7 +94,7 @@ class controls
 		w = 0.15 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class Menu_CloseBtn: RscButton
+	class Menu_CloseBtn: ZKB_RscButton
 	{
 		action = "closedialog 0;";
 

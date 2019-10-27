@@ -73,7 +73,7 @@ if (primaryWeapon _player != "") then
 		_playerInfoStr = _playerInfoStr + format ["- %1",([configName (_itemConfig select 0)] call ZKB_fnc_GetItemName)];
 		_playerInfoStr = _playerInfoStr + "<br/>";
 		};
-	}forEach (([primaryWeapon _player]) + (primaryWeaponMagazine _player) + (primaryWeaponItems _player));
+	}forEach ((([primaryWeapon _player]) + (primaryWeaponMagazine _player) + (primaryWeaponItems _player)) - [""]);
 	}
 	else
 	{
@@ -94,7 +94,7 @@ if (handgunWeapon _player != "") then
 		_playerInfoStr = _playerInfoStr + format ["- %1",([configName (_itemConfig select 0)] call ZKB_fnc_GetItemName)];
 		_playerInfoStr = _playerInfoStr + "<br/>";
 		};
-	}forEach (([handgunWeapon _player]) + (handgunMagazine _player) + (handgunItems _player));
+	}forEach ((([handgunWeapon _player]) + (handgunMagazine _player) + (handgunItems _player)) - [""]);
 	}
 	else
 	{
@@ -115,7 +115,7 @@ if (secondaryWeapon _player != "") then
 		_playerInfoStr = _playerInfoStr + format ["- %1",([configName (_itemConfig select 0)] call ZKB_fnc_GetItemName)];
 		_playerInfoStr = _playerInfoStr + "<br/>";
 		};
-	}forEach (([secondaryWeapon _player]) + (secondaryWeaponMagazine _player) + (secondaryWeaponItems _player));
+	}forEach ((([secondaryWeapon _player]) + (secondaryWeaponMagazine _player) + (secondaryWeaponItems _player)) - [""]);
 	}
 	else
 	{
@@ -231,12 +231,15 @@ _playerInfoStr = _playerInfoStr + "<br/>";
 _playerInfoStr = _playerInfoStr + localize "STR_Admin_PlayerInfoVehicles";
 _playerInfoStr = _playerInfoStr + "<br/>";
 {
-private _item = typeOf _x;
-private _itemConfig = "getText (_x >> ""className"") isEqualTo _item" configClasses (missionConfigFile >> "Item_Config"); //Get the itemConfig class from item className
-if (count _itemConfig > 0) then
+if !(isnull _x) then 
 	{
-	_playerInfoStr = _playerInfoStr + format ["- %1 (%2)  %3",([configName (_itemConfig select 0)] call ZKB_fnc_GetItemName),(_x getVariable ["plate",_x]),format [localize "STR_Admin_PlayerInfoVehOwner",if ((_x getVariable ["VehicleOwner",""]) isEqualTo (getPlayerUID _player)) then {localize "STR_Common_Yes"}else{localize "STR_Common_No"}]];
-	_playerInfoStr = _playerInfoStr + "<br/>";
+	private _item = typeOf _x;
+	private _itemConfig = "getText (_x >> ""className"") isEqualTo _item" configClasses (missionConfigFile >> "Item_Config"); //Get the itemConfig class from item className
+	if (count _itemConfig > 0) then
+		{
+		_playerInfoStr = _playerInfoStr + format ["- %1 (%2)  %3",([configName (_itemConfig select 0)] call ZKB_fnc_GetItemName),(_x getVariable ["plate",_x]),format [localize "STR_Admin_PlayerInfoVehOwner",if ((_x getVariable ["VehicleOwner",""]) isEqualTo (getPlayerUID _player)) then {localize "STR_Common_Yes"}else{localize "STR_Common_No"}]];
+		_playerInfoStr = _playerInfoStr + "<br/>";
+		};
 	};
 }forEach (_player getVariable ["ZKB_Keys",[]]);
 
@@ -286,7 +289,7 @@ if (isLocalized _str) then
 	{
 	_playerLogsStr = _playerLogsStr + (switch (count _formatArr) do
 		{
-		case 0: {_str;};
+		case 0: {localize _str;};
 		case 1: {format [localize _str, (_formatArr select 0)]};
 		case 2: {format [localize _str, (_formatArr select 0), (_formatArr select 1)]};
 		case 3: {format [localize _str, (_formatArr select 0), (_formatArr select 1), (_formatArr select 2)]};
@@ -303,7 +306,7 @@ if (isLocalized _str) then
 	{
 	_playerLogsStr = _playerLogsStr + (switch (count _formatArr) do
 		{
-		case 0: {_str;};
+		case 0: {localize _str;};
 		case 1: {format [_str, (_formatArr select 0)]};
 		case 2: {format [_str, (_formatArr select 0), (_formatArr select 1)]};
 		case 3: {format [_str, (_formatArr select 0), (_formatArr select 1), (_formatArr select 2)]};
