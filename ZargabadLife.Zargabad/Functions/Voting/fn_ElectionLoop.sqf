@@ -165,17 +165,17 @@
 			};
 			
 		}forEach playableUnits;
-		
+
 		//Remove candidates if they don't have enough votes
 		{
-		if ((_x select 1) < SETTING(getNumber,"ZKB_MinMayorVotes")) then //Need at least this many votes to be considered 
+		if ((_x select 1) < SETTING(getNumber,"ZKB_MinChiefVotes")) then //Need at least this many votes to be considered 
 			{
 			_voteTally set [_forEachIndex,"remove"];
 			};
 		}forEach _voteTally;
 		_voteTally = _voteTally - ["remove"];
-		
-		if (count _voteTally > 1) then //Theres at least 1 player eligible to win
+
+		if (count _voteTally > 0) then //Theres at least 1 player eligible to win
 			{
 			_sortedVotes = [_voteTally, [], {_x select 1}, "DESCEND"] call BIS_fnc_sortBy; //Sort the votes from most votes to least
 			//Get the player with the most votes and any one who ties with them
@@ -187,10 +187,8 @@
 				_wonVotes pushBack _x;
 				};
 			}forEach _sortedVotes;
-			
 			//Incase there are other players who tied in number of votes pick one randomly #RNG
 			private _newChief = selectRandom _wonVotes;
-			
 			if ((missionNamespace getVariable ["currentChief",""]) isEqualTo (_newChief select 0)) then
 				{
 				["STR_Voting_ChiefStays", [name ([(_newChief select 0)] call ZKB_fnc_GetPlayerFromID)]] remoteExecCall ["ZKB_fnc_DynamicText",0,false];

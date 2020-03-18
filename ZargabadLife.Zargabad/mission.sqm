@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=1667;
+		nextID=1684;
 	};
 	class Camera
 	{
@@ -16031,7 +16031,7 @@ class Mission
 					};
 					id=497;
 					type="Misc_cargo_cont_tiny";
-					atlOffset=4.7683716e-005;
+					atlOffset=4.9591064e-005;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -16073,7 +16073,7 @@ class Mission
 					};
 					id=499;
 					type="Misc_cargo_cont_tiny";
-					atlOffset=2.4936771;
+					atlOffset=2.493681;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -16115,7 +16115,7 @@ class Mission
 					};
 					id=500;
 					type="Misc_cargo_cont_tiny";
-					atlOffset=2.4893799;
+					atlOffset=2.4893837;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -16176,7 +16176,7 @@ class Mission
 							};
 							id=504;
 							type="CUP_I_TK_GUE_Soldier_AAT";
-							atlOffset=0.00017547607;
+							atlOffset=0.00017929077;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -16266,7 +16266,7 @@ class Mission
 						speedMode="LIMITED";
 					};
 					id=503;
-					atlOffset=0.00017547607;
+					atlOffset=0.00017929077;
 				};
 				class Item5
 				{
@@ -16369,7 +16369,7 @@ class Mission
 					};
 					id=570;
 					type="Land_Laptop_02_unfolded_F";
-					atlOffset=1.1244354;
+					atlOffset=1.1244373;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -16454,7 +16454,6 @@ class Mission
 					type="mil_flag";
 					colorName="ColorGreen";
 					id=505;
-					atlOffset=0.46833038;
 				};
 				class Item11
 				{

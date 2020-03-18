@@ -5,10 +5,6 @@ class PlayerUID {adminLevel = 0;}; //adminLevel for playerUID
 class Admins
 {
 class 76561198034910314 {adminLevel = 5;}; //ZKB1325
-class 76561198011217903 {adminLevel = 4;}; //Woods
-class 76561198145974876 {adminLevel = 4;}; //Gamerz
-class 76561198042283286 {adminLevel = 4;}; //Walrus
-class 76561198059428945 {adminLevel = 4;}; //Joe
 };
 
 /*

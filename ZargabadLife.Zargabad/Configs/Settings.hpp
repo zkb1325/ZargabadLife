@@ -2,9 +2,9 @@ class ZKB_Settings
 	{
 	//True/False if stats should save over restarts Default: false
 	//Requires the server to be running INIDBI2
-	ZKB_StatSaveEnabled = false;
+	ZKB_StatSaveEnabled = true;
 	ZKB_SavePlayerPos = true; //True/False if the players position should be saved so they login where they last were Default: true
-	ZKB_StatWipeStartDate[] = {2018,1,1,24,0}; //Start date (servers local timezone) for stat wipes. All future stat wipes will be based off this date as well the first stat wipe will not happen until this date
+	ZKB_StatWipeStartDate[] = {2020,2,21,23,55}; //Start date (servers local timezone) for stat wipes. All future stat wipes will be based off this date as well the first stat wipe will not happen until this date
 	ZKB_StatWipeDelay[] = {0,0,7,0,0}; //Delay between each stat wipe {years,months,days,hours,minutes}
 	
 	ZKB_UseCBAKeyBinds = true; //True/False if CBA is used for keybinds. False will remove the requirement for CBA

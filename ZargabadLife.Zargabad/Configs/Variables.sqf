@@ -11,9 +11,9 @@ ZKB_IntroMessage =
 "This life mod is intended to be a recreation of Arma 2 OA Zargabad Life.<br/>Original credit to EddieV223, Pogoman, Issetea, and Fewo.<br/>Thanks to the CUP team for porting Arma 2 OA assets to Arma 3 as this mission uses and requires: Cup_Terrains-Maps, Cup_Terrains-Core, Cup_Vehicles, Cup_Units, Cup_weapons, and CBA_A3</t><br/><br/>",
 "<t color='#FF0000' align='center'>This version of the Life Framework is intended for Zargabad Life, A more generic version will be released in the future.</t><br/><br/>",
 "<br/>",
-"Website: <a underline='true' href='https://www.igfgaming.net/'>www.igfgaming.net</a><br/>",
-"Discord: <a underline='true' href='http://discord.me/igfgaming'>http://discord.me/igfgaming</a><br/>",
-"Teamspeak: <t color='#D09B43'>play.igfgaming.net</t><br/>",
+//"Website: <a underline='true' href='https://www.arkleus.net/'>www.arkleus.net</a><br/>",
+//"Discord: <a underline='true' href='http://discord.me/igfgaming'>http://discord.me/igfgaming</a><br/>",
+//"Teamspeak: <t color='#D09B43'>play.igfgaming.net</t><br/>",
 "<br/>",
 "<t size='1.5' color='#ff9400'>You can find the controls and full rules in the map tabs along with jail times and ticket amounts.</t><br/>",
 "<br/>",
@@ -162,7 +162,7 @@ If a Peacekeeper that was fired fails to leave or go Civ, or if the UN Commander
 <br/>
 Peacekeepers are NOT allowed to use civilian weapons and gear. Peacekeepers are only allowed to use the equipment that is available to them at UN Base. However Peacekeepers are allowed to use civilian vehicles.<br/>
 <br/>
-Peacekeepers are ONLY allowed to random search a Civ if the Civ is seen in or leaving a gang area, terror area or they Civ were stopped at a roadblock/checkpoint. Civs can also be random searched if they are seen in or leaving a drug field or drug dealer.<br/>
+Peacekeepers are ONLY allowed to random search a Civ if the Civ is seen in or leaving a gang area, terror area or the Civ was stopped at a roadblock/checkpoint. Civs can also be random searched if they are seen in or leaving a drug field or drug dealer.<br/>
 <br/>
 Peacekeepers are allowed to ""Camp"" all areas on the map whether it's to catch someone or to deter illegal activity.<br/>
 <br/>
