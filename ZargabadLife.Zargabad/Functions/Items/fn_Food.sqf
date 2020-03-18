@@ -33,24 +33,25 @@ if (_action == "Use") exitWith
 		ZKB_Hunger = 0;	
 		};
 	["STR_ItemMisc_JustAte", [[_item] call ZKB_fnc_GetItemName, ZKB_Hunger]] call ZKB_fnc_DynamicText;
+	player setVariable ["Hunger",ZKB_Hunger,true];
 	};
 
 if (_action == "HungerLoop") exitWith
 	{
 	while {true} do
 		{
-		sleep 35;
+		sleep 50;
 		ZKB_Hunger = ZKB_Hunger + 1;
 		
 		if (ZKB_Hunger >= 95) then
 			{
 			["STR_ItemMisc_Starving"] call ZKB_fnc_DynamicText;	
-			player groupchat localize "STR_ItemMisc_Starving";
 			};
 			
 		if (ZKB_Hunger >= 100) then
 			{
 			player setDamage 1;
+			["STR_Admin_PlayerLogsStarved",name player] call ZKB_fnc_AdminAddPlayerLog;
 			};
 		};
 	};

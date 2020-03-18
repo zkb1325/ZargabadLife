@@ -18,7 +18,7 @@ class controls
 		h = 0.24 * safezoneH;
 		colorBackground[] = {-1,-1,-1,0.5};
 	};
-	class DynamicButtonMenu_Frame: RscFrame
+	class DynamicButtonMenu_Frame: ZKB_RscFrame
 	{
 		idc = 16002;
 		x = 0.16 * safezoneW + safezoneX;
@@ -26,7 +26,7 @@ class controls
 		w = 0.7 * safezoneW;
 		h = 0.24 * safezoneH;
 	};
-	class WantedRelease_SetWantedTxt: RscStructuredText
+	class WantedRelease_SetWantedTxt: ZKB_RscStructuredText
 	{
 		idc = 16010;
 		text = "$STR_Cop_WantedMenuSetWantedMenu";
@@ -35,7 +35,7 @@ class controls
 		w = 0.31 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class WantedRelease_SetWantedPlayerList: RscCombo
+	class WantedRelease_SetWantedPlayerList: ZKB_RscCombo
 	{
 		idc = 16020;
 		x = 0.17 * safezoneW + safezoneX;
@@ -43,7 +43,7 @@ class controls
 		w = 0.19 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class WantedRelease_CrimeReason: RscEdit
+	class WantedRelease_CrimeReason: ZKB_RscEdit
 	{
 		idc = 16030;
 		text = "$STR_Cop_WantedMenuSetDescription";
@@ -52,7 +52,7 @@ class controls
 		w = 0.31 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class WantedRelease_SetWantedBtn: RscButton
+	class WantedRelease_SetWantedBtn: ZKB_RscButton
 	{
 		idc = 16040;
 		text = "$STR_Cop_WantedMenuSetWanted";
@@ -62,7 +62,7 @@ class controls
 		h = 0.04 * safezoneH;
 		action = "[lbData [16020,lbCurSel 16020],ctrlText 16030] call ZKB_fnc_SetWanted;";
 	};
-	class WantedRelease_SetUnWantedBtn: RscButton
+	class WantedRelease_SetUnWantedBtn: ZKB_RscButton
 	{
 		idc = 16050;
 		text = "$STR_Cop_WantedMenuPardon";
@@ -72,7 +72,7 @@ class controls
 		h = 0.04 * safezoneH;
 		action = "[lbData [16020,lbCurSel 16020]] call ZKB_fnc_PardonPlayer;";
 	};
-	class WantedRelease_JailReleaseTxt: RscStructuredText
+	class WantedRelease_JailReleaseTxt: ZKB_RscStructuredText
 	{
 		idc = 16060;
 		text = "$STR_Cop_WantedMenuJailRelease";
@@ -81,7 +81,7 @@ class controls
 		w = 0.3 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class WantedRelease_ReleaseMenuPlayerList: RscCombo
+	class WantedRelease_ReleaseMenuPlayerList: ZKB_RscCombo
 	{
 		idc = 16070;
 		x = 0.52 * safezoneW + safezoneX;
@@ -89,7 +89,7 @@ class controls
 		w = 0.14 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class WantedRelease_JailReleaseBtn: RscButton
+	class WantedRelease_JailReleaseBtn: ZKB_RscButton
 	{
 		idc = 16080;
 		text = "$STR_Cop_WantedMenuSetFree";
@@ -99,7 +99,7 @@ class controls
 		h = 0.04 * safezoneH;
 		action = "[lbData [16070,lbCurSel 16070]] call ZKB_fnc_FreePlayer;";
 	};
-	class WantedRelease_VertTrenLine: RscText
+	class WantedRelease_VertTrenLine: ZKB_RscText
 	{
 		idc = 16090;
 		x = 0.49 * safezoneW + safezoneX;
@@ -108,7 +108,7 @@ class controls
 		h = 0.24 * safezoneH;
 		colorBackground[] = {0.5,0.5,0.5,0.5};
 	};
-	class WantedRelease_Cancel: RscButton
+	class WantedRelease_Cancel: ZKB_RscButton
 	{
 		idc = 16110;
 		text = "$STR_Common_Close";

@@ -9,6 +9,7 @@
 private _hostageUnit = param [0,objNull,[objNull]];
 private _hostageTaker = param [1,objNull,[objNull]];
 if (isnull _hostageUnit or isnull _hostageTaker) exitWith {};
+["STR_Admin_AdminLogsHostageTaken",name _hostageTaker,playersNumber west] call ZKB_fnc_AdminAddAdminLog;
 
 private _hostagePos = getPosATL _hostageUnit;
 private _animation = selectRandom ["Acts_AidlPsitMstpSsurWnonDnon01","Acts_AidlPsitMstpSsurWnonDnon02","Acts_AidlPsitMstpSsurWnonDnon03","Acts_AidlPsitMstpSsurWnonDnon04","Acts_AidlPsitMstpSsurWnonDnon05"];
@@ -30,6 +31,7 @@ while {true} do
 		{
 		["STR_Hostage_TakerFailed"] remoteExecCall ["ZKB_fnc_DynamicText",0,false];
 		[] remoteExecCall ["ZKB_fnc_HostageCopWin",west,false];
+		["STR_Admin_AdminLogsHostageTakerLeft",name _hostageTaker] call ZKB_fnc_AdminAddAdminLog;
 		};
 		
 	if (_hostageUnit getVariable ["killed",false]) exitWith
@@ -41,12 +43,14 @@ while {true} do
 		{
 		["STR_Hostage_Freed"] remoteExecCall ["ZKB_fnc_DynamicText",0,false];
 		[] remoteExecCall ["ZKB_fnc_HostageCopWin",west,false];
+		["STR_Admin_AdminLogsHostageFreed"] call ZKB_fnc_AdminAddAdminLog;
 		};
 		
 	if (time > _hostageEndTime) exitWith
 		{
 		["STR_Hostage_TimePassed",[SETTING(getNumber,"ZKB_HostageTime")]] remoteExecCall ["ZKB_fnc_DynamicText",0,false];
 		[] remoteExecCall ["ZKB_fnc_HostageCivWin",_hostageTaker,false];
+		["STR_Admin_AdminLogsHostageTakerWin",name _hostageTaker,[SETTING(getNumber,"ZKB_HostageTime"),"HH:MM:SS"] call BIS_fnc_secondsToString,[SETTING(getNumber,"ZKB_HostageCivReward")] call ZKB_fnc_FormatNumber] call ZKB_fnc_AdminAddAdminLog;
 		};
 	
 	_hostageMarker setMarkerText format [localize "STR_Hostage_TimerCenter",[_hostageEndTime - time,"MM:SS"] call BIS_fnc_secondsToString];

@@ -18,7 +18,7 @@ class controls
 		w = 0.38 * safezoneW;
 		h = 0.24 * safezoneH;
 	};
-	class DynamicButtonMenu_Frame: RscFrame
+	class DynamicButtonMenu_Frame: ZKB_RscFrame
 	{
 		idc = 24002;
 		text = "$STR_Cop_CivcamMenu";
@@ -27,7 +27,7 @@ class controls
 		w = 0.38 * safezoneW;
 		h = 0.24 * safezoneH;
 	};
-	class CivCamMenu_CivSelectTxt: RscStructuredText
+	class CivCamMenu_CivSelectTxt: ZKB_RscStructuredText
 	{
 		idc = 24010;
 		text = "$STR_Cop_CivcamMenuSelectCiv";
@@ -36,7 +36,7 @@ class controls
 		w = 0.1625 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class CivCamMenu_CivSelectList: RscCombo
+	class CivCamMenu_CivSelectList: ZKB_RscCombo
 	{
 		idc = 24020;
 		x = 0.5 * safezoneW + safezoneX;
@@ -44,7 +44,7 @@ class controls
 		w = 0.17 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class CivCamMenu_WatchLenghtSlider: RscSlider
+	class CivCamMenu_WatchLenghtSlider: ZKB_RscSlider
 	{
 		idc = 24030;
 		x = 0.33 * safezoneW + safezoneX;
@@ -52,7 +52,7 @@ class controls
 		w = 0.35 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class CivCamMenu_DurationTxt: RscStructuredText
+	class CivCamMenu_DurationTxt: ZKB_RscStructuredText
 	{
 		idc = 24040;
 		text = "$STR_Cop_CivcamMenuDuration";
@@ -61,7 +61,7 @@ class controls
 		w = 0.15 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class CivCamMenu_CostTxt: RscStructuredText
+	class CivCamMenu_CostTxt: ZKB_RscStructuredText
 	{
 		idc = 24050;
 		text = "$STR_Cop_CivcamMenuCost";
@@ -70,7 +70,7 @@ class controls
 		w = 0.15 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class CivCamMenu_WatchBtn: RscButton
+	class CivCamMenu_WatchBtn: ZKB_RscButton
 	{
 		idc = 24060;
 		text = "$STR_Cop_CivcamMenuWatch";

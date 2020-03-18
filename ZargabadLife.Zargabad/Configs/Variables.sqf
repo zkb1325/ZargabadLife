@@ -11,10 +11,14 @@ ZKB_IntroMessage =
 "This life mod is intended to be a recreation of Arma 2 OA Zargabad Life.<br/>Original credit to EddieV223, Pogoman, Issetea, and Fewo.<br/>Thanks to the CUP team for porting Arma 2 OA assets to Arma 3 as this mission uses and requires: Cup_Terrains-Maps, Cup_Terrains-Core, Cup_Vehicles, Cup_Units, Cup_weapons, and CBA_A3</t><br/><br/>",
 "<t color='#FF0000' align='center'>This version of the Life Framework is intended for Zargabad Life, A more generic version will be released in the future.</t><br/><br/>",
 "<br/>",
-"You can find the controls and full rules in the map tabs along with jail times and ticket amounts.<br/>",
+//"Website: <a underline='true' href='https://www.arkleus.net/'>www.arkleus.net</a><br/>",
+//"Discord: <a underline='true' href='http://discord.me/igfgaming'>http://discord.me/igfgaming</a><br/>",
+//"Teamspeak: <t color='#D09B43'>play.igfgaming.net</t><br/>",
+"<br/>",
+"<t size='1.5' color='#ff9400'>You can find the controls and full rules in the map tabs along with jail times and ticket amounts.</t><br/>",
 "<br/>",
 "Default Controls:<br/>",
-"All keybinds can be changed if you go to Configure >> Controls >> Configure Addons >> and select Zargabad Life from the drop down.<br/>",
+"<t underline='true'>All keybinds can be changed if you go to Configure >> Controls >> Configure Addons >> and select Zargabad Life from the drop down.</t><br/>",
 "- Press F1 to open this menu.<br/>",
 "- Press F2 to lower sound volume by 10%.<br/>",
 "- Press F3 to raise sound volume by 10%.<br/>",
@@ -32,11 +36,11 @@ ZKB_IntroMessage =
 "- Press F as a cop in the driver seat of a vehicle to toggle the siren on and off.<br/>",
 "- You can press 2 then click the menu button or press 0-0-Enter to get to the menu where you can change settings and see other helpful information.<br/>",
 "- You can open the gear of a vehicle if you have keys to the vehicle or the vehicle is unlocked.<br/>",
-"<br/>",
+"<br/><br/>",
 "Rules:<br/>",
 "The rules can be found in the map tab ""Server Rules"", There is no excuse to not read them.<br/>",
 "If you want to do something but not sure if it's against the rules then either don't do it or ask an Admin.<br/>",
-"<br/>",
+"<br/><br/>",
 "While this mission is meant to be a recreation of Zargabad Life from Arma 2 some things are a little different for reasons ranging from doable to practical.<br/>For example:<br/>",
 "- Speed upgrades are in the mission but not usable because CUP vehicles behave oddly.<br/>",
 "- Robbing the bank now puts Blue Ink in your inventory instead of automatically wanting you to make things a little more fair with cops having to manually search you.<br/>",
@@ -57,6 +61,31 @@ ZKB_IntroMessage =
 "<br/><br/>"
 ];
 
+//Jail times and tickets for the map tabs. Will get added under rules and in its own tab. ["Title","text"]
+private _jailTimes =
+[
+"Jail Times and Tickets",
+"The player is not automatically pardoned after paying a ticket so in some cases the player should be pardoned after paying a ticket. For example if they are caught with $30,000 or less of illegal items/gear and pay the ticket.<br/>
+<br/>
+- Speeding: $2,000 Ticket or 2 minutes if ticket can't be paid<br/>
+- Operating vehicle without proper license: $2,000 Ticket and vehicle impounded or 2 minutes if ticket can't be paid and vehicle impounded<br/>
+- Reckless Driver (offRoading in town, wrong lane): $5,000 ticket or 4 minutes if ticket can't be paid<br/>
+- Evasion (Not pulling over within 1 minute): 3 minutes<br/>
+- Murder and any other life taking crime: 5 minutes per<br/>
+- Hostage Taking: 10 minutes<br/>
+- Robbing the bank: Ticket amount stole and 15 minutes or 25 minutes if ticket can't be paid<br/>
+- Other robberies (gas station, player): 2 minutes per<br/>
+- Escaping Jail: 20 minutes<br/>
+- Illegal Item/Gear: Ticket the value if less then $30,000 else 6 minutes<br/>
+- Drug Dealing: Ticket value sold and 5 minutes or 10 minutes if ticket can't be paid<br/>
+- Being a slaver: 3 minutes per<br/>
+- Theft of Government Funds: Ticket amount stole and 7 minutes or 12 minutes if ticket can't be paid<br/>
+- Attempted GTA: 1 minute per<br/>
+- GTA: 2 minutes per<br/>
+"
+];
+
+
 //Array of rules in format [["Rules category","all the rules for this category in a single string"],...]
 ZKB_Rules =
 [
@@ -66,15 +95,13 @@ ZKB_Rules =
 <br/>
 No trolling or being a nuisance to other players such as knocking a player out over and over, standing in front of another players vehicle to block them, or Running in front of other player driving so they run you over.<br/>
 <br/>
-Illegal Workers/Slaves are only illegal if they are within a workplace.<br/>
-<br/>
 Don't confuse Laws and Rules. Laws that are broken are punishable by jail time while Rules are punishable by an Admin's decision.<br/>
 <br/>
 Laws could conflict with rules and should be brought to an Admin's attention. For example: ""All weapons are illegal, Anyone seen with a weapon should be shot."".<br/>
 <br/>
-Civs are not allowed to enter Cop Base.<br/>
+Civs are not allowed to enter UN Base.<br/>
 <br/>
-Cops are not allowed to enter Terror Hideout.<br/>
+Peacekeepers are not allowed to enter Terror Hideout.<br/>
 <br/>
 You are not allowed to rob or kill Civs in the white civ spawn area marker UNLESS you initiate the robbery outside the area and they run in.<br/>"
 ],
@@ -82,13 +109,13 @@ You are not allowed to rob or kill Civs in the white civ spawn area marker UNLES
 "New Life Rule",
 "You are NOT allowed to return to the scene of your death 5 minutes after you respawn.<br/>
 <br/>
-As a Civ you will only become unWanted if killed by a cop or arrested.<br/>
+As a Civ you will only become unWanted if killed by a Peacekeeper or arrested.<br/>
 <br/>
-Cops are allowed to arrest you as you run out of Civ spawn ""White Area Marker"" but must wait until you are out of the Civ spawn ""White Area Marker"" before they can attempt to apprehend you.<br/>"
+Peacekeepers are allowed to arrest you as you run out of Civ spawn ""White Area Marker"" but must wait until you are out of the Civ spawn ""White Area Marker"" before they can attempt to apprehend you.<br/>"
 ],
 [
 "DeathMatching Rules",
-"Killing other players both Civ and Cop for no reason is considered Random Death Match (RDM).<br/>
+"Killing other players both Civ and Peacekeepers for no reason is considered Random Death Match (RDM).<br/>
 <br/>
 No RMDing, If you kill another player you better have a good reason for it.<br/>
 <br/>
@@ -103,14 +130,14 @@ When you can kill another player as a Civ:<br/>
 - The player you are killing is not listening to your demands such as stop running so you can rob them (Give them time to stop).<br/>
 - The player you are killing is in a helicopter and not obeying your commands to leave the area or to land.<br/>
 - The player you are killing is trying to rob you or shooting at you.<br/>
-- The player you are killing is a Cop and actively pursuing you.<br/>
-- The player you are killing is a Cop and they are trying to search you while you have illegal items on you.<br/>
+- The player you are killing is a Peacekeeper and actively pursuing you.<br/>
+- The player you are killing is a Peacekeeper and they are trying to search you while you have illegal items on you.<br/>
 <br/>
-When you can kill another player as a Cop:<br/>
+When you can kill another player as a Peacekeeper:<br/>
 - The player you are killing is Wanted for a murder or any other crime involving killing someone.<br/>
 - The player you are killing is Wanted and has a visible weapon in hand.<br/>
 - The player you are killing is in a helicopter and not obeying your commands to leave the area or to land.<br/>
-- The player you are killing has an illegal weapon (automatic weapons, explosives/Launchers, Cop weapon).<br/>
+- The player you are killing has an illegal weapon (automatic weapons, explosives/Launchers, UN weapon).<br/>
 - The player you are killing is in a vehicle that has a mounted weapon.<br/>
 - The player you are killing is visibly armed in or immediately around the bank.<br/>
 - The player you are killing has a weapon in hand at a gas station.<br/>
@@ -122,35 +149,26 @@ When you can kill another player as a Cop:<br/>
 "You are not allowed to return to the scene of your death for 5 minutes after you respawn.<br/>"
 ],
 [
-"Cop Rules",
-"You are not allowed to return to the scene of your death or the last crime you were involved in for 5 minutes after you respawn.<br/>
+"UN Peacekeeper Rules",
+"Peacekeepers are NOT allowed to be corrupt, this includes giving or selling UN equipment/gear to Civs or the mayor.<br/>
 <br/>
-Cop are NOT allowed to use civilian weapons and gear. Cops are only allowed to use the equipment that is available to them at Cop Base.<br/>
+You are not allowed to return to the scene of your death or the last crime you were involved in for 5 minutes after you respawn.<br/>
 <br/>
-Cops  are ONLY allowed to random search a Civ if the Civ is seen in or leaving a gang area or terror area or they Civ was stopped at a roadblock/checkpoint.<br/>
+Peacekeepers must follow the orders given by the UN Commander.<br/>
 <br/>
-Cops are allowed to ""Camp"" drug sellers.<br/>
+The UN Commander has the power to fire any officer that fails to follow their orders.<br/>
 <br/>
-Cops are allowed to ""Camp"" Civ spawn and arrest wanted civilians as they run out, But remember that inside Civ spawn ""White Area Marker"" is safe from crime and being arrested so cops need to wait for the Civ to run out.<br/>"
+If a Peacekeeper that was fired fails to leave or go Civ, or if the UN Commanders orders seem unreasonable then an Admin should be contacted.<br/>
+<br/>
+Peacekeepers are NOT allowed to use civilian weapons and gear. Peacekeepers are only allowed to use the equipment that is available to them at UN Base. However Peacekeepers are allowed to use civilian vehicles.<br/>
+<br/>
+Peacekeepers are ONLY allowed to random search a Civ if the Civ is seen in or leaving a gang area, terror area or the Civ was stopped at a roadblock/checkpoint. Civs can also be random searched if they are seen in or leaving a drug field or drug dealer.<br/>
+<br/>
+Peacekeepers are allowed to ""Camp"" all areas on the map whether it's to catch someone or to deter illegal activity.<br/>
+<br/>
+Peacekeepers are allowed to ""Camp"" Civ spawn and arrest wanted civilians as they run out, But remember that inside Civ spawn ""White Area Marker"" is safe from crime and being arrested so Peacekeepers need to wait for the Civ to run out.<br/>"
 ],
-[
-"Jail Times and Tickets",
-"The player is not automatically pardoned after paying a ticket so in some cases the player should be pardoned after paying a ticket. For example if they are caught with $30,000 or less of illegal items/gear and pay the ticket.<br/>
-<br/>
-- Speeding: $2,000 Ticket or 2 minutes if ticket can't be paid<br/>
-- Reckless Driver (offRoading in town, wrong lane): $5,000 ticket or 4 minutes if ticket can't be paid<br/>
-- Evasion (Not pulling over within 1 minute): 3 minutes<br/>
-- Murder and any other life taking crime: 5 minutes per<br/>
-- Hostage Taking: 10 minutes<br/>
-- Robbing the bank: Ticket amount stole and 15 minutes or 25 minutes if ticket can't be paid<br/>
-- Other robberies (gas station, player): 2 minutes per<br/>
-- Escaping Jail: 20 minutes<br/>
-- Illegal Item/Gear: Ticket the value if less then $30,000 else 6 minutes<br/>
-- Drug Dealing: Ticket value sold and 5 minutes or 10 minutes if ticket can't be paid<br/>
-- Being a slaver: 3 minutes per<br/>
-- Theft of Government Funds: Ticket amount stole and 7 minutes or 12 minutes if ticket can't be paid<br/>
-"
-],
+_jailTimes,
 [
 "Mayor and Law Rules",
 "The mayor can commit crimes including breaking their own laws but is not immune and faces the same punishment as any other Civ.<br/>
@@ -178,9 +196,6 @@ Terrorism is a coordinated bombing or an attack on a specific target or location
 ]
 ];
 
-//Base loadout for cops
-ZKB_RespawnLoadOut = [[],[],["CUP_hgun_Makarov","","","",["CUP_8Rnd_9x18_MakarovSD_M",8],[],""],["CUP_U_C_Policeman_01",[["CUP_8Rnd_9x18_MakarovSD_M",6,8]]],["V_TacVest_blk_POLICE",[["SmokeShellYellow",2,1]]],[],"CUP_H_C_Policecap_01","",["Binocular","","","",[],[],""],["ItemMap","ItemGPS","ItemRadio","ItemCompass","ItemWatch",""]];
-
 //True/False if the dynamic text along the left side of the screen should appear along with group chat messages or if just the group chat messages. The player can change this in settings
 ZKB_EnableDynamicText = true;
 
@@ -204,17 +219,25 @@ if (side player == WEST) then
 		
 ZKB_PerformingAction = false;
 SirenLock = false;
+ZKB_RespawnLoadOut = getUnitLoadout (missionConfigFile >> "ZKB_Settings" >> "ZKB_CopLoadout");
 
 ZKB_BankAccount = SETTING(getNumber,"ZKB_StartingBankAccount");
+player setVariable ["BankAccount",ZKB_BankAccount,true];
 player setVariable ["ZKB_Inventory",SETTING(getArray,"ZKB_StartingInventory"),true]; //Starting inventory for first time players.
 player setVariable ["ZKB_MaxINVWeight",SETTING(getNumber,"ZKB_MaxINVWeight"),true];
 
 ZKB_CopsKilled = [0,0];
+player setVariable ["CopKills",ZKB_CopsKilled,true];
 ZKB_CivsKilled = [0,0];
+player setVariable ["CivKills",ZKB_CivsKilled,true];
 ZKB_Suicides = 0; //Serving jail time or being killed by another player will reset this to 0. Yes punish the player if they kill them self but don't punish them if they get killed by another player/RDMed
+player setVariable ["Suicides",ZKB_Suicides,true];
 ZKB_Deaths = 0;
+player setVariable ["Deaths",ZKB_Deaths,true];
 
 ZKB_Hunger = 5;
+player setVariable ["Hunger",ZKB_Hunger,true];
+
 ZKB_ShovelDur = 20;
 ZKB_PickaxeDur = 50;
 ZKB_JackhammerDur = 100;
@@ -227,6 +250,13 @@ if (iscop) then
 	if (call ZKB_fnc_IsMayor) then
 		{
 		missionNamespace setVariable ["currentMayor","",true];
+		ZKB_TaxArray = [5,5,5,5,5];
+		publicVariable "ZKB_TaxArray";
+		if (SETTING(getNumber,"ZKB_StatSaveEnabled") isEqualTo 1) then
+			{
+			["mayor",""] remoteExecCall ["ZKB_fnc_ServerSaveStats",2,false];
+			["taxes",ZKB_TaxArray] remoteExecCall ["ZKB_fnc_ServerSaveStats",2,false];
+			};
 		};
 		
 	ZKB_RadioTextMsg_1 = "Put your fucking hands up!";				
@@ -239,6 +269,10 @@ if (iscop) then
 	if (call ZKB_fnc_IsChief) then 
 		{
 		missionNamespace setVariable ["currentChief","",true];
+		if (SETTING(getNumber,"ZKB_StatSaveEnabled") isEqualTo 1) then
+			{
+			["chief",""] remoteExecCall ["ZKB_fnc_ServerSaveStats",2,false];
+			};
 		};
 				
 	ZKB_RadioTextMsg_1 = "Put your fucking hands up now!";
@@ -251,3 +285,6 @@ ZKB_RadioTextBroadcast_1 = "direct";
 ZKB_RadioTextBroadcast_2 = "direct";											
 ZKB_RadioTextBroadcast_3 = "direct";				
 ZKB_RadioTextBroadcast_4 = "direct";
+
+player createDiarySubject ["jailtimes",_jailTimes select 0];
+player createDiaryRecord ["jailtimes", _jailTimes];

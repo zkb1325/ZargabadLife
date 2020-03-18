@@ -11,8 +11,8 @@
 	factorycost: How much the factory cost to buy
 	Box_For_Gear_To_Spawn: Where created gear will spawn use objNull for no weapon crate and gear will be created at players feet
 	GameLogic_For_Vehicles_To_Spawn: Where created vehicles will spawn, use objNull for no vehicle spawn
-	[Item Array]: Array of items defined in masterarray.sqf to appear for production in the factory
-	"Variable": Variable used for factory variables (queue,workers,storage)
+	[Item Array]: Array of items defined in Item_Config.hpp to appear for production in the factory
+	"Variable": Base Variable used for factory variables (queue,workers,storage)
 
 */
 
@@ -107,6 +107,8 @@ _WeaponFactory =
 "CUP_20Rnd_B_765x17_Ball_M",
 "CUP_srifle_LeeEnfield",
 "CUP_10x_303_M",
+"CUP_srifle_CZ550",
+"CUP_5x_22_LR_17_HMR_M",
 "CUP_Saiga12K",
 "CUP_8Rnd_B_Saiga12_74Pellets_M"
 ];
@@ -151,6 +153,7 @@ _terrorGearFactory =
 "CUP_optic_PSO_3",
 "CUP_launch_RPG7V",
 "CUP_PG7V_M",
+"CUP_OG7_M",
 "CUP_launch_Igla",
 "CUP_Igla_M",
 "CUP_IED_V1_M",
@@ -235,7 +238,6 @@ _factoryLocationString = _factoryLocationString + format ["<marker name='%1'>%2<
 		_factoryqueue = missionNameSpace getVariable [(_facarray select 6)+"Queue", []];
 		_factoryqueue deleteAt 0;
 		missionNameSpace setVariable [(_facarray select 6)+"Queue", _factoryqueue];
-		call ZKB_fnc_SavePlayer;
 		};
 	};
 }forEach ZKB_FactoryDefines;

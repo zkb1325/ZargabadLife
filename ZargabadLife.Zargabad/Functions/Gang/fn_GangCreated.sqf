@@ -23,3 +23,9 @@ private _gangIndexArray = (missionNameSpace getVariable ["ZKB_GangIndexArray",[]
 missionNameSpace setVariable [format ["GangArray_%1", (count _gangIndexArray)], [_gangname, [[(getPlayerUID player), (name player)]], true], true];
 _gangIndexArray pushBack (count _gangIndexArray);
 missionNameSpace setVariable ["ZKB_GangIndexArray",_gangIndexArray,true];
+if (SETTING(getNumber,"ZKB_StatSaveEnabled") isEqualTo 1) then
+	{
+	[] remoteExecCall ["ZKB_fnc_ServerUpdateGangSave",2,false];
+	};
+
+["STR_Admin_PlayerLogsCreatedGang",name player,_gangname] call ZKB_fnc_AdminAddPlayerLog;

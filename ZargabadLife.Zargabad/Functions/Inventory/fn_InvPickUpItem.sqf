@@ -35,3 +35,5 @@ if (_amounttoadd < _amount) then
 	};
 	
 ["STR_Inv_PickedUp", [[_amounttoadd] call ZKB_fnc_FormatNumber, [_item] call ZKB_fnc_GetItemName]] call ZKB_fnc_DynamicText;
+
+["STR_Admin_PlayerLogsPickUpItem",name player,[_amounttoadd] call ZKB_fnc_FormatNumber,[_item] call ZKB_fnc_GetItemName] call ZKB_fnc_AdminAddPlayerLog;

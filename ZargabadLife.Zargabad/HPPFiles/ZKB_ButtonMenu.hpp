@@ -18,7 +18,7 @@ class controls
 		w = 0.225 * safezoneW;
 		h = 0.6 * safezoneH;
 	};
-	class ButtonMenu_Btn1: RscButton
+	class ButtonMenu_Btn1: ZKB_RscButton
 	{
 		idc = 15010;
 		text = "Button 1"; //--- ToDo: Localize;
@@ -28,7 +28,7 @@ class controls
 		h = 0.04 * safezoneH;
 		action = "closedialog 0";
 	};
-	class ButtonMenu_Btn2: RscButton
+	class ButtonMenu_Btn2: ZKB_RscButton
 	{
 		idc = 15020;
 		text = "Button 2"; //--- ToDo: Localize;
@@ -38,7 +38,7 @@ class controls
 		h = 0.04 * safezoneH;
 		action = "closedialog 0";
 	};
-	class ButtonMenu_Btn3: RscButton
+	class ButtonMenu_Btn3: ZKB_RscButton
 	{
 		idc = 15030;
 		text = "Button 3"; //--- ToDo: Localize;
@@ -48,7 +48,7 @@ class controls
 		h = 0.04 * safezoneH;
 		action = "closedialog 0";
 	};
-	class ButtonMenu_Btn4: RscButton
+	class ButtonMenu_Btn4: ZKB_RscButton
 	{
 		idc = 15040;
 		text = "Button 4"; //--- ToDo: Localize;
@@ -58,7 +58,7 @@ class controls
 		h = 0.04 * safezoneH;
 		action = "closedialog 0";
 	};
-	class ButtonMenu_Btn5: RscButton
+	class ButtonMenu_Btn5: ZKB_RscButton
 	{
 		idc = 15050;
 		text = "Button 5"; //--- ToDo: Localize;
@@ -68,7 +68,7 @@ class controls
 		h = 0.04 * safezoneH;
 		action = "closedialog 0";
 	};
-	class ButtonMenu_Btn6: RscButton
+	class ButtonMenu_Btn6: ZKB_RscButton
 	{
 		idc = 15060;
 		text = "Button 6"; //--- ToDo: Localize;
@@ -78,7 +78,7 @@ class controls
 		h = 0.04 * safezoneH;
 		action = "closedialog 0";
 	};
-	class ButtonMenu_Btn7: RscButton
+	class ButtonMenu_Btn7: ZKB_RscButton
 	{
 		idc = 15070;
 		text = "Button 7"; //--- ToDo: Localize;
@@ -88,7 +88,7 @@ class controls
 		h = 0.04 * safezoneH;
 		action = "closedialog 0";
 	};
-	class ButtonMenu_Btn8: RscButton
+	class ButtonMenu_Btn8: ZKB_RscButton
 	{
 		idc = 15080;
 		text = "Button 8"; //--- ToDo: Localize;
@@ -98,7 +98,7 @@ class controls
 		h = 0.04 * safezoneH;
 		action = "closedialog 0";
 	};
-	class ButtonMenu_Cancel: RscButton
+	class ButtonMenu_Cancel: ZKB_RscButton
 	{
 		idc = 15090;
 		text = "Cancel"; //--- ToDo: Localize;

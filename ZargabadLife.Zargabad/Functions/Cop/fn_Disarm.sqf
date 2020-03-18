@@ -12,4 +12,5 @@ if (!([_disarmUnit] call ZKB_fnc_IsRestrained) and !([_disarmUnit] call ZKB_fnc_
 
 [player] remoteExecCall ["ZKB_fnc_Disarmed",_disarmUnit,false];
 ["STR_Cop_Disarming",[name _disarmUnit]] call ZKB_fnc_DynamicText;
+["STR_Admin_PlayerLogsDisarmedPlayer",name player,name _disarmUnit] call ZKB_fnc_AdminAddPlayerLog;
 

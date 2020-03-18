@@ -3,6 +3,7 @@ class className //className used for shops and factories
 	{
 	className = "className used for spawning weapons/gear/vehicles";
 		Note: class className AND className = ""; should ALWWAYS be the same for virtual items. Gear and Vehicles can be different but not recommended.
+	dropClass = ""; //For virtual items only will be the physical object the drops on the ground
 	Condition = ""; //Condition that must return true in order to buy the item. Leave "" or don't define to always return true. This is checked every time someone tries to buy the item.
 	displayName = "item name";
 	picture = ""; //File path to an image.paa for virtual items only
@@ -35,10 +36,31 @@ class Item_Config
 #include "ItemConfig_Gear.hpp"
 #include "ItemConfig_Vehicles.hpp"
 
+class ItemBase
+	{
+	className = "";
+	dropClass = "Land_Suitcase_F";
+	displayName = "";
+	itemType = "";
+	Function = "";
+	buyPirce = 0;
+	sellPirce = 0;
+	Weight = 0;
+	trunkSpace = 0;
+	civLicense = "";
+	copLicense = "";
+	sharedLicense = "";
+	canDrop = true;
+	canGive = true;
+	isIllegal = false;
+	Description = "";
+	reqResources[] = {};
+	};
 
-class Money
+class Money: ItemBase
 	{
 	className = "Money";
+	dropClass = "Land_Money_F";
 	displayName = "Money";
 	itemType = "";
 	Function = "";
@@ -55,7 +77,7 @@ class Money
 	Description = "STR_ItemDesc_Money";
 	reqResources[] = {};
 	};
-class KeyChain
+class KeyChain: ItemBase
 	{
 	className = "KeyChain";
 	displayName = "Key Chain";
@@ -74,7 +96,7 @@ class KeyChain
 	Description = "STR_ItemDesc_KeyChain";
 	reqResources[] = {};
 	};
-class Phone
+class Phone: ItemBase
 	{
 	className = "Phone";
 	displayName = "Phone";
@@ -93,9 +115,10 @@ class Phone
 	Description = "STR_ItemDesc_Phone";
 	reqResources[] = {{"Plastic",1},{"ElectronicComponents",1}};
 	};
-class MedKit
+class MedKit: ItemBase
 	{
 	className = "MedKit";
+	dropClass = "Land_PainKillers_F";
 	displayName = "MedKit";
 	itemType = "Item";
 	Function = "ZKB_fnc_MedKit";
@@ -112,7 +135,7 @@ class MedKit
 	Description = "STR_ItemDesc_MedKit";
 	reqResources[] = {{"Plastic",1},{"Coal",1}};
 	};
-class RepairKit
+class RepairKit: ItemBase
 	{
 	className = "RepairKit";
 	displayName = "RepairKit";
@@ -129,11 +152,12 @@ class RepairKit
 	canGive = true;
 	isIllegal = false;
 	Description = "STR_ItemDesc_RepKit";
-	reqResources[] = {{"Steel",3},{"Plastic",2}};
+	reqResources[] = {{"Steel",2},{"Plastic",1}};
 	};
-class Lighter
+class Lighter: ItemBase
 	{
 	className = "Lighter";
+	dropClass = "Land_ButaneTorch_F";
 	displayName = "Lighter";
 	itemType = "Item";
 	Function = "ZKB_fnc_Lighter";
@@ -148,9 +172,9 @@ class Lighter
 	canGive = true;
 	isIllegal = true;
 	Description = "STR_ItemDesc_Lighter";
-	reqResources[] = {{"Plastic",1},{"Oil",1}};
+	reqResources[] = {{"Plastic",1}};
 	};
-class LockPick
+class LockPick: ItemBase
 	{
 	className = "LockPick";
 	displayName = "LockPick";
@@ -167,11 +191,12 @@ class LockPick
 	canGive = true;
 	isIllegal = true;
 	Description = "STR_ItemDesc_LockPick";
-	reqResources[] = {{"Steel",1}};
+	reqResources[] = {{"Iron",1}};
 	};
-class RefuelCan
+class RefuelCan: ItemBase
 	{
 	className = "RefuelCan";
+	dropClass = "Land_CanisterFuel_F";
 	displayName = "Refuel Can";
 	itemType = "Item";
 	Function = "ZKB_fnc_RefuelCan";
@@ -186,14 +211,15 @@ class RefuelCan
 	canGive = true;
 	isIllegal = false;
 	Description = "STR_ItemDesc_RefuelCan";
-	reqResources[] = {{"Plastic",1},{"Oil",2}};
+	reqResources[] = {{"Plastic",1},{"Oil",1}};
 	};
-class SyphonFuelKit
+class SiphonFuelKit: ItemBase
 	{
-	className = "SyphonFuelKit";
-	displayName = "Syphon Fuel-Kit";
+	className = "SiphonFuelKit";
+	dropClass = "Land_CanisterFuel_F";
+	displayName = "Siphon Fuel-Kit";
 	itemType = "Item";
-	Function = "ZKB_fnc_SyphonFuel";
+	Function = "ZKB_fnc_SiphonFuel";
 	buyPirce = 1000;
 	sellPirce = -1;
 	Weight = 1;
@@ -204,12 +230,13 @@ class SyphonFuelKit
 	canDrop = true;
 	canGive = true;
 	isIllegal = false;
-	Description = "STR_ItemDesc_SyphonFuelKit";
-	reqResources[] = {{"Plastic",2}};
+	Description = "STR_ItemDesc_SiphonFuelKit";
+	reqResources[] = {{"Plastic",1}};
 	};
-class OilBarrel
+class OilBarrel: ItemBase
 	{
 	className = "OilBarrel";
+	dropClass = "Land_MetalBarrel_F";
 	displayName = "Oil Barrel";
 	itemType = "Item";
 	Function = "ZKB_fnc_RefuelCan";
@@ -226,9 +253,10 @@ class OilBarrel
 	Description = "STR_ItemDesc_OilBarrel";
 	reqResources[] = {{"Oil",4}};
 	};
-class WeaponBag
+class WeaponBag: ItemBase
 	{
 	className = "WeaponBag";
+	dropClass = "Land_Sleeping_bag_folded_F";
 	displayName = "Weapon Bag";
 	itemType = "Item";
 	Function = "ZKB_fnc_WeaponBag";
@@ -245,9 +273,10 @@ class WeaponBag
 	Description = "STR_ItemDesc_WeaponBag";
 	reqResources[] = {};
 	};
-class ItemBag
+class ItemBag: ItemBase
 	{
 	className = "ItemBag";
+	dropClass = "Land_Sleeping_bag_folded_F";
 	displayName = "Item Bag";
 	itemType = "Item";
 	Function = "ZKB_fnc_ItemBag";
@@ -264,9 +293,10 @@ class ItemBag
 	Description = "STR_ItemDesc_ItemBag";
 	reqResources[] = {};
 	};
-class DefuseKit
+class DefuseKit: ItemBase
 	{
 	className = "DefuseKit";
+	dropClass = "Land_MultiMeter_F";
 	displayName = "Defuse Kit";
 	itemType = "Item";
 	Function = "ZKB_fnc_DefuseKit";
@@ -283,7 +313,7 @@ class DefuseKit
 	Description = "STR_ItemDesc_DefuseKit";
 	reqResources[] = {};
 	};
-class SpikeStrip
+class SpikeStrip: ItemBase
 	{
 	className = "SpikeStrip";
 	displayName = "Spike Strip";
@@ -302,7 +332,7 @@ class SpikeStrip
 	Description = "STR_ItemDesc_SpikeStrip";
 	reqResources[] = {};
 	};
-class BlueInk
+class BlueInk: ItemBase
 	{
 	className = "BlueInk";
 	displayName = "Blue Ink";
@@ -321,9 +351,10 @@ class BlueInk
 	Description = "STR_ItemDesc_BlueInk";
 	reqResources[] = {};
 	};
-class BankInsurance
+class BankInsurance: ItemBase
 	{
 	className = "BankInsurance";
+	dropClass = "Land_File1_F";
 	displayName = "Bank Insurance";
 	itemType = "";
 	Function = "";
@@ -340,7 +371,7 @@ class BankInsurance
 	Description = "STR_ItemDesc_BankInsurance";
 	reqResources[] = {};
 	};
-class FishingPole
+class FishingPole: ItemBase
 	{
 	className = "FishingPole";
 	displayName = "FishingPole";
@@ -359,7 +390,7 @@ class FishingPole
 	Description = "STR_ItemDesc_FishingPole";
 	reqResources[] = {{"Plastic",1}};
 	};
-class Shovel
+class Shovel: ItemBase
 	{
 	className = "Shovel";
 	displayName = "Shovel";
@@ -378,7 +409,7 @@ class Shovel
 	Description = "STR_ItemDesc_Shovel";
 	reqResources[] = {{"Iron",1}};
 	};
-class PickAxe
+class PickAxe: ItemBase
 	{
 	className = "PickAxe";
 	displayName = "PickAxe";
@@ -397,7 +428,7 @@ class PickAxe
 	Description = "STR_ItemDesc_PickAxe";
 	reqResources[] = {{"Iron",2}};
 	};
-class JackHammer
+class JackHammer: ItemBase
 	{
 	className = "JackHammer";
 	displayName = "JackHammer";
@@ -414,11 +445,12 @@ class JackHammer
 	canGive = true;
 	isIllegal = false;
 	Description = "STR_ItemDesc_JackHammer";
-	reqResources[] = {{"Steel",2},{"Plastic",1},{"ElectronicComponents",1}};
+	reqResources[] = {{"Steel",2},{"ElectronicComponents",1}};
 	};
-class VehicleAmmo
+class VehicleAmmo: ItemBase
 	{
 	className = "VehicleAmmo";
+	dropClass = "Land_Ammobox_rounds_F";
 	displayName = "Vehicle Ammo";
 	itemType = "Item";
 	Function = "ZKB_fnc_VehicleAmmo";
@@ -433,10 +465,10 @@ class VehicleAmmo
 	canGive = true;
 	isIllegal = true;
 	Description = "STR_ItemDesc_VehicleAmmo";
-	reqResources[] = {{"Copper",5},{"BlackPowder",10}};
+	reqResources[] = {{"Copper",5},{"BlackPowder",8}};
 	};
 /*
-class SpeedUpgrade1
+class SpeedUpgrade1: ItemBase
 	{
 	className = "SpeedUpgrade1";
 	displayName = "Speed Upgrade 1";
@@ -453,9 +485,9 @@ class SpeedUpgrade1
 	canGive = true;
 	isIllegal = true;
 	Description = "STR_ItemDesc_SpeedUpgrade";
-	reqResources[] = {{"Steel",1},{"ElectronicComponents",1},{"Plastic",1},{"Oil",5}};
+	reqResources[] = {{"Steel",1},{"ElectronicComponents",1},{"Plastic",1}};
 	};
-class SpeedUpgrade2
+class SpeedUpgrade2: ItemBase
 	{
 	className = "SpeedUpgrade2";
 	displayName = "Speed Upgrade 2";
@@ -472,9 +504,9 @@ class SpeedUpgrade2
 	canGive = true;
 	isIllegal = true;
 	Description = "STR_ItemDesc_SpeedUpgrade";
-	reqResources[] = {{"Steel",2},{"ElectronicComponents",2},{"Plastic",2},{"Oil",5}};
+	reqResources[] = {{"Steel",2},{"ElectronicComponents",2},{"Plastic",2}};
 	};
-class SpeedUpgrade3
+class SpeedUpgrade3: ItemBase
 	{
 	className = "SpeedUpgrade3";
 	displayName = "Speed Upgrade 3";
@@ -491,9 +523,9 @@ class SpeedUpgrade3
 	canGive = true;
 	isIllegal = true;
 	Description = "STR_ItemDesc_SpeedUpgrade";
-	reqResources[] = {{"Steel",3},{"ElectronicComponents",3},{"Platinum",1},{"Oil",5}};
+	reqResources[] = {{"Steel",3},{"ElectronicComponents",3},{"Platinum",1}};
 	};
-class SpeedUpgrade4
+class SpeedUpgrade4: ItemBase
 	{
 	className = "SpeedUpgrade4";
 	displayName = "Speed Upgrade 4";
@@ -510,9 +542,9 @@ class SpeedUpgrade4
 	canGive = true;
 	isIllegal = true;
 	Description = "STR_ItemDesc_SpeedUpgrade";
-	reqResources[] = {{"Steel",4},{"ElectronicComponents",4},{"Platinum",2},{"Oil",5}};
+	reqResources[] = {{"Steel",4},{"ElectronicComponents",4},{"Platinum",2}};
 	};
-class SpeedUpgrade5
+class SpeedUpgrade5: ItemBase
 	{
 	className = "SpeedUpgrade5";
 	displayName = "Speed Upgrade 5";
@@ -529,12 +561,13 @@ class SpeedUpgrade5
 	canGive = true;
 	isIllegal = true;
 	Description = "STR_ItemDesc_SpeedUpgrade";
-	reqResources[] = {{"Steel",5},{"ElectronicComponents",5},{"Platinum",4},{"Oil",5}};
+	reqResources[] = {{"Steel",5},{"ElectronicComponents",5},{"Platinum",4}};
 	};
 */
-class SuicideBomb
+class SuicideBomb: ItemBase
 	{
 	className = "SuicideBomb";
+	dropClass = "Explosive";
 	displayName = "Suicide Bomb";
 	itemType = "Item";
 	Function = "ZKB_fnc_SuicideBomb";
@@ -551,9 +584,10 @@ class SuicideBomb
 	Description = "STR_ItemDesc_SuicideBomb";
 	reqResources[] = {{"ElectronicComponents",2},{"Iron",15},{"BlackPowder",20}};
 	};
-class ActivationBomb
+class ActivationBomb: ItemBase
 	{
 	className = "ActivationBomb";
+	dropClass = "Explosive";
 	displayName = "Activation Bomb";
 	itemType = "Item";
 	Function = "ZKB_fnc_ActivationBomb";
@@ -570,9 +604,10 @@ class ActivationBomb
 	Description = "STR_ItemDesc_ActivationBomb";
 	reqResources[] = {{"ElectronicComponents",5},{"Iron",20},{"BlackPowder",25}};
 	};
-class TimeBomb
+class TimeBomb: ItemBase
 	{
 	className = "TimeBomb";
+	dropClass = "Explosive";
 	displayName = "Time Bomb";
 	itemType = "Item";
 	Function = "ZKB_fnc_TimeBomb";
@@ -587,11 +622,12 @@ class TimeBomb
 	canGive = true;
 	isIllegal = true;
 	Description = "STR_ItemDesc_TimeBomb";
-	reqResources[] = {{"ElectronicComponents",10},{"Iron",10},{"Plastic",5},{"BlackPowder",25}};
+	reqResources[] = {{"ElectronicComponents",8},{"Iron",10},{"BlackPowder",25}};
 	};
-class SpeedBomb
+class SpeedBomb: ItemBase
 	{
 	className = "SpeedBomb";
+	dropClass = "Explosive";
 	displayName = "Speed Bomb";
 	itemType = "Item";
 	Function = "ZKB_fnc_SpeedBomb";
@@ -606,11 +642,12 @@ class SpeedBomb
 	canGive = true;
 	isIllegal = true;
 	Description = "STR_ItemDesc_SpeedBomb";
-	reqResources[] = {{"ElectronicComponents",10},{"Iron",20},{"BlackPowder",25}};
+	reqResources[] = {{"ElectronicComponents",8},{"Iron",20},{"BlackPowder",25}};
 	};
-class RemoteBomb
+class RemoteBomb: ItemBase
 	{
 	className = "RemoteBomb";
+	dropClass = "Explosive";
 	displayName = "Remote Bomb";
 	itemType = "Item";
 	Function = "ZKB_fnc_RemoteBomb";
@@ -625,11 +662,12 @@ class RemoteBomb
 	canGive = true;
 	isIllegal = true;
 	Description = "STR_ItemDesc_RemoteBomb";
-	reqResources[] = {{"ElectronicComponents",5},{"Iron",20},{"Copper",10},{"BlackPowder",25}};
+	reqResources[] = {{"ElectronicComponents",5},{"Iron",20},{"BlackPowder",25}};
 	};
-class BombRemote
+class BombRemote: ItemBase
 	{
 	className = "BombRemote";
+	dropClass = "Land_Tablet_02_F";
 	displayName = "Bomb Remote";
 	itemType = "Item";
 	Function = "ZKB_fnc_BombRemote";
@@ -644,11 +682,12 @@ class BombRemote
 	canGive = true;
 	isIllegal = true;
 	Description = "STR_ItemDesc_BombRemote";
-	reqResources[] = {{"ElectronicComponents",2},{"Plastic",2}};
+	reqResources[] = {{"ElectronicComponents",1},{"Plastic",1}};
 	};
-class Goat
+class Goat: ItemBase
 	{
 	className = "Goat";
+	dropClass = "Land_TinContainer_F";
 	displayName = "Goat Meat";
 	itemType = "Item";
 	Function = "ZKB_fnc_Food";
@@ -665,9 +704,10 @@ class Goat
 	Description = "STR_ItemDesc_Goat";
 	reqResources[] = {};
 	};
-class Rabbit
+class Rabbit: ItemBase
 	{
 	className = "Rabbit";
+	dropClass = "Land_TinContainer_F";
 	displayName = "Rabbit Meat";
 	itemType = "Item";
 	Function = "ZKB_fnc_Food";
@@ -684,9 +724,10 @@ class Rabbit
 	Description = "STR_ItemDesc_Rabbit";
 	reqResources[] = {};
 	};
-class StrangeMeat
+class StrangeMeat: ItemBase
 	{
 	className = "StrangeMeat";
+	dropClass = "Land_TinContainer_F";
 	displayName = "Strange Meat";
 	itemType = "Item";
 	Function = "ZKB_fnc_Food";
@@ -703,9 +744,10 @@ class StrangeMeat
 	Description = "STR_ItemDesc_StrangeMeat";
 	reqResources[] = {};
 	};
-class Donut
+class Donut: ItemBase
 	{
 	className = "Donut";
+	dropClass = "Land_TinContainer_F";
 	displayName = "Donut";
 	itemType = "Item";
 	Function = "ZKB_fnc_Food";
@@ -722,9 +764,10 @@ class Donut
 	Description = "STR_ItemDesc_Donut";
 	reqResources[] = {};
 	};
-class Trout
+class Trout: ItemBase
 	{
 	className = "Trout";
+	dropClass = "Land_TinContainer_F";
 	displayName = "Trout";
 	itemType = "Item";
 	Function = "ZKB_fnc_Food";
@@ -741,9 +784,10 @@ class Trout
 	Description = "STR_ItemDesc_Fish";
 	reqResources[] = {};
 	};
-class Perch
+class Perch: ItemBase
 	{
 	className = "Perch";
+	dropClass = "Land_TinContainer_F";
 	displayName = "Perch";
 	itemType = "Item";
 	Function = "ZKB_fnc_Food";
@@ -760,9 +804,10 @@ class Perch
 	Description = "STR_ItemDesc_Fish";
 	reqResources[] = {};
 	};
-class Walleye
+class Walleye: ItemBase
 	{
 	className = "Walleye";
+	dropClass = "Land_TinContainer_F";
 	displayName = "Walleye";
 	itemType = "Item";
 	Function = "ZKB_fnc_Food";
@@ -779,9 +824,10 @@ class Walleye
 	Description = "STR_ItemDesc_Fish";
 	reqResources[] = {};
 	};
-class Bass
+class Bass: ItemBase
 	{
 	className = "Bass";
+	dropClass = "Land_TinContainer_F";
 	displayName = "Bass";
 	itemType = "Item";
 	Function = "ZKB_fnc_Food";
@@ -798,9 +844,10 @@ class Bass
 	Description = "STR_ItemDesc_Fish";
 	reqResources[] = {};
 	};
-class Bread
+class Bread: ItemBase
 	{
 	className = "Bread";
+	dropClass = "Land_TinContainer_F";
 	displayName = "Bread";
 	itemType = "Item";
 	Function = "ZKB_fnc_Food";
@@ -817,9 +864,10 @@ class Bread
 	Description = "STR_ItemDesc_Bread";
 	reqResources[] = {};
 	};
-class Iron
+class Iron: ItemBase
 	{
 	className = "Iron";
+	dropClass = "Land_Bucket_F";
 	displayName = "Iron";
 	itemType = "Item";
 	Function = "";
@@ -836,9 +884,10 @@ class Iron
 	Description = "STR_ItemDesc_Iron";
 	reqResources[] = {};
 	};
-class Copper
+class Copper: ItemBase
 	{
 	className = "Copper";
+	dropClass = "Land_Bucket_F";
 	displayName = "Copper";
 	itemType = "Item";
 	Function = "";
@@ -855,9 +904,10 @@ class Copper
 	Description = "STR_ItemDesc_Copper";
 	reqResources[] = {};
 	};
-class Coal
+class Coal: ItemBase
 	{
 	className = "Coal";
+	dropClass = "Land_Bucket_F";
 	displayName = "Coal";
 	itemType = "Item";
 	Function = "";
@@ -874,9 +924,10 @@ class Coal
 	Description = "STR_ItemDesc_Coal";
 	reqResources[] = {};
 	};
-class Silicon
+class Silicon: ItemBase
 	{
 	className = "Silicon";
+	dropClass = "Land_Bucket_F";
 	displayName = "Silicon";
 	itemType = "Item";
 	Function = "";
@@ -893,9 +944,10 @@ class Silicon
 	Description = "STR_ItemDesc_Silicon";
 	reqResources[] = {};
 	};
-class DiamondRock
+class DiamondRock: ItemBase
 	{
 	className = "DiamondRock";
+	dropClass = "Land_Bucket_F";
 	displayName = "Diamond Rock";
 	itemType = "Item";
 	Function = "";
@@ -912,9 +964,10 @@ class DiamondRock
 	Description = "STR_ItemDesc_DamondRock";
 	reqResources[] = {};
 	};
-class Platinum
+class Platinum: ItemBase
 	{
 	className = "Platinum";
+	dropClass = "Land_Bucket_F";
 	displayName = "Platinum";
 	itemType = "Item";
 	Function = "";
@@ -931,9 +984,10 @@ class Platinum
 	Description = "STR_ItemDesc_Platinum";
 	reqResources[] = {};
 	};
-class Silver
+class Silver: ItemBase
 	{
 	className = "Silver";
+	dropClass = "Land_Bucket_F";
 	displayName = "Silver";
 	itemType = "Item";
 	Function = "";
@@ -950,9 +1004,10 @@ class Silver
 	Description = "STR_ItemDesc_Silver";
 	reqResources[] = {};
 	};
-class Gold
+class Gold: ItemBase
 	{
 	className = "Gold";
+	dropClass = "Land_Bucket_F";
 	displayName = "Gold";
 	itemType = "Item";
 	Function = "";
@@ -969,9 +1024,10 @@ class Gold
 	Description = "STR_ItemDesc_Gold";
 	reqResources[] = {};
 	};
-class Oil
+class Oil: ItemBase
 	{
 	className = "Oil";
+	dropClass = "Land_MetalBarrel_F";
 	displayName = "Oil";
 	itemType = "Item";
 	Function = "";
@@ -988,9 +1044,10 @@ class Oil
 	Description = "STR_ItemDesc_Oil";
 	reqResources[] = {};
 	};
-class Sand
+class Sand: ItemBase
 	{
 	className = "Sand";
+	dropClass = "Land_Bucket_F";
 	displayName = "Sand";
 	itemType = "Item";
 	Function = "";
@@ -1007,9 +1064,10 @@ class Sand
 	Description = "STR_ItemDesc_Sand";
 	reqResources[] = {};
 	};
-class Sulfer
+class Sulfer: ItemBase
 	{
 	className = "Sulfer";
+	dropClass = "Land_Bucket_F";
 	displayName = "Sulfer";
 	itemType = "Item";
 	Function = "";
@@ -1026,9 +1084,10 @@ class Sulfer
 	Description = "STR_ItemDesc_Sulfer";
 	reqResources[] = {};
 	};
-class Steel
+class Steel: ItemBase
 	{
 	className = "Steel";
+	dropClass = "Land_Bucket_F";
 	displayName = "Steel";
 	itemType = "Item";
 	Function = "";
@@ -1045,9 +1104,10 @@ class Steel
 	Description = "STR_ItemDesc_Steel";
 	reqResources[] = {{"Iron",2}};
 	};
-class BlackPowder
+class BlackPowder: ItemBase
 	{
 	className = "BlackPowder";
+	dropClass = "Land_Bucket_F";
 	displayName = "Black Powder";
 	itemType = "Item";
 	Function = "";
@@ -1064,9 +1124,10 @@ class BlackPowder
 	Description = "STR_ItemDesc_BlackPowder";
 	reqResources[] = {{"Coal",1},{"Sulfer",1}};
 	};
-class Glass
+class Glass: ItemBase
 	{
 	className = "Glass";
+	dropClass = "Land_Bucket_F";
 	displayName = "Glass";
 	itemType = "Item";
 	Function = "";
@@ -1083,9 +1144,10 @@ class Glass
 	Description = "STR_ItemDesc_Glass";
 	reqResources[] = {{"Sand",1},{"Silicon",1}};
 	};
-class Plastic
+class Plastic: ItemBase
 	{
 	className = "Plastic";
+	dropClass = "Land_Bucket_F";
 	displayName = "Plastic";
 	itemType = "Item";
 	Function = "";
@@ -1102,9 +1164,10 @@ class Plastic
 	Description = "STR_ItemDesc_Plastic";
 	reqResources[] = {{"Oil",1},{"Coal",1}};
 	};
-class ElectronicComponents
+class ElectronicComponents: ItemBase
 	{
 	className = "ElectronicComponents";
+	dropClass = "Land_Bucket_F";
 	displayName = "Electronic Components";
 	itemType = "Item";
 	Function = "";
@@ -1119,11 +1182,12 @@ class ElectronicComponents
 	canGive = true;
 	isIllegal = false;
 	Description = "STR_ItemDesc_ElectronicComponents";
-	reqResources[] = {{"Silicon",1},{"Copper",1},{"Plastic",1}};
+	reqResources[] = {{"Silicon",1},{"Copper",1}};
 	};
-class DiamondRing
+class DiamondRing: ItemBase
 	{
 	className = "DiamondRing";
+	dropClass = "Land_MetalCase_01_small_F";
 	displayName = "Diamond Ring";
 	itemType = "Item";
 	Function = "";
@@ -1140,9 +1204,10 @@ class DiamondRing
 	Description = "STR_ItemDesc_DiamondRing";
 	reqResources[] = {{"DiamondRock",10},{"Silver",1}};
 	};
-class ExpensiveDiamondRing
+class ExpensiveDiamondRing: ItemBase
 	{
 	className = "ExpensiveDiamondRing";
+	dropClass = "Land_MetalCase_01_small_F";
 	displayName = "Expensive Diamond Ring";
 	itemType = "Item";
 	Function = "";
@@ -1159,9 +1224,10 @@ class ExpensiveDiamondRing
 	Description = "STR_ItemDesc_ExpensiveDiamondRing";
 	reqResources[] = {{"DiamondRock",15},{"Gold",2}};
 	};
-class PlatinumRing
+class PlatinumRing: ItemBase
 	{
 	className = "PlatinumRing";
+	dropClass = "Land_MetalCase_01_small_F";
 	displayName = "Platinum Ring";
 	itemType = "Item";
 	Function = "";
@@ -1178,9 +1244,10 @@ class PlatinumRing
 	Description = "STR_ItemDesc_PlatinumRing";
 	reqResources[] = {{"DiamondRock",10},{"Platinum",5}};
 	};
-class ExpensivePlatinumRing
+class ExpensivePlatinumRing: ItemBase
 	{
 	className = "ExpensivePlatinumRing";
+	dropClass = "Land_MetalCase_01_small_F";
 	displayName = "Expensive Platinum Ring";
 	itemType = "Item";
 	Function = "";
@@ -1197,9 +1264,10 @@ class ExpensivePlatinumRing
 	Description = "STR_ItemDesc_ExpensivePlatinumRing";
 	reqResources[] = {{"DiamondRock",15},{"Platinum",10}};
 	};
-class UnProcessedCocaine
+class UnProcessedCocaine: ItemBase
 	{
 	className = "UnProcessedCocaine";
+	dropClass = "Land_Bag_EP1";
 	displayName = "UnProcessed Cocaine";
 	itemType = "";
 	Function = "";
@@ -1216,9 +1284,10 @@ class UnProcessedCocaine
 	Description = "STR_ItemDesc_UnProcessedCocaine";
 	reqResources[] = {};
 	};
-class Cocaine
+class Cocaine: ItemBase
 	{
 	className = "Cocaine";
+	dropClass = "Land_Bag_EP1";
 	displayName = "Cocaine";
 	itemType = "";
 	Function = "ZKB_fnc_Cocaine";
@@ -1235,9 +1304,10 @@ class Cocaine
 	Description = "STR_ItemDesc_Cocaine";
 	reqResources[] = {{"UnProcessedCocaine",4}};
 	};
-class UnProcessedMarijuana
+class UnProcessedMarijuana: ItemBase
 	{
 	className = "UnProcessedMarijuana";
+	dropClass = "Land_Bag_EP1";
 	displayName = "UnProcessed Marijuana";
 	itemType = "";
 	Function = "";
@@ -1254,9 +1324,10 @@ class UnProcessedMarijuana
 	Description = "STR_ItemDesc_UnProcessedMarijuana";
 	reqResources[] = {};
 	};
-class Marijuana
+class Marijuana: ItemBase
 	{
 	className = "Marijuana";
+	dropClass = "Land_Bag_EP1";
 	displayName = "Marijuana";
 	itemType = "";
 	Function = "ZKB_fnc_Marijuana";
@@ -1273,9 +1344,10 @@ class Marijuana
 	Description = "STR_ItemDesc_Marijuana";
 	reqResources[] = {{"UnProcessedMarijuana",5}};
 	};
-class UnProcessedLSD
+class UnProcessedLSD: ItemBase
 	{
 	className = "UnProcessedLSD";
+	dropClass = "Land_Bag_EP1";
 	displayName = "UnProcessed LSD";
 	itemType = "";
 	Function = "";
@@ -1292,9 +1364,10 @@ class UnProcessedLSD
 	Description = "STR_ItemDesc_UnProcessedLSD";
 	reqResources[] = {};
 	};
-class LSD
+class LSD: ItemBase
 	{
 	className = "LSD";
+	dropClass = "Land_Bag_EP1";
 	displayName = "LSD";
 	itemType = "";
 	Function = "ZKB_fnc_LSD";
@@ -1311,9 +1384,10 @@ class LSD
 	Description = "STR_ItemDesc_LSD";
 	reqResources[] = {{"UnProcessedLSD",3}};
 	};
-class UnProcessedHeroin
+class UnProcessedHeroin: ItemBase
 	{
 	className = "UnProcessedHeroin";
+	dropClass = "Land_Bag_EP1";
 	displayName = "UnProcessed Heroin";
 	itemType = "";
 	Function = "";
@@ -1330,9 +1404,10 @@ class UnProcessedHeroin
 	Description = "STR_ItemDesc_UnProcessedHeroin";
 	reqResources[] = {};
 	};
-class Heroin
+class Heroin: ItemBase
 	{
 	className = "Heroin";
+	dropClass = "Land_Bag_EP1";
 	displayName = "Heroin";
 	itemType = "";
 	Function = "ZKB_fnc_Heroin";
@@ -1349,7 +1424,7 @@ class Heroin
 	Description = "STR_ItemDesc_Heroin";
 	reqResources[] = {{"UnProcessedHeroin",3}};
 	};
-class M2StaticMG
+class M2StaticMG: ItemBase
 	{
 	className = "M2StaticMG";
 	displayName = "M2 Static MG";
@@ -1366,6 +1441,6 @@ class M2StaticMG
 	canGive = true;
 	isIllegal = true;
 	Description = "STR_ItemDesc_M2StaticMg";
-	reqResources[] = {{"Steel",5},{"Iron",2},{"BlackPowder",2}};
+	reqResources[] = {{"Steel",5},{"BlackPowder",2}};
 	};
 };

@@ -16,3 +16,5 @@ _robbedPlayer setVariable ["lastRobbed",serverTime + 120,true];
 
 [player,"Armed Robbery",15000] call ZKB_fnc_AddWanted;
 [player] remoteExecCall ["ZKB_fnc_RobPlayerDropItems",_robbedPlayer,false];
+
+["STR_Admin_PlayerLogsRobbedPlayer",name player,name _robbedPlayer] call ZKB_fnc_AdminAddPlayerLog;

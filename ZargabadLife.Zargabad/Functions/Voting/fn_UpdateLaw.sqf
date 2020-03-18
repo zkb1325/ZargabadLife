@@ -1,3 +1,4 @@
+#include "..\..\ConfigMacros.hpp"
 /*
 	Author: ZKB1325
 	FileName: fn_UpdateLaw.sqf
@@ -11,6 +12,8 @@ private _forced = param [2,false];
 
 if (!(call ZKB_fnc_IsMayor) and !_forced) exitWith {};
 
+_lawString = toString ((toArray _lawString) - [60,62]); //Prevent players from trolling with structured text
+
 disableSerialization;
 private _display = uiNamespace getVariable "ZKB_LawEditMenu";
 private _lawListCtrl = _display displayCtrl 22010;
@@ -22,3 +25,8 @@ ZKB_LawArray set [_lawIndex,_lawString];
 publicVariable "ZKB_LawArray";
 
 format [localize "STR_Law_LawChanged",_lawIndex+1, _lawString] remoteExecCall ["hint",0,false];
+["STR_Admin_AdminLogsChangedLaw",name player,_lawIndex+1,_lawString] call ZKB_fnc_AdminAddAdminLog;
+if (SETTING(getNumber,"ZKB_StatSaveEnabled") isEqualTo 1) then
+	{
+	["laws",ZKB_LawArray] remoteExecCall ["ZKB_fnc_ServerSaveStats",2,false];
+	};

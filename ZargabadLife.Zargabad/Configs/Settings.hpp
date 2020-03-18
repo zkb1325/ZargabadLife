@@ -1,5 +1,69 @@
 class ZKB_Settings
 	{
+	//True/False if stats should save over restarts Default: false
+	//Requires the server to be running INIDBI2
+	ZKB_StatSaveEnabled = true;
+	ZKB_SavePlayerPos = true; //True/False if the players position should be saved so they login where they last were Default: true
+	ZKB_StatWipeStartDate[] = {2020,2,21,23,55}; //Start date (servers local timezone) for stat wipes. All future stat wipes will be based off this date as well the first stat wipe will not happen until this date
+	ZKB_StatWipeDelay[] = {0,0,7,0,0}; //Delay between each stat wipe {years,months,days,hours,minutes}
+	
+	ZKB_UseCBAKeyBinds = true; //True/False if CBA is used for keybinds. False will remove the requirement for CBA
+
+	ZKB_DayTimeAcc = 7; //Time acceleration during the day Default: 7
+	ZKB_NightTimeAcc = 15; //Time acceleration during the night Default: 15
+	
+	ZKB_CopsOnlyLoseWeapons = true; //True/False if cops will only lose weapons on respawn Default: true
+	ZKB_CopsLoseNothing = false; //True/False if cops lose no gear when killed. ZKB_CopsOnlyLoseWeapons must = false Default: false
+	
+	//Base loadout for cops
+	class ZKB_CopLoadout
+		{
+		uniformClass = "CUP_U_B_USArmy_Base"; //Uniform
+		backpack = ""; //Backpack
+		linkedItems[] = {"CUP_H_CDF_OfficerCap_UN","Binocular","ItemMap","ItemGPS","ItemRadio","ItemCompass","ItemWatch"}; //Vest, Helmet, binocular, Map, GPS, Radio, Compass, Watch
+		weapons[] = {"CUP_hgun_Makarov"}; //Primary, Handgun, Secondary
+		items[] = {}; //Inventory Items (Any Item you want in inventory)
+		magazines[] = {"CUP_8Rnd_9x18_MakarovSD_M","CUP_8Rnd_9x18_MakarovSD_M","CUP_8Rnd_9x18_MakarovSD_M","CUP_8Rnd_9x18_MakarovSD_M","CUP_8Rnd_9x18_MakarovSD_M","CUP_8Rnd_9x18_MakarovSD_M","SmokeShellYellow","SmokeShellYellow"};
+		};
+
+	//Array of head gear/helmet/hat classNames the player could start with as civ
+	ZKB_StartingHeadGear[] =
+	{
+	"CUP_H_TKI_Lungee_Open_01",
+	"CUP_H_TKI_Lungee_Open_02",
+	"CUP_H_TKI_Lungee_Open_03",
+	"CUP_H_TKI_Lungee_Open_04",
+	"CUP_H_TKI_Lungee_Open_05",
+	"CUP_H_TKI_Lungee_Open_06",
+	"CUP_H_TKI_Lungee_01",
+	"CUP_H_TKI_Lungee_02",
+	"CUP_H_TKI_Lungee_03",
+	"CUP_H_TKI_Lungee_04",
+	"CUP_H_TKI_Lungee_05",
+	"CUP_H_TKI_Lungee_06",
+	"CUP_H_TKI_Pakol_1_01",
+	"CUP_H_TKI_Pakol_2_04",
+	"CUP_H_TKI_Pakol_2_05",
+	"CUP_H_TKI_Pakol_2_06"
+	};
+	
+	//Array of uniform classNames the player could start with as civ
+	ZKB_StartingUniforms[] =
+	{
+	"CUP_O_TKI_Khet_Jeans_04",
+	"CUP_O_TKI_Khet_Jeans_02",
+	"CUP_O_TKI_Khet_Jeans_01",
+	"CUP_O_TKI_Khet_Jeans_03",
+	"CUP_O_TKI_Khet_Partug_04",
+	"CUP_O_TKI_Khet_Partug_02",
+	"CUP_O_TKI_Khet_Partug_01",
+	"CUP_O_TKI_Khet_Partug_07",
+	"CUP_O_TKI_Khet_Partug_08",
+	"CUP_O_TKI_Khet_Partug_05",
+	"CUP_O_TKI_Khet_Partug_06"
+	};
+	
+	ZKB_StartingGear[] = {"ItemMap","ItemWatch","ItemCompass","ItemRadio"}; //Array of gear classNames that the player starts with as civ (NVG, Map, GPS, Watch, radio)
 	
 	ZKB_StartingInventory[] = {{"KeyChain",1}}; //Starting inventory for new players
 	ZKB_MaxINVWeight = 60; //Default max amount of weight a player can hold for virtual items Default: 60
@@ -14,6 +78,9 @@ class ZKB_Settings
 	
 	ZKB_MaxStationMoney = 25000; //Max amount that can be robbed from a gas station Default: 25000
 	ZKB_MaxVaultMoney = 300000; //Max amount that can be robbed from a bank vault Default: 300000
+	
+	ZKB_MinMayorVotes = 1; //Minimum number of votes needed to be considered for mayor Default: 1
+	ZKB_MinChiefVotes = 1; //Minimum number of votes needed to be considered for police chief Default: 1
 	
 	ZKB_CopRespawnTimeBase = 15; //Base/min respawn time a cop gets before punishments added. Players respawn time resets to this + ZKB_SuicidePenalty once the player dies. Default: 15
 	ZKB_CivRespawnTimeBase = 25; //Base/min respawn time a civ gets before punishments added. Players respawn time resets to this + ZKB_SuicidePenalty once the player dies. Default: 25
@@ -32,7 +99,7 @@ class ZKB_Settings
 	ZKB_SlaveCost = 50000; //Cost to buy a slave Default: 50000
 	ZKB_MaxSlaves = 3; //Max number of slaves a player can own Default: 3
 	ZKB_SlaveBonus = 5000; //How much the slave makes per minute Default: 5000
-	ZKB_SlaveFreeReward = 15000; //How much the slave makes per minute Default: 15000
+	ZKB_SlaveFreeReward = 15000; //How much the player (Cop) gets for freeing a slave Default: 15000
 	ZKB_SlaveClass = "CUP_C_TK_Man_02"; //Unit className to spawn as the slave unit
 	
 	//Array of delivery point objects objects should be in array as a string 
@@ -65,7 +132,7 @@ class ZKB_Settings
 
 	{"Pistol_License", "Pistol License", 12000, {"GunShop"}, "IsCiv"},
 	{"Rifle_License", "Rifle License", 22000, {"GunShop"}, "IsCiv"},
-	{"Engineer_License", "Engineer License", 25000, {"CivSpawnATM"}, "IsCiv"},
+	//{"Engineer_License", "Engineer License", 25000, {"CivSpawnATM"}, "IsCiv"}, //Not used currently because speed upgrades are removed
 	{"Terror_Training", "Terror Training", 850000, {"TerrorATM"}, "IsCiv"},
 
 	{"Civ_Shop_License", "Civ Shop License", 10000, {"CopBaseATM"}, "IsCop"},
@@ -75,19 +142,25 @@ class ZKB_Settings
 	{"Air_Support_Officer_Training", "Air Support-Officer Training", 250000, {"CopBaseATM"}, "IsCop"}
 	};
 	
+	ZKB_StationRobReqCops = 0; //Required number of cops online to rob a gas station Default: 0
+	ZKB_BankRobReqCops = 5; //Required number of cops online to rob the bank Default: 5
+	
 	//Array of game logic for the government convoy and Assassin mission to spawn at, should be array of stringed object names
 	ZKB_MissionStartPositions[] = {"GovConvoySpawn_1","GovConvoySpawn_2","GovConvoySpawn_3","GovConvoySpawn_4"};
 
+	ZKB_GovConvoyReqCops = 2; //Required number of cops that need to be online in order for the government convoy to start Default: 2
 	ZKB_GovConvoyLoopTime = 45; //Time in minutes between the government convoy Default: 45
-	ZKB_GovConvoyCopReward = 100000; //Reward cops get when government convoy makes it to PD Default: 100000
+	ZKB_GovConvoyCopReward = 40000; //Reward cops get when government convoy makes it to PD Default: 40000
 	ZKB_GovConvoyStealReward = 20000; //Reward for the civ that steals the money. The reward is multiplied by the number of cops online Default: 20000
 	
-	ZKB_VipLoopTime = 35; //Time in minutes between the assassin/VIP mission Default: 35
-	ZKB_VipReward = 75000; //Reward cops get when the VIP makes it to PD Default: 75000
+	ZKB_VipReqCops = 2; //Required number of cops that need to be online in order for the vip mission to start Default: 2
+	ZKB_VipLoopTime = 55; //Time in minutes between the assassin/VIP mission Default: 55
+	ZKB_VipReward = 50000; //Reward cops get when the VIP makes it to PD Default: 50000
 	ZKB_VipKilledReward = 20000; //Reward for the civ that kills the vip. The reward is multiplied by the number of cops online Default: 20000
 	
+	ZKB_HostageReqCops = 5; //Required number of cops online to take a hostage Default: 5
 	ZKB_HostageTime = 20; //Time in minutes the hostage taker has to defend the hostage Default: 20
-	ZKB_HostageSafeReward = 150000; //Reward cops get when the hostage is freed or the hostage taker fails Default: 150000
+	ZKB_HostageSafeReward = 100000; //Reward cops get when the hostage is freed or the hostage taker fails Default: 100000
 	ZKB_HostageCivReward = 350000; //Reward to the civ that took the hostage and held it for the required amount of time Default: 350000
 	ZKB_HostageKilledLoss = 15000; //How much does each Cop lose if the hostage was killed Default: 15000
 	ZKB_HostageKilledBounty = 20000; //How much does the civ that kills the hostage get wanted for, the amount is this multiplied by the number of cops online Default: 20000

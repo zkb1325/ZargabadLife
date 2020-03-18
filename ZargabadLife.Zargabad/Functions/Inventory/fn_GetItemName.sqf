@@ -5,9 +5,9 @@
 	Description: Returns the display name of an item based on class name
 */
 private _classname = param [0,"",[""]];
-//([_classname] call ZKB_fnc_GetItemInfo) select 1;
+private _return = "";
 private _displayName = getText (missionConfigFile >> "Item_Config" >> _classname >> "displayName");
-if (isLocalized _displayName) then
+_return = if (isLocalized _displayName) then
 	{
 	localize _displayName;
 	}
@@ -15,3 +15,10 @@ if (isLocalized _displayName) then
 	{
 	_displayName;
 	};
+	
+if (_return isEqualTo "") then
+	{
+	_return = _classname call ZKB_fnc_CfgGetDisplayName;
+	};
+	
+_return;

@@ -33,3 +33,4 @@ if (_playersBounty > 0) then
 	
 closeDialog 0;
 [_jailTime,_playersBail,name player] remoteExec ["ZKB_fnc_Jail",_arrestedUnit,false];
+["STR_Admin_PlayerLogsPlayerArrested",name _arrestedUnit,name player,_jailTime] call ZKB_fnc_AdminAddPlayerLog;

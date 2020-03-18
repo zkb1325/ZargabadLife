@@ -55,18 +55,22 @@ switch _boughttype do
 		["STR_Shop_BoughtItem", [([_boughtamount] call ZKB_fnc_FormatNumber), ([_boughtItem] call ZKB_fnc_GetItemName), ([(_boughtItemPrice*_boughtamount)] call ZKB_fnc_FormatNumber)]] call ZKB_fnc_DynamicText;
 		if !(_boughtitemstock <= -1) then {[ZKB_shopobject, _boughtItemIndex, _boughtamount, false] call ZKB_fnc_UpdateShopStock;};
 		ZKB_shopobject setVariable ["curTax",(ZKB_shopobject getVariable ["curTax",0]) + (_paidTaxes*_boughtamount),true];
+		["STR_Admin_PlayerLogsBoughtItem",name player,[_boughtamount] call ZKB_fnc_FormatNumber,[_boughtItem] call ZKB_fnc_GetItemName,[(_boughtItemPrice*_boughtamount)] call ZKB_fnc_FormatNumber] call ZKB_fnc_AdminAddPlayerLog;
 		};
 		
 	case "CfgVehicles":
 		{
 		_vehspawnpoint = (_shopData select 3);
-		if(count (nearestobjects [getpos _vehspawnpoint,["motorcycle","Car","Tank","Ship","Air"], 3]) > 0) exitWith {["STR_Shop_VehSpawnBlocked"] call ZKB_fnc_DynamicText;};
+		private _impounded = false;
+		if (count (nearestobjects [getpos _vehspawnpoint,["motorcycle","Car","Tank","Ship","Air"], 3]) > 0) then {_impounded = [(nearestobjects [getpos _vehspawnpoint,["motorcycle","Car","Tank","Ship","Air"], 3]) # 0,true] call ZKB_fnc_Impound;};
+		if ((count (nearestobjects [getpos _vehspawnpoint,["motorcycle","Car","Tank","Ship","Air"], 3]) > 0) and !_impounded) exitWith {["STR_Shop_VehSpawnBlocked"] call ZKB_fnc_DynamicText;};
 		[_boughtItemClass,_vehspawnpoint,-1,player] spawn ZKB_fnc_CreateVehicle;
 		["Money", (_boughtItemPrice*_boughtamount)] call ZKB_fnc_InvRemoveItem;
 		["STR_Shop_BoughtVeh", [([_boughtItem] call ZKB_fnc_GetItemName), ([(_boughtItemPrice*_boughtamount)] call ZKB_fnc_FormatNumber)]] call ZKB_fnc_DynamicText;
 		if !(_boughtitemstock <= -1) then {[ZKB_shopobject, _boughtItemIndex, _boughtamount, false] call ZKB_fnc_UpdateShopStock;};
 		ZKB_shopobject setVariable ["curTax",(ZKB_shopobject getVariable ["curTax",0]) + (_paidTaxes*_boughtamount),true];
 		closeDialog 0;
+		["STR_Admin_PlayerLogsBoughtItem",name player,[_boughtamount] call ZKB_fnc_FormatNumber,[_boughtItem] call ZKB_fnc_GetItemName,[(_boughtItemPrice*_boughtamount)] call ZKB_fnc_FormatNumber] call ZKB_fnc_AdminAddPlayerLog;
 		};
 	default
 		{
@@ -91,6 +95,7 @@ switch _boughttype do
 		["STR_Shop_BoughtItem", [([_boughtamount] call ZKB_fnc_FormatNumber), ([_boughtItem] call ZKB_fnc_GetItemName), ([(_boughtItemPrice*_boughtamount)] call ZKB_fnc_FormatNumber)]] call ZKB_fnc_DynamicText;
 		if !(_boughtitemstock <= -1) then {[ZKB_shopobject, _boughtItemIndex, _boughtamount, false] call ZKB_fnc_UpdateShopStock;};
 		ZKB_shopobject setVariable ["curTax",(ZKB_shopobject getVariable ["curTax",0]) + (_paidTaxes*_boughtamount),true];
+		["STR_Admin_PlayerLogsBoughtItem",name player,[_boughtamount] call ZKB_fnc_FormatNumber,[_boughtItem] call ZKB_fnc_GetItemName,[(_boughtItemPrice*_boughtamount)] call ZKB_fnc_FormatNumber] call ZKB_fnc_AdminAddPlayerLog;
 		};
 	};
 	

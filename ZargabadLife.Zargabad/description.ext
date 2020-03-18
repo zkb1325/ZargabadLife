@@ -1,6 +1,6 @@
 author = "ZKB1325"; //Please be respectful and do not change
 OnLoadName = "Zargabad Life";
-OnLoadMission = "Old Arma 2 style Zargabad life recreated for Arma 3.";
+OnLoadMission = "Arma 2 style Zargabad life recreated for Arma 3.";
 
 showCompass   = 1;
 showGPS       = 1;
@@ -13,20 +13,27 @@ saving = 0;
 onPauseScript[] = {ZKB_fnc_EscMenuInterupt};
 
 respawn       = 3;
-respawnDelay  = 2;
+respawnDelay  = 1;
 respawnDialog = 0;
 
 disabledAI    = 1;
 joinUnassigned = 0;
-disableChannels[]={{0,false,true},{1,false,false},{2,true,true},{3,false,false},{4,false,false},{5,false,false},{6,true,true}};
+disableChannels[]={{0,false,true},{1,false,true},{2,true,true},{3,false,false},{4,false,false},{5,false,false},{6,true,true}};
 //enableDebugConsole = 1;
 enableDebugConsole[] = {"76561198034910314"};
 allowFunctionsRecompile = 0;
 
+/*
+This is commented out by default because of local hosting the host being counted as a server and not a client
+It's recommended to un-comment the #include "CfgRemoteExec.hpp" if you are setting up a dedicated server
+https://community.bistudio.com/wiki/CfgRemoteExec
+*/
+//#include "CfgRemoteExec.hpp"
+
 corpseManagerMode = 1;
 corpseLimit = 1;
-corpseRemovalMinTime = 3; //Value should be at least 1 above respawnDelay
-corpseRemovalMaxTime = 3;
+corpseRemovalMinTime = 2; //Value should be at least 1 above respawnDelay
+corpseRemovalMaxTime = 2;
 	
 wreckManagerMode = 1;
 wreckLimit = 1;
@@ -63,6 +70,7 @@ class CfgSounds
 
 #include "Configs\ItemConfig.hpp"
 #include "Configs\Settings.hpp"
+#include "Configs\AdminCommandConfig.hpp"
 
 class CfgFunctions
 {
@@ -80,6 +88,7 @@ class CfgFunctions
 #include "HPPFiles\ZKB_KeyChain.hpp" //3000
 #include "HPPFiles\ZKB_Factory.hpp" //4000
 #include "HPPFiles\ZKB_ListMenu.hpp" //5000
+#include "HPPFiles\ZKB_DualInvListMenu.hpp" //5000
 #include "HPPFiles\ZKB_ItemInfo.hpp" //6000
 #include "HPPFiles\ZKB_ShoutText.hpp" //7000
 #include "HPPFiles\ZKB_Phone.hpp" //8000
@@ -102,6 +111,8 @@ class CfgFunctions
 #include "HPPFiles\ZKB_CivCamMenu.hpp" //24000
 #include "HPPFiles\ZKB_MainCam.hpp" //25000
 #include "HPPFiles\ZKB_ViewSettings.hpp" //26000
+
+#include "HPPFiles\Admin\ZKB_Admin.hpp" //50000
 
 class RscTitles
 {

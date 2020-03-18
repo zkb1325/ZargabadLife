@@ -42,5 +42,5 @@ if (_action == "SendMessage") exitWith
 	
 	["STR_ItemMisc_PhoneSent", [name _selectedplayer, _message]] call ZKB_fnc_DynamicText;
 	["STR_ItemMisc_PhoneRecieved", [name player, _message],30] remoteExecCall ["ZKB_fnc_DynamicText", _selectedplayer, false];
-
+	["STR_Admin_PlayerLogsSentPhoneMessage",name player,name _selectedplayer,_message] call ZKB_fnc_AdminAddPlayerLog;
 	};

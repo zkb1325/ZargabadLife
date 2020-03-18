@@ -17,18 +17,23 @@ if ([format [localize "STR_Cop_TicketQuestion",_ticketedBy,[_ticketAmount] call 
 		["Money",_ticketAmount] call ZKB_fnc_InvRemoveItem;
 		[_ticketAmount,playersNumber west] remoteExecCall ["ZKB_fnc_TicketCollect",west,false];	
 		["STR_Cop_PayedTicket",[name player, [_ticketAmount] call ZKB_fnc_FormatNumber]] remoteExecCall ["ZKB_fnc_DynamicText",[west,player],false];
+		["STR_Admin_PlayerLogsPaidTicket",name player,[_ticketAmount] call ZKB_fnc_FormatNumber,name _ticketedBy] call ZKB_fnc_AdminAddPlayerLog;
 		};
 		
 	if (ZKB_BankAccount >= _ticketAmount) exitWith
 		{
 		ZKB_BankAccount = ZKB_BankAccount - _ticketAmount;
+		player setVariable ["BankAccount",ZKB_BankAccount,true];
 		[_ticketAmount,playersNumber west] remoteExecCall ["ZKB_fnc_TicketCollect",west,false];	
 		["STR_Cop_PayedTicket",[name player, [_ticketAmount] call ZKB_fnc_FormatNumber]] remoteExecCall ["ZKB_fnc_DynamicText",[west,player],false];
+		["STR_Admin_PlayerLogsPaidTicket",name player,[_ticketAmount] call ZKB_fnc_FormatNumber,name _ticketedBy] call ZKB_fnc_AdminAddPlayerLog;
 		};
 		
 	["STR_Cop_DidntPayTicketNoMoney",[name player, [_ticketAmount] call ZKB_fnc_FormatNumber]] remoteExecCall ["ZKB_fnc_DynamicText",[west,player],false];
+	["STR_Admin_PlayerLogsPaidTicketNoMoney",name player,[_ticketAmount] call ZKB_fnc_FormatNumber,name _ticketedBy] call ZKB_fnc_AdminAddPlayerLog;
 	}
 	else
 	{
-	["STR_Cop_DidntPayTicket",[name player]]remoteExecCall ["ZKB_fnc_DynamicText",[west,player],false]; 
+	["STR_Cop_DidntPayTicket",[name player]]remoteExecCall ["ZKB_fnc_DynamicText",[west,player],false];
+	["STR_Admin_PlayerLogsRefusedTicket",name player,[_ticketAmount] call ZKB_fnc_FormatNumber,name _ticketedBy] call ZKB_fnc_AdminAddPlayerLog;
 	};

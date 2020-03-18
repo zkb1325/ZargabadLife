@@ -11,6 +11,15 @@
 private _unit = param [0,objNull];
 private _cropse = param [1,objNull];
 if !(isNull _cropse) then {deleteVehicle _cropse};
+[] spawn
+	{
+	if !(isNil "ZKB_LastKilledBy") then
+		{
+		waitUntil {alive ZKB_LastKilledBy};
+		[player] remoteExecCall ["ZKB_fnc_KilledPlayer",ZKB_LastKilledBy,false];
+		ZKB_LastKilledBy = nil;
+		};
+	};
 _unit allowDamage false;
 
 call ZKB_fnc_ClearGear;
@@ -91,7 +100,7 @@ if (IsCop) then
 	} 
 	else 
 	{
-	titleText [format[localize "STR_Respawn_CivRespawnTime", ZKB_Deaths, ZKB_Suicides, (ZKB_CopsKilled select 1), (ZKB_CivsKilled select 1), [round (SETTING(getNumber,"ZKB_CivRespawnTimeBase") + ((ZKB_CivsKilled select 0) * SETTING(getNumber,"ZKB_KillCivPenaltyt")) + ((ZKB_CopsKilled select 0) * SETTING(getNumber,"ZKB_KillCopPenalty")) + (SETTING(getNumber,"ZKB_SuicidePenalty") * ZKB_Suicides)) min SETTING(getNumber,"ZKB_MaxRespawnTime"), "MM:SS"] call BIS_Fnc_secondsToString], "plain"];
+	titleText [format[localize "STR_Respawn_CivRespawnTime", ZKB_Deaths, ZKB_Suicides, (ZKB_CopsKilled select 0), (ZKB_CivsKilled select 0), [round (SETTING(getNumber,"ZKB_CivRespawnTimeBase") + ((ZKB_CivsKilled select 0) * SETTING(getNumber,"ZKB_KillCivPenaltyt")) + ((ZKB_CopsKilled select 0) * SETTING(getNumber,"ZKB_KillCopPenalty")) + (SETTING(getNumber,"ZKB_SuicidePenalty") * ZKB_Suicides)) min SETTING(getNumber,"ZKB_MaxRespawnTime"), "MM:SS"] call BIS_Fnc_secondsToString], "plain"];
 	};
 	
 sleep 10;
@@ -127,8 +136,10 @@ sleep 10;
 
 player setVariable ["ZKB_MaxINVWeight",SETTING(getNumber,"ZKB_MaxINVWeight"),true];	
 ZKB_CopsKilled set [0,0];
+player setVariable ["CopKills",ZKB_CopsKilled,true];
 ZKB_CivsKilled set [0,0];
-call ZKB_fnc_SavePlayer;
+player setVariable ["CivKills",ZKB_CivsKilled,true];
+[] spawn ZKB_fnc_SavePlayer;
 _unit allowDamage true;
 player enableStamina false;
 [100000] call ZKB_fnc_SetRating;

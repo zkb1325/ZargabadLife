@@ -8,7 +8,7 @@ closeDialog 0;
 private _selectedCandidate = param [0];
 if (_selectedCandidate isEqualTo "") exitWith 
 	{
-	player getVariable ["chiefVote",_selectedCandidate,true];
+	player setVariable ["chiefVote",nil,true];
 	["STR_Voting_VoteNoOneChief"] call ZKB_fnc_DynamicText;
 	};
 
@@ -17,3 +17,4 @@ if (isNull _candidate) exitWith {["STR_Voting_VoteError"] call ZKB_fnc_DynamicTe
 
 player setVariable ["chiefVote",_selectedCandidate,true];
 ["STR_Voting_VotedForChief",[name _candidate]] call ZKB_fnc_DynamicText;
+["STR_Admin_PlayerLogsVotedForChief",name player,name _candidate] call ZKB_fnc_AdminAddPlayerLog;

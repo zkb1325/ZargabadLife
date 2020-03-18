@@ -13,6 +13,7 @@ if (!(vehicle player isEqualTo player) and (speed (vehicle player) > 10)) exitWi
 if !(vehicle player isEqualTo player)  then {moveOut player;waitUntil {(isNull objectParent player)};};
 closeDialog 0;
 titleText[format [localize "STR_Cop_KnockedOutBy",_knockedOutBy],"PLAIN"];
+["STR_Admin_PlayerLogsKnockedOut",name player,_knockedOutBy] call ZKB_fnc_AdminAddPlayerLog;
 
 [] spawn 
 	{

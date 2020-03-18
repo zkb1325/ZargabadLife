@@ -31,11 +31,11 @@ if (_forced) exitWith
 		}forEach _inv;
 		player setVariable ["ZKB_Inventory",_inv,true];
 		};
-	call ZKB_fnc_SavePlayer;
+	[] spawn ZKB_fnc_SavePlayer;
 	true;
 	};
 
-if ((([player] call ZKB_fnc_GetInvTotalWeight) + (([_item] call ZKB_fnc_GetItemWeight)*_amountadd)) > (player getVariable ["ZKB_MaxINVWeight",SETTING(getNumber,"ZKB_MaxINVWeight")])) exitWith {["STR_Inv_ToMuchWeight", [[_amountadd] call ZKB_fnc_FormatNumber, [_item] call ZKB_fnc_GetItemName]] call ZKB_fnc_DynamicText; false;};
+if ((([player] call ZKB_fnc_GetInvTotalWeight) + (([_item] call ZKB_fnc_GetItemWeight)*_amountadd)) > (player getVariable ["ZKB_MaxINVWeight",SETTING(getNumber,"ZKB_MaxINVWeight")]) and !(([_item] call ZKB_fnc_GetItemWeight) isEqualTo 0)) exitWith {["STR_Inv_ToMuchWeight", [[_amountadd] call ZKB_fnc_FormatNumber, [_item] call ZKB_fnc_GetItemName]] call ZKB_fnc_DynamicText; false;};
 	
 if ([_item] call ZKB_fnc_GetInvItemAmount <= 0) then
 	{
@@ -51,5 +51,5 @@ if ([_item] call ZKB_fnc_GetInvItemAmount <= 0) then
 	}forEach _inv;
 	player setVariable ["ZKB_Inventory",_inv,true];
 	};
-call ZKB_fnc_SavePlayer;
+[] spawn ZKB_fnc_SavePlayer;
 true;

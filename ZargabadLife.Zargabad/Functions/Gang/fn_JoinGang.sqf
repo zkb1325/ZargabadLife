@@ -1,3 +1,4 @@
+#include "..\..\ConfigMacros.hpp"
 /*
 	Author: ZKB1325
 	File: fn_JoinGang.sqf
@@ -19,6 +20,13 @@ _joiningmemberarray pushBack [(getPlayerUID player),(name player)];
 _joininggangarray set [1,_joiningmemberarray];
 missionNameSpace setVariable [_gangVariable, _joininggangarray, true];
 
+if (SETTING(getNumber,"ZKB_StatSaveEnabled") isEqualTo 1) then
+	{
+	[] remoteExecCall ["ZKB_fnc_ServerUpdateGangSave",2,false];
+	};
+
 ["STR_Gang_JoinedGang", [(_joininggangarray select 0)]] call ZKB_fnc_DynamicText;
 
 [player] call ZKB_fnc_GroupGang;
+
+["STR_Admin_PlayerLogsJoinedGang",name player,(_joininggangarray select 0)] call ZKB_fnc_AdminAddPlayerLog;

@@ -15,4 +15,5 @@ _item = _this select 1;
 [_item, 1] call ZKB_fnc_InvRemoveItem;
 
 (vehicle player) setVariable ["PlantedBomb", ["ActivationBomb", getPlayerUID player], true];
-["STR_ItemMisc_PlantedBomb", [(vehicle player)]] call ZKB_fnc_DynamicText;
+["STR_ItemMisc_PlantedBomb", [(vehicle player) getVariable ["plate",(vehicle player)]]] call ZKB_fnc_DynamicText;
+["STR_Admin_PlayerLogsPlantedActivationBomb",name player,(vehicle player) getVariable ["plate",(vehicle player)]] call ZKB_fnc_AdminAddPlayerLog;

@@ -17,7 +17,7 @@ class controls
 		w = 0.33 * safezoneW;
 		h = 0.81 * safezoneH;
 	};
-	class KeyChain_Frame: RscFrame
+	class KeyChain_Frame: ZKB_RscFrame
 	{
 		idc = 3002;
 		x = 0.34 * safezoneW + safezoneX;
@@ -25,7 +25,7 @@ class controls
 		w = 0.33 * safezoneW;
 		h = 0.81 * safezoneH;
 	};
-	class KeyChain_List: RscListBox
+	class KeyChain_List: ZKB_RscListBox
 	{
 		idc = 3010;
 		x = 0.35 * safezoneW + safezoneX;
@@ -33,7 +33,7 @@ class controls
 		w = 0.31 * safezoneW;
 		h = 0.54 * safezoneH;
 	};
-	class KeyChain_Use: RscButton
+	class KeyChain_Use: ZKB_RscButton
 	{
 		idc = 3020;
 		text = $STR_Inv_Use;
@@ -43,7 +43,7 @@ class controls
 		w = 0.31 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class KeyChain_Give: RscButton
+	class KeyChain_Give: ZKB_RscButton
 	{
 		idc = 3030;
 		text = $STR_Inv_Give;
@@ -53,7 +53,7 @@ class controls
 		w = 0.31 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class KeyChain_Cancel: RscButton
+	class KeyChain_Cancel: ZKB_RscButton
 	{
 		idc = 3040;
 		text = $STR_Common_Close;
@@ -63,7 +63,7 @@ class controls
 		h = 0.04 * safezoneH;
 		action = "closedialog 0";
 	};
-	class KeyChain_PlayerList: RscCombo
+	class KeyChain_PlayerList: ZKB_RscCombo
 	{
 		idc = 3050;
 

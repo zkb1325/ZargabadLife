@@ -17,8 +17,9 @@ _playerside = switch (true) do
 	};
 private _vehInfo = ((missionNamespace getVariable format ["%1_Impound",getPlayerUID player]) select _impoundIndex);
 if !((_vehInfo select 2) find _playerside > -1) exitWith {["STR_Vehicle_ImpoundWrongSide"] call ZKB_fnc_DynamicText;};
-if(count (nearestobjects [getpos ZKB_ImpoundSpawn,["motorcycle","Car","Tank","Ship","Air"], 3]) > 0) exitWith {["STR_Shop_VehSpawnBlocked"] call ZKB_fnc_DynamicText;};
-
+private _impounded = false;
+if (count (nearestobjects [getpos ZKB_ImpoundSpawn,["motorcycle","Car","Tank","Ship","Air"], 3]) > 0) then {_impounded = [(nearestobjects [getpos ZKB_ImpoundSpawn,["motorcycle","Car","Tank","Ship","Air"], 3]) # 0,true] call ZKB_fnc_Impound;};
+if ((count (nearestobjects [getpos ZKB_ImpoundSpawn,["motorcycle","Car","Tank","Ship","Air"], 3]) > 0) and !_impounded) exitWith {["STR_Shop_VehSpawnBlocked"] call ZKB_fnc_DynamicText;};
 
 if ((["Money"] call ZKB_fnc_GetInvItemAmount) < SETTING(getNumber,"ZKB_UnImpoundCost")) exitWith {["STR_Vehicle_ImpoundNoMoney",[[SETTING(getNumber,"ZKB_UnImpoundCost")] call ZKB_fnc_FormatNumber,[_vehInfo select 0] call ZKB_fnc_GetItemName]] call ZKB_fnc_DynamicText;};
 ["Money",SETTING(getNumber,"ZKB_UnImpoundCost")] call ZKB_fnc_InvRemoveItem;
@@ -28,5 +29,9 @@ closeDialog 0;
 
 private _impoundInfo = ((missionNamespace getVariable format ["%1_Impound",getPlayerUID player]) deleteAt _impoundIndex);
 missionNamespace setVariable [format ["%1_Impound",getPlayerUID player],missionNamespace getVariable format ["%1_Impound",getPlayerUID player],true];
-
-[(_impoundInfo select 0),ZKB_ImpoundSpawn,-1,(_impoundInfo select 1),(_impoundInfo select 2),(_impoundInfo select 3),(_impoundInfo select 4)] spawn ZKB_fnc_CreateVehicle;
+if (SETTING(getNumber,"ZKB_StatSaveEnabled") isEqualTo 1) then
+	{
+	[format ["%1_Impound",(_impoundInfo select 1)]] remoteExecCall ["ZKB_fnc_ServerUpdateImpound",2,false];
+	};
+[(_impoundInfo select 0),ZKB_ImpoundSpawn,-1,(_impoundInfo select 1),(_impoundInfo select 2),(_impoundInfo select 3),(_impoundInfo select 4),false,"",(_impoundInfo select 5)] spawn ZKB_fnc_CreateVehicle;
+["STR_Admin_PlayerLogsUnImpoundedVeh",name player,(_impoundInfo select 2)] call ZKB_fnc_AdminAddPlayerLog;

@@ -1,3 +1,4 @@
+#include "..\..\ConfigMacros.hpp"
 /*
 	Author: ZKB1325
 	FileName: fn_InitPlayer.sqf
@@ -6,14 +7,15 @@
 	Description: Init for joining players. Handles first time joining and stat loading for session
 */
 
-//Disabled by default because CBA Keybinds are used.
+["STR_Admin_PlayerJoined",name player,playerSide] call ZKB_fnc_AdminAddPlayerLog;
+
 (findDisplay 46) displayAddEventHandler ["KeyDown", {_this call ZKB_fnc_KeyDownEH;}]; //still needed for map key and escape key
-//(findDisplay 46) displayAddEventHandler ["KeyUp", {_this call ZKB_fnc_KeyUpEH;}];
 
 player addEventHandler ["HandleDamage", {_this call ZKB_fnc_HandleDamageEH;}];
 player addEventHandler ["Killed", {_this call ZKB_fnc_KilledEH;}];
 player addEventHandler ["Respawn", {_this spawn ZKB_fnc_RespawnEH;}];
 player addEventHandler ["GetInMan", {_this spawn ZKB_fnc_GetInEH;}];
+player addEventHandler ["GetOutMan", {_this spawn ZKB_fnc_GetOutEH;}];
 player addEventHandler ["InventoryOpened",{_this call ZKB_fnc_InventoryOpenedEH;}];
 
 call ZKB_fnc_ClearGear;
@@ -27,6 +29,29 @@ switch (playerSide) do
 			}
 			else
 			{
+			if (SETTING(getNumber,"ZKB_StatSaveEnabled") isEqualTo 1) exitWith
+				{
+				[format ["stats_%1_%2",getPlayerUID player,playerSide]] remoteExecCall ["ZKB_fnc_ServerLoadPlayerStats",2,false];
+
+				waitUntil {!(isNil {missionNamespace getVariable format ["stats_%1_%2",getPlayerUID player,playerSide]})};
+				
+				if ((missionNamespace getVariable [format ["stats_%1_%2",getPlayerUID player,playerSide],[]]) isEqualTo []) then
+					{
+					player setUnitLoadout [ZKB_RespawnLoadOut,true];
+					}
+					else
+					{
+					call ZKB_fnc_LoadPlayer;
+					private _keys = player getVariable ["ZKB_Keys",[]];
+					{
+					if (((_x getVariable ["VehicleOwner",""]) isEqualTo (getPlayerUID player)) and ((_x getVariable ["plate",""]) find "Cop" > -1))then
+						{
+						_keys pushBack _x;
+						};
+					}forEach (nearestObjects [getArray(configFile >> "CfgWorlds" >> worldName >> "centerPosition"),["motorcycle","Car","Tank","Ship","Air"],(getNumber (configFile >> "CfgWorlds" >> worldName >> "MapSize"))]);
+					player setVariable ["ZKB_Keys",_keys,true];
+					};
+				};
 			player setUnitLoadout [ZKB_RespawnLoadOut,true];
 			};
 		};
@@ -39,47 +64,67 @@ switch (playerSide) do
 			}
 			else
 			{
-			private _startHeadGear = 
-				[
-				"CUP_H_TKI_Lungee_Open_01",
-				"CUP_H_TKI_Lungee_Open_02",
-				"CUP_H_TKI_Lungee_Open_03",
-				"CUP_H_TKI_Lungee_Open_04",
-				"CUP_H_TKI_Lungee_Open_05",
-				"CUP_H_TKI_Lungee_Open_06",
-				"CUP_H_TKI_Lungee_01",
-				"CUP_H_TKI_Lungee_02",
-				"CUP_H_TKI_Lungee_03",
-				"CUP_H_TKI_Lungee_04",
-				"CUP_H_TKI_Lungee_05",
-				"CUP_H_TKI_Lungee_06",
-				"CUP_H_TKI_Pakol_1_01",
-				"CUP_H_TKI_Pakol_2_04",
-				"CUP_H_TKI_Pakol_2_05",
-				"CUP_H_TKI_Pakol_2_06"
-				];
-			private _startUniforms = 
-				[
-				"CUP_O_TKI_Khet_Jeans_04",
-				"CUP_O_TKI_Khet_Jeans_02",
-				"CUP_O_TKI_Khet_Jeans_01",
-				"CUP_O_TKI_Khet_Jeans_03",
-				"CUP_O_TKI_Khet_Partug_04",
-				"CUP_O_TKI_Khet_Partug_02",
-				"CUP_O_TKI_Khet_Partug_01",
-				"CUP_O_TKI_Khet_Partug_07",
-				"CUP_O_TKI_Khet_Partug_08",
-				"CUP_O_TKI_Khet_Partug_05",
-				"CUP_O_TKI_Khet_Partug_06"
-				];
+			if (SETTING(getNumber,"ZKB_StatSaveEnabled") isEqualTo 1) then
+				{
+				[format ["stats_%1_%2",getPlayerUID player,playerSide]] remoteExecCall ["ZKB_fnc_ServerLoadPlayerStats",2,false];
+
+				waitUntil {!(isNil {missionNamespace getVariable format ["stats_%1_%2",getPlayerUID player,playerSide]})};
 				
-			player addHeadgear (selectRandom _startHeadGear);
-			player forceAddUniform (selectRandom _startUniforms);
-			{
-			player addWeapon _x;
-			}forEach ["ItemMap","ItemWatch","ItemCompass","ItemRadio"];
-				
-			ZKB_RespawnLoadOut = getUnitLoadout player;
+				if ((missionNamespace getVariable [format ["stats_%1_%2",getPlayerUID player,playerSide],[]]) isEqualTo []) then
+					{
+					if (count SETTING(getArray,"ZKB_StartingHeadGear") > 0) then
+						{
+						player addHeadgear (selectRandom SETTING(getArray,"ZKB_StartingHeadGear"));
+						};
+						
+					if (count SETTING(getArray,"ZKB_StartingUniforms") > 0) then
+						{
+						player forceAddUniform (selectRandom SETTING(getArray,"ZKB_StartingUniforms"));
+						};
+						
+					if (count SETTING(getArray,"ZKB_StartingGear") > 0) then
+						{
+						{
+						player addWeapon _x;
+						}forEach SETTING(getArray,"ZKB_StartingGear");
+						};
+						
+					ZKB_RespawnLoadOut = getUnitLoadout player;
+					}
+					else
+					{
+					call ZKB_fnc_LoadPlayer;
+					private _keys = player getVariable ["ZKB_Keys",[]];
+					{
+					if (((_x getVariable ["VehicleOwner",""]) isEqualTo (getPlayerUID player)) and ((_x getVariable ["plate",""]) find "Civ" > -1))then
+						{
+						_keys pushBack _x;
+						};
+					}forEach (nearestObjects [getArray(configFile >> "CfgWorlds" >> worldName >> "centerPosition"),["motorcycle","Car","Tank","Ship","Air"],(getNumber (configFile >> "CfgWorlds" >> worldName >> "MapSize"))]);
+					player setVariable ["ZKB_Keys",_keys,true];
+					};
+				}
+				else
+				{
+				if (count SETTING(getArray,"ZKB_StartingHeadGear") > 0) then
+					{
+					player addHeadgear (selectRandom SETTING(getArray,"ZKB_StartingHeadGear"));
+					};
+					
+				if (count SETTING(getArray,"ZKB_StartingUniforms") > 0) then
+					{
+					player forceAddUniform (selectRandom SETTING(getArray,"ZKB_StartingUniforms"));
+					};
+					
+				if (count SETTING(getArray,"ZKB_StartingGear") > 0) then
+					{
+					{
+					player addWeapon _x;
+					}forEach SETTING(getArray,"ZKB_StartingGear");
+					};
+					
+				ZKB_RespawnLoadOut = getUnitLoadout player;
+				};
 			};
 		};
 	};
@@ -121,7 +166,7 @@ call ZKB_fnc_OpenWelcomeMenu;
 reverse ZKB_Rules;
 player createDiarySubject ["serverRules",localize "STR_MainMenu_MapTabServerRules"];
 {
-ZKB_DiaryRules = player createDiaryRecord ["serverRules", _x];
+player createDiaryRecord ["serverRules", _x];
 }forEach ZKB_Rules;
 
 if !(player diarySubjectExists "locations") then

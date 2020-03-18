@@ -46,7 +46,7 @@ if (isDedicated) exitWith {};
 
 if (playerSide isEqualTo civilian) then
 	{
-	_hostage addAction [localize "STR_Hostage_TakeHostage",{[(_this select 0),player] remoteExec ["ZKB_fnc_TakeHostageLoop",2,false]; [player,"Taking a Hostage",100000] call ZKB_fnc_AddWanted;},"",1,true,true,"",'(currentWeapon player != "") and !(_target getVariable ["activeHostage",false]) and !(missionNamespace getVariable ["hostageMissionActive",false]) and ((_target getVariable ["lastHostage",0]) < serverTime)',6];
+	_hostage addAction [localize "STR_Hostage_TakeHostage",{if (playersNumber west < (getNumber (missionConfigFile >> "ZKB_Settings" >> "ZKB_HostageReqCops"))) exitWith {["STR_Robbing_RequiredCops",[(getNumber (missionConfigFile >> "ZKB_Settings" >> "ZKB_HostageReqCops"))]] call ZKB_fnc_DynamicText;}; [(_this select 0),player] remoteExec ["ZKB_fnc_TakeHostageLoop",2,false]; [player,"Taking a Hostage",100000] call ZKB_fnc_AddWanted;},"",1,true,true,"",'(currentWeapon player != "") and ((playersNumber west) >= 5) and !(_target getVariable ["activeHostage",false]) and !(missionNamespace getVariable ["hostageMissionActive",false]) and ((_target getVariable ["lastHostage",0]) < serverTime)',6];
 	};
 if (playerSide isEqualTo west) then
 	{

@@ -5,7 +5,7 @@
 	Function: ZKB_fnc_AddActions
 	Description: Adds needed addActions to the player
 */
-player addAction [localize "STR_ItemMisc_PickUpSpikestrip", {if (["SpikeStrip", 1] call ZKB_fnc_InvAddItem) then {deleteVehicle ((nearestObjects [player,["Land_Razorwire_F"],5]) select 0);};}, "", 1, true, true, "", "_spike = ((nearestObjects [player,[""Land_Razorwire_F""],6]) select 0); !(isNil ""_spike"") and ((damage _spike) == 1)"];
+player addAction [localize "STR_ItemMisc_PickUpSpikestrip", {if (["SpikeStrip", 1] call ZKB_fnc_InvAddItem) then {deleteVehicle ((nearestObjects [player,["Land_Razorwire_F"],6]) select 0);};}, "", 1, true, true, "", "_spike = ((nearestObjects [player,[""Land_Razorwire_F""],6]) select 0); !(isNil ""_spike"") and ((damage _spike) == 1)"];
 
 if (IsCiv) then
 	{

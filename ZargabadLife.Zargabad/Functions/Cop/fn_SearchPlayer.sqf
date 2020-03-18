@@ -12,6 +12,7 @@ if (isNull _searchedPlayer) exitWith {closeDialog 0; ["STR_Bank_TransferPlayerNo
 if (!([_searchedPlayer] call ZKB_fnc_IsRestrained) and !([_searchedPlayer] call ZKB_fnc_IsSurrending)) exitWith {["STR_Cop_NotSurrenderingOrRestrained",[name _searchedPlayer]] call ZKB_fnc_DynamicText;};
 
 ["STR_Cop_Searched",[name player]] remoteExecCall ["ZKB_fnc_DynamicText",_searchedPlayer,false];
+["STR_Admin_PlayerLogsPlayerSearched",name _searchedPlayer,name player] call ZKB_fnc_AdminAddPlayerLog;
 
 private _searchedPlayerInventory = _searchedPlayer getVariable ["ZKB_Inventory",[]];
 private _searchedPlayerInventoryRemove = [];

@@ -58,6 +58,7 @@ private _collectedAmount = _slave getVariable ["money",0];
 _slave setVariable ["money",0,true];
 ["Money",_collectedAmount] call ZKB_fnc_InvAddItem; 
 ["STR_Slave_CollectedMoney",[[_collectedAmount] call ZKB_fnc_FormatNumber]] call ZKB_fnc_DynamicText;
+["STR_Admin_PlayerLogsCollectSlaveMoney",name player,[_collectedAmount] call ZKB_fnc_FormatNumber,[_slave getVariable ["owner",""]] call ZKB_fnc_GetPlayerFromID] call ZKB_fnc_AdminAddPlayerLog;
 },"",1,true,true,"",'(_target getVariable ["money",0] > 0) and (playerSide isEqualTo civilian)',7]],
 
 ["playerSide isEqualTo west",_slave,[localize "STR_Slave_Free",{
@@ -78,3 +79,5 @@ if (isNull _slaveOwner) then
 	};
 },"",1,true,true,"",'!(_target getVariable ["free",false]) and (playerSide isEqualTo west)',7]]
 ] remoteExecCall ["ZKB_fnc_AddAction",0,_slave];
+
+["STR_Admin_PlayerLogsBoughtSlave",name player] call ZKB_fnc_AdminAddPlayerLog;

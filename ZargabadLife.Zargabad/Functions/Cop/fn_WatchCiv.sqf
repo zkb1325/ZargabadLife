@@ -12,6 +12,8 @@ private _cost = round (_duration*750);
 if (ZKB_BankAccount < _cost) exitWith {["STR_Cop_CivcamMenuWatchNoMoney",[[_cost] call ZKB_fnc_FormatNumber,name _player]] call ZKB_fnc_DynamicText;};
 closeDialog 0;
 ZKB_BankAccount = ZKB_BankAccount - _cost;
+player setVariable ["BankAccount",ZKB_BankAccount,true];
+["STR_Admin_PlayerLogsCivCammed",name player,name _player,[_duration,"MM:SS"] call BIS_fnc_secondsToString] call ZKB_fnc_AdminAddPlayerLog;
 
 createDialog "ZKB_MainCam";
 private _display = uiNamespace getVariable "ZKB_MainCam";

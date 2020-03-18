@@ -12,3 +12,4 @@ if !(_player getVariable ["InJail",false]) exitWith {["STR_Cop_WantedMenuSetFree
 
 _player setVariable ["InJail",false,true];
 ["STR_Cop_WantedMenuSetFreeBy",[name _player,name player]] remoteExecCall ["ZKB_fnc_DynamicText",0,false];
+["STR_Admin_PlayerLogsFreedPlayer",name player,name _player] call ZKB_fnc_AdminAddPlayerLog;

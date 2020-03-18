@@ -22,7 +22,9 @@ if (_selectedPlayerUID isEqualTo getPlayerUID player) exitWith
 
 	["Money",_transferAmount] call ZKB_fnc_InvRemoveItem;
 	ZKB_BankAccount = ZKB_BankAccount + _transferAmount;
+	player setVariable ["BankAccount",ZKB_BankAccount,true];
 	["STR_Bank_Deposited", [[_transferAmount] call ZKB_fnc_FormatNumber]] call ZKB_fnc_DynamicText;
+	["STR_Admin_PlayerLogsDepositBank",name player,[_transferAmount] call ZKB_fnc_FormatNumber] call ZKB_fnc_AdminAddPlayerLog;
 	};
 	
 private _selectedAccountUnit = [_selectedPlayerUID] call ZKB_fnc_GetPlayerFromID;
@@ -32,8 +34,10 @@ private _transferTax = (_transferAmount * ((ZKB_TaxArray select 4)/100));
 if (ZKB_BankAccount < (_transferAmount + _transferTax)) exitWith {["STR_Bank_TransferNotEnough", [[_transferAmount] call ZKB_fnc_FormatNumber, name _selectedAccountUnit,[_transferTax] call ZKB_fnc_FormatNumber]] call ZKB_fnc_DynamicText;};
 
 ZKB_BankAccount = ZKB_BankAccount - (_transferAmount + _transferTax);
+player setVariable ["BankAccount",ZKB_BankAccount,true];
 [_transferAmount,name player] remoteExecCall ["ZKB_fnc_TransferBank",_selectedAccountUnit,false];
 ["STR_Bank_Transferred", [[_transferAmount] call ZKB_fnc_FormatNumber, name _selectedAccountUnit,[_transferTax] call ZKB_fnc_FormatNumber]] call ZKB_fnc_DynamicText;
-call ZKB_fnc_SavePlayer;
+["STR_Admin_PlayerLogsTransferedBank",name player,[_transferAmount] call ZKB_fnc_FormatNumber,name _selectedAccountUnit] call ZKB_fnc_AdminAddPlayerLog;
+[] spawn ZKB_fnc_SavePlayer;
 
 

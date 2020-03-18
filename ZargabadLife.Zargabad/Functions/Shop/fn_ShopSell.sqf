@@ -59,6 +59,7 @@ switch _soldtype do
 				ZKB_shopobject setVariable ["soldDrugs",_soldDrugArray,true];
 				};
 			};
+		["STR_Admin_PlayerLogsSoldItem",name player,[_soldamount] call ZKB_fnc_FormatNumber,[_soldItem] call ZKB_fnc_GetItemName,[(_soldItemPrice*_soldamount)] call ZKB_fnc_FormatNumber] call ZKB_fnc_AdminAddPlayerLog;
 		};
 	case "CfgVehicles":
 		{
@@ -68,7 +69,7 @@ switch _soldtype do
 					}forEach ZKB_TempSellVehList;
 		if (isNull _vehtosell) exitWith {["STR_Shop_VehSellToFar"] call ZKB_fnc_DynamicText;};
 		if !(alive _vehtosell) exitWith {["STR_Shop_VehSellDestroyed"] call ZKB_fnc_DynamicText;};
-		
+		if !(isNil {_vehtosell getVariable "VehicleUniqueID"}) then {[_vehtosell getVariable "VehicleUniqueID"] remoteExecCall ["ZKB_fnc_ServerDeleteVehicle",2,false];};
 		["STR_Shop_SellVeh", [([_soldItem] call ZKB_fnc_GetItemName), _vehtosell getVariable ["plate",_vehtosell], ([(_soldItemPrice*_soldamount)] call ZKB_fnc_FormatNumber)]] call ZKB_fnc_DynamicText;
 		deleteVehicle _vehtosell;
 		["Money", (_soldItemPrice*_soldamount)] call ZKB_fnc_InvAddItem;
@@ -76,6 +77,7 @@ switch _soldtype do
 		closeDialog 0;
 		_keys = player getVariable ["ZKB_Keys", []];
 		player setVariable ["ZKB_Keys", (_keys - [objNull]), true];
+		["STR_Admin_PlayerLogsSoldItem",name player,[_soldamount] call ZKB_fnc_FormatNumber,[_soldItem] call ZKB_fnc_GetItemName,[(_soldItemPrice*_soldamount)] call ZKB_fnc_FormatNumber] call ZKB_fnc_AdminAddPlayerLog;
 		};
 	default
 		{
@@ -181,7 +183,8 @@ switch _soldtype do
 	
 		["Money", (_soldItemPrice*_soldamount)] call ZKB_fnc_InvAddItem;
 		["STR_Shop_SellItem", [([_soldamount] call ZKB_fnc_FormatNumber), ([_soldItem] call ZKB_fnc_GetItemName), ([(_soldItemPrice*_soldamount)] call ZKB_fnc_FormatNumber)]] call ZKB_fnc_DynamicText;
-		if !(_solditemstock <= -1) then {[ZKB_shopobject, _soldItemIndex, _soldamount, true] call ZKB_fnc_UpdateShopStock;};	
+		if !(_solditemstock <= -1) then {[ZKB_shopobject, _soldItemIndex, _soldamount, true] call ZKB_fnc_UpdateShopStock;};
+		["STR_Admin_PlayerLogsSoldItem",name player,[_soldamount] call ZKB_fnc_FormatNumber,[_soldItem] call ZKB_fnc_GetItemName,[(_soldItemPrice*_soldamount)] call ZKB_fnc_FormatNumber] call ZKB_fnc_AdminAddPlayerLog;
 		};
 	};
 

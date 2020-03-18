@@ -17,5 +17,6 @@ if ((ZKB_BankAccount + _transferAmount) > SETTING(getNumber,"ZKB_MaxBankAccount"
 	};
 
 ZKB_BankAccount = ZKB_BankAccount + _transferAmount;
+player setVariable ["BankAccount",ZKB_BankAccount,true];
 ["STR_Bank_TransferredRecieve", [_transferOwnerName, [_transferAmount] call ZKB_fnc_FormatNumber]] call ZKB_fnc_DynamicText;
-call ZKB_fnc_SavePlayer;
+[] spawn ZKB_fnc_SavePlayer;

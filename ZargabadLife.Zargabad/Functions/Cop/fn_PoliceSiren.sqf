@@ -36,13 +36,13 @@ if (_activate) then
 					if (speed _veh > 40) then
 						{
 
-						_veh say3D "Siren_Long";
+						_veh say3D ["Siren_Long",1000];
 						//sleep _longDur;
 						_sleeptime = time + _longDur;
 						} 
 						else 
 						{
-						_veh say3D "Siren_Short";
+						_veh say3D ["Siren_Short",800];
 						//sleep _shortDur;
 						_sleeptime = time + _shortDur;
 						};

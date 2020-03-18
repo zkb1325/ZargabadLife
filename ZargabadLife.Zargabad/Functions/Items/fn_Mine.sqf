@@ -62,6 +62,7 @@ switch _item do
 			
 			[_mineditem, _minedamount] call ZKB_fnc_InvAddItem;
 			["STR_ItemMisc_JustMined", [_minedamount, [_mineditem] call ZKB_fnc_GetItemName]] call ZKB_fnc_DynamicText;
+			["STR_Admin_PlayerLogsPlayerGatherdResource",name player,[_minedamount] call ZKB_fnc_FormatNumber,[_mineditem] call ZKB_fnc_GetItemName] call ZKB_fnc_AdminAddPlayerLog;
 			
 			ZKB_ShovelDur = ZKB_ShovelDur - floor (random 2);
 			if (ZKB_ShovelDur <=0) then
@@ -104,6 +105,7 @@ switch _item do
 			
 			[_mineditem, _minedamount] call ZKB_fnc_InvAddItem;
 			["STR_ItemMisc_JustMined", [_minedamount, [_mineditem] call ZKB_fnc_GetItemName]] call ZKB_fnc_DynamicText;
+			["STR_Admin_PlayerLogsPlayerGatherdResource",name player,[_minedamount] call ZKB_fnc_FormatNumber,[_mineditem] call ZKB_fnc_GetItemName] call ZKB_fnc_AdminAddPlayerLog;
 			
 			ZKB_PickaxeDur = ZKB_PickaxeDur - floor (random 2);
 			if (ZKB_PickaxeDur <=0) then
@@ -139,6 +141,7 @@ switch _item do
 			
 			[_mineditem, _minedamount] call ZKB_fnc_InvAddItem;
 			["STR_ItemMisc_JustMined", [_minedamount, [_mineditem] call ZKB_fnc_GetItemName]] call ZKB_fnc_DynamicText;
+			["STR_Admin_PlayerLogsPlayerGatherdResource",name player,[_minedamount] call ZKB_fnc_FormatNumber,[_mineditem] call ZKB_fnc_GetItemName] call ZKB_fnc_AdminAddPlayerLog;
 			
 			ZKB_JackhammerDur = ZKB_JackhammerDur - floor (random 2);
 			if (ZKB_JackhammerDur <=0) then
@@ -157,6 +160,7 @@ switch _item do
 			
 			[_mineditem, _minedamount] call ZKB_fnc_InvAddItem;
 			["STR_ItemMisc_JustMined", [_minedamount, [_mineditem] call ZKB_fnc_GetItemName]] call ZKB_fnc_DynamicText;
+			["STR_Admin_PlayerLogsPlayerGatherdResource",name player,[_minedamount] call ZKB_fnc_FormatNumber,[_mineditem] call ZKB_fnc_GetItemName] call ZKB_fnc_AdminAddPlayerLog;
 			
 			ZKB_JackhammerDur = ZKB_JackhammerDur - floor (random 2);
 			if (ZKB_JackhammerDur <=0) then
@@ -175,6 +179,7 @@ switch _item do
 			
 			[_mineditem, _minedamount] call ZKB_fnc_InvAddItem;
 			["STR_ItemMisc_JustMined", [_minedamount, [_mineditem] call ZKB_fnc_GetItemName]] call ZKB_fnc_DynamicText;
+			["STR_Admin_PlayerLogsPlayerGatherdResource",name player,[_minedamount] call ZKB_fnc_FormatNumber,[_mineditem] call ZKB_fnc_GetItemName] call ZKB_fnc_AdminAddPlayerLog;
 			
 			ZKB_JackhammerDur = ZKB_JackhammerDur - floor (random 2);
 			if (ZKB_JackhammerDur <=0) then

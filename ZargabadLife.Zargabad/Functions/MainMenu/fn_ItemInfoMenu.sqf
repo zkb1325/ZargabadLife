@@ -10,7 +10,7 @@ createDialog "ZKB_ItemInfo";
 private _display = uiNamespace getVariable "ZKB_ItemInfo";
 private _spawnBtnCtrl = _display displayCtrl 6031;
 
-if (!(serverCommandAvailable "#lock") and !((getPlayerUID player) in (getArray (missionConfigFile >> "enableDebugConsole")))) then
+if !((getPlayerUID player) in (getArray (missionConfigFile >> "enableDebugConsole"))) then
 	{
 	_spawnBtnCtrl ctrlShow false;
 	};

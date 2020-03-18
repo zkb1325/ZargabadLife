@@ -12,14 +12,14 @@ if ([player] call ZKB_fnc_IsRestrained) exitWith {true;};
 if ([player] call ZKB_fnc_IsSurrending) exitWith {true;};
 if ([player] call ZKB_fnc_IsKnockedOut) exitWith {true;};
 
-if ((isPlayer cursorObject) and IsCop and (side cursorObject isEqualTo civilian) and (player distance cursorObject < 3)) exitWith
+if ((isPlayer cursorObject) and IsCop and (side cursorObject isEqualTo civilian) and (player distance cursorObject < 3) and (cursorObject isKindOf "MAN")) exitWith
 	{
 	if (dialog) then {closeDialog 0;};
 	[cursorObject] spawn ZKB_fnc_CivInteractionMenu;
 	true;
 	};
 	
-if ((isPlayer cursorObject) and IsCiv and (player distance cursorObject < 3)) exitWith
+if ((isPlayer cursorObject) and IsCiv and (player distance cursorObject < 3) and (cursorObject isKindOf "MAN")) exitWith
 	{
 	if (dialog) then {closeDialog 0;};
 	[cursorObject] spawn ZKB_fnc_InteractionMenu;
@@ -36,7 +36,7 @@ if ((vehicle player == player) and ((locked cursorObject) == 0) and (!isNil {cur
 	true;
 	};
 	
-if (!(vehicle player == player)) exitWith 
+if (!(vehicle player == player) and (((getPosATL (vehicle player) select 2) < 5) or ((getPosASL (vehicle player) select 2) < 3))) exitWith
 	{
 	_vcl = (vehicle player);
 	if((locked _vcl) == 2) exitwith {["STR_Common_VehIsLocked"] call ZKB_fnc_DynamicText; true;};

@@ -18,6 +18,21 @@ while {!isNull _display} do
 {
 _info = "";
 _info = _info + "<t size='1.2'>";
+if (SETTING(getNumber,"ZKB_StatSaveEnabled") isEqualTo 1) then
+	{
+	private _statWipeDate = [(ZKB_ServerStartTime select 0),(ZKB_ServerStartTime select 1),(ZKB_ServerStartTime select 2),(ZKB_ServerStartTime select 3),(ZKB_ServerStartTime select 4)+(serverTime/60)] call BIS_fnc_fixDate;
+	if ([_statWipeDate,ZKB_NextStatWipe] call ZKB_fnc_CompareMinute) then
+		{
+		_info = _info + localize "STR_MainMenu_ServerNextStatWipeOnRestart";
+		_info = _info + "<br/>";
+		}
+		else
+		{
+		private _statWipeIn = [ZKB_NextStatWipe,_statWipeDate] call ZKB_fnc_SubtractDate;
+		_info = _info + format [localize "STR_MainMenu_ServerNextStatWipeIn",(_statwipein select 0),(_statwipein select 1),(_statwipein select 2),(_statwipein select 3),(_statwipein select 4)];
+		_info = _info + "<br/>";
+		};
+	};
 _info = _info + format [localize "STR_MainMenu_InfoDate",(date select 2),(date select 1),(date select 0)];
 _info = _info + "<br/>";
 _info = _info + format [localize "STR_MainMenu_InfoUptime",[serverTime,"HH:MM:SS"] call BIS_fnc_secondsToString];
@@ -255,7 +270,7 @@ if (([_x] call ZKB_fnc_IsWanted) and !(_x getVariable ["InJail",false])) then
 			_crimes = _crimes + format ["(%1x) %2<br/>",{_x isEqualTo _crime}count _crimeArray,_crime];
 		};
 	}forEach _crimeArray;
-	_wantedText = _wantedText + format [localize "STR_Cop_WantedListWanted",_x,name _x,((_x getVariable ["warrants",[]]) select 1)];
+	_wantedText = _wantedText + format [localize "STR_Cop_WantedListWanted",_x,name _x,[((_x getVariable ["warrants",[]]) select 1)] call ZKB_fnc_FormatNumber];
 	_wantedText = _wantedText + "<br/>" + _crimes + "<br/>";
 	};
 }forEach _civs;

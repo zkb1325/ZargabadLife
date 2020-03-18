@@ -34,14 +34,16 @@ switch _itemtype do
 	case "VirtualItem":
 		{
 		[ZKB_OpenFactory,"Remove",_item,1] call ZKB_fnc_UpdateFacStorageCompleted;
-		[ZKB_OpenFactory, "Add", [_item, 1], 1, true] call ZKB_fnc_UpdateFacStorage;
+		[missionNameSpace,(_facarray select 6)+"Storage",_item,1] call ZKB_fnc_DualInvAddItem;
 		["STR_Fac_CreatedItem",[([_item] call ZKB_fnc_GetItemName)]] call ZKB_fnc_DynamicText;
 		};	
 	case "CfgVehicles":
 		{
 		private _vehspawnpoint = (_facarray select 4);
 		if (isNull _vehspawnpoint) exitWith {};
-		if(count (nearestobjects [getpos _vehspawnpoint,["motorcycle","Car","Tank","Ship","Air"], 3]) > 0) exitwith {["STR_Shop_VehSpawnBlocked"] call ZKB_fnc_DynamicText;};
+		private _impounded = false;
+		if (count (nearestobjects [getpos _vehspawnpoint,["motorcycle","Car","Tank","Ship","Air"], 3]) > 0) then {_impounded = [(nearestobjects [getpos _vehspawnpoint,["motorcycle","Car","Tank","Ship","Air"], 3]) # 0,true] call ZKB_fnc_Impound;};
+		if ((count (nearestobjects [getpos _vehspawnpoint,["motorcycle","Car","Tank","Ship","Air"], 3]) > 0) and !_impounded) exitWith {["STR_Shop_VehSpawnBlocked"] call ZKB_fnc_DynamicText;};
 		[ZKB_OpenFactory,"Remove",_item,1] call ZKB_fnc_UpdateFacStorageCompleted;
 		[_itemClass,_vehspawnpoint,-1,player] spawn ZKB_fnc_CreateVehicle;
 		closeDialog 0;

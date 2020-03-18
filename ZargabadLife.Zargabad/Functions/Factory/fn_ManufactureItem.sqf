@@ -36,17 +36,16 @@ _reqitem = _x;
 if !(_hasreqitem isEqualTo (count _requiredresources)) exitWith {["STR_Fac_ManufactureNoResource"] call ZKB_fnc_DynamicText;};
 
 {
-[ZKB_OpenFactory, "Remove", [(_x select 0), (_x select 1)], (_x select 1), true] call ZKB_fnc_UpdateFacStorage;
+[missionNameSpace,(_facarray select 6)+"Storage",(_x select 0),(_x select 1)] call ZKB_fnc_DualInvRemoveItem;
 }forEach _requiredresources;
 
 _factoryqueue = missionNameSpace getVariable [(_facarray select 6)+"Queue", []];
-_manutime = round(((([_item] call ZKB_fnc_GetItemBuyPrice)*.02)/_workers)/1.5) max 5;	
+_manutime = round(((([_item] call ZKB_fnc_GetItemBuyPrice)*.02)/_workers)/1.5) max 1;	
 
 _factoryqueue pushBack [_item,_manutime];
 missionNameSpace setVariable [(_facarray select 6)+"Queue", _factoryqueue];
 
 ["STR_Fac_ManufactureQueueAdd", [([_item] call ZKB_fnc_GetItemName)]] call ZKB_fnc_DynamicText;
-call ZKB_fnc_SavePlayer;
 	
 	
 	

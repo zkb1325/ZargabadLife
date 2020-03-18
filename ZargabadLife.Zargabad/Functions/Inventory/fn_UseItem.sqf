@@ -6,6 +6,7 @@
 	Passes to the item function ["Use", "Item", InventoryAmount, AmountUsed]
 	Use: So you can use the same function for multiple things IE. If ((_this select 0) == "Use") then {}; ZKB_fnc_food uses this
 */
+if (([player] call ZKB_fnc_IsRestrained) or ([player] call ZKB_fnc_IsSurrending) or ([player] call ZKB_fnc_IsKnockedOut)) exitWith {["STR_Common_CantUseDetained"] call ZKB_fnc_DynamicText; false;};
 private _itemarr = param [0,"",["",[]]];
 if (typeName _itemarr isEqualTo typeName "") then
 	{
@@ -31,4 +32,5 @@ _function = [_item] call ZKB_fnc_GetItemFunction;
 if !(typeName _function == "CODE") exitWith {["STR_Inv_NoUse", [[_item] call ZKB_fnc_GetItemName]] call ZKB_fnc_DynamicText; false;};
 closeDialog 0;
 ["Use", _item, _iteminvamount, _amountused] spawn _function;
+["STR_Admin_PlayerLogsUseItem",name player,[_amountused] call ZKB_fnc_FormatNumber,[_item] call ZKB_fnc_GetItemName] call ZKB_fnc_AdminAddPlayerLog;
 true;

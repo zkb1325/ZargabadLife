@@ -8,3 +8,4 @@
 private _convoyReward = SETTING(getNumber,"ZKB_VipReward");
 ["STR_Assassin_CopReward",[[_convoyReward] call ZKB_fnc_FormatNumber]] call ZKB_fnc_DynamicText;
 ZKB_BankAccount = (ZKB_BankAccount + _convoyReward) min SETTING(getNumber,"ZKB_MaxBankAccount");
+player setVariable ["BankAccount",ZKB_BankAccount,true];

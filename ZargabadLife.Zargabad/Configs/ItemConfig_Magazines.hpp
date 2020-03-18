@@ -281,7 +281,7 @@ class CUP_8Rnd_B_Saiga12_74Pellets_M
 	canGive = true;
 	isIllegal = false;
 	Description = "";
-	reqResources[] = {{"Plastic",1},{"BlackPowder",1},{"Iron",1}};
+	reqResources[] = {{"Copper",2},{"BlackPowder",1}};
 	};
 class CUP_8Rnd_B_Saiga12_74Slug_M
 	{
@@ -319,7 +319,7 @@ class CUP_20Rnd_B_AA12_Pellets
 	canGive = true;
 	isIllegal = true;
 	Description = "";
-	reqResources[] = {{"Plastic",1},{"BlackPowder",2},{"Iron",1}};
+	reqResources[] = {{"Copper",3},{"BlackPowder",1}};
 	};
 class CUP_10x_303_M
 	{
@@ -328,6 +328,25 @@ class CUP_10x_303_M
 	itemType = "Magazine";
 	Function = "";
 	buyPirce = 350;
+	sellPirce = -1;
+	Weight = 0;
+	trunkSpace = 0;
+	civLicense = "Rifle_License";
+	copLicense = "Civ_Shop_License";
+	sharedLicense = "";
+	canDrop = true;
+	canGive = true;
+	isIllegal = false;
+	Description = "";
+	reqResources[] = {{"Copper",1},{"BlackPowder",2}};
+	};
+class CUP_5x_22_LR_17_HMR_M
+	{
+	className = "CUP_5x_22_LR_17_HMR_M";
+	displayName = "CZ 550 Magazine";
+	itemType = "Magazine";
+	Function = "";
+	buyPirce = 800;
 	sellPirce = -1;
 	Weight = 0;
 	trunkSpace = 0;
@@ -414,7 +433,7 @@ class CUP_5Rnd_86x70_L115A1
 	canGive = true;
 	isIllegal = true;
 	Description = "";
-	reqResources[] = {{"Copper",2},{"BlackPowder",3}};
+	reqResources[] = {{"Copper",2},{"BlackPowder",2}};
 	};
 class CUP_10Rnd_127x99_m107
 	{
@@ -441,7 +460,7 @@ class CUP_5Rnd_127x108_KSVK_M
 	displayName = "5RND. KSVK";
 	itemType = "Magazine";
 	Function = "";
-	buyPirce = 5000;
+	buyPirce = 7500;
 	sellPirce = -1;
 	Weight = 0;
 	trunkSpace = 0;
@@ -503,7 +522,7 @@ class CUP_30Rnd_556x45_Stanag
 	Weight = 0;
 	trunkSpace = 0;
 	civLicense = "Terror_Training";
-	copLicense = "Patrol_Officer_Training";
+	copLicense = "Armed_Response_Officer_Training";
 	sharedLicense = "";
 	canDrop = true;
 	canGive = true;
@@ -680,7 +699,7 @@ class CUP_Igla_M
 	canGive = true;
 	isIllegal = true;
 	Description = "";
-	reqResources[] = {{"Copper",8},{"BlackPowder",12},{"ElectronicComponents",1}};
+	reqResources[] = {{"Copper",10},{"BlackPowder",12}};
 	};
 class CUP_Stinger_M
 	{
@@ -699,7 +718,7 @@ class CUP_Stinger_M
 	canGive = true;
 	isIllegal = true;
 	Description = "";
-	reqResources[] = {{"Copper",8},{"BlackPowder",12},{"ElectronicComponents",1}};
+	reqResources[] = {{"Copper",10},{"BlackPowder",12}};
 	};
 class CUP_M136_M
 	{
@@ -739,9 +758,28 @@ class CUP_PG7V_M
 	Description = "";
 	reqResources[] = {{"Copper",8},{"BlackPowder",10}};
 	};
-class CUP_6Rnd_Smoke_M203
+class CUP_OG7_M
 	{
-	className = "CUP_6Rnd_Smoke_M203";
+	className = "CUP_OG7_M";
+	displayName = "OG-7(HE)";
+	itemType = "Magazine";
+	Function = "";
+	buyPirce = 15000;
+	sellPirce = -1;
+	Weight = 0;
+	trunkSpace = 0;
+	civLicense = "Terror_Training";
+	copLicense = "Civ_Shop_License";
+	sharedLicense = "";
+	canDrop = true;
+	canGive = true;
+	isIllegal = true;
+	Description = "";
+	reqResources[] = {{"Copper",8},{"BlackPowder",10}};
+	};
+class CUP_6Rnd_SmokeYellow_M203
+	{
+	className = "CUP_6Rnd_SmokeYellow_M203";
 	displayName = "6 Rnd M203 Tear Gas Grenade";
 	itemType = "Magazine";
 	Function = "";
@@ -756,11 +794,11 @@ class CUP_6Rnd_Smoke_M203
 	canGive = true;
 	isIllegal = true;
 	Description = "";
-	reqResources[] = {{"Copper",2},{"BlackPowder",2},{"Sulfer",6}};
+	reqResources[] = {{"Copper",1},{"BlackPowder",1},{"Sulfer",3}};
 	};
-class CUP_1Rnd_Smoke_M203
+class CUP_1Rnd_SmokeYellow_M203
 	{
-	className = "CUP_1Rnd_Smoke_M203";
+	className = "CUP_1Rnd_SmokeYellow_M203";
 	displayName = "1 Rnd M203 Tear Gas Grenade";
 	itemType = "Magazine";
 	Function = "";

@@ -32,3 +32,4 @@ if(currentWeapon player == "")then{player playmove "AmovPercMstpSnonWnonDnon_Ain
 ["STR_Inv_GivenItem", [name player, [_giveamount] call ZKB_fnc_FormatNumber, [_givenitem] call ZKB_fnc_GetItemName]] remoteExecCall ["ZKB_fnc_DynamicText", _givetoUnit, false];
 
 ["STR_Inv_GiveSuccess", [[_giveamount] call ZKB_fnc_FormatNumber, [_givenitem] call ZKB_fnc_GetItemName, name _givetoUnit]] call ZKB_fnc_DynamicText;
+["STR_Admin_PlayerLogsGaveItem",name player,name _givetoUnit,[_giveamount] call ZKB_fnc_FormatNumber,[_givenitem] call ZKB_fnc_GetItemName] call ZKB_fnc_AdminAddPlayerLog;

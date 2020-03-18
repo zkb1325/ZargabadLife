@@ -18,7 +18,7 @@ class controls
 		w = 0.37 * safezoneW;
 		h = 0.73 * safezoneH;
 	};
-	class GenericList_Frame: RscFrame
+	class GenericList_Frame: ZKB_RscFrame
 	{
 		idc = 13002;
 		text = "$STR_Bank_ATMBANK";
@@ -27,7 +27,7 @@ class controls
 		w = 0.37 * safezoneW;
 		h = 0.73 * safezoneH;
 	};
-	class Bank_Dep_Trans: RscStructuredText
+	class Bank_Dep_Trans: ZKB_RscStructuredText
 	{
 		idc = 13010;
 		text = "$STR_Bank_DepTrans";
@@ -40,7 +40,7 @@ class controls
 			align = "center";
 			};
 	};
-	class Bank_SelectPlayer: RscStructuredText
+	class Bank_SelectPlayer: ZKB_RscStructuredText
 	{
 		idc = 13020;
 		text = "$STR_Bank_PlayerSelect";
@@ -54,7 +54,7 @@ class controls
 			align = "right";
 			};
 	};
-	class Bank_PlayerList: RscCombo
+	class Bank_PlayerList: ZKB_RscCombo
 	{
 		idc = 13030;
 		x = 0.48 * safezoneW + safezoneX;
@@ -62,7 +62,7 @@ class controls
 		w = 0.19 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class Bank_Dep_Trans_Amount: RscEdit
+	class Bank_Dep_Trans_Amount: ZKB_RscEdit
 	{
 		idc = 13040;
 		text = "0";
@@ -71,7 +71,7 @@ class controls
 		w = 0.325 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class Bank_TaxInfo: RscStructuredText
+	class Bank_TaxInfo: ZKB_RscStructuredText
 	{
 		idc = 13045;
 		text = "";
@@ -80,7 +80,7 @@ class controls
 		w = 0.325 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class Bank_Dep_Trans_Btn: RscButton
+	class Bank_Dep_Trans_Btn: ZKB_RscButton
 	{
 		idc = 13050;
 		text = "$STR_Bank_Submit";
@@ -90,7 +90,7 @@ class controls
 		w = 0.2 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class Bank_InvMoneyTxt: RscStructuredText
+	class Bank_InvMoneyTxt: ZKB_RscStructuredText
 	{
 		idc = 13060;
 		text = "$STR_Bank_InvMoney";
@@ -99,7 +99,7 @@ class controls
 		w = 0.3125 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class Bank_AccountMoneyTxt: RscStructuredText
+	class Bank_AccountMoneyTxt: ZKB_RscStructuredText
 	{
 		idc = 13070;
 		text = "$STR_Bank_BankMoney";
@@ -108,7 +108,7 @@ class controls
 		w = 0.3125 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class Bank_TrenLine: RscText
+	class Bank_TrenLine: ZKB_RscText
 	{
 		idc = 13080;
 		x = 0.32 * safezoneW + safezoneX;
@@ -117,7 +117,7 @@ class controls
 		h = 0.01 * safezoneH;
 		colorBackground[] = {0.5,0.5,0.5,0.75};
 	};
-	class Bank_WithdrawTxt: RscStructuredText
+	class Bank_WithdrawTxt: ZKB_RscStructuredText
 	{
 		idc = 13090;
 		text = "$STR_Bank_Withdraw";
@@ -130,7 +130,7 @@ class controls
 			align = "center";
 			};
 	};
-	class Bank_WithdrawAmount: RscEdit
+	class Bank_WithdrawAmount: ZKB_RscEdit
 	{
 		idc = 13100;
 		text = "0";
@@ -139,7 +139,7 @@ class controls
 		w = 0.325 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class Bank_WithdrawBtn: RscButton
+	class Bank_WithdrawBtn: ZKB_RscButton
 	{
 		idc = 13110;
 		text = "$STR_Bank_Withdraw";
@@ -149,7 +149,7 @@ class controls
 		w = 0.2 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class Bank_Cancel: RscButton
+	class Bank_Cancel: ZKB_RscButton
 	{
 		idc = 13120;
 		text = "$STR_Common_Close";

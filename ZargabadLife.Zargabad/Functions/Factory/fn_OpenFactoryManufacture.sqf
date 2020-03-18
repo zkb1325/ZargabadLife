@@ -28,7 +28,7 @@ if (_workers <= 0) then
 	}
 	else
 	{
-	_manitime = round(((([_x] call ZKB_fnc_GetItemBuyPrice)*.02)/_workers)/1.5) max 5;	
+	_manitime = round(((([_x] call ZKB_fnc_GetItemBuyPrice)*.02)/_workers)/1.5) max 1;	
 	};
 _index = _facitemlist lbAdd (([_x] call ZKB_fnc_GetItemName) + " - " + (if (_workers <= 0) then {_manitime}else{([_manitime, "MM:SS"] call BIS_Fnc_secondsToString)}));	
 _facitemlist lbSetData [_index, _x];
@@ -125,4 +125,5 @@ _facitemlist lbSetData [_index, _x];
 		
 		sleep .1;
 		};
+	[] spawn ZKB_fnc_SavePlayer;
 	};

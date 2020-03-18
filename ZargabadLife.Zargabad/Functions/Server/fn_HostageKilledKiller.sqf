@@ -9,3 +9,4 @@
 private _bounty = round (SETTING(getNumber,"ZKB_HostageKilledBounty") * (playersNumber west));
 ["STR_Hostage_HostageKilledCiv",[[_bounty] call ZKB_fnc_FormatNumber]] call ZKB_fnc_DynamicText;
 [player,"Killing the Hostage",_bounty] call ZKB_fnc_AddWanted;
+["STR_Admin_AdminLogsHostageKilled",name player,playersNumber west] call ZKB_fnc_AdminAddAdminLog;

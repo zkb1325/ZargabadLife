@@ -7,7 +7,7 @@
 */
 if !(missionNamespace getVariable ["keysEnabled",true]) exitWith {false;};
 	
-if (vehicle player == player or !(driver (vehicle player) isEqualTo player) or !IsCop) exitWith {true;};
+if (vehicle player == player or !(driver (vehicle player) isEqualTo player) or !IsCop) exitWith {false;};
 if (SirenLock) exitWith {systemchat "Anti Siren Spam"; true;};
 [] spawn {SirenLock = true; sleep 3; SirenLock = false;};
 if ((vehicle player) getVariable ["SirenOn",false]) then

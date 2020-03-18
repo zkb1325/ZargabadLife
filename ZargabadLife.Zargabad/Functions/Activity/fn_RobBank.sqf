@@ -13,6 +13,7 @@
 
 private _safe = param [0, objNull, [objNull]];
 
+if (playersNumber west < SETTING(getNumber,"ZKB_BankRobReqCops")) exitWith {["STR_Robbing_RequiredCops",[SETTING(getNumber,"ZKB_BankRobReqCops")]] call ZKB_fnc_DynamicText;};
 if (currentWeapon player == "") exitWith {["STR_Bank_RobNoWeapon"] call ZKB_fnc_DynamicText;};
 if ((serverTime - (_safe getVariable ["lastRobbed",0])) < 1200) exitWith {["STR_Bank_SafeRecent"] call ZKB_fnc_DynamicText;};
 if (ZKB_PerformingAction) exitWith {["STR_Common_AlreadyPerformingAction"] call ZKB_fnc_DynamicText;};
@@ -52,6 +53,7 @@ if (currentWeapon player isEqualTo handgunWeapon player) then {player switchMove
 
 ["Money", _robAmount] call ZKB_fnc_InvAddItem;
 ["STR_Bank_RobbedBank"] call ZKB_fnc_DynamicText;
+["STR_Admin_PlayerLogsRobbedBank",name player,[_robAmount] call ZKB_fnc_FormatNumber] call ZKB_fnc_AdminAddPlayerLog;
 [_robAmount] remoteExecCall ["ZKB_fnc_RobBankLoss",0,false];
 
 ZKB_PerformingAction = false;

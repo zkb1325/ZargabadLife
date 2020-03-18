@@ -6,6 +6,7 @@
 */
 [] spawn
 	{
+	#include "..\..\ConfigMacros.hpp"
 	private _mayorElectionLoopTime = time + 1800;
 	private _voteTally = [];
 	private _sortedVotes = [];
@@ -26,7 +27,6 @@
 		
 		private _playerCurVote = _x getVariable ["mayorVote",""];
 		private _playerCurVoteUnit = [_playerCurVote] call ZKB_fnc_GetPlayerFromID;
-		_x setVariable ["mayorVote","",true];
 		_inArray = false;
 		
 		//See if the voted for player is already in the tally
@@ -60,7 +60,7 @@
 		
 		//Remove candidates if they don't have enough votes
 		{
-		if ((_x select 1) < 2) then //Need at least this many votes to be considered 
+		if ((_x select 1) < SETTING(getNumber,"ZKB_MinMayorVotes")) then //Need at least this many votes to be considered 
 			{
 			_voteTally set [_forEachIndex,"remove"];
 			};
@@ -90,8 +90,15 @@
 				else
 				{
 				["STR_Voting_NewMayor",[name ([(_newMayor select 0)] call ZKB_fnc_GetPlayerFromID),(_newMayor select 1)]] remoteExecCall ["ZKB_fnc_DynamicText",0,false];
+				{
+				_x setVariable ["mayorVote",nil,true];
+				}forEach playAbleUnits;
 				};
 			missionNamespace setVariable ["currentMayor",(_newMayor select 0),true];
+			if (SETTING(getNumber,"ZKB_StatSaveEnabled") isEqualTo 1) then
+				{
+				["mayor",(_newMayor select 0)] call ZKB_fnc_ServerSaveStats;
+				};
 			}
 			else
 			{
@@ -107,6 +114,7 @@
 //Police cheif	
 [] spawn
 	{
+	#include "..\..\ConfigMacros.hpp"
 	private _chiefElectionLoopTime = time + 1200;
 	private _voteTally = [];
 	private _sortedVotes = [];
@@ -127,7 +135,6 @@
 		
 		private _playerCurVote = _x getVariable ["chiefVote",""];
 		private _playerCurVoteUnit = [_playerCurVote] call ZKB_fnc_GetPlayerFromID;
-		_x setVariable ["chiefVote","",true];
 		_inArray = false;
 		
 		//See if the voted for player is already in the tally
@@ -158,17 +165,17 @@
 			};
 			
 		}forEach playableUnits;
-		
+
 		//Remove candidates if they don't have enough votes
 		{
-		if ((_x select 1) < 1) then //Need at least this many votes to be considered 
+		if ((_x select 1) < SETTING(getNumber,"ZKB_MinChiefVotes")) then //Need at least this many votes to be considered 
 			{
 			_voteTally set [_forEachIndex,"remove"];
 			};
 		}forEach _voteTally;
 		_voteTally = _voteTally - ["remove"];
-		
-		if (count _voteTally > 1) then //Theres at least 1 player eligible to win
+
+		if (count _voteTally > 0) then //Theres at least 1 player eligible to win
 			{
 			_sortedVotes = [_voteTally, [], {_x select 1}, "DESCEND"] call BIS_fnc_sortBy; //Sort the votes from most votes to least
 			//Get the player with the most votes and any one who ties with them
@@ -180,10 +187,8 @@
 				_wonVotes pushBack _x;
 				};
 			}forEach _sortedVotes;
-			
 			//Incase there are other players who tied in number of votes pick one randomly #RNG
 			private _newChief = selectRandom _wonVotes;
-			
 			if ((missionNamespace getVariable ["currentChief",""]) isEqualTo (_newChief select 0)) then
 				{
 				["STR_Voting_ChiefStays", [name ([(_newChief select 0)] call ZKB_fnc_GetPlayerFromID)]] remoteExecCall ["ZKB_fnc_DynamicText",0,false];
@@ -191,8 +196,15 @@
 				else
 				{
 				["STR_Voting_NewCheif",[name ([(_newChief select 0)] call ZKB_fnc_GetPlayerFromID),(_newChief select 1)]] remoteExecCall ["ZKB_fnc_DynamicText",0,false];
+				{
+				_x setVariable ["chiefVote",nil,true];
+				}forEach playAbleUnits;
 				};
 			missionNamespace setVariable ["currentChief",(_newChief select 0),true];
+			if (SETTING(getNumber,"ZKB_StatSaveEnabled") isEqualTo 1) then
+				{
+				["chief",(_newChief select 0)] remoteExecCall ["ZKB_fnc_ServerSaveStats",2,false];
+				};
 			}
 			else
 			{

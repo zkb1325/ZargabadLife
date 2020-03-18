@@ -6,7 +6,7 @@
 */
 
 if !([player] call ZKB_fnc_IsGangMember) exitWith {["STR_Gang_NotInGang"] call ZKB_fnc_DynamicText;};
-
+["STR_Admin_PlayerLogsLeftGang",name player,[getPlayerUID player] call ZKB_fnc_GetGangName] call ZKB_fnc_AdminAddPlayerLog;
 
 closeDialog 0;
 

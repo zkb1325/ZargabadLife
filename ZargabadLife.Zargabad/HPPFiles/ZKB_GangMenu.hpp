@@ -18,7 +18,7 @@ class controls
 		w = 0.675 * safezoneW;
 		h = 0.24 * safezoneH;
 	};	
-	class GangMenu_Frame: RscFrame
+	class GangMenu_Frame: ZKB_RscFrame
 	{
 		idc = 17002;
 		text = $STR_Gang_GangMenu;
@@ -27,7 +27,7 @@ class controls
 		w = 0.675 * safezoneW;
 		h = 0.24 * safezoneH;
 	};
-	class GangMenu_JoinBtn: RscButton
+	class GangMenu_JoinBtn: ZKB_RscButton
 	{
 		idc = 17010;
 		text = $STR_Gang_Join;
@@ -37,7 +37,7 @@ class controls
 		h = 0.04 * safezoneH;
 		action = "[lbData [17050, (lbCurSel 17050)]] call ZKB_fnc_JoinGang;";
 	};
-	class GangMenu_LeaveBtn: RscButton
+	class GangMenu_LeaveBtn: ZKB_RscButton
 	{
 		idc = 17020;
 		text = $STR_Gang_Leave;
@@ -47,7 +47,7 @@ class controls
 		h = 0.04 * safezoneH;
 		action = "call ZKB_fnc_LeaveGang;";
 	};
-	class GangMenu_ManageBtn: RscButton
+	class GangMenu_ManageBtn: ZKB_RscButton
 	{
 		idc = 17030;
 		text = $STR_Gang_Manage;
@@ -57,7 +57,7 @@ class controls
 		h = 0.04 * safezoneH;
 		action = "call ZKB_fnc_ManageGang;";
 	};
-	class GangMenu_CreateBtn: RscButton
+	class GangMenu_CreateBtn: ZKB_RscButton
 	{
 		idc = 17040;
 		text = $STR_Gang_Create;
@@ -67,7 +67,7 @@ class controls
 		h = 0.04 * safezoneH;
 		action = "call ZKB_fnc_GangCreate;";
 	};
-	class GangMenu_GangList: RscListBox
+	class GangMenu_GangList: ZKB_RscListBox
 	{
 		idc = 17050;
 

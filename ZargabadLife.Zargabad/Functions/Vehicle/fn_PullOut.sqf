@@ -34,6 +34,7 @@ if (_success) then
 	if (isCop and isPlayer _target) then
 		{
 		["STR_Vehicle_PullOutGlobal",[name player, name _target]] remoteExecCall ["ZKB_fnc_DynamicText",0,false];
+		["STR_Admin_PlayerLogsPullOut",name player,name _target] call ZKB_fnc_AdminAddPlayerLog;
 		};
 		
 	if(local _vehicle) then 

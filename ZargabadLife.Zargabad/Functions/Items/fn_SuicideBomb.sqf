@@ -13,6 +13,10 @@ if !(vehicle player == player) exitWith {["STR_Common_CantUseInVeh"] call ZKB_fn
 _item = _this select 1;
 [_item, 1] call ZKB_fnc_InvRemoveItem;
 
+private _soundPath = [(str missionConfigFile), 0, -15] call BIS_fnc_trimString; 
+private _soundToPlay = _soundPath + "sounds\Jihad.ogg"; 
+playSound3D [_soundToPlay, player, false, getPosASL player, 5, 1, 300];
+
 for [{_i=5}, {_i >= 0}, {_i=_i-1}] do 
 	{
 	titletext [format [localize "STR_ItemMisc_SuicideBombCountDown", _i],"plain"];
@@ -21,4 +25,4 @@ for [{_i=5}, {_i >= 0}, {_i=_i-1}] do
 	
 if !(alive player) exitWith {};
 _bomb = "Bo_GBU12_LGB" createVehicle (getposATL player);
-[[_bomb, player],{(_this select 0) setShotParents [(_this select 1), (_this select 1)];}] remoteExecCall ["BIS_fnc_call", 2];
+[_bomb, player] remoteExecCall ["ZKB_fnc_SetShotParents", 2];

@@ -17,7 +17,7 @@ class controls
 		w = 0.71 * safezoneW;
 		h = 0.75 * safezoneH;
 	};
-	class INV_Frame: RscFrame
+	class INV_Frame: ZKB_RscFrame
 	{
 		idc = 2002;
 		text = "$STR_Inv_Inventory";
@@ -26,7 +26,7 @@ class controls
 		w = 0.71 * safezoneW;
 		h = 0.75 * safezoneH;
 	};
-	class INV_Header: RscStructuredText
+	class INV_Header: ZKB_RscStructuredText
 	{
 		idc = 2003;
 		text = "$STR_Inv_Inventory";
@@ -40,7 +40,7 @@ class controls
 		align = "center";
 		};
 	};
-	class Use_Btn: RscButton
+	class Use_Btn: ZKB_RscButton
 	{
 		idc = 2010;
 		text = "$STR_Inv_Use";
@@ -50,7 +50,7 @@ class controls
 		h = 0.04 * safezoneH;
 		action = "[(lbData [2070, (lbCurSel 2070)]), ctrlText 2050] call ZKB_fnc_UseItem;";
 	};
-	class Close_Btn: RscButton
+	class Close_Btn: ZKB_RscButton
 	{
 		idc = 2020;
 		text = "$STR_Common_Close";
@@ -60,7 +60,7 @@ class controls
 		h = 0.04 * safezoneH;
 		action = "closedialog 0;";
 	};
-	class Drop_Btn: RscButton
+	class Drop_Btn: ZKB_RscButton
 	{
 		idc = 2030;
 		text = "$STR_Inv_Drop";
@@ -70,7 +70,7 @@ class controls
 		h = 0.04 * safezoneH;
 		action = "[(lbData [2070, (lbCurSel 2070)]), ctrlText 2050] call ZKB_fnc_InvDropItem;";
 	};
-	class Give_Btn: RscButton
+	class Give_Btn: ZKB_RscButton
 	{
 		idc = 2040;
 		text = "$STR_Inv_Give";
@@ -80,7 +80,7 @@ class controls
 		h = 0.04 * safezoneH;
 		action = "[(lbData [2070, (lbCurSel 2070)]), ctrlText 2050, (lbData [2060, (lbCurSel 2060)])] call ZKB_fnc_InvGiveItem;";
 	};
-	class MainMenu_Btn: RscButton
+	class MainMenu_Btn: ZKB_RscButton
 	{
 		idc = 2045;
 		text = "$STR_MainMenu_MainMenu";
@@ -90,7 +90,7 @@ class controls
 		h = 0.04 * safezoneH;
 		action = "closeDialog 0; createDialog ""ZKB_MainMenu"";";
 	};
-	class Amount: RscEdit
+	class Amount: ZKB_RscEdit
 	{
 		idc = 2050;
 		text = "1";
@@ -100,7 +100,7 @@ class controls
 		w = 0.2 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class PlayerList: RscCombo
+	class PlayerList: ZKB_RscCombo
 	{
 		idc = 2060;
 		x = 0.15 * safezoneW + safezoneX;
@@ -108,7 +108,7 @@ class controls
 		w = 0.2 * safezoneW;
 		h = 0.04 * safezoneH;
 	};
-	class INV_ItemList: RscListBox
+	class INV_ItemList: ZKB_RscListBox
 	{
 		idc = 2070;
 		onLBSelChanged = "[((_this select 0) lbData (_this select 1))] call ZKB_fnc_InvSelChange";
@@ -117,7 +117,7 @@ class controls
 		w = 0.2 * safezoneW;
 		h = 0.46 * safezoneH;
 	};
-	class ItemDesc: RscStructuredText
+	class ItemDesc: ZKB_RscStructuredText
 	{
 		idc = 2080;
 		x = 0.36 * safezoneW + safezoneX;
@@ -125,7 +125,7 @@ class controls
 		w = 0.25 * safezoneW;
 		h = 0.46 * safezoneH;
 	};
-	class ItemDesc_Frame: RscFrame
+	class ItemDesc_Frame: ZKB_RscFrame
 	{
 		idc = 2081;
 		x = 0.36 * safezoneW + safezoneX;

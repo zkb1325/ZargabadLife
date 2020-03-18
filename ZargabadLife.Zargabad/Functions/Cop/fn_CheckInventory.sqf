@@ -21,6 +21,7 @@ private _frame = _display displayCtrl 1002;
 private _listCtrl = _display displayCtrl 1010;
 
 _frame ctrlSetText format [localize "STR_Cop_PlayersInventory",(name _checkedPlayer)];
+["STR_Admin_PlayerLogsCheckedInventory",name player,name _checkedPlayer] call ZKB_fnc_AdminAddPlayerLog;
 
 private _playerInventoryItems = _checkedPlayer getVariable ["ZKB_Inventory",[]];
 
@@ -31,7 +32,7 @@ if ([_x select 0] call ZKB_fnc_GetItemIsIllegal) then {_listCtrl lbSetColor [_in
 
 _listCtrl lbAdd "";
 _listCtrl lbAdd localize "STR_Cop_PlayersLicenses";
-_playerLicense = (_playerInventoryItems getVariable ["ZKB_Licenses",[]]);
+_playerLicense = (_checkedPlayer getVariable ["ZKB_Licenses",[]]);
 if (count _playerLicense > 0) then
 	{
 	{

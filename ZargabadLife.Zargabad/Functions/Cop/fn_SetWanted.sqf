@@ -12,3 +12,4 @@ if ((_crimeDescription isEqualTo "") or (_crimeDescription isEqualTo (localize "
 
 [_player,_crimeDescription] call ZKB_fnc_AddWanted;
 ["STR_Cop_WantedMenuSetWantedGlobal",[name _player,_crimeDescription,name player]] remoteExecCall ["ZKB_fnc_DynamicText",0,false];
+["STR_Cop_WantedMenuSetWantedGlobal",name _player,_crimeDescription,name player] call ZKB_fnc_AdminAddPlayerLog;

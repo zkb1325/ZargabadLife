@@ -12,7 +12,7 @@
 	waitUntil{!isNull (findDisplay 49)};
 	_abortButton = (findDisplay 49) displayCtrl 104;
 	_abortButton ctrlEnable false;
-	_aborttime = time + 1;
+	_aborttime = time + 10;
 	
 	waitUntil {
 			_abortButton ctrlSetText format["%1",[(_aborttime - time),"SS.MS"] call BIS_fnc_secondsToString];
@@ -32,6 +32,7 @@
 	waitUntil{!isNull (findDisplay 49)};
 	_respawnbtn = (findDisplay 49) displayCtrl 1010;
 	_respawnbtn ctrlEnable false;
+	waitUntil{!(player getVariable ["respawning",false])};
 	_respawntime = time + 30;
 	
 	waitUntil {

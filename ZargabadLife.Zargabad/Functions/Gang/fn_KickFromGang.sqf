@@ -12,17 +12,18 @@ if (_kickedmemberUID == (getPlayerUID player)) exitWith {["STR_Gang_CantKickSelf
 
 
 closeDialog 0;
-
+private _kickedMemberName = [_kickedmemberUID] call ZKB_fnc_GetGangMemberName;
 [_kickedmemberUID] call ZKB_fnc_RemoveFromGang;
+
+
+["STR_Gang_KickedMember", [_kickedMemberName]] call ZKB_fnc_DynamicText;
+[localize "STR_Gang_KickedFromGang"] remoteExec ["ZKB_fnc_DynamicText", _kickedmemberunit, false];
+["STR_Admin_PlayerLogsKickedFromGang",name player,_kickedMemberName,[getPlayerUID player] call ZKB_fnc_GetGangName] call ZKB_fnc_AdminAddPlayerLog;
+
 
 _kickedmemberunit = [_kickedmemberUID] call ZKB_fnc_GetPlayerFromID;
 
-if (isNull _kickedmemberunit) then
+if !(isNull _kickedmemberunit) then
 	{
-	["STR_Gang_KickedMemberNotInGame"] call ZKB_fnc_DynamicText;	
-	}
-	else
-	{
-	["STR_Gang_KickedMember", [name _kickedmemberunit]] call ZKB_fnc_DynamicText;
 	[localize "STR_Gang_KickedFromGang"] remoteExec ["ZKB_fnc_DynamicText", _kickedmemberunit, false];
 	};

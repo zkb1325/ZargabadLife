@@ -12,3 +12,4 @@ if (isNull _healedUnit) exitWith {closeDialog 0; ["STR_Bank_TransferPlayerNotInG
 _healedUnit setDamage 0;
 ["STR_Cop_HealedBy",[name player]] remoteExecCall ["ZKB_fnc_DynamicText",_healedUnit,false];
 ["STR_Cop_Healed",[name _healedUnit]] call ZKB_fnc_DynamicText;
+["STR_Admin_PlayerLogsCopHealed",name player,name _healedUnit] call ZKB_fnc_AdminAddPlayerLog;

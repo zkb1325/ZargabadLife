@@ -17,7 +17,7 @@ class controls
 		w = 0.4 * safezoneW;
 		h = 0.8 * safezoneH;
 	};
-	class GenericTextBox_Frame: RscFrame
+	class GenericTextBox_Frame: ZKB_RscFrame
 	{
 		idc = 1502;
 		x = 0.3 * safezoneW + safezoneX;
@@ -25,7 +25,7 @@ class controls
 		w = 0.4 * safezoneW;
 		h = 0.8 * safezoneH;
 	};
-	class GenericTextBox_Text_CTRLGrp: RscControlsGroup
+	class GenericTextBox_Text_CTRLGrp: ZKB_RscControlsGroup
 		{
 		
 		idc = 1503;
@@ -37,7 +37,7 @@ class controls
 		class controls
 			{
 		
-			class GenericTextBox_Text: RscStructuredText
+			class GenericTextBox_Text: ZKB_RscStructuredText
 				{
 				idc = 1510;
 				text = "";
@@ -48,7 +48,7 @@ class controls
 				};	
 			};
 		};
-	class GenericTextBox_Text_Frame: RscFrame
+	class GenericTextBox_Text_Frame: ZKB_RscFrame
 		{
 		
 		idc = 1504;
@@ -57,7 +57,7 @@ class controls
 		w = 0.35 * safezoneW;
 		h = 0.64 * safezoneH;
 		};
-	class GenericTextBox_Btn: RscButton
+	class GenericTextBox_Btn: ZKB_RscButton
 	{
 		idc = 1520;
 		text = "$STR_Common_Close";
